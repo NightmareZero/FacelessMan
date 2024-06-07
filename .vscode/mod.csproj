@@ -23,7 +23,8 @@
 		<Compile Include="../Source/Harmony/*" />
 		<Compile Include="../Source/Defs/*" />
 		<Compile Include="../Source/Utils/*" />
-		<!-- <Compile Include="../Source/Defs/Abilities/*" /> -->
+		<Compile Include="../Source/Abilities/*" />
+		<Compile Include="../Source/ModExtension/*" />
 		
 	 	<!-- Rimworld -->
 	 	<Reference Include="../../../RimWorldWin64_Data/Managed/*.dll">

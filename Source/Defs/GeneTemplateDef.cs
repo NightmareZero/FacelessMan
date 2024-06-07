@@ -16,7 +16,7 @@ using RimWorld.Planet;
 using HarmonyLib;
 
 namespace NzFaceLessManMod { 
-    public class AbilityGeneTemplateDef : Def
+    public class XenoGeneTemplateDef : Def
     {
 
         public Type geneClass = typeof(Gene);

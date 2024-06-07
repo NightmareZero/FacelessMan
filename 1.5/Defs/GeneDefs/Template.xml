@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <NzFaceLessManMod.XenoGeneTemplateDef>
+		<geneClass>Gene</geneClass>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix>
+		<displayCategory>Test1231</displayCategory>
+		<selectionWeight>0</selectionWeight>
+		<defName>xenoGeneTemplateDef</defName>
+		<label>morph: {0}</label>
+		<description>Carriers of this gene have the extraordinary archite-powered ability to rapidly morph into a {0} xenotype at will. They will inherit all the genetic abilities and drawbacks of that xenotype, but they will be able to morph back at any time.</description>	
+		<displayOrderOffset>0</displayOrderOffset>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<biostatArc>0</biostatArc>
+		<!-- <ability>VRE_Morph</ability> -->
+	</NzFaceLessManMod.XenoGeneTemplateDef>
+</Defs>

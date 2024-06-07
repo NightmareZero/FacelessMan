@@ -18,6 +18,8 @@ using HarmonyLib;
 namespace NzFaceLessManMod
 {
 
+
+
     [HarmonyPatch(typeof(GeneDefGenerator))]
     [HarmonyPatch(nameof(GeneDefGenerator.ImpliedGeneDefs))]
     public static class FaceLessMan_GeneDefGenerator_ImpliedGeneDefs_Patch
@@ -27,14 +29,21 @@ namespace NzFaceLessManMod
         {
             List<GeneDef> genes = values.ToList();
 
-            // TODO
-            List <XenotypeDef> listOfXenotypes = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element,DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
-            && element.defName!= "AG_RandomCustom").ToList();
+            // 从xml中获取template
+            XenoGeneTemplateDef template = null;
+
+            GlobalValues.AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
+            && element.defName != "AG_RandomCustom").ToList();
+
+            GlobalValues.AvaliableXenotypeDef.ForEach(xeno =>
+            {
+                genes.Add(GetFromXenotype(template, xeno, genes.Count()));
+            });
 
             return genes;
         }
 
-        public static GeneDef GetFromXenotype(AbilityGeneTemplateDef template,XenotypeDef def, int displayOrderBase)
+        public static GeneDef GetFromXenotype(XenoGeneTemplateDef template, XenotypeDef def, int displayOrderBase)
         {
 
 
@@ -54,6 +63,13 @@ namespace NzFaceLessManMod
                 displayOrderInCategory = displayOrderBase + template.displayOrderOffset,
                 minAgeActive = template.minAgeActive,
                 modContentPack = template.modContentPack,
+
+                modExtensions = new List<DefModExtension> {
+                    new GeneXenoModExtension{
+                        xenotypeDef = def
+
+                    }
+                },
                 // modExtensions = new List<DefModExtension> {
                 //     new VanillaGenesExpanded.GeneExtension {
                 //         backgroundPathArchite = "UI/Icons/Genes/GeneBackground_MorphGene"
