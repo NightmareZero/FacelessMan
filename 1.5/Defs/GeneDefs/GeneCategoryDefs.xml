@@ -3,6 +3,6 @@
   <GeneCategoryDef>
     <defName>FacelessMan</defName>
     <label>faceless man</label>
-    <displayPriorityInXenotype>200.001</displayPriorityInXenotype>
+    <displayPriorityInXenotype>900.001</displayPriorityInXenotype>
   </GeneCategoryDef>
 </Defs>

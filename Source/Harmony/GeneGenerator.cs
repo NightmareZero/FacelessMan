@@ -32,7 +32,7 @@ namespace NzFaceLessManMod
             try
             {
                 // 从xml中获取template
-                XenoGeneTemplateDef template = null;
+                XenoGeneTemplateDef template = XmlDefs.xenoGeneTemplateDef;
 
                 GlobalValues.AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
                 && element.defName != "AG_RandomCustom").ToList();
@@ -87,7 +87,7 @@ namespace NzFaceLessManMod
                 //     }
                 // },
 
-                abilities = new List<AbilityDef> { template.ability },
+                // abilities = new List<AbilityDef> { template.ability },
                 descriptionHyperlinks = new List<DefHyperlink> { new DefHyperlink { def = template.ability } }
             };
 

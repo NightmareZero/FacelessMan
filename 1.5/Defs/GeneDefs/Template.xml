@@ -3,11 +3,11 @@
     <NzFaceLessManMod.XenoGeneTemplateDef>
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
-		<exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix>
+		<!-- <exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix> -->
 		<displayCategory>FacelessMan</displayCategory>
 		<selectionWeight>0</selectionWeight>
 		<defName>xenoGeneTemplateDef</defName>
-		<label>morph: {0}</label>
+		<label>Gene: {0}</label>
 		<description>Carriers of this gene have the extraordinary archite-powered ability to rapidly morph into a {0} xenotype at will. They will inherit all the genetic abilities and drawbacks of that xenotype, but they will be able to morph back at any time.</description>	
 		<displayOrderOffset>0</displayOrderOffset>
 		<biostatCpx>2</biostatCpx>
