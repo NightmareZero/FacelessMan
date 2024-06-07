@@ -4,7 +4,7 @@
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
 		<exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix>
-		<displayCategory>Test1231</displayCategory>
+		<displayCategory>FacelessMan</displayCategory>
 		<selectionWeight>0</selectionWeight>
 		<defName>xenoGeneTemplateDef</defName>
 		<label>morph: {0}</label>

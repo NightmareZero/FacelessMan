@@ -19,6 +19,7 @@ namespace NzFaceLessManMod
         {
             var harmony = new Harmony("nightz.facelessman");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
+            Log.Message("FacelessManMod loaded");
         }
     }
 
