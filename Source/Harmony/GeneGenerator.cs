@@ -29,16 +29,24 @@ namespace NzFaceLessManMod
         {
             List<GeneDef> genes = values.ToList();
 
-            // 从xml中获取template
-            XenoGeneTemplateDef template = null;
-
-            GlobalValues.AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
-            && element.defName != "AG_RandomCustom").ToList();
-
-            GlobalValues.AvaliableXenotypeDef.ForEach(xeno =>
+            try
             {
-                genes.Add(GetFromXenotype(template, xeno, genes.Count()));
-            });
+                // 从xml中获取template
+                XenoGeneTemplateDef template = null;
+
+                GlobalValues.AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
+                && element.defName != "AG_RandomCustom").ToList();
+
+                GlobalValues.AvaliableXenotypeDef.ForEach(xeno =>
+                {
+                    genes.Add(GetFromXenotype(template, xeno, genes.Count()));
+                });
+            }
+            catch (Exception e)
+            {
+                Log.Error("Error in Postfix of GeneDefGenerator.ImpliedGeneDefs: " + e.Message);
+            }
+
 
             return genes;
         }
