@@ -4,7 +4,7 @@
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
 		<!-- <exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix> -->
-		<displayCategory>FacelessMan</displayCategory>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<selectionWeight>0</selectionWeight>
 		<defName>xenoGeneTemplateDef</defName>
 		<label>Gene: {0}</label>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
     <AbilityCategoryDef>
-        <defName>FacelessMan</defName>
-        <label>faceless</label>
+        <defName>Nzflm_AbilityCategory</defName>
+        <label>facelessman</label>
         <description>Abilities related to the Faceless</description>
     </AbilityCategoryDef>   
 </Defs>

@@ -10,7 +10,7 @@
         <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
-        <category>FacelessMan</category>
+        <category>Nzflm_AbilityCategory</category>
         <displayOrder>500</displayOrder>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
