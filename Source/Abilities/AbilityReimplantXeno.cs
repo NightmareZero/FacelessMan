@@ -26,7 +26,7 @@ namespace NzFaceLessManMod
         public override void Apply(LocalTargetInfo caster, LocalTargetInfo dest)
         {
             base.Apply(caster, dest);
-            // Pawn casterPawn = caster.Pawn;
+            Pawn casterPawn = caster.Pawn;
             Pawn targetPawn = dest.Pawn;
             if (targetPawn == null)
             {
@@ -41,6 +41,22 @@ namespace NzFaceLessManMod
             // int max2 = InternalDefOf.VRE_EndogermLossShock.CompProps<HediffCompProperties_Disappears>().disappearsAfterTicks.max;
             // Find.LetterStack.ReceiveLetter("LetterLabelGenesImplanted".Translate(), "VRE_LetterTextGenesImplanted".Translate(parent.pawn.Named("CASTER"), pawn.Named("TARGET"), max.ToStringTicksToPeriod().Named("COMADURATION"), max2.ToStringTicksToPeriod().Named("SHOCKDURATION")), LetterDefOf.NeutralEvent, new LookTargets(parent.pawn, pawn));
             // }
+            List<FloatMenuOption> selectXenoMenu = new List<FloatMenuOption>();
+
+            Dictionary<string, XenotypeDef> xenoGenes = GetGeneXenotypes(casterPawn);
+
+            foreach (var xeno in xenoGenes)
+            {
+                var opt = new FloatMenuOption(xeno.Key, () =>
+                {
+                    // 在这里调用 base.Activate
+                    // base.Activate(target, dest);
+                });
+                selectXenoMenu.Add(opt);
+            }
+
+            // 显示 FloatMenu
+            Find.WindowStack.Add(new FloatMenu(selectXenoMenu));
         }
 
         /// <summary>
@@ -66,7 +82,13 @@ namespace NzFaceLessManMod
         /// </summary>
         public static bool isGeneXenotype(GeneDef geneDef)
         {
-            return geneDef.defName.Contains("VRE_");
+            var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
+            if (genoXeno != null)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public static void ReimplantXenotype(Pawn caster, Pawn dest, XenotypeDef xenotype)
