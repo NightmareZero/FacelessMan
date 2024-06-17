@@ -44,14 +44,15 @@ namespace NzFaceLessManMod
             // }
             List<FloatMenuOption> selectXenoMenu = new List<FloatMenuOption>();
 
+            // 从施放者的基因中寻找可用的基因组
             Dictionary<string, XenotypeDef> xenoGenes = GetGeneXenotypes(casterPawn);
 
+            // 绘制菜单
             foreach (var xeno in xenoGenes)
             {
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
-                    // 在这里调用 base.Activate
-                    // base.Activate(target, dest);
+                    ReimplantXenotype(casterPawn, targetPawn, xeno.Value);
                 });
                 selectXenoMenu.Add(opt);
             }
