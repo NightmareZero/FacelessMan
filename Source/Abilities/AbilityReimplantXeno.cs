@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace NzFaceLessManMod
 {
@@ -91,10 +92,26 @@ namespace NzFaceLessManMod
             return true;
         }
 
-        public static void ReimplantXenotype(Pawn caster, Pawn dest, XenotypeDef xenotype)
+        public static void ReimplantXenotype(Pawn caster, Pawn target, XenotypeDef xenotype)
         {
             // 清除旧基因
-            CleanOldGenes(dest, xenotype);
+            CleanOldGenes(target, xenotype);
+            // 设置基因类别
+            target.genes.SetXenotype(xenotype);
+            target.genes.xenotypeName = xenotype.defName; // TODO 是否使用这个值存疑
+            // TODO 根据targetXentype获取对应的icondef 
+            // dest.genes.iconDef = targetXenotype.;
+
+            // 设置新基因
+            AddNewGenes(target, xenotype);
+
+            // 添加基因不稳定hediff
+            target.health.AddHediff(XmlDefs.Flm_GeneticInstability);
+            // 添加基因不稳定hediff
+            SetExtractGermline(caster);
+            // 更新异种基因复制
+            GeneUtility.UpdateXenogermReplication(target);
+
 
         }
 
@@ -122,9 +139,53 @@ namespace NzFaceLessManMod
             }
         }
 
+        /// <summary>
+        /// 添加新基因
+        /// 根据xenoType的内源性添加谱系/异种基因
+        /// </summary>
+        public static void AddNewGenes(Pawn target, XenotypeDef xenotype)
+        {
+            // 获取谱系基因/异种基因flag
+            bool isEndotype = xenotype.inheritable;
+            if (isEndotype) // 根据flag移除谱系/异种基因
+            {
+                foreach (Gene gene in target.genes.Endogenes)
+                {
+                    target.genes.AddGene(gene.def, xenogene: false);
+                }
+            }
+            else
+            {
+                foreach (Gene gene in target.genes.Xenogenes)
+                {
+                    target.genes.AddGene(gene.def, xenogene: true);
+                }
+            }
 
+            
+        }
 
-        // public static void ReimplantGermline(Pawn caster, Pawn dest)
+        /// <summary>
+        /// 为一个Pawn添加异种基因复制hediff, 并设置基因丢失冲击hediff
+        /// 如果Pawn已经处于基因丢失状态, 则直接死亡
+        /// </summary>
+        public static void SetExtractGermline(Pawn caster, int overrideDurationTicks = -1)
+        {
+            caster.health.AddHediff(XmlDefs.Flm_GeneLossShock);
+            if (GeneUtility.PawnWouldDieFromReimplanting(caster))
+            {
+                caster.genes.SetXenotype(XenotypeDefOf.Baseliner);
+            }
+            Hediff hediff = HediffMaker.MakeHediff(HediffDefOf.XenogermReplicating, caster);
+            if (overrideDurationTicks > 0)
+            {
+                hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = overrideDurationTicks;
+            }
+            caster.health.AddHediff(hediff);
+        }
+
+        
+        // public static void ReimplantGermline(Pawn caster, Pawn dest, XenotypeDef targetXenotype)
         // {
 
         //     // QuestUtility.SendQuestTargetSignals(caster.questTags, "XenogermReimplanted", caster.Named("SUBJECT"));
@@ -135,15 +196,7 @@ namespace NzFaceLessManMod
         //         xenogenesToPreserve.Add(gene.def);
         //     }
 
-        //     // 移除全部基因
-        //     if (dest.genes?.Xenogenes?.Count > 0)
-
-
-        //         // TODO 
-        //         dest.genes.SetXenotype(caster.genes.Xenotype);
-        //     dest.genes.xenotypeName = caster.genes.xenotypeName;
-        //     dest.genes.xenotypeName = caster.genes.xenotypeName;
-        //     dest.genes.iconDef = caster.genes.iconDef;
+        //     // TODO ->
 
         //     List<Gene> adjustedList = new List<Gene>();
 
@@ -177,25 +230,10 @@ namespace NzFaceLessManMod
         //     {
         //         caster.genes.Xenotype.soundDefOnImplant.PlayOneShot(SoundInfo.InMap(dest));
         //     }
-        //     dest.health.AddHediff(InternalDefOf.VRE_EndogerminationComa);
-        //     ExtractGermline(caster);
+        //     dest.health.AddHediff(XmlDefs.Flm_GeneticInstability);
+        //     SetExtractGermline(caster);
         //     GeneUtility.UpdateXenogermReplication(dest);
 
-        // }
-
-        // public static void ExtractGermline(Pawn pawn, int overrideDurationTicks = -1)
-        // {
-        //     pawn.health.AddHediff(InternalDefOf.VRE_EndogermLossShock);
-        //     if (GeneUtility.PawnWouldDieFromReimplanting(pawn))
-        //     {
-        //         pawn.genes.SetXenotype(XenotypeDefOf.Baseliner);
-        //     }
-        //     Hediff hediff = HediffMaker.MakeHediff(HediffDefOf.XenogermReplicating, pawn);
-        //     if (overrideDurationTicks > 0)
-        //     {
-        //         hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = overrideDurationTicks;
-        //     }
-        //     pawn.health.AddHediff(hediff);
         // }
     }
 }
