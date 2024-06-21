@@ -15,4 +15,22 @@
 		<biostatArc>0</biostatArc>
 		<!-- <ability>VRE_Morph</ability> -->
 	</NzFaceLessManMod.XenoGeneTemplateDef>
+	<GeneDef>
+		<defName>Flm_SuperCarrier</defName>
+		<label>super gene carrier</label>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<description>Carriers of this gene can choose one of their genetic profiles for morphing.</description>
+		<iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath>
+        <abilities>
+			<li>Flm_Morphing</li>
+		</abilities>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<exclusionTags>
+			<li>Flm_SuperCarrier</li>		
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+		
+		
+	</GeneDef>
 </Defs>
