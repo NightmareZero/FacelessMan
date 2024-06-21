@@ -33,11 +33,11 @@ namespace NzFaceLessManMod
             {
                 return;
             }
-    
+
             List<FloatMenuOption> selectXenoMenu = new List<FloatMenuOption>();
 
             // 从施放者的基因中寻找可用的基因组
-            Dictionary<string, XenotypeDef> xenoGenes = GetGeneXenotypes(casterPawn);
+            Dictionary<string, XenotypeDef> xenoGenes = Utils.GetGeneXenotypes(casterPawn);
 
             // 绘制菜单
             foreach (var xeno in xenoGenes)
@@ -51,38 +51,6 @@ namespace NzFaceLessManMod
 
             // 显示 FloatMenu
             Find.WindowStack.Add(new FloatMenu(selectXenoMenu));
-        }
-
-        /// <summary>
-        /// 从一个Pawn身上, 获取全部的 "异种类型" 基因, 以其defName为key
-        /// </summary>
-        public static Dictionary<string, XenotypeDef> GetGeneXenotypes(Pawn pawn)
-        {
-            Dictionary<string, XenotypeDef> geneXenotypes = new Dictionary<string, XenotypeDef>();
-            // 遍历pawn的全部基因，判断是否为异种携带者基因，加入返回值
-            foreach (Gene gene in pawn.genes.GenesListForReading)
-            {
-                if (isGeneXenotype(gene.def))
-                {
-                    geneXenotypes.Add(gene.def.defName, pawn.genes.Xenotype);
-                }
-            }
-
-            return geneXenotypes;
-        }
-
-        /// <summary>
-        /// 判断一个基因是否为本mod创建的 "异种类型携带者"基因
-        /// </summary>
-        public static bool isGeneXenotype(GeneDef geneDef)
-        {
-            var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
-            if (genoXeno != null)
-            {
-                return false;
-            }
-
-            return true;
         }
 
         public static void ReimplantXenotype(Pawn caster, Pawn target, XenotypeDef xenotype)
@@ -138,24 +106,10 @@ namespace NzFaceLessManMod
         /// </summary>
         public static void AddNewGenes(Pawn target, XenotypeDef xenotype)
         {
-            // 获取谱系基因/异种基因flag
-            bool isEndotype = xenotype.inheritable;
-            if (isEndotype) // 根据flag移除谱系/异种基因
+            foreach (GeneDef gene in xenotype.AllGenes)
             {
-                foreach (Gene gene in target.genes.Endogenes)
-                {
-                    target.genes.AddGene(gene.def, xenogene: false);
-                }
+                target.genes.AddGene(gene, xenogene: !xenotype.inheritable);
             }
-            else
-            {
-                foreach (Gene gene in target.genes.Xenogenes)
-                {
-                    target.genes.AddGene(gene.def, xenogene: true);
-                }
-            }
-
-            
         }
 
         /// <summary>
@@ -177,7 +131,7 @@ namespace NzFaceLessManMod
             caster.health.AddHediff(hediff);
         }
 
-        
+
         // public static void ReimplantGermline(Pawn caster, Pawn dest, XenotypeDef targetXenotype)
         // {
 
