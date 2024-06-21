@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <GeneDef>
+		<defName>Flm_GermlineReimplanter</defName>
+		<label>gene reimplanter</label>
+		<labelShortAdj>reimplanter</labelShortAdj>
+		<description>Carriers of this gene can implant a copy of selected germline into another person through an injector organ. Their own genetic material will then regrow very slowly. If they implant while their genes are regrowing, they will die. Xenogenes will be unaffected.</description>
+		<iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<abilities>
+			<li>Flm_ReimplantGermline</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>NzFlm_ReimplantXenogerm</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatCpx>3</biostatCpx>
+		<biostatArc>1</biostatArc>
+	</GeneDef>
+    <GeneDef>
+		<defName>Flm_Morphs</defName>
+		<label>gene morphing</label>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<description>Carriers of this gene can choose one of their genetic profiles for morphing.</description>
+		<iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath>
+        <abilities>
+			<li>Flm_Morphing</li>
+		</abilities>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<exclusionTags>
+			<!-- <li>MorphCondition</li>		 -->
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>2</biostatMet>
+		
+		
+	</GeneDef>
+</Defs>

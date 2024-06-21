@@ -33,15 +33,7 @@ namespace NzFaceLessManMod
             {
                 return;
             }
-            // TODO
-            // ReimplantGermline(parent.pawn, targetPawn);
-            // FleckMaker.AttachedOverlay(targetPawn, FleckDefOf.FlashHollow, new Vector3(0f, 0f, 0.26f));
-            // if (PawnUtility.ShouldSendNotificationAbout(parent.pawn) || PawnUtility.ShouldSendNotificationAbout(targetPawn))
-            // {
-            // int max = InternalDefOf.VRE_EndogerminationComa.CompProps<HediffCompProperties_Disappears>().disappearsAfterTicks.max;
-            // int max2 = InternalDefOf.VRE_EndogermLossShock.CompProps<HediffCompProperties_Disappears>().disappearsAfterTicks.max;
-            // Find.LetterStack.ReceiveLetter("LetterLabelGenesImplanted".Translate(), "VRE_LetterTextGenesImplanted".Translate(parent.pawn.Named("CASTER"), pawn.Named("TARGET"), max.ToStringTicksToPeriod().Named("COMADURATION"), max2.ToStringTicksToPeriod().Named("SHOCKDURATION")), LetterDefOf.NeutralEvent, new LookTargets(parent.pawn, pawn));
-            // }
+    
             List<FloatMenuOption> selectXenoMenu = new List<FloatMenuOption>();
 
             // 从施放者的基因中寻找可用的基因组
