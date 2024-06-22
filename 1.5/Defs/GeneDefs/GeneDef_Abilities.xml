@@ -16,7 +16,6 @@
 			<AbilityDef>NzFlm_ReimplantXenogerm</AbilityDef>
 		</descriptionHyperlinks>
 		<biostatCpx>3</biostatCpx>
-		<biostatArc>1</biostatArc>
 	</GeneDef>
     <GeneDef>
 		<defName>Flm_Morphs</defName>
@@ -24,7 +23,7 @@
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene can choose one of their genetic profiles for morphing.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
+		<iconPath>UI/Icons/Xenotypes/Other</iconPath>
         <abilities>
 			<li>Flm_Morphing</li>
 		</abilities>

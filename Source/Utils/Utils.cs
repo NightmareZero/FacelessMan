@@ -18,7 +18,7 @@ namespace NzFaceLessManMod
             {
                 if (isGeneXenotype(gene.def))
                 {
-                    geneXenotypes.Add(gene.def.label, pawn.genes.Xenotype);
+                    geneXenotypes.Add(gene.def.label, getGeneXenotype(gene.def));
                 }
             }
 
@@ -34,6 +34,16 @@ namespace NzFaceLessManMod
 
             return genoXeno != null;
         }
+
+        /// <summary>
+        /// 判断一个基因是否为本mod创建的 "异种类型携带者"基因
+        /// </summary>
+        public static XenotypeDef getGeneXenotype(GeneDef geneDef)
+        {
+            var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
+
+            return genoXeno.xenotypeDef;
+        }        
         
         public static bool HasActiveGene(this Pawn pawn, GeneDef geneDef)
         {

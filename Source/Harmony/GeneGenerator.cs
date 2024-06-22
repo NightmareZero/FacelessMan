@@ -75,7 +75,7 @@ namespace NzFaceLessManMod
                 modExtensions = new List<DefModExtension> {
                     new GeneXenoModExtension{
                         xenotypeDef = def
-                        
+
                     }
                 },
                 // modExtensions = new List<DefModExtension> {
@@ -90,6 +90,10 @@ namespace NzFaceLessManMod
                 // abilities = new List<AbilityDef> { template.ability },
                 descriptionHyperlinks = new List<DefHyperlink> { new DefHyperlink { def = template.ability } }
             };
+            // Debug模式则输出日志
+            #if DEBUG
+            Log.Message("flm: geneDef: " + geneDef.label);
+            #endif
 
 
             if (!template.exclusionTagPrefix.NullOrEmpty())

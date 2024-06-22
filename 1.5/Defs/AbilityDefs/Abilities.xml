@@ -19,7 +19,7 @@
             <verbClass>Verb_CastAbilityTouch</verbClass>
             <drawAimPie>false</drawAimPie>
             <range>-1</range>
-            <warmupTime>4</warmupTime>
+            <warmupTime>3</warmupTime>
             <stunTargetOnCastStart>true</stunTargetOnCastStart>
             <targetParams>
                 <canTargetAnimals>false</canTargetAnimals>

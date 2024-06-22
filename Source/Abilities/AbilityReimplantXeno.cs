@@ -7,17 +7,19 @@ using Verse.Sound;
 
 namespace NzFaceLessManMod
 {
+    [StaticConstructorOnStartup]
     public class CompAbilityReimplantXeno : CompAbilityEffect
     {
 
 
-        public CompProperties_AbilityReimplantXeno Props
-        {
-            get
-            {
-                return (CompProperties_AbilityReimplantXeno)this.props;
-            }
-        }
+        // public CompProperties_AbilityReimplantXeno Props
+        // {
+        //     get
+        //     {
+        //         return (CompProperties_AbilityReimplantXeno)this.props;
+        //     }
+        // }
+        private new CompProperties_AbilityReimplantXeno Props => (CompProperties_AbilityReimplantXeno)props;
 
         public override IEnumerable<PreCastAction> GetPreCastActions()
         {
@@ -31,6 +33,7 @@ namespace NzFaceLessManMod
             Pawn targetPawn = dest.Pawn;
             if (targetPawn == null)
             {
+                Log.Message("targetPawn is null");
                 return;
             }
 
@@ -40,8 +43,10 @@ namespace NzFaceLessManMod
             Dictionary<string, XenotypeDef> xenoGenes = Utils.GetGeneXenotypes(casterPawn);
 
             // 绘制菜单
-            foreach (var xeno in xenoGenes)
+            foreach (var xeno_ in xenoGenes)
             {
+                var xeno = xeno_;
+
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
                     ReimplantXenotype(casterPawn, targetPawn, xeno.Value);
@@ -129,6 +134,49 @@ namespace NzFaceLessManMod
                 hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = overrideDurationTicks;
             }
             caster.health.AddHediff(hediff);
+        }
+
+        public override bool Valid(LocalTargetInfo target, bool throwMessages = false)
+        {
+            Pawn pawn = target.Pawn;
+            if (pawn == null)
+            {
+                return base.Valid(target, throwMessages);
+            }
+            if (pawn.IsQuestLodger())
+            {
+                if (throwMessages)
+                {
+                    Messages.Message("MessageCannotImplantInTempFactionMembers".Translate(), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
+            if (pawn.HostileTo(parent.pawn) && !pawn.Downed)
+            {
+                if (throwMessages)
+                {
+                    Messages.Message("MessageCantUseOnResistingPerson".Translate(parent.def.Named("ABILITY")), pawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
+            if (!parent.pawn.genes.Endogenes.Any())
+            {
+                if (throwMessages)
+                {
+                    Messages.Message("VRE_MessagePawnHasNoGermline".Translate(parent.pawn), parent.pawn, MessageTypeDefOf.RejectInput, historical: false);
+                }
+                return false;
+            }
+            
+            // if (!PawnIdeoCanAcceptReimplant(parent.pawn, pawn))
+            // {
+            //     if (throwMessages)
+            //     {
+            //         Messages.Message("MessageCannotBecomeNonPreferredXenotype".Translate(pawn), pawn, MessageTypeDefOf.RejectInput, historical: false);
+            //     }
+            //     return false;
+            // }
+            return base.Valid(target, throwMessages);
         }
 
 

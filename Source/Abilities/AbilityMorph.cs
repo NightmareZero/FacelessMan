@@ -7,24 +7,19 @@ using Verse.Sound;
 
 namespace NzFaceLessManMod
 {
+    [StaticConstructorOnStartup]
     public class CompAbilityMorph : CompAbilityEffect
     {
-        public CompProperties_AbilityMorph Props
-        {
-            get
-            {
-                return (CompProperties_AbilityMorph)this.props;
-            }
-        }
+
 
         public override IEnumerable<PreCastAction> GetPreCastActions()
         {
             return base.GetPreCastActions();
         }
 
-        public override void Apply(LocalTargetInfo caster, LocalTargetInfo nullDest)
+        public override void Apply(LocalTargetInfo caster, LocalTargetInfo dest)
         {
-            // base.Apply(caster, dest);
+            base.Apply(caster, dest);
             Pawn casterPawn = caster.Pawn;
             Pawn targetPawn = casterPawn;
             if (targetPawn == null)
@@ -46,12 +41,16 @@ namespace NzFaceLessManMod
                 return;
             }
             // 绘制菜单
-            foreach (var xeno in xenoGenes)
+            foreach (var xeno_ in xenoGenes)
             {
+                var xeno = xeno_;
+                #if DEBUG
+                Log.Message("flm: draw menu xeno.Key: " + xeno.Key);
+                #endif
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
                     MorphXenotype(targetPawn, xeno.Value);
-                    // base.Apply(caster, caster);
+                    base.Apply(caster, dest);
                 });
                 selectXenoMenu.Add(opt);
             }
@@ -79,10 +78,15 @@ namespace NzFaceLessManMod
         /// </summary>
         public static void AddNewXenotypeGenes(Pawn target, XenotypeDef xenotype)
         {
+#if DEBUG
             Log.Message("flm: Add xenogene: " + xenotype.label);
+#endif
+
             foreach (GeneDef gene in xenotype.AllGenes)
             {
+#if DEBUG
                 Log.Message("flm: Add gene: " + gene.label);
+#endif
                 target.genes.AddGene(gene, xenogene: true);
             }
         }
