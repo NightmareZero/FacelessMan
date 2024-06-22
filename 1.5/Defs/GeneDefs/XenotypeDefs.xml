@@ -20,7 +20,7 @@
             unimpeded throughout colonized space to stake territorial claims and establish packs or
             larger clans. Their wolfman form has diminished nocturnal abilities, trading many
             advantages in exchange for being able to share their xenogerm with others.</descriptionShort>
-        <iconPath>UI/Icons/Xenotypes/Wolfman</iconPath>
+        <iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
         <inheritable>true</inheritable>
         <genes>
             <li>Flm_GermlineReimplanter</li>

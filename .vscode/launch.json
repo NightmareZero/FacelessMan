@@ -4,17 +4,41 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // {
+        //     "name": "Rimworld Mod Project",
+        //     "type": "clr",
+        //     "request": "launch",
+        //     "preLaunchTask": "build dll",
+        //     "program": "../../RimWorldWin64.exe",
+        //     "args": ["-savedatafolder=../../Save"],
+        //     "cwd": "${workspaceFolder}",
+        //     "console": "internalConsole",
+        //     "internalConsoleOptions":"neverOpen",
+        //     "stopAtEntry": true
+        // },
         {
-            "name": "Rimworld Mod Project",
+            "name": "Rimworld Mod Project - Debug",
             "type": "clr",
             "request": "launch",
-            "preLaunchTask": "build dll",
+            "preLaunchTask": "build dll - Debug",
             "program": "../../RimWorldWin64.exe",
             "args": ["-savedatafolder=../../Save"],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
-            "internalConsoleOptions":"neverOpen",
+            "internalConsoleOptions": "neverOpen",
             "stopAtEntry": true
+        },
+        {
+            "name": "Rimworld Mod Project - Release",
+            "type": "clr",
+            "request": "launch",
+            "preLaunchTask": "build dll - Release",
+            "program": "../../RimWorldWin64.exe",
+            "args": ["-savedatafolder=../../Save"],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
         }
     ]
 }

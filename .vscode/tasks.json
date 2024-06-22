@@ -10,5 +10,25 @@
             },
             "command": ".vscode/build.bat",
         },
+        {
+            "label": "build dll - Debug",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "command": ".vscode/build.bat",
+            "args": ["Debug"] // 假设build.bat接受构建配置作为参数
+        },
+        {
+            "label": "build dll - Release",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "command": ".vscode/build.bat",
+            "args": ["Release"] // 假设build.bat接受构建配置作为参数
+        }
     ]
 }

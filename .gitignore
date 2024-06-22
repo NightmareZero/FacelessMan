@@ -2,6 +2,6 @@
 /*.sln 
 
 # /*/Assemblies
-# /*/Assemblies/*.pdb
+/*/Assemblies/*.pdb
 # /.vscode
 # /Source

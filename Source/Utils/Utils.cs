@@ -18,25 +18,21 @@ namespace NzFaceLessManMod
             {
                 if (isGeneXenotype(gene.def))
                 {
-                    geneXenotypes.Add(gene.def.defName, pawn.genes.Xenotype);
+                    geneXenotypes.Add(gene.def.label, pawn.genes.Xenotype);
                 }
             }
 
             return geneXenotypes;
         }
 
-                /// <summary>
+        /// <summary>
         /// 判断一个基因是否为本mod创建的 "异种类型携带者"基因
         /// </summary>
         public static bool isGeneXenotype(GeneDef geneDef)
         {
             var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
-            if (genoXeno != null)
-            {
-                return false;
-            }
 
-            return true;
+            return genoXeno != null;
         }
         
         public static bool HasActiveGene(this Pawn pawn, GeneDef geneDef)

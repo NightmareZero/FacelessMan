@@ -75,7 +75,7 @@ namespace NzFaceLessManMod
                 modExtensions = new List<DefModExtension> {
                     new GeneXenoModExtension{
                         xenotypeDef = def
-
+                        
                     }
                 },
                 // modExtensions = new List<DefModExtension> {

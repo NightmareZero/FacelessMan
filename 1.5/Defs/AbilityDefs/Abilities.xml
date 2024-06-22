@@ -7,7 +7,8 @@
             organ. If this person's genes are currently regrowing, they will implant their xenogerm
             and die in the process.\n\nWhen implanted, a xenogerm will overwrite the target's
             xenogenes. Germline genes will be unaffected.</description>
-        <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
+        <!-- <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath> -->
+		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <category>Nzflm_AbilityCategory</category>
@@ -34,9 +35,10 @@
     <AbilityDef>
 		<defName>Flm_Morphing</defName>
 		<label>morph</label>
-		<cooldownTicksRange>60000</cooldownTicksRange>
+		<!-- <cooldownTicksRange>60000</cooldownTicksRange> -->
 		<description>Morph into a different xenotype.</description>
-		<iconPath>UI/Icons/Genes/Gene_Morph</iconPath>
+		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
 		<aiCanUse>false</aiCanUse>
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
