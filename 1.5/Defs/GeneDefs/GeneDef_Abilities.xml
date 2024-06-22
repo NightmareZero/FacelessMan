@@ -8,7 +8,7 @@
 		<iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<abilities>
-			<li>Flm_ReimplantGermline</li>
+			<li>NzFlm_ReimplantXenogerm</li>
 		</abilities>
 		<descriptionHyperlinks>
 			<AbilityDef>NzFlm_ReimplantXenogerm</AbilityDef>
