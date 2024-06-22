@@ -7,7 +7,6 @@ using Verse.Sound;
 
 namespace NzFaceLessManMod
 {
-    [StaticConstructorOnStartup]
     public class CompAbilityReimplantXeno : CompAbilityEffect
     {
 
@@ -26,11 +25,11 @@ namespace NzFaceLessManMod
             return base.GetPreCastActions();
         }
 
-        public override void Apply(LocalTargetInfo caster, LocalTargetInfo dest)
+        public override void Apply(LocalTargetInfo caster, LocalTargetInfo target)
         {
-            base.Apply(caster, dest);
+            base.Apply(caster, target);
             Pawn casterPawn = caster.Pawn;
-            Pawn targetPawn = dest.Pawn;
+            Pawn targetPawn = target.Pawn;
             if (targetPawn == null)
             {
                 Log.Message("targetPawn is null");
