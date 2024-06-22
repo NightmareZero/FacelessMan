@@ -22,6 +22,8 @@
             <warmupTime>3</warmupTime>
             <stunTargetOnCastStart>true</stunTargetOnCastStart>
             <targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
                 <canTargetAnimals>false</canTargetAnimals>
                 <canTargetSelf>false</canTargetSelf>
                 <canTargetBuildings>false</canTargetBuildings>

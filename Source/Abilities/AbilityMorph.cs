@@ -17,10 +17,10 @@ namespace NzFaceLessManMod
             return base.GetPreCastActions();
         }
 
-        public override void Apply(LocalTargetInfo caster, LocalTargetInfo dest)
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            base.Apply(caster, dest);
-            Pawn casterPawn = caster.Pawn;
+            base.Apply(target, dest);
+            Pawn casterPawn = parent.pawn;
             Pawn targetPawn = casterPawn;
             if (targetPawn == null)
             {
@@ -50,7 +50,7 @@ namespace NzFaceLessManMod
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
                     MorphXenotype(targetPawn, xeno.Value);
-                    base.Apply(caster, dest);
+                    base.Apply(target, dest);
                 });
                 selectXenoMenu.Add(opt);
             }

@@ -11,24 +11,23 @@ namespace NzFaceLessManMod
     {
 
 
-        // public CompProperties_AbilityReimplantXeno Props
-        // {
-        //     get
-        //     {
-        //         return (CompProperties_AbilityReimplantXeno)this.props;
-        //     }
-        // }
-        private new CompProperties_AbilityReimplantXeno Props => (CompProperties_AbilityReimplantXeno)props;
+        public CompProperties_AbilityReimplantXeno Props
+        {
+            get
+            {
+                return (CompProperties_AbilityReimplantXeno)this.props;
+            }
+        }
+        // private new CompProperties_AbilityReimplantXeno Props => (CompProperties_AbilityReimplantXeno)props;
 
         public override IEnumerable<PreCastAction> GetPreCastActions()
         {
             return base.GetPreCastActions();
         }
 
-        public override void Apply(LocalTargetInfo caster, LocalTargetInfo target)
+        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
-            base.Apply(caster, target);
-            Pawn casterPawn = caster.Pawn;
+            base.Apply(target, dest);
             Pawn targetPawn = target.Pawn;
             if (targetPawn == null)
             {
@@ -36,10 +35,24 @@ namespace NzFaceLessManMod
                 return;
             }
 
+            // 获取技能施放者
+            Pawn caster = parent.pawn;
+#if DEBUG
+            Log.Message("caster: " + caster.Name);
+            Log.Message("targetPawn: " + targetPawn.Name);
+#endif
+
             List<FloatMenuOption> selectXenoMenu = new List<FloatMenuOption>();
 
             // 从施放者的基因中寻找可用的基因组
-            Dictionary<string, XenotypeDef> xenoGenes = Utils.GetGeneXenotypes(casterPawn);
+            Dictionary<string, XenotypeDef> xenoGenes = Utils.GetGeneXenotypes(caster);
+
+            if (xenoGenes.Count == 0)
+            {
+                // 在左上角弹出消息
+                Messages.Message("NoXenotype".Translate(), MessageTypeDefOf.RejectInput);
+                return;
+            }
 
             // 绘制菜单
             foreach (var xeno_ in xenoGenes)
@@ -48,7 +61,14 @@ namespace NzFaceLessManMod
 
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
-                    ReimplantXenotype(casterPawn, targetPawn, xeno.Value);
+                    if (!caster.genes.Xenotype.soundDefOnImplant.NullOrUndefined())
+                    {
+#if DEBUG
+                        Log.Message("caster.genes.Xenotype.soundDefOnImplant: " + caster.genes.Xenotype.soundDefOnImplant);
+#endif
+                        caster.genes.Xenotype.soundDefOnImplant.PlayOneShot(SoundInfo.InMap(caster));
+                    }
+                    ReimplantXenotype(caster, targetPawn, xeno.Value);
                 });
                 selectXenoMenu.Add(opt);
             }
@@ -166,7 +186,7 @@ namespace NzFaceLessManMod
                 }
                 return false;
             }
-            
+
             // if (!PawnIdeoCanAcceptReimplant(parent.pawn, pawn))
             // {
             //     if (throwMessages)
