@@ -198,6 +198,15 @@ namespace NzFaceLessManMod
             return base.Valid(target, throwMessages);
         }
 
+        public override Window ConfirmationDialog(LocalTargetInfo target, Action confirmAction)
+        {
+            if (GeneUtility.PawnWouldDieFromReimplanting(parent.pawn))
+            {
+                return Dialog_MessageBox.CreateConfirmation("Flm_WarningPawnWillDieFromReimplanting".Translate(parent.pawn.Named("PAWN")), confirmAction, destructive: true);
+            }
+            return null;
+        }
+
 
         // public static void ReimplantGermline(Pawn caster, Pawn dest, XenotypeDef targetXenotype)
         // {

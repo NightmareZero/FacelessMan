@@ -40,6 +40,7 @@
 		<Compile Include="../Source/Utils/*" />
 		<Compile Include="../Source/Abilities/*" />
 		<Compile Include="../Source/ModExtension/*" />
+		<Compile Include="../Source/Dialog/*" />
 
 		<!-- Rimworld -->
 		<Reference Include="../../../RimWorldWin64_Data/Managed/*.dll">
