@@ -15,15 +15,15 @@
 		<!-- <ability>VRE_Morph</ability> -->
 	</NzFaceLessManMod.XenoGeneTemplateDef>
 	<GeneDef>
-		<defName>Flm_SuperCarrier</defName>
-		<label>super gene carrier</label>
+		<defName>Flm_GeneMaster</defName>
+		<label>gene master</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
-		<description>Carriers of this gene can choose one of their genetic profiles for morphing.</description>
+		<description>Carriers of this gene have all genetic profiles available within their body. and they won't be weakened by genetic recombination.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<exclusionTags>
-			<li>Flm_SuperCarrier</li>		
+			<li>Flm_GeneMaster</li>		
 		</exclusionTags>
 		<biostatCpx>9</biostatCpx>
 		<biostatMet>3</biostatMet>

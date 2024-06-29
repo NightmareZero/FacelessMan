@@ -43,7 +43,7 @@ namespace NzFaceLessManMod
                     xeno.AllGenes.ForEach(gene =>
                     {
                         // 如果是超级载体则设置为包含所有基因
-                        if (gene.defName == XmlDefs.Flm_SuperCarrier.defName)
+                        if (gene.defName == XmlDefs.Flm_GeneMaster.defName)
                         {
                             GeneXenoModExtension modExt = new GeneXenoModExtension
                             {

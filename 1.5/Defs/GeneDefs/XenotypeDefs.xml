@@ -25,7 +25,7 @@
         <genes>
             <li>Flm_GermlineReimplanter</li>
             <li>Flm_Morphs</li>
-            <li>Flm_SuperCarrier</li>
+            <li>Flm_GeneMaster</li>
         </genes>
     </XenotypeDef>
 </Defs>

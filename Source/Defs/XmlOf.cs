@@ -19,7 +19,7 @@ namespace NzFaceLessManMod
         public static SoundDef FoamSpray_Resolve;
 
         // 超级携带者基因
-        public static GeneDef Flm_SuperCarrier;
+        public static GeneDef Flm_GeneMaster;
 
 
         static XmlDefs()
