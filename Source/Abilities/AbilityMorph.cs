@@ -11,6 +11,9 @@ namespace NzFaceLessManMod
     public class CompAbilityMorph : CompAbilityEffect
     {
 
+        private bool isMorphed = false;
+
+        private XenotypeDef targetXenotype;
 
         public override IEnumerable<PreCastAction> GetPreCastActions()
         {
@@ -44,19 +47,43 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
-                #if DEBUG
+#if DEBUG
                 Log.Message("flm: draw menu xeno.Key: " + xeno.Key);
-                #endif
+#endif
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
                     MorphXenotype(targetPawn, xeno.Value);
+                    this.isMorphed = true;
                     base.Apply(target, dest);
                 });
                 selectXenoMenu.Add(opt);
             }
 
             // 显示 FloatMenu
-            Find.WindowStack.Add(new FloatMenu(selectXenoMenu));
+            FloatMenu menu = new FloatMenu(selectXenoMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+
+
+                onCloseCallback = () =>
+                {
+                    // 如果未选择任何选项, 则移除CD
+                    if (isMorphed == false)
+                    {
+                        // 在左上角输出内容
+                        Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);
+                        this.parent.ResetCooldown();
+                    }
+#if DEBUG
+                    Log.Message("flm: no select option");
+#endif
+
+                }
+            };
+
+            Find.WindowStack.Add(menu);
         }
 
         /// <summary>
@@ -68,8 +95,8 @@ namespace NzFaceLessManMod
             CleanOldXenotype(target);
             // 添加新基因
             AddNewXenotypeGenes(target, xeno);
-            // 更新异种基因复制
-            GeneUtility.UpdateXenogermReplication(target);
+            // 播放声音
+            XmlDefs.FoamSpray_Resolve.PlayOneShot(new TargetInfo(target.Position, target.Map, false));
         }
 
         /// <summary>

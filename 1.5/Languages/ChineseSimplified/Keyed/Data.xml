@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
     <nzflm.category_facelessman>无面人</nzflm.category_facelessman>
+    <nzflm.no_xenotype>无异种类型</nzflm.no_xenotype>
+    <nzflm.no_xenotype_selected>异种类型未选择</nzflm.no_xenotype_selected>
 </LanguageData>

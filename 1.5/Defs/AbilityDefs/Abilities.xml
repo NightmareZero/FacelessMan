@@ -3,12 +3,13 @@
     <AbilityDef ParentName="AbilityTouchBase">
         <defName>NzFlm_ReimplantXenogerm</defName>
         <label>implant genes</label>
+		<cooldownTicksRange>30000</cooldownTicksRange>
         <description>Implant this person's xenogenes into a willing subject using a special injector
             organ. If this person's genes are currently regrowing, they will implant their xenogerm
             and die in the process.\n\nWhen implanted, a xenogerm will overwrite the target's
             xenogenes. Germline genes will be unaffected.</description>
         <!-- <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <category>Nzflm_AbilityCategory</category>
@@ -19,7 +20,7 @@
             <verbClass>Verb_CastAbilityTouch</verbClass>
             <drawAimPie>false</drawAimPie>
             <range>-1</range>
-            <warmupTime>3</warmupTime>
+            <warmupTime>4</warmupTime>
             <stunTargetOnCastStart>true</stunTargetOnCastStart>
             <targetParams>
 				<canTargetPawns>true</canTargetPawns>
@@ -37,10 +38,11 @@
     <AbilityDef>
 		<defName>Flm_Morphing</defName>
 		<label>morph</label>
-		<!-- <cooldownTicksRange>60000</cooldownTicksRange> -->
+		<cooldownTicksRange>30000</cooldownTicksRange>
 		<description>Morph into a different xenotype.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
+		<iconPath>UI/Icons/Xenotypes/Other</iconPath>
+		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
 		<aiCanUse>false</aiCanUse>
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
@@ -52,7 +54,7 @@
 		<hotKey>Misc12</hotKey>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
-			<warmupTime>0.5</warmupTime>
+			<warmupTime>4</warmupTime>
 			<drawAimPie>False</drawAimPie>
 			<requireLineOfSight>False</requireLineOfSight>
 			<targetParams>
@@ -65,9 +67,7 @@
 			</targetParams>
 		</verbProperties>
 		<comps>
-			<li Class="NzFaceLessManMod.CompProperties_AbilityMorph">
-				
-			</li>
+			<li Class="NzFaceLessManMod.CompProperties_AbilityMorph"/>
 		</comps>
 	</AbilityDef>
 </Defs>

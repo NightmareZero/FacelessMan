@@ -15,6 +15,9 @@ namespace NzFaceLessManMod
         // 注入者 基因丢失冲击
         public static HediffDef Flm_GeneLossShock;
 
+        // 声音1
+        public static SoundDef FoamSpray_Resolve;
+
 
         static XmlDefs()
         {
