@@ -11,7 +11,7 @@ namespace NzFaceLessManMod
     public class CompAbilityMorph : CompAbilityEffect
     {
 
-        private bool isMorphed = false;
+        private bool isXenoSelected = false;
 
         private XenotypeDef targetXenotype;
 
@@ -40,7 +40,7 @@ namespace NzFaceLessManMod
             if (xenoGenes.Count == 0)
             {
                 // 在左上角弹出消息
-                Messages.Message("NoXenotype".Translate(), MessageTypeDefOf.RejectInput);
+                Messages.Message("nzflm.no_xenotype".Translate(), MessageTypeDefOf.RejectInput);
                 return;
             }
             // 绘制菜单
@@ -53,7 +53,7 @@ namespace NzFaceLessManMod
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
                     MorphXenotype(targetPawn, xeno.Value);
-                    this.isMorphed = true;
+                    this.isXenoSelected = true;
                     base.Apply(target, dest);
                 });
                 selectXenoMenu.Add(opt);
@@ -70,7 +70,7 @@ namespace NzFaceLessManMod
                 onCloseCallback = () =>
                 {
                     // 如果未选择任何选项, 则移除CD
-                    if (isMorphed == false)
+                    if (isXenoSelected == false)
                     {
                         // 在左上角输出内容
                         Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);

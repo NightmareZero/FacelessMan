@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using Verse;
 
@@ -18,9 +19,13 @@ namespace NzFaceLessManMod
             {
                 if (isGeneXenotype(gene.def))
                 {
-                    geneXenotypes.Add(gene.def.label, getGeneXenotype(gene.def));
+                   foreach (var geneXenotype in getGeneXenotype(gene.def))
+                    {
+                        geneXenotypes.SetOrAdd(geneXenotype.Value.label, geneXenotype.Value);
+                    }
                 }
             }
+
 
             return geneXenotypes;
         }
@@ -38,13 +43,13 @@ namespace NzFaceLessManMod
         /// <summary>
         /// 判断一个基因是否为本mod创建的 "异种类型携带者"基因
         /// </summary>
-        public static XenotypeDef getGeneXenotype(GeneDef geneDef)
+        public static Dictionary<String, XenotypeDef> getGeneXenotype(GeneDef geneDef)
         {
             var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
 
-            return genoXeno.xenotypeDef;
-        }        
-        
+            return genoXeno.GetContainGenes();
+        }
+
         public static bool HasActiveGene(this Pawn pawn, GeneDef geneDef)
         {
             if (pawn.genes is null) return false;

@@ -10,6 +10,7 @@ namespace NzFaceLessManMod
     public class CompAbilityReimplantXeno : CompAbilityEffect
     {
 
+        private bool isXenoSelected = false;
 
         public CompProperties_AbilityReimplantXeno Props
         {
@@ -65,16 +66,42 @@ namespace NzFaceLessManMod
                     {
 #if DEBUG
                         Log.Message("caster.genes.Xenotype.soundDefOnImplant: " + caster.genes.Xenotype.soundDefOnImplant);
-#endif
+#endif  
                         caster.genes.Xenotype.soundDefOnImplant.PlayOneShot(SoundInfo.InMap(caster));
                     }
                     ReimplantXenotype(caster, targetPawn, xeno.Value);
+                    this.isXenoSelected = true;
                 });
                 selectXenoMenu.Add(opt);
             }
 
             // 显示 FloatMenu
-            Find.WindowStack.Add(new FloatMenu(selectXenoMenu));
+            FloatMenu menu = new FloatMenu(selectXenoMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+
+
+                onCloseCallback = () =>
+                {
+                    // 如果未选择任何选项, 则移除CD
+                    if (isXenoSelected == false)
+                    {
+                        // 在左上角输出内容
+                        Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);
+                        this.parent.ResetCooldown();
+                    }
+#if DEBUG
+                    Log.Message("flm: no select option");
+#endif
+
+                }
+            };
+
+
+            // 显示 FloatMenu
+            Find.WindowStack.Add(menu);
         }
 
         public static void ReimplantXenotype(Pawn caster, Pawn target, XenotypeDef xenotype)

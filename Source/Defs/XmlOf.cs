@@ -15,8 +15,11 @@ namespace NzFaceLessManMod
         // 注入者 基因丢失冲击
         public static HediffDef Flm_GeneLossShock;
 
-        // 声音1
+        // 声音1 (暂时使用用作变身结束的声音)
         public static SoundDef FoamSpray_Resolve;
+
+        // 超级携带者基因
+        public static GeneDef Flm_SuperCarrier;
 
 
         static XmlDefs()

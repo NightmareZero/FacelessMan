@@ -40,6 +40,26 @@ namespace NzFaceLessManMod
                 GlobalValues.AvaliableXenotypeDef.ForEach(xeno =>
                 {
                     genes.Add(GetFromXenotype(template, xeno, genes.Count()));
+                    xeno.AllGenes.ForEach(gene =>
+                    {
+                        // 如果是超级载体则设置为包含所有基因
+                        if (gene.defName == XmlDefs.Flm_SuperCarrier.defName)
+                        {
+                            GeneXenoModExtension modExt = new GeneXenoModExtension
+                            {
+                                containXeno = GlobalValues.AvaliableXenotypeDef.ToDictionary(x => x.defName, x => x)
+                            };
+                            // 如果没有modExtensions则创建一个
+                            if (gene.modExtensions == null)
+                            {
+                                gene.modExtensions = new List<DefModExtension> { modExt };
+                            }
+                            else
+                            {
+                                gene.modExtensions.Add(modExt);
+                            }
+                        }
+                    });
                 });
             }
             catch (Exception e)
@@ -51,18 +71,22 @@ namespace NzFaceLessManMod
             return genes;
         }
 
-        public static GeneDef GetFromXenotype(XenoGeneTemplateDef template, XenotypeDef def, int displayOrderBase)
+        public static GeneDef GetFromXenotype(XenoGeneTemplateDef template, XenotypeDef xeno, int displayOrderBase)
         {
 
+            GeneXenoModExtension modExt = new GeneXenoModExtension
+            {
+                xenotypeDef = xeno
+            };
 
             GeneDef geneDef = new GeneDef
             {
-                defName = template.defName + "_" + def.defName,
+                defName = template.defName + "_" + xeno.defName,
                 geneClass = template.geneClass,
-                label = template.label.Formatted(def.label),
-                iconPath = def.iconPath,
-                description = template.description.Formatted(def.LabelCap),
-                labelShortAdj = template.labelShortAdj.Formatted(def.label),
+                label = template.label.Formatted(xeno.label),
+                iconPath = xeno.iconPath,
+                description = template.description.Formatted(xeno.LabelCap),
+                labelShortAdj = template.labelShortAdj.Formatted(xeno.label),
                 selectionWeight = template.selectionWeight,
                 biostatCpx = template.biostatCpx,
                 biostatMet = template.biostatMet,
@@ -72,28 +96,18 @@ namespace NzFaceLessManMod
                 minAgeActive = template.minAgeActive,
                 modContentPack = template.modContentPack,
 
-                modExtensions = new List<DefModExtension> {
-                    new GeneXenoModExtension{
-                        xenotypeDef = def
+                modExtensions = new List<DefModExtension> { modExt },
 
-                    }
-                },
-                // modExtensions = new List<DefModExtension> {
-                //     new VanillaGenesExpanded.GeneExtension {
-                //         backgroundPathArchite = "UI/Icons/Genes/GeneBackground_MorphGene"
-                //     },
-                //     new MorphGeneDefExtension {
-                //         xenotype = def
-                //     }
-                // },
-
-                // abilities = new List<AbilityDef> { template.ability },
                 descriptionHyperlinks = new List<DefHyperlink> { new DefHyperlink { def = template.ability } }
             };
+
+
+
+
             // Debug模式则输出日志
-            #if DEBUG
+#if DEBUG
             Log.Message("flm: geneDef: " + geneDef.label);
-            #endif
+#endif
 
 
             if (!template.exclusionTagPrefix.NullOrEmpty())
