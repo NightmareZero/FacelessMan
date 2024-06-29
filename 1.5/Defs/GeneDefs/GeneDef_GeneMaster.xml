@@ -11,7 +11,7 @@
 		<description>Carriers of this gene have the extraordinary archite-powered ability to rapidly morph into a {0} xenotype at will. They will inherit all the genetic abilities and drawbacks of that xenotype, but they will be able to morph back at any time.</description>	
 		<displayOrderOffset>0</displayOrderOffset>
 		<biostatCpx>2</biostatCpx>
-		<biostatMet>1</biostatMet>
+		<biostatMet>-1</biostatMet>
 		<!-- <ability>VRE_Morph</ability> -->
 	</NzFaceLessManMod.XenoGeneTemplateDef>
 	<GeneDef>
@@ -27,7 +27,7 @@
 		</exclusionTags>
 		<biostatCpx>9</biostatCpx>
 		<biostatMet>3</biostatMet>
-		<biostatArc>1</biostatArc>
+		<biostatArc>3</biostatArc>
 		
 	</GeneDef>
 </Defs>
