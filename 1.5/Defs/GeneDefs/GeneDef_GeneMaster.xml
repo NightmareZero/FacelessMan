@@ -20,13 +20,13 @@
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene have all genetic profiles available within their body. and they won't be weakened by genetic recombination.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
+		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon5</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<exclusionTags>
 			<li>Flm_GeneMaster</li>		
 		</exclusionTags>
 		<biostatCpx>9</biostatCpx>
-		<biostatMet>3</biostatMet>
+		<biostatMet>4</biostatMet>
 		<biostatArc>3</biostatArc>
 		
 	</GeneDef>

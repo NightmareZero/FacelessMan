@@ -6,7 +6,7 @@
 		<labelShortAdj>reimplanter</labelShortAdj>
 		<description>Carriers of this gene can implant a copy of selected germline into another person through an injector organ. Their own genetic material will then regrow very slowly. If they implant while their genes are regrowing, they will die. Xenogenes will be unaffected.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon1</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
 
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<abilities>
@@ -16,6 +16,7 @@
 			<AbilityDef>NzFlm_ReimplantXenogerm</AbilityDef>
 		</descriptionHyperlinks>
 		<biostatCpx>3</biostatCpx>
+		<biostatMet>-1</biostatMet>
 	</GeneDef>
     <GeneDef>
 		<defName>Flm_Morphs</defName>
@@ -32,7 +33,7 @@
 			<!-- <li>MorphCondition</li>		 -->
 		</exclusionTags>
 		<biostatCpx>1</biostatCpx>
-		<biostatMet>1</biostatMet>
+		<biostatMet>-1</biostatMet>
 		
 		
 	</GeneDef>

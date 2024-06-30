@@ -3,23 +3,15 @@
     <XenotypeDef>
         <defName>Flm_FacelessMan</defName>
         <label>facelessman</label>
-        <description>A dubious xenogerm of debated origin, wolfmen/lycans have propagated unimpeded
-            throughout colonized space to stake territorial claims and establish packs or larger
-            clans. Their wolfman form has diminished nocturnal abilities, trading many advantages in
-            exchange for being able to share their xenogerm with others.\n\nThere is no clear
-            history established regarding the history of lycans, made especially murky as each new
-            pack tends to fabricate their own origins. This has led to widely varying conspiracy
-            theories, most of which at least partially involve sanguophages, especially due to
-            similarities in their genes. The most prevalent one is that a sanguophage fell in love
-            with an yttakin, later transforming them into one of their ilk, however there were
-            complications as the newly-changed sanguophage was pregnant. The child was born but was
-            abandoned by their parents, yet managed to survive living amongst stray dogs. Eventually
-            they set out to make their own family, whether through blood or water, and to always
-            consider that family comes first.</description>
-        <descriptionShort>A dubious xenogerm of debated origin, wolfmen/lycans have propagated
-            unimpeded throughout colonized space to stake territorial claims and establish packs or
-            larger clans. Their wolfman form has diminished nocturnal abilities, trading many
-            advantages in exchange for being able to share their xenogerm with others.</descriptionShort>
+        <description>The Faceless Ones' origins are shrouded in mystery, with some claiming they are
+            the byproduct of laboratory experiments in the pursuit of the ultimate human, while
+            others recount that they were selectively bred to serve as stand-ins for dignitaries in
+            public settings. Now, they primarily act as diplomats or spies for various factions,
+            utilizing their extensive internal gene pool to transform into any race. Coupled with
+            their exquisite makeup skills, they can infiltrate any colony or organization and slip
+            away unharmed afterward.</description>
+        <descriptionShort>The Faceless Ones are skilled infiltrators, capable of transforming
+            themselves or their minions into any race using their extensive gene pool.</descriptionShort>
         <iconPath>UI/Icons/Xenotypes/Other</iconPath>
         <inheritable>true</inheritable>
         <genes>

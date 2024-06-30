@@ -3,6 +3,6 @@
   <GeneCategoryDef>
     <defName>Nzflm_GeneCategory</defName>
     <label>facelessman</label>
-    <displayPriorityInXenotype>500.001</displayPriorityInXenotype>
-  </GeneCategoryDef>
+    <displayPriorityInXenotype>501</displayPriorityInXenotype>
+  </GeneCategoryDef>  
 </Defs>
