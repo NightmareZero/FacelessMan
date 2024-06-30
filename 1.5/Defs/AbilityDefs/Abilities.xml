@@ -41,11 +41,12 @@
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<description>Morph into a different xenotype.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Other</iconPath>
+		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
 		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
 		<aiCanUse>false</aiCanUse>
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
 		<stunTargetWhileCasting>True</stunTargetWhileCasting>
 		<showPsycastEffects>False</showPsycastEffects>
