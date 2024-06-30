@@ -7,8 +7,8 @@
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<selectionWeight>0</selectionWeight>
 		<defName>xenoGeneTemplateDef</defName>
-		<label>Gene: {0}</label>
-		<description>Carriers of this gene have the extraordinary archite-powered ability to rapidly morph into a {0} xenotype at will. They will inherit all the genetic abilities and drawbacks of that xenotype, but they will be able to morph back at any time.</description>	
+		<label>GenePack: {0}</label>
+		<description>Carriers of this gene possess the complete genetic of {0} xenotype within them.</description>	
 		<displayOrderOffset>0</displayOrderOffset>
 		<biostatCpx>2</biostatCpx>
 		<biostatMet>-1</biostatMet>
@@ -18,7 +18,7 @@
 		<defName>Flm_GeneMaster</defName>
 		<label>gene master</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
-		<description>Carriers of this gene have all genetic profiles available within their body. and they won't be weakened by genetic recombination.</description>
+		<description>Carriers of this gene have all xenotype genes available within their body. and they won't be weakened by genetic recombination.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon5</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>

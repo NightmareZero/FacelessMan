@@ -2,7 +2,7 @@
 <Defs>
     <AbilityCategoryDef>
         <defName>Nzflm_AbilityCategory</defName>
-        <label>facelessman</label>
+        <label>faceless</label>
         <description>Abilities related to the Faceless</description>
     </AbilityCategoryDef>   
 </Defs>

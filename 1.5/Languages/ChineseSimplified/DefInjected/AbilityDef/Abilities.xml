@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <NzFlm_ReimplantXenogerm.label>基因植入</NzFlm_ReimplantXenogerm.label>
+    <NzFlm_ReimplantXenogerm.description>将含有自身异种基因副本的胚芽植入目标体内。如果植入者的异种基因仍处于重构状态，将会导致其死亡。\n\n植入后，异种胚芽的基因会覆盖被植入者的异种基因，而系谱基因不受影响。</NzFlm_ReimplantXenogerm.description>
+
+    <Flm_Morphing.label>变形</Flm_Morphing.label>
+    <Flm_Morphing.description>变形为不同的异种类型。</Flm_Morphing.description>
+</LanguageData>

@@ -4,7 +4,7 @@
 		<defName>Flm_GermlineReimplanter</defName>
 		<label>gene reimplanter</label>
 		<labelShortAdj>reimplanter</labelShortAdj>
-		<description>Carriers of this gene can implant a copy of selected germline into another person through an injector organ. Their own genetic material will then regrow very slowly. If they implant while their genes are regrowing, they will die. Xenogenes will be unaffected.</description>
+		<description>Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ. </description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath> -->
 		<iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
 
@@ -22,7 +22,7 @@
 		<defName>Flm_Morphs</defName>
 		<label>gene morphing</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
-		<description>Carriers of this gene can choose one of their genetic profiles for morphing.</description>
+		<description>Carriers of this gene can choose one of their xenotype gene pack for morphing.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Xenotypes/Other</iconPath>
         <abilities>

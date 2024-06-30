@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Flm_GermlineReimplanter.label>基因注入</Flm_GermlineReimplanter.label>
+    <Flm_GermlineReimplanter.labelShortAdj>注入</Flm_GermlineReimplanter.labelShortAdj>
+    <Flm_GermlineReimplanter.description>这个基因的携带者，可以从体内包含的基因组中，挑选一个，并作为异种基因注入选中的目标体内。</Flm_GermlineReimplanter.description>
+
+    <Flm_Morphs.label>基因变形</Flm_Morphs.label>
+    <Flm_Morphs.description>这个基因的携带者，可以选择一个基因组进行变形。</Flm_Morphs.description>
+</LanguageData>
