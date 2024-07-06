@@ -6,4 +6,7 @@
 
     <Flm_Morphs.label>基因变形</Flm_Morphs.label>
     <Flm_Morphs.description>这个基因的携带者，可以选择一个基因组进行变形。</Flm_Morphs.description>
+
+    <Flm_GeneMaster.label>基因主宰</Flm_GeneMaster.label>
+    <Flm_GeneMaster.description>携带这种基因的人体内拥有所有的异种基因，并且不会因基因重组而削弱。</Flm_GeneMaster.description>
 </LanguageData>

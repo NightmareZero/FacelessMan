@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-    <Flm_GeneMaster.label>基因主宰</Flm_GeneMaster.label>
-    <Flm_GeneMaster.description>携带这种基因的人体内拥有所有的异种基因，并且不会因基因重组而削弱。</Flm_GeneMaster.description>
+    <Nzflm_Strong.label>强壮</Nzflm_Strong.label>
+    <Nzflm_Strong.description>携带这个基因的人更加强壮，对各种伤害有更高的抵抗力。</Nzflm_Strong.description>
 
     <xenoGeneTemplateDef.label>基因组: {0}</xenoGeneTemplateDef.label>
     <xenoGeneTemplateDef.description>这种基因的携带者体内拥有 {0} 异型的完整基因。</xenoGeneTemplateDef.description>

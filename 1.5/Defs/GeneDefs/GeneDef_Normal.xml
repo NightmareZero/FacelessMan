@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<NzFaceLessManMod.XenoGeneTemplateDef>
+		<geneClass>Gene</geneClass>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<!-- <exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix> -->
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<selectionWeight>0</selectionWeight>
+		<defName>xenoGeneTemplateDef</defName>
+		<label>GenePack: {0}</label>
+		<description>Carriers of this gene possess the complete genetic of {0} xenotype within them.</description>
+		<displayOrderOffset>0</displayOrderOffset>
+		<biostatCpx>2</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<!-- <ability>VRE_Morph</ability> -->
+	</NzFaceLessManMod.XenoGeneTemplateDef>
+	<GeneDef>
+		<defName>Nzflm_Strong</defName>
+		<label>strong</label>
+		<displayCategory>Pain</displayCategory>
+		<description>Carriers of this gene are stronger and have a higher resistance to various types of injuries.</description>
+		<iconPath>UI/Icons/Genes/Gene_BodyHulk</iconPath>
+		<displayOrderInCategory>1</displayOrderInCategory>
+		<forcedTraits>
+			<li>
+				<def>Tough</def>
+			</li>
+		</forcedTraits>
+		<exclusionTags>
+			<li>Strong</li>		
+		</exclusionTags>		
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-3</biostatMet>
+
+	</GeneDef>
+</Defs>
