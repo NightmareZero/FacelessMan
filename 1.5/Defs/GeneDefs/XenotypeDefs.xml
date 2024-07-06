@@ -12,11 +12,12 @@
             away unharmed afterward.</description>
         <descriptionShort>The Faceless Ones are skilled infiltrators, capable of transforming
             themselves or their minions into any race using their extensive gene pool.</descriptionShort>
-        <iconPath>UI/Icons/Xenotypes/Other</iconPath>
+        <iconPath>UI/Icons/Abilities/Mask</iconPath>
         <inheritable>true</inheritable>
         <genes>
             <li>Flm_GermlineReimplanter</li>
             <li>Flm_GeneMaster</li>
+            <li>Flm_FleshMaster</li>
             <li>Flm_Morphs</li>
             <li>Beauty_Pretty</li>
             <li>AptitudePoor_Construction</li>

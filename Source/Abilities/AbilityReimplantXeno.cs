@@ -108,14 +108,15 @@ namespace NzFaceLessManMod
         {
             // 清除旧基因
             CleanOldGenes(target, xenotype);
-            // 设置基因类别
-            target.genes.SetXenotype(xenotype);
-            target.genes.xenotypeName = xenotype.defName; // TODO 是否使用这个值存疑
-            // TODO 根据targetXentype获取对应的icondef 
-            // dest.genes.iconDef = targetXenotype.;
+
+            target.genes.xenotypeName = xenotype.label;
+            target.genes.iconDef = Utils.GetXenotypeIcon(xenotype);
+            
 
             // 设置新基因
             AddNewGenes(target, xenotype);
+            // 设置异种基因
+            target.genes.SetXenotype(xenotype);
 
             // 添加基因不稳定hediff
             target.health.AddHediff(XmlDefs.Flm_GeneticInstability);

@@ -9,7 +9,7 @@
 			and die in the process.\n\nWhen implanted, a xenogerm will overwrite the target's
 			xenogenes. Germline genes will be unaffected.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath> -->
-		<iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath>
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
 		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
 		<category>Nzflm_AbilityCategory</category>
@@ -41,7 +41,7 @@
 		<cooldownTicksRange>30000</cooldownTicksRange>
 		<description>Morph into a different xenotype.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
-		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
 		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
 		<aiCanUse>false</aiCanUse>
 		<jobDef>CastAbilityOnThing</jobDef>

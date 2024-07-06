@@ -7,6 +7,7 @@ namespace NzFaceLessManMod
 {
     public static class Utils
     {
+        static Dictionary<string, XenotypeIconDef> xenotypeIconCache = new Dictionary<string, XenotypeIconDef>();
 
         /// <summary>
         /// 从一个Pawn身上, 获取全部的 "异种类型" 基因, 以其defName为key
@@ -28,6 +29,30 @@ namespace NzFaceLessManMod
 
 
             return geneXenotypes;
+        }
+
+        /// <summary>
+        /// 从XenotypeDef中获取其对应的图标
+        /// </summary>
+        public static XenotypeIconDef GetXenotypeIcon(XenotypeDef xenotype)
+        {
+            if (xenotypeIconCache.TryGetValue(xenotype.defName, out var icon))
+            {
+                return icon;
+            }
+            else
+            {
+                var iconDef = DefDatabase<XenotypeIconDef>.GetNamedSilentFail(xenotype.defName);
+                if (iconDef != null)
+                {
+                    xenotypeIconCache[xenotype.defName] = iconDef;
+                    return iconDef;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         /// <summary>

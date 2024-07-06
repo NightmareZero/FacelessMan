@@ -83,10 +83,10 @@ namespace NzFaceLessManMod
             {
                 defName = template.defName + "_" + xeno.defName,
                 geneClass = template.geneClass,
-                label = template.label.Formatted(xeno.label),
+                label = template.label.Translate(xeno.label),
                 iconPath = xeno.iconPath,
-                description = template.description.Formatted(xeno.LabelCap),
-                labelShortAdj = template.labelShortAdj.Formatted(xeno.label),
+                description = template.description.Translate(xeno.LabelCap),
+                labelShortAdj = template.labelShortAdj.Translate(xeno.label),
                 selectionWeight = template.selectionWeight,
                 biostatCpx = template.biostatCpx,
                 biostatMet = template.biostatMet,
