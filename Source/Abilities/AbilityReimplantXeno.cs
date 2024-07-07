@@ -171,7 +171,7 @@ namespace NzFaceLessManMod
         /// </summary>
         public static void SetExtractGermline(Pawn caster, int overrideDurationTicks = -1)
         {
-            caster.health.AddHediff(XmlDefs.Flm_GeneLossShock);
+            caster.health.AddHediff(XmlDefs.Flm_GeneLossDizzy);
             if (GeneUtility.PawnWouldDieFromReimplanting(caster))
             {
                 caster.genes.SetXenotype(XenotypeDefOf.Baseliner);

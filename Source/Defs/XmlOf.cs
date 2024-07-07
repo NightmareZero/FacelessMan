@@ -13,7 +13,7 @@ namespace NzFaceLessManMod
         public static HediffDef Flm_GeneticInstability;
 
         // 注入者 基因丢失冲击
-        public static HediffDef Flm_GeneLossShock;
+        public static HediffDef Flm_GeneLossDizzy;
 
         // 声音1 (暂时使用用作变身结束的声音)
         public static SoundDef FoamSpray_Resolve;
