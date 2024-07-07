@@ -42,7 +42,8 @@
 		<description>Morph into a different xenotype.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
-		<warmupStartSound>Bloodfeed_Cast</warmupStartSound>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
 		<aiCanUse>false</aiCanUse>
 		<jobDef>CastAbilityOnThing</jobDef>
 		<targetRequired>False</targetRequired>
@@ -69,6 +70,42 @@
 		</verbProperties>
 		<comps>
 			<li Class="NzFaceLessManMod.CompProperties_AbilityMorph" />
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>Flm_Evolve</defName>
+		<label>embrace evolution</label>
+		<cooldownTicksRange>120000</cooldownTicksRange>
+		<description>Let the target change to a customized xenotype.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<aiCanUse>false</aiCanUse>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>true</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>4</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_AbilityEvolve" />
 		</comps>
 	</AbilityDef>
 </Defs>

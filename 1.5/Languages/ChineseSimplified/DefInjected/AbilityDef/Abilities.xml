@@ -5,4 +5,7 @@
 
     <Flm_Morphing.label>变形</Flm_Morphing.label>
     <Flm_Morphing.description>变形为不同的异种类型。</Flm_Morphing.description>
+
+    <Flm_Evolve.label>拥抱进化</Flm_Evolve.label>
+    <Flm_Evolve.description>让目标变成一个定制的异种类型。</Flm_Evolve.description>
 </LanguageData>

@@ -117,6 +117,7 @@ namespace NzFaceLessManMod
             AddNewGenes(target, xenotype);
             // 设置异种基因
             target.genes.SetXenotype(xenotype);
+            
 
             // 添加基因不稳定hediff
             target.health.AddHediff(XmlDefs.Flm_GeneticInstability);

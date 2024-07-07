@@ -24,7 +24,7 @@
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene can choose one of their xenotype gene pack for morphing.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
-		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
         <abilities>
 			<li>Flm_Morphing</li>
 		</abilities>
@@ -42,8 +42,11 @@
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene have all xenotype genes available within their body. and they won't be weakened by genetic recombination.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon5</iconPath>
+		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
+		<abilities>
+			<li>Flm_Evolve</li>
+		</abilities>
 		<exclusionTags>
 			<li>Flm_GeneMaster</li>		
 		</exclusionTags>
