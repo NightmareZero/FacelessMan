@@ -3,5 +3,6 @@
 
 # /*/Assemblies
 /*/Assemblies/*.pdb
+/*/Assemblies/*.dll
 # /.vscode
 # /Source
