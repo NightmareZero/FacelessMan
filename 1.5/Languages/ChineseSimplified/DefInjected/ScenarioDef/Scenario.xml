@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <Flm_Escape.label>逃难</Flm_Escape.label>
+  <Flm_Escape.scenario.description>在愈演愈烈的继承人斗争中，你失败了，你不得不离开自己的家族、锦衣玉食、仆人、珠宝，来到了这个荒凉的地方，尝试活下来，在逃难的路上，你花言巧语的说服了一名当地人，让他服务于你。</Flm_Escape.scenario.description>
+  <Flm_Escape.scenario.name>逃难</Flm_Escape.scenario.name>
+  <Flm_Escape.scenario.summary>你逃离了自己的家族，尝试生存下去。</Flm_Escape.scenario.summary>
+  <Flm_Escape.scenario.parts.GameStartDialog.text>经过数次的变身和伪装，你甩脱了家族追捕，现在你必须在这个荒凉的地方生存下去。现在在被忽悠过来的仆从的帮助下，你将建立一个强大的领地，并向你的兄弟们复仇。</Flm_Escape.scenario.parts.GameStartDialog.text> 
+  
+</LanguageData>
