@@ -33,7 +33,7 @@
 			<!-- <li>MorphCondition</li>		 -->
 		</exclusionTags>
 		<biostatCpx>1</biostatCpx>
-		<biostatMet>-1</biostatMet>
+		<biostatMet>-2</biostatMet>
 	
 	</GeneDef>
 	<GeneDef>
@@ -59,7 +59,7 @@
 		<label>flesh  master</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene specializes in controlling their's cells, allowing the body to heal quickly and become more resilient, and bleeding wounds close very quickly.</description>
-		<iconPath>UI/Icons/Xenotypes/Custom/CustomXenotypeIcon5</iconPath>
+		<iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<geneClass>Gene_Clotting</geneClass>
 		<forcedTraits>
@@ -67,6 +67,9 @@
 				<def>Tough</def>
 			</li>
 		</forcedTraits>
+		<abilities>
+			<li>Flm_Disguise</li>
+		</abilities>
 		<statFactors>
 			<InjuryHealingFactor>6</InjuryHealingFactor>
 		  </statFactors>

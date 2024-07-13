@@ -33,7 +33,7 @@
         <label>peasant</label>
         <description>a servant race created by the Faceless Ones, designed to perform tasks they are not skilled at or do not prefer.</description>
         <descriptionShort>a servant race created by the Faceless Ones, designed to perform tasks they are not skilled at or do not prefer.</descriptionShort>
-        <iconPath>UI/Icons/Xenotypes/Other</iconPath>
+        <iconPath>UI/Icons/Genes/Flm_Worker</iconPath>
         <inheritable>true</inheritable>
         <genes>
             <li>Hair_ShortOnly</li>

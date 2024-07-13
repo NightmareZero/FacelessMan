@@ -59,8 +59,7 @@ namespace NzFaceLessManMod
             // 添加基因不稳定hediff
             target.health.AddHediff(XmlDefs.Flm_GeneticInstability);
             caster.health.AddHediff(XmlDefs.Flm_GeneLossDizzy);
-            // 添加基因不稳定hediff
-            // SetExtractGermline(caster);
+
             // 更新异种基因复制
             GeneUtility.UpdateXenogermReplication(target);
         }
