@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
     <NzFlm_ReimplantXenogerm.label>基因植入</NzFlm_ReimplantXenogerm.label>
-    <NzFlm_ReimplantXenogerm.description>将含有自身异种基因副本的胚芽植入目标体内。如果植入者的异种基因仍处于重构状态，将会导致其死亡。\n\n植入后，异种胚芽的基因会覆盖被植入者的异种基因，而系谱基因不受影响。</NzFlm_ReimplantXenogerm.description>
+    <NzFlm_ReimplantXenogerm.description>将自身含有的“异种基因包”的胚芽植入目标体内。如果植入者的异种基因仍处于重构状态，将会导致其死亡。\n\n植入后，异种胚芽的基因会覆盖被植入者的异种基因，而系谱基因不受影响。</NzFlm_ReimplantXenogerm.description>
 
     <Flm_Morphing.label>变形</Flm_Morphing.label>
     <Flm_Morphing.description>变形为不同的异种类型。</Flm_Morphing.description>
 
     <Flm_Evolve.label>拥抱进化</Flm_Evolve.label>
-    <Flm_Evolve.description>让目标变成一个定制的异种类型。</Flm_Evolve.description>
+    <Flm_Evolve.description>定制一个异种胚芽，并注入目标体内，但是即使是强大的基因主宰，也会变得虚弱。</Flm_Evolve.description>
 
     <Flm_Disguise.label>伪装</Flm_Disguise.label>
     <Flm_Disguise.description>操纵自己的血肉之躯，改变皮肤颜色，再生或脱发，伪装成选定的目标。</Flm_Disguise.description>

@@ -4,10 +4,11 @@
 		<defName>NzFlm_ReimplantXenogerm</defName>
 		<label>implant genes</label>
 		<cooldownTicksRange>30000</cooldownTicksRange>
-		<description>Implant this person's xenogenes into a willing subject. If this person's genes
-			are currently regrowing, they will implant their xenogerm
-			and die in the process.\n\nWhen implanted, a xenogerm will overwrite the target's
-			xenogenes. Germline genes will be unaffected.</description>
+		<description>Implanting the xenotype carrying the genes of the 'xenotype gene package' from
+			oneself into a target organism. If the recipient's xenotype genes are still undergoing
+			reconstruction, it will lead to their demise.\n\n
+			After implantation, the genes of the xenotype will overwrite those of the
+			recipient's xenotype genes, while the lineage genes remain unaffected.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath> -->
 		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
@@ -76,7 +77,7 @@
 		<defName>Flm_Evolve</defName>
 		<label>embrace evolution</label>
 		<cooldownTicksRange>120000</cooldownTicksRange>
-		<description>Let the target change to a customized xenotype.</description>
+		<description>Customize an xenotype and inject it into the target, but even the mighty gene master will become weakened.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
@@ -112,7 +113,8 @@
 		<defName>Flm_Disguise</defName>
 		<label>disguise</label>
 		<cooldownTicksRange>60000</cooldownTicksRange>
-		<description>manipulating your flesh and blood to change the color of one's skin and regenerate or lose one's hair, Disguise as a selected target.</description>
+		<description>Manipulating your flesh and blood to change the color of one's skin and
+			regenerate or lose one's hair, Disguise as a selected target.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Disguise</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>

@@ -2,7 +2,7 @@
 <Defs>
     <GeneDef>
 		<defName>Flm_GermlineReimplanter</defName>
-		<label>gene reimplanter</label>
+		<label>genepack reimplanter</label>
 		<labelShortAdj>reimplanter</labelShortAdj>
 		<description>Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ. </description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath> -->
@@ -56,7 +56,7 @@
 	</GeneDef>
 	<GeneDef>
 		<defName>Flm_FleshMaster</defName>
-		<label>flesh  master</label>
+		<label>flesh master</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene specializes in controlling their's cells, allowing the body to heal quickly and become more resilient, and bleeding wounds close very quickly.</description>
 		<iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
