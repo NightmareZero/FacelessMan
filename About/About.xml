@@ -14,11 +14,28 @@
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
 	</modDependencies>
-
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>brrainz.harmony</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+	</loadAfter>
 	<incompatibleWith>
 		<!-- <li>username.modname</li> -->
 	</incompatibleWith>
 
-	<description>Template</description>
+	<description>The Faceless Ones' origins are shrouded in mystery, with some claiming they are
+		the byproduct of laboratory experiments in the pursuit of the ultimate human, while
+		others recount that they were selectively bred to serve as stand-ins for dignitaries in
+		public settings. Now, they primarily act as diplomats or spies for various factions,
+		utilizing their extensive internal gene pool to transform into any race. Coupled with
+		their exquisite makeup skills, they can infiltrate any colony or organization and slip
+		away unharmed afterward.</description>
 </ModMetaData>
