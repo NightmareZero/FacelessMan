@@ -62,20 +62,12 @@
 		<iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<geneClass>Gene_Clotting</geneClass>
-		<forcedTraits>
-			<li>
-				<def>Tough</def>
-			</li>
-		</forcedTraits>
 		<abilities>
 			<li>Flm_Disguise</li>
 		</abilities>
 		<statFactors>
 			<InjuryHealingFactor>6</InjuryHealingFactor>
-		  </statFactors>
-		<exclusionTags>
-			<li>Strong</li>		
-		</exclusionTags>
+		</statFactors>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>
 		<biostatArc>2</biostatArc>
