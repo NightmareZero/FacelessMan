@@ -8,7 +8,7 @@ if "%1"=="" (
 )
 
 REM remove unnecessary assemblies
-DEL /Q .\*\Assemblies\*.*
+DEL /Q .\1.5\Assemblies\*.*
 
 REM build dll with specified configuration
 dotnet build .vscode -c %BUILD_CONFIG%
