@@ -3,7 +3,7 @@
 	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>NzFlm_ReimplantXenogerm</defName>
 		<label>implant genes</label>
-		<cooldownTicksRange>30000</cooldownTicksRange>
+		<cooldownTicksRange>15000</cooldownTicksRange>
 		<description>Implanting the xenotype carrying the genes of the 'xenotype gene package' from
 			oneself into a target organism. If the recipient's xenotype genes are still undergoing
 			reconstruction, it will lead to their demise.\n\n
@@ -39,7 +39,7 @@
 	<AbilityDef>
 		<defName>Flm_Morphing</defName>
 		<label>morph</label>
-		<cooldownTicksRange>30000</cooldownTicksRange>
+		<cooldownTicksRange>10000</cooldownTicksRange>
 		<description>Morph into a different xenotype.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
@@ -112,7 +112,7 @@
 	<AbilityDef>
 		<defName>Flm_Disguise</defName>
 		<label>disguise</label>
-		<cooldownTicksRange>60000</cooldownTicksRange>
+		<cooldownTicksRange>30000</cooldownTicksRange>
 		<description>Manipulating your flesh and blood to change the color of one's skin and
 			regenerate or lose one's hair, Disguise as a selected target.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
