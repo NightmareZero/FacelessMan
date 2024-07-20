@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -43,6 +44,16 @@ namespace NzFaceLessManMod
                 Messages.Message("nzflm.no_xenotype".Translate(), MessageTypeDefOf.RejectInput);
                 return;
             }
+
+            if (xenoGenes.Count == 1)
+            {
+                // 如果只有一个基因, 则直接使用第一个
+                MorphXenotype(targetPawn, xenoGenes.First().Value);
+                this.isXenoSelected = true;
+                base.Apply(target, dest);
+                return;
+            }
+
             // 绘制菜单
             foreach (var xeno_ in xenoGenes)
             {
