@@ -65,6 +65,7 @@ namespace NzFaceLessManMod
             catch (Exception e)
             {
                 Log.Error("Error in Postfix of GeneDefGenerator.ImpliedGeneDefs: " + e.Message);
+                Log.Error("StackTrace: " + e.StackTrace);
             }
 
 
