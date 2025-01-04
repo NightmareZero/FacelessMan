@@ -59,6 +59,10 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
+                if (xeno.Value.defName == XmlDefs.Flm_FacelessMan.defName)
+                {
+                    continue;
+                }
 
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {

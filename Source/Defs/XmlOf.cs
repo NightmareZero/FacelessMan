@@ -21,6 +21,9 @@ namespace NzFaceLessManMod
         // 超级携带者基因
         public static GeneDef Flm_GeneMaster;
 
+        // 无面人基因
+        public static XenotypeDef Flm_FacelessMan;
+
 
         static XmlDefs()
         {

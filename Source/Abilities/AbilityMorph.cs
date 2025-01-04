@@ -58,6 +58,10 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
+                if (xeno.Value.defName == XmlDefs.Flm_FacelessMan.defName)
+                {
+                    continue;
+                }
 #if DEBUG
                 Log.Message("flm: draw menu xeno.Key: " + xeno.Key);
 #endif
