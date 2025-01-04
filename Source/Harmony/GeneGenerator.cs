@@ -39,7 +39,11 @@ namespace NzFaceLessManMod
 
                 GlobalValues.AvaliableXenotypeDef.ForEach(xeno =>
                 {
-                    genes.Add(GetFromXenotype(template, xeno, genes.Count()));
+                    // 如果不是无面人异种，则生成一个对应基因包
+                    if (xeno.defName != XmlDefs.Flm_FacelessMan.defName)
+                    {
+                        genes.Add(GetFromXenotype(template, xeno, genes.Count()));
+                    }
                     xeno.AllGenes.ForEach(gene =>
                     {
                         // 如果是超级载体则设置为包含所有基因

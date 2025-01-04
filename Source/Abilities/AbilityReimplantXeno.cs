@@ -129,6 +129,12 @@ namespace NzFaceLessManMod
             // SetExtractGermline(caster);
             // 更新异种基因复制
             GeneUtility.UpdateXenogermReplication(target);
+            Hediff firstHediffOfDef = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.XenogermReplicating);
+            if (firstHediffOfDef != null)
+            {
+                // 找到HediffComp_Disappears组件, 设置持续时间2天
+                firstHediffOfDef.TryGetComp<HediffComp_Disappears>().ticksToDisappear = GenDate.TicksPerDay;
+            }
 
 
         }
