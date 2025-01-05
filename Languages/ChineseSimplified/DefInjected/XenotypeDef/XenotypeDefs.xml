@@ -9,5 +9,9 @@
   <Flm_Peasant.label>奴工种</Flm_Peasant.label>
   <Flm_Peasant.description>无面人创造的一种仆人种族，旨在执行他们不擅长或不喜欢的任务</Flm_Peasant.description>
   <Flm_Peasant.descriptionShort>无面人创造的一种仆人种族，旨在执行他们不擅长或不喜欢的任务</Flm_Peasant.descriptionShort>
+
+  <Flm_Warrior.label>狂战种</Flm_Warrior.label>
+  <Flm_Warrior.description>无面人创造的一种战士种族，这种暴躁的傻大个，除了战斗和吃几乎什么都不会，但是却是无面人的忠实卫士</Flm_Warrior.description>
+  <Flm_Warrior.descriptionShort>无面人的忠诚卫士，专门负责战斗</Flm_Warrior.descriptionShort>
   
 </LanguageData>

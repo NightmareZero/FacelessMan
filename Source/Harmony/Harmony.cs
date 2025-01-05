@@ -23,6 +23,7 @@ namespace NzFaceLessManMod
         }
     }
 
+    [StaticConstructorOnStartup]
     public static class GlobalValues
     {
         public static List<XenotypeDef> AvaliableXenotypeDef;

@@ -3,8 +3,11 @@
     <NzFlm_ReimplantXenogerm.label>基因植入</NzFlm_ReimplantXenogerm.label>
     <NzFlm_ReimplantXenogerm.description>将自身含有的“异种基因包”的胚芽植入目标体内。如果植入者的异种基因仍处于重构状态，将会导致其死亡。\n\n植入后，异种胚芽的基因会覆盖被植入者的异种基因，而系谱基因不受影响。</NzFlm_ReimplantXenogerm.description>
 
-    <Flm_Morphing.label>变形</Flm_Morphing.label>
-    <Flm_Morphing.description>变形为不同的异种类型。</Flm_Morphing.description>
+    <Flm_Morphing.label>异种变形</Flm_Morphing.label>
+    <Flm_Morphing.description>使用身上的基因包替换自己的异种基因。</Flm_Morphing.description>
+
+    <Flm_MorphingE.label>内源变形</Flm_MorphingE.label>
+    <Flm_MorphingE.description>使用身上的基因包替换自己的可遗传内源基因。</Flm_MorphingE.description>
 
     <Flm_Evolve.label>拥抱进化</Flm_Evolve.label>
     <Flm_Evolve.description>定制一个异种胚芽，并注入目标体内，但是即使是强大的基因主宰，也会变得虚弱。</Flm_Evolve.description>

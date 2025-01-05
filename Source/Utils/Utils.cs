@@ -20,7 +20,7 @@ namespace NzFaceLessManMod
             {
                 if (isGeneXenotype(gene.def))
                 {
-                   foreach (var geneXenotype in getGeneXenotype(gene.def))
+                    foreach (var geneXenotype in getGeneXenotype(gene.def))
                     {
                         geneXenotypes.SetOrAdd(geneXenotype.Value.label, geneXenotype.Value);
                     }
@@ -29,6 +29,32 @@ namespace NzFaceLessManMod
 
 
             return geneXenotypes;
+        }
+
+
+        /// <summary>
+        /// 从一个Pawn身上, 获取全部的 "内源异种类型" 基因, 以其defName为key
+        /// </summary>
+        /// <param name="pawn"></param>
+        /// <returns></returns>
+        public static Dictionary<string, XenotypeDef> GetGeneEndotypes(Pawn pawn)
+        {
+            Dictionary<string, XenotypeDef> geneEndotypes = new Dictionary<string, XenotypeDef>();
+            // 遍历pawn的全部基因，判断是否为异种携带者基因，加入返回值
+            foreach (Gene gene in pawn.genes.GenesListForReading)
+            {
+                if (isGeneXenotype(gene.def))
+                {
+                    foreach (var geneXenotype in getGeneXenotype(gene.def))
+                    {
+                        if (geneXenotype.Value.inheritable)
+                        {
+                            geneEndotypes.SetOrAdd(geneXenotype.Value.label, geneXenotype.Value);
+                        }
+                    }
+                }
+            }
+            return geneEndotypes;
         }
 
         /// <summary>

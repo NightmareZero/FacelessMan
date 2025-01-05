@@ -34,13 +34,15 @@
     <XenotypeDef>
         <defName>Flm_Peasant</defName>
         <label>peasant</label>
-        <description>a servant race created by the Faceless Ones, designed to perform tasks they are
+        <description>a servant race created by the Faceless, designed to perform tasks they are
             not skilled at or do not prefer.</description>
         <descriptionShort>a servant race created by the Faceless Ones, designed to perform tasks
             they are not skilled at or do not prefer.</descriptionShort>
         <iconPath>UI/Icons/Genes/Flm_Worker</iconPath>
         <inheritable>true</inheritable>
         <genes>
+            <li>xenoGeneTemplateDef_Flm_Warrior</li>
+            <li>Flm_MorphsE</li>
             <li>Hair_ShortOnly</li>
             <li>Beard_NoBeardOnly</li>
             <li>Jaw_Baseline</li>
@@ -48,7 +50,8 @@
             <li>Body_Standard</li>
             <li>Hair_Gray</li>
             <li>Skin_LightGray</li>
-            <li>AptitudePoor_Melee</li>
+            <li>AptitudeTerrible_Shooting</li>
+            <li>AptitudeTerrible_Melee</li>
             <li>AptitudeStrong_Construction</li>
             <li>AptitudeRemarkable_Mining</li>
             <li>AptitudeStrong_Cooking</li>
@@ -57,6 +60,41 @@
             <li>AptitudeTerrible_Crafting</li>
             <li>AptitudeTerrible_Artistic</li>
             <li>AptitudeStrong_Medicine</li>
+            <li>AptitudeTerrible_Social</li>
+            <li>AptitudeTerrible_Intellectual</li>
+        </genes>
+    </XenotypeDef>
+    <XenotypeDef>
+        <defName>Flm_Warrior</defName>
+        <label>warrior</label>
+        <description>A warrior race created by the Faceless, these brutish and aggressive giants are loyal guardians of the Faceless, knowing little else besides fighting and eating.</description> 
+        <descriptionShort>guardian of the faceless, dedicated to combat.</descriptionShort>
+        <iconPath>UI/Icons/Genes/Flm_Warrior</iconPath>
+        <inheritable>true</inheritable>
+        <genes>
+            <li>xenoGeneTemplateDef_Flm_Peasant</li>
+            <li>Flm_MorphsE</li>
+            <li>MoveSpeed_Quick</li>
+            <li>Aggression_Aggressive</li>
+            <li>MeleeDamage_Strong</li>
+            <li>Nzflm_Strong</li>
+            <li>Robust</li>
+            <li>Hair_BaldOnly</li>
+            <li>Beard_NoBeardOnly</li>
+            <li>Jaw_Baseline</li>
+            <li>Headbone_Human</li>
+            <li>Body_Hulk</li>
+            <li>Skin_LightGray</li>
+            <li>Unstoppable</li>
+            <li>AptitudeStrong_Shooting</li>
+            <li>AptitudeRemarkable_Melee</li>
+            <li>AptitudeTerrible_Construction</li>
+            <li>AptitudeStrong_Mining</li>
+            <li>AptitudeTerrible_Cooking</li>
+            <li>AptitudeTerrible_Plants</li>
+            <li>AptitudeTerrible_Animals</li>
+            <li>AptitudeTerrible_Crafting</li>
+            <li>AptitudeTerrible_Artistic</li>
             <li>AptitudeTerrible_Social</li>
             <li>AptitudeTerrible_Intellectual</li>
         </genes>

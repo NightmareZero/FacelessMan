@@ -20,9 +20,9 @@
 	</GeneDef>
     <GeneDef>
 		<defName>Flm_Morphs</defName>
-		<label>gene morphing</label>
+		<label>xenotpye morphing</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
-		<description>Carriers of this gene can choose one of their xenotype gene pack for morphing.</description>
+		<description>Carriers of this gene can choose one of their gene pack to instead of their xenotype gene</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
         <abilities>
@@ -34,8 +34,24 @@
 		</exclusionTags>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
-	
 	</GeneDef>
+    <GeneDef>
+		<defName>Flm_MorphsE</defName>
+		<label>endotpye morphing</label>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<description>Carriers of this gene can choose one of their gene pack to instead of their inheritable gene, it only works on inheritable gene pack.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+        <abilities>
+			<li>Flm_MorphingE</li>
+		</abilities>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<exclusionTags>
+			<!-- <li>MorphCondition</li>		 -->
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</GeneDef>	
 	<GeneDef>
 		<defName>Flm_GeneMaster</defName>
 		<label>gene master</label>
@@ -67,6 +83,7 @@
 		</abilities>
 		<statFactors>
 			<InjuryHealingFactor>3</InjuryHealingFactor>
+			<IncomingDamageFactor>0.67</IncomingDamageFactor>
 		</statFactors>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>

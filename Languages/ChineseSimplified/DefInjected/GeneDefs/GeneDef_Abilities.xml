@@ -4,8 +4,11 @@
     <Flm_GermlineReimplanter.labelShortAdj>注入</Flm_GermlineReimplanter.labelShortAdj>
     <Flm_GermlineReimplanter.description>这个基因的携带者，可以从体内包含的基因组中，挑选一个，并作为异种基因注入选中的目标体内。</Flm_GermlineReimplanter.description>
 
-    <Flm_Morphs.label>基因变形</Flm_Morphs.label>
-    <Flm_Morphs.description>这个基因的携带者，可以选择一个基因组进行变形。</Flm_Morphs.description>
+    <Flm_Morphs.label>异种变形</Flm_Morphs.label>
+    <Flm_Morphs.description>这个基因的携带者，可以选择一个基因组，对自己的异种基因进行切换。</Flm_Morphs.description>
+
+    <Flm_MorphsE.label>内源变形</Flm_MorphsE.label>
+    <Flm_MorphsE.description>这个基因的携带者，可以选择一个基因组，对自己的内源基因进行切换。只对可遗传的异种基因包有效。</Flm_MorphsE.description>
 
     <Flm_GeneMaster.label>基因主宰</Flm_GeneMaster.label>
     <Flm_GeneMaster.description>携带这种基因的人体内拥有所有的异种基因，并且不会因基因重组而削弱。</Flm_GeneMaster.description>

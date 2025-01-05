@@ -12,6 +12,6 @@ MD ..\FacelessMan-Release
 REM copy new mod files and directories
 xcopy /E /I /Y .\1.5 ..\FacelessMan-Release\1.5
 xcopy /E /I /Y .\About ..\FacelessMan-Release\About
-@REM xcopy /E /I /Y .\Languages ..\FacelessMan-Release\Languages
+xcopy /E /I /Y .\Languages ..\FacelessMan-Release\Languages
 @REM xcopy /E /I /Y .\Sounds ..\FacelessMan-Release\Sounds
 xcopy /E /I /Y .\Textures ..\FacelessMan-Release\Textures

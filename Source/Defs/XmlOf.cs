@@ -5,6 +5,7 @@ namespace NzFaceLessManMod
 {
 
     [DefOf]
+
     public static class XmlDefs
     {
         public static XenoGeneTemplateDef xenoGeneTemplateDef;
