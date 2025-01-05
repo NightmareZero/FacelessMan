@@ -123,6 +123,10 @@ namespace NzFaceLessManMod
 
             foreach (GeneDef gene in xenotype.AllGenes)
             {
+                if (gene.defName == XmlDefs.Flm_MorphsE.defName)
+                {
+                    continue;
+                }
 #if DEBUG
                 Log.Message("flm: Add gene: " + gene.label);
 #endif
