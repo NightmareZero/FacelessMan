@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <xenoGeneTemplateDef.label>基因包: {0}</xenoGeneTemplateDef.label>
+    <xenoGeneTemplateDef.description>携带这个基因的人体内拥有完整的 "{0}" 异种基因。</xenoGeneTemplateDef.description>
+</LanguageData>

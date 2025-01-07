@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 	<NzFaceLessManMod.XenoGeneTemplateDef>
+		<defName>xenoGeneTemplateDef</defName>
 		<geneClass>Gene</geneClass>
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
 		<!-- <exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix> -->
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<selectionWeight>0</selectionWeight>
-		<defName>xenoGeneTemplateDef</defName>
 		<label>GenePack: {0}</label>
 		<description>Carriers of this gene possess the complete genetic of {0} xenotype within them.</description>
 		<displayOrderOffset>0</displayOrderOffset>

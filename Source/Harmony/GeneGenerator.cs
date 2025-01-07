@@ -42,7 +42,7 @@ namespace NzFaceLessManMod
                     // 如果不是无面人异种，则生成一个对应基因包
                     if (xeno.defName != XmlDefs.Flm_FacelessMan.defName)
                     {
-                        genes.Add(GetFromXenotype(template, xeno, genes.Count()));
+                        genes.Add(GetGenePackGeneFromXenotype(template, xeno, genes.Count()));
                     }
                     xeno.AllGenes.ForEach(gene =>
                     {
@@ -76,7 +76,7 @@ namespace NzFaceLessManMod
             return genes;
         }
 
-        public static GeneDef GetFromXenotype(XenoGeneTemplateDef template, XenotypeDef xeno, int displayOrderBase)
+        public static GeneDef GetGenePackGeneFromXenotype(XenoGeneTemplateDef template, XenotypeDef xeno, int displayOrderBase)
         {
 
             GeneXenoModExtension modExt = new GeneXenoModExtension
