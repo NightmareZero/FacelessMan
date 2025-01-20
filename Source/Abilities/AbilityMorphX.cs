@@ -22,12 +22,6 @@ namespace NzFaceLessManMod
         {
             base.Apply(target, dest);
             Pawn casterPawn = parent.pawn;
-            Pawn targetPawn = casterPawn;
-            if (targetPawn == null)
-            {
-                Log.Message("targetPawn is null");
-                return;
-            }
 
             List<FloatMenuOption> selectXenoMenu = new List<FloatMenuOption>();
 
@@ -45,7 +39,7 @@ namespace NzFaceLessManMod
             if (xenoGenes.Count == 1)
             {
                 // 如果只有一个基因, 则直接使用第一个
-                MorphXenotype(targetPawn, xenoGenes.First().Value);
+                MorphXenotype(casterPawn, xenoGenes.First().Value);
                 this.isXenoSelected = true;
                 base.Apply(target, dest);
                 return;
@@ -64,7 +58,7 @@ namespace NzFaceLessManMod
 #endif
                 var opt = new FloatMenuOption(xeno.Key, () =>
                 {
-                    MorphXenotype(targetPawn, xeno.Value);
+                    MorphXenotype(casterPawn, xeno.Value);
                     this.isXenoSelected = true;
                     base.Apply(target, dest);
                 });
@@ -101,14 +95,70 @@ namespace NzFaceLessManMod
         /// <summary>
         /// 从施放者身上, 移除一个基因, 并将其移植到目标身上
         /// </summary>
-        public static void MorphXenotype(Pawn target, XenotypeDef xeno)
+        public static void MorphXenotype(Pawn caster, XenotypeDef xeno)
         {
             // 清除旧基因
-            CleanOldXenotype(target);
+            CleanOldXenotype(caster);
             // 添加新基因
-            AddNewXenotypeGenes(target, xeno);
+            AddNewXenotypeGenes(caster, xeno);
+            // 修复变身技能
+            fixMorphAbility(caster);
             // 播放声音
-            XmlDefs.FoamSpray_Resolve.PlayOneShot(new TargetInfo(target.Position, target.Map, false));
+            XmlDefs.FoamSpray_Resolve.PlayOneShot(new TargetInfo(caster.Position, caster.Map, false));
+        }
+
+        /// <summary>
+        /// 修复变身技能, 防止在有多个变身基因的情况下，移除一个基因后，变身技能消失
+        /// </summary>
+        /// <param name="caster"></param>
+        private static void fixMorphAbility(Pawn caster)
+        { 
+            // 检查caster是否有变身技能
+            Ability morphAbility = caster.abilities?.abilities?.Find(a => a.def == XmlDefs.Flm_Morphing);
+            if (morphAbility != null) // 如果有，则不需要修复
+            { 
+                return; 
+            }
+
+            // 检查基因中是否有变身技能
+            if (caster?.genes == null)
+            {
+                return;
+            }
+            caster.genes?.Endogenes?.ForEach(gene =>
+            {
+                if (gene.def?.abilities != null)
+                {
+                    gene.def.abilities.ForEach(abilityDef =>
+                    {
+                        if (abilityDef == XmlDefs.Flm_Morphing)
+                        {
+                            // 添加变身技能
+                            Ability ability = new Ability(caster,XmlDefs.Flm_Morphing);
+                            caster.abilities.abilities.Add(ability);
+                            return; // 找到一个就可以了
+                        }
+                    });
+                }
+            });
+
+            caster.genes?.Xenogenes?.ForEach(gene =>
+            {
+                if (gene.def?.abilities != null)
+                {
+                    gene.def.abilities.ForEach(abilityDef =>
+                    {
+                        if (abilityDef == XmlDefs.Flm_Morphing)
+                        {
+                            // 添加变身技能
+                            Ability ability = new Ability(caster, XmlDefs.Flm_Morphing);
+                            caster.abilities.abilities.Add(ability);
+                            return; // 找到一个就可以了
+                        }
+                    });
+                }
+            });
+
         }
 
         /// <summary>

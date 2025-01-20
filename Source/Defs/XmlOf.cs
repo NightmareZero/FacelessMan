@@ -28,6 +28,9 @@ namespace NzFaceLessManMod
         // 内源变形基因
         public static GeneDef Flm_MorphsE;
 
+        // 变身技能(异种)
+        public static AbilityDef Flm_Morphing;
+
 
         static XmlDefs()
         {
