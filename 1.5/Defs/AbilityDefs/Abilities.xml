@@ -135,6 +135,7 @@
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<warmupTime>4</warmupTime>
+			<range>2</range>
 			<drawAimPie>False</drawAimPie>
 			<requireLineOfSight>False</requireLineOfSight>
 			<targetParams>

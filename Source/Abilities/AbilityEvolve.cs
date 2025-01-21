@@ -37,7 +37,8 @@ namespace NzFaceLessManMod
             
             if (customXenotype == null)
             {
-                 Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);
+                Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);
+                this.parent.ResetCooldown();
                 return;
             }
 
