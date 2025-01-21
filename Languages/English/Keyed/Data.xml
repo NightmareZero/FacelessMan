@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+    <nzflm.remove_endotype>clean endogenous genes</nzflm.remove_endotype>
+    <nzflm.remove_xenotype>cull xenotype genes</nzflm.remove_xenotype>
 </LanguageData>

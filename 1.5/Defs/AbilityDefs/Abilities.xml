@@ -77,9 +77,9 @@
 	</AbilityDef>
 	<AbilityDef>
 		<defName>Flm_MorphingE</defName>
-		<label>endotype morph</label>
+		<label>endogenous morph</label>
 		<cooldownTicksRange>15000</cooldownTicksRange>
-		<description>Morph into a different endotype.</description>
+		<description>Morph into a different endogenous.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>

@@ -55,11 +55,15 @@ namespace NzFaceLessManMod
                 return;
             }
 
-            // 绘制菜单
+            // 绘制菜单(基因组)
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
                 if (xeno.Value.defName == XmlDefs.Flm_FacelessMan.defName)
+                {
+                    continue;
+                }
+                else if (xeno.Value.genes.Count == 0)
                 {
                     continue;
                 }
@@ -78,6 +82,27 @@ namespace NzFaceLessManMod
                 });
                 selectXenoMenu.Add(opt);
             }
+            // 绘制菜单(特殊处理)
+            var optRemoveEndo = new FloatMenuOption("nzflm.remove_endotype".Translate(), () =>
+            {
+                if (!caster.genes.Xenotype.soundDefOnImplant.NullOrUndefined())
+                {
+                    caster.genes.Xenotype.soundDefOnImplant.PlayOneShot(SoundInfo.InMap(caster));
+                }
+                CleanOldGenes(targetPawn, true);
+                this.isXenoSelected = true;
+            });
+            var optRemoveXeno = new FloatMenuOption("nzflm.remove_xenotype".Translate(), () =>
+            {
+                if (!caster.genes.Xenotype.soundDefOnImplant.NullOrUndefined())
+                {
+                    caster.genes.Xenotype.soundDefOnImplant.PlayOneShot(SoundInfo.InMap(caster));
+                }
+                CleanOldGenes(targetPawn, false);
+                this.isXenoSelected = true;
+            });
+            selectXenoMenu.Add(optRemoveEndo);
+            selectXenoMenu.Add(optRemoveXeno);
 
             // 显示 FloatMenu
             FloatMenu menu = new FloatMenu(selectXenoMenu)
@@ -85,7 +110,6 @@ namespace NzFaceLessManMod
                 vanishIfMouseDistant = false,
                 // 弹出时暂停游戏
                 forcePause = true,
-
 
                 onCloseCallback = () =>
                 {
@@ -95,9 +119,12 @@ namespace NzFaceLessManMod
                         // 在左上角输出内容
                         Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);
                         this.parent.ResetCooldown();
+#if DEBUG
+                        Log.Message("flm: no select option");
+#endif                        
                     }
 #if DEBUG
-                    Log.Message("flm: no select option");
+                    this.parent.ResetCooldown();
 #endif
 
                 }
@@ -115,13 +142,13 @@ namespace NzFaceLessManMod
 
             target.genes.xenotypeName = xenotype.label;
             target.genes.iconDef = Utils.GetXenotypeIcon(xenotype);
-            
+
 
             // 设置新基因
             AddNewGenes(target, xenotype);
             // 设置异种基因
             target.genes.SetXenotype(xenotype);
-            
+
 
             // 添加基因不稳定hediff
             target.health.AddHediff(XmlDefs.Flm_GeneticInstability);
@@ -141,18 +168,18 @@ namespace NzFaceLessManMod
 
         /// <summary>
         /// 移除旧基因
-        /// 根据xenoType的内源性移除谱系/异种基因
         /// </summary>
-        public static void CleanOldGenes(Pawn target, XenotypeDef xenotype)
+        /// <param name="target"></param>
+        /// <param name="isEndotype"></param>
+        public static void CleanOldGenes(Pawn target, bool isEndotype)
         {
-            // 获取谱系基因/异种基因flag
-            bool isEndotype = xenotype.inheritable;
-            if (isEndotype) // 根据flag移除谱系/异种基因
+            if (isEndotype)
             {
                 for (int num = target.genes.Endogenes.Count - 1; num >= 0; num--)
                 {
                     target.genes.RemoveGene(target.genes.Endogenes[num]);
                 }
+                target.genes.SetXenotype(XenotypeDefOf.Baseliner);
             }
             else
             {
@@ -160,7 +187,20 @@ namespace NzFaceLessManMod
                 {
                     target.genes.RemoveGene(target.genes.Xenogenes[num]);
                 }
+                target.genes.xenotypeName = XenotypeDefOf.Baseliner.label.Translate();
+                target.genes.iconDef = Utils.GetXenotypeIcon(XenotypeDefOf.Baseliner);
             }
+        }
+
+        /// <summary>
+        /// 移除旧基因
+        /// 根据xenoType的内源性移除谱系/异种基因
+        /// </summary>
+        public static void CleanOldGenes(Pawn target, XenotypeDef xenotype)
+        {
+            // 获取谱系基因/异种基因flag
+            bool isEndotype = xenotype.inheritable;
+            CleanOldGenes(target, isEndotype);
         }
 
         /// <summary>
