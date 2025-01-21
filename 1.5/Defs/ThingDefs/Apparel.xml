@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>Flm_Apparel_Duster</defName>
+        <!-- 无面人风衣 -->
+        <label>facerlessman duster</label>
+        <!-- 不知道是由于什么原因，似乎无面人非常喜欢风衣，以至于他们改造了传统的风衣，在内衬中加入了装甲，使得这件看上去和普通大衣没什么区别的衣服，实际上防护力相当出众 -->
+        <description>A duster that has been modified by the facelessmen, adding armor to the duster, making this seemingly ordinary coat quite protective. </description>
+        <possessionCount>1</possessionCount>
+        <recipeMaker>
+            <researchPrerequisite>FlakArmor</researchPrerequisite>
+            <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+            <displayPriority>215</displayPriority>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.05</drawSize>
+        </graphicData>
+        <costStuffCount>80</costStuffCount>
+        <stuffCategories>
+            <li>Fabric</li>
+            <li>Leathery</li>
+        </stuffCategories>
+        <costList>
+            <Steel>60</Steel>
+            <Plasteel>10</Plasteel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <thingCategories>
+            <li>ApparelMisc</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToMake>14000</WorkToMake>
+            <Mass>5</Mass>
+            <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.56</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.37</ArmorRating_Heat>
+            <StuffEffectMultiplierArmor>0.4</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.70</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.80</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <MoveSpeed>-0.08</MoveSpeed>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Neck</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+            </layers>
+            <tags>
+                <li>IndustrialAdvanced</li>
+                <li>Royal</li>
+                <li>RoyalTier2</li>
+                <li>RoyalTier5</li>
+            </tags>
+            <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+        </apparel>
+        <colorGenerator Class="ColorGenerator_Options">
+            <options>
+                <li>
+                    <weight>10</weight>
+                    <only>(0.33,0.33,0.33)</only>
+                </li>
+                <li>
+                    <weight>10</weight>
+                    <only>(0.65,0.65,0.65)</only>
+                </li>
+                <li>
+                    <weight>30</weight>
+                    <only>(0.4,0.3,0.15)</only>
+                </li>
+                <li>
+                    <weight>6</weight>
+                    <min>(0.3,0.3,0.3)</min>
+                    <max>(0.5,0.5,0.5)</max>
+                </li>
+                <li>
+                    <weight>2</weight>
+                    <min>(0.5,0.5,0.5)</min>
+                    <max>(1,1,1)</max>
+                </li>
+            </options>
+        </colorGenerator>
+        <tradeTags>
+            <li>BasicClothing</li>
+        </tradeTags>
+    </ThingDef>
+</Defs>
