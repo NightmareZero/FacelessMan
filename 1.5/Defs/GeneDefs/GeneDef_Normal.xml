@@ -27,10 +27,48 @@
 			</li>
 		</forcedTraits>
 		<exclusionTags>
-			<li>Strong</li>		
-		</exclusionTags>		
+			<li>Strong</li>
+		</exclusionTags>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-3</biostatMet>
 
+	</GeneDef>
+	<GeneDef>
+		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
+		<defName>Nzflm_FemaleOnly</defName>
+		<label>female only</label>
+		<displayCategory>Healing</displayCategory>
+		<!-- 携带这一基因的人通常仅有女性 -->
+		<description>Carriers of this gene are usually female.</description>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<iconPath>UI/Icons/Genes/Female</iconPath>
+		<exclusionTags>
+			<li>Nzflm_MaleOnly</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="NzFaceLessManMod.GeneModExt">
+				<forceFemale>true</forceFemale>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef>
+		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
+		<defName>Nzflm_MaleOnly</defName>
+		<label>male only</label>
+		<displayCategory>Healing</displayCategory>
+		<!-- 携带这一基因的人通常仅有男性 -->
+		<description>Carriers of this gene are usually male.</description>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<iconPath>UI/Icons/Genes/Male</iconPath>
+		<exclusionTags>
+			<li>Nzflm_FemaleOnly</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="NzFaceLessManMod.GeneModExt">
+				<forceMale>true</forceMale>
+			</li>
+		</modExtensions>
 	</GeneDef>
 </Defs>
