@@ -179,17 +179,19 @@ namespace NzFaceLessManMod
                 {
                     target.genes.RemoveGene(target.genes.Endogenes[num]);
                 }
-                target.genes.SetXenotype(XenotypeDefOf.Baseliner);
             }
             else
             {
                 for (int num = target.genes.Xenogenes.Count - 1; num >= 0; num--)
                 {
                     target.genes.RemoveGene(target.genes.Xenogenes[num]);
-                }
-                target.genes.xenotypeName = XenotypeDefOf.Baseliner.label.Translate();
-                target.genes.iconDef = Utils.GetXenotypeIcon(XenotypeDefOf.Baseliner);
+                }   
             }
+
+            if (target.genes.Xenogenes.Count == 0 && target.genes.Endogenes.Count == 0)
+                {
+                    target.genes.SetXenotype(XenotypeDefOf.Baseliner);
+                }
         }
 
         /// <summary>
