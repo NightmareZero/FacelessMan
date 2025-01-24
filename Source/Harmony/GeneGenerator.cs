@@ -18,15 +18,17 @@ using HarmonyLib;
 namespace NzFaceLessManMod
 {
 
-
-
     [HarmonyPatch(typeof(GeneDefGenerator))]
     [HarmonyPatch(nameof(GeneDefGenerator.ImpliedGeneDefs))]
     public static class FaceLessMan_GeneDefGenerator_ImpliedGeneDefs_Patch
     {
+        public static List<XenotypeDef> AvaliableXenotypeDef;
         [HarmonyPostfix]
         public static IEnumerable<GeneDef> Postfix(IEnumerable<GeneDef> values)
         {
+            #if DEBUG
+            Log.Message("flm: GeneDefGenerator.ImpliedGeneDefs Postfix");
+            #endif
             List<GeneDef> genes = values.ToList();
 
             try
@@ -34,10 +36,10 @@ namespace NzFaceLessManMod
                 // 从xml中获取template
                 XenoGeneTemplateDef template = XmlDefs.xenoGeneTemplateDef;
 
-                GlobalValues.AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
+                AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
                 && element.defName != "AG_RandomCustom").ToList();
 
-                GlobalValues.AvaliableXenotypeDef.ForEach(xeno =>
+                AvaliableXenotypeDef.ForEach(xeno =>
                 {
                     // 如果不是无面人异种，则生成一个对应基因包
                     if (xeno.defName != XmlDefs.Flm_FacelessMan.defName)
@@ -51,7 +53,7 @@ namespace NzFaceLessManMod
                         {
                             GeneXenoModExtension modExt = new GeneXenoModExtension
                             {
-                                containXeno = GlobalValues.AvaliableXenotypeDef.ToDictionary(x => x.defName, x => x)
+                                containXeno = AvaliableXenotypeDef.ToDictionary(x => x.defName, x => x)
                             };
                             // 如果没有modExtensions则创建一个
                             if (gene.modExtensions == null)

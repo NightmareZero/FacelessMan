@@ -51,3 +51,6 @@ mod内容：
 
 这个Mod的英文部分都是机翻的，如果有人愿意对其中的错误和疏漏进行修正，可以私信我或者直接去Github提交
 另外除了封面是Ai生成的，其他的基本用的都是Rimworld自带的图标，如果有人觉得太丑，也可以去Github提交，我可以添加你为Mod的合作者
+
+其他：
+我从VanillaRacesExpanded-Lycanthrope和VanillaRacesExpanded-Insector里面抄了少量关于HarmonyPatch相关的代码(并根据我的需求进行了删改)，如果涉及到侵权什么的，请告知我

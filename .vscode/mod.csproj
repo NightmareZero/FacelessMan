@@ -9,6 +9,7 @@
 		<AssemblyName>NzFaceLessMan</AssemblyName>
 		<OutputPath>../1.5/Assemblies</OutputPath>
 		<VersionPrefix>0.1.0.0</VersionPrefix>
+		<LangVersion>9.0</LangVersion>
 
 
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

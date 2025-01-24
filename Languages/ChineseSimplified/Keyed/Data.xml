@@ -6,4 +6,6 @@
     <nzflm.no_endotype_selected>内源类型未选择</nzflm.no_endotype_selected>
     <nzflm.remove_endotype>移除系谱基因</nzflm.remove_endotype>
     <nzflm.remove_xenotype>移除异种基因</nzflm.remove_xenotype>
+    <nzflm.evolutionGene>基因表达</nzflm.evolutionGene>
+    <nzflm.evolutionGeneDesc>这些从动物、虫族、实验室中获取的基因性状，已经整合进了无面人的基因中，你可以从中选择一些来表达</nzflm.evolutionGeneDesc>
 </LanguageData>

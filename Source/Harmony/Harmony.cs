@@ -17,15 +17,26 @@ namespace NzFaceLessManMod
 
         public FacelessManMod(ModContentPack content) : base(content)
         {
+            #if DEBUG
+            Log.Message("FacelessManMod: loaded");
+            #endif
             var harmony = new Harmony("nightz.facelessman");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Log.Message("FacelessManMod loaded");
         }
     }
 
     [StaticConstructorOnStartup]
-    public static class GlobalValues
+    public static class Main
     {
-        public static List<XenotypeDef> AvaliableXenotypeDef;
+        static Main()
+        {
+            Log.Message("FacelessManMod: StaticConstructorOnStartup");
+            // var harmony = new Harmony("nightz.facelessman");
+            // harmony.PatchAll(Assembly.GetExecutingAssembly());
+            // #if DEBUG
+            // Log.Message("FacelessManMod loaded");
+            // #endif
+        }
     }
+
 }

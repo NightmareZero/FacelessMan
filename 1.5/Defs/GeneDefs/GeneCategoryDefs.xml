@@ -4,5 +4,11 @@
     <defName>Nzflm_GeneCategory</defName>
     <label>facelessman</label>
     <displayPriorityInXenotype>501</displayPriorityInXenotype>
-  </GeneCategoryDef>  
+  </GeneCategoryDef>
+
+  <GeneCategoryDef>
+    <defName>Nzflm_GeneEvolution</defName>
+    <label>facelessman gene evolutions</label>
+    <displayPriorityInXenotype>502</displayPriorityInXenotype>
+  </GeneCategoryDef>
 </Defs>
