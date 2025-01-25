@@ -22,6 +22,17 @@ namespace NzFaceLessManMod
             return base.GetPreCastActions();
         }
 
+        public override bool GizmoDisabled(out string reason)
+        {
+            reason = "";
+            if (parent.pawn.health.hediffSet.GetFirstHediffOfDef(XmlDefs.Flm_GeneticInstability) != null)
+            {
+                reason = XmlDefs.Flm_GeneticInstability.label;
+                return true;
+            }
+            return false;
+        }
+
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
         {
             base.Apply(target, dest);
@@ -34,7 +45,7 @@ namespace NzFaceLessManMod
                 Log.Message("targetPawn is null");
                 return;
             }
-            
+
             if (customXenotype == null)
             {
                 Messages.Message("nzflm.no_xenotype_selected".Translate(), MessageTypeDefOf.RejectInput);

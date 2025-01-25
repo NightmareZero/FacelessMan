@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <HediffDef>
+        <defName>Flm_Evolution</defName>
+        <!-- 进化 -->
+        <label>evolution</label>
+        <!-- 随着时间积累，身体会逐渐适应，并允许表达更多的基因 -->
+        <description>As time accumulates, the body will gradually adapt and allow the expression of more genes.</description>
+        <hediffClass>NzFaceLessManMod.Evolution</hediffClass>
+        <initialSeverity>0.001</initialSeverity>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <!-- <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>0.1</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages> -->
+        <comps>
+            <!-- <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>120000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li> -->
+        </comps>
+    </HediffDef>
+</Defs>

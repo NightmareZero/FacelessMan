@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <GeneDef>
+	<GeneDef>
 		<defName>Flm_GermlineReimplanter</defName>
 		<label>genepack reimplanter</label>
 		<labelShortAdj>reimplanter</labelShortAdj>
 		<description>Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ. </description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath> -->
 		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
-
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<abilities>
 			<li>NzFlm_ReimplantXenogerm</li>
@@ -18,14 +17,14 @@
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>-2</biostatMet>
 	</GeneDef>
-    <GeneDef>
+	<GeneDef>
 		<defName>Flm_Morphs</defName>
 		<label>xenotpye morphing</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene can choose one of their gene pack to instead of their xenotype gene</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
-        <abilities>
+		<abilities>
 			<li>Flm_Morphing</li>
 		</abilities>
 		<displayOrderInCategory>1000</displayOrderInCategory>
@@ -35,14 +34,14 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 	</GeneDef>
-    <GeneDef>
+	<GeneDef>
 		<defName>Flm_MorphsE</defName>
 		<label>endotpye morphing</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene can choose one of their gene pack to instead of their inheritable gene, it only works on inheritable gene pack.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
-        <abilities>
+		<abilities>
 			<li>Flm_MorphingE</li>
 		</abilities>
 		<displayOrderInCategory>1000</displayOrderInCategory>
@@ -51,9 +50,10 @@
 		</exclusionTags>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
-	</GeneDef>	
+	</GeneDef>
 	<GeneDef>
 		<defName>Flm_GeneMaster</defName>
+		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
 		<label>gene master</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene have all xenotype genes available within their body. and they won't be weakened by genetic recombination.</description>
@@ -64,11 +64,17 @@
 			<li>Flm_Evolve</li>
 		</abilities>
 		<exclusionTags>
-			<li>Flm_GeneMaster</li>		
+			<li>Flm_GeneMaster</li>
 		</exclusionTags>
 		<biostatCpx>9</biostatCpx>
 		<biostatMet>6</biostatMet>
 		<biostatArc>3</biostatArc>
+		<modExtensions>
+			<li Class="NzFaceLessManMod.GeneModExt">
+				<hediffDef>Flm_Evolution</hediffDef>
+				<hediffRemove>false</hediffRemove>
+			</li>
+		</modExtensions>
 	</GeneDef>
 	<GeneDef>
 		<defName>Flm_FleshMaster</defName>

@@ -8,4 +8,7 @@
     <nzflm.remove_xenotype>移除异种基因</nzflm.remove_xenotype>
     <nzflm.evolutionGene>基因表达</nzflm.evolutionGene>
     <nzflm.evolutionGeneDesc>这些从动物、虫族、实验室中获取的基因性状，已经整合进了无面人的基因中，你可以从中选择一些来表达</nzflm.evolutionGeneDesc>
+
+    <nzflm.evolution_button_label>基因选择</nzflm.evolution_button_label>
+    <nzflm.evolution_button_desc>选择你想要表达的基因</nzflm.evolution_button_desc>
 </LanguageData>

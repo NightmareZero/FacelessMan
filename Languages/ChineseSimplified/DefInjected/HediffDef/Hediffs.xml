@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
     <Flm_GeneticInstability.label>基因不稳定</Flm_GeneticInstability.label>
-    <Flm_GeneticInstability.description>这个人体内植入了一些基因。这些基因需要时间来融入宿主，并修改全身各种组织的基因和化学物质。在这段时间内，这个人无法安全地醒来，所以基因让他们陷入昏迷。\n\n这种昏迷的持续时间可以通过植入更好的医疗设施和更有技术的医生来减少。</Flm_GeneticInstability.description>
+    <Flm_GeneticInstability.description>这个人体内基因发生了变化。这些基因需要时间来融入宿主，并修改全身各种组织的基因和化学物质。在这段时间内，这个人会十分虚弱。</Flm_GeneticInstability.description>
     
     <Flm_GeneLossDizzy.label>基因丢失眩晕</Flm_GeneLossDizzy.label>
     <Flm_GeneLossDizzy.description>这个人的基因最近被移除或排出。这使得这个人的新陈代谢和激素不稳定，暂时使他们虚弱和昏昏欲睡，免疫系统也变得虚弱。</Flm_GeneLossDizzy.description>

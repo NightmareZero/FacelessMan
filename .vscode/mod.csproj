@@ -42,6 +42,7 @@
 		<Compile Include="../Source/Abilities/*" />
 		<Compile Include="../Source/ModExtension/*" />
 		<Compile Include="../Source/Genes/*" />
+		<Compile Include="../Source/Hediffs/*" />
 		<Compile Include="../Source/UI/*" />
 
 		<!-- Rimworld -->

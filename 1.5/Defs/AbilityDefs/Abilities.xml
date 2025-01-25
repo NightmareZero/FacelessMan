@@ -117,7 +117,7 @@
 	<AbilityDef>
 		<defName>Flm_Evolve</defName>
 		<label>embrace evolution</label>
-		<cooldownTicksRange>120000</cooldownTicksRange>
+		<!-- <cooldownTicksRange>120000</cooldownTicksRange> -->
 		<description>Customize an xenotype and inject it into the target, but even the mighty gene master will become weakened.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
