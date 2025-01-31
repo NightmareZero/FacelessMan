@@ -1,7 +1,10 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
 using Verse;
+
 
 namespace NzFaceLessManMod
 {
@@ -29,6 +32,30 @@ namespace NzFaceLessManMod
 
 
             return geneXenotypes;
+        }
+
+         public static List<EvolutionGeneDef> cachedAllCanChooseEvolutionGene = null;
+
+        public static List<EvolutionGeneDef> AllCanChooseEvolutionGene
+        {
+            get
+            {
+                if (cachedAllCanChooseEvolutionGene == null)
+                {
+                    cachedAllCanChooseEvolutionGene = new List<EvolutionGeneDef>();
+
+
+                    List<EvolutionGeneDef> genelinegenes = DefDatabase<EvolutionGeneDef>.AllDefs.Where(x => !x.cannotBeChosen).ToList();
+
+
+                    foreach (var allDef in genelinegenes)
+                    {
+                        cachedAllCanChooseEvolutionGene.Add(allDef);
+                    }
+                    cachedAllCanChooseEvolutionGene.SortBy((EvolutionGeneDef x) => 0f - x.displayCategory.displayPriorityInXenotype, (EvolutionGeneDef x) => x.displayCategory.label, (EvolutionGeneDef x) => x.displayOrderInCategory);
+                }
+                return cachedAllCanChooseEvolutionGene;
+            }
         }
 
 
@@ -94,7 +121,7 @@ namespace NzFaceLessManMod
         /// <summary>
         /// 判断一个基因是否为本mod创建的 "异种类型携带者"基因
         /// </summary>
-        public static Dictionary<String, XenotypeDef> getGeneXenotype(GeneDef geneDef)
+        public static Dictionary<string, XenotypeDef> getGeneXenotype(GeneDef geneDef)
         {
             var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
 

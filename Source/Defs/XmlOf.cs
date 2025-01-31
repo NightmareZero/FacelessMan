@@ -31,6 +31,8 @@ namespace NzFaceLessManMod
         // 变身技能(异种)
         public static AbilityDef Flm_Morphing;
 
+        public static HediffDef Flm_Evolution;
+
 
         static XmlDefs()
         {

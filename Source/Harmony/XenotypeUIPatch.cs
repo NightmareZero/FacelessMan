@@ -28,25 +28,34 @@ namespace NzFaceLessManMod
 
         public static List<Gene> flmEvGenes = new List<Gene>();
         [HarmonyPrefix]
-        public static void Prefix(List<Gene> ___xenogenes, bool xeno, ref int count)
+        public static void Prefix(List<Gene> ___xenogenes, List<Gene> ___endogenes, bool xeno, ref int count)
         {
             // #if DEBUG
             // Log.Message("flm: GeneUIUtility.DrawSection Prefix");
             // #endif
             if (xeno)
             {
-                flmEvGenes = ___xenogenes.Where(x => x.def is EvolutionGeneDef).ToList();
+                var flmEvGenesX = ___xenogenes.Where(x => x.def is EvolutionGeneDef).ToList();
 
-                if (flmEvGenes.Any())
+                if (flmEvGenesX.Any())
                 {
                     ___xenogenes.RemoveAll(x => x.def is EvolutionGeneDef);
                     count = ___xenogenes.Count;
                 }
 
+                flmEvGenes.AddRange(flmEvGenesX);
+            } else
+            {
+                flmEvGenes = ___endogenes.Where(x => x.def is EvolutionGeneDef).ToList();
+                if (flmEvGenes.Any())
+                {
+                    ___endogenes.RemoveAll(x => x.def is EvolutionGeneDef);
+                    count = ___endogenes.Count;
+                }
             }
         }
         [HarmonyPostfix]
-        public static void Postfix(Rect rect, bool xeno, ref float curY, Rect containingRect, ref float ___xenogenesHeight)
+        public static void Postfix(Rect rect, bool xeno, ref float curY, Rect containingRect, ref float ___xenogenesHeight, ref float ___endogenesHeight)
         {
             if (xeno && flmEvGenes.Any())
             {
@@ -54,7 +63,14 @@ namespace NzFaceLessManMod
                 {
                     GeneUIUtility.DrawGene(flmEvGenes[i], r, GeneType.Xenogene);
                 }, containingRect);
-            }
+            } 
+            // else if (!xeno && flmEvGenes.Any())
+            // {
+            //     DrawSection(rect, flmEvGenes.Count, ref curY, ref ___endogenesHeight, delegate (int i, Rect r)
+            //     {
+            //         GeneUIUtility.DrawGene(flmEvGenes[i], r, GeneType.Endogene);
+            //     }, containingRect);
+            // }
         }
 
 

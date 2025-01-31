@@ -11,4 +11,8 @@
 
     <nzflm.evolution_button_label>基因选择</nzflm.evolution_button_label>
     <nzflm.evolution_button_desc>选择你想要表达的基因</nzflm.evolution_button_desc>
+
+    <!-- 进化相关 -->
+    <nzflm.evolution_point_overflows>进化点使用溢出</nzflm.evolution_point_overflows>
+    <nzflm.evolution_not_applicable>不可用: {0}</nzflm.evolution_not_applicable>
 </LanguageData>

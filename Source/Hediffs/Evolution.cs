@@ -23,7 +23,7 @@ namespace NzFaceLessManMod
         {
             if (pawn.IsColonistPlayerControlled)
             {
-                
+
                 var manageEvolution = new Command_Action
                 {
                     defaultLabel = "nzflm.evolution_button_label".Translate(),
@@ -31,6 +31,10 @@ namespace NzFaceLessManMod
                     icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
                     action = () =>
                     {
+                        Find.WindowStack.Add(new Dialog_EditEvolution(pawn, delegate
+                        {
+                            // GameComponent_Genelines.Instance.AddGeneline(newGeneline);
+                        }));
                         // var options = new List<FloatMenuOption>();
                         // foreach (var allGeneline in GameComponent_Genelines.Instance.genelines.Where(x => x != geneline))
                         // {
@@ -60,6 +64,15 @@ namespace NzFaceLessManMod
             Scribe_Values.Look(ref evolutionLimit, "evolutionLimit");
             Scribe_Values.Look(ref evolution, "evolution");
             Scribe_Collections.Look(ref evolutions, "evolutions", LookMode.Def);
+        }
+
+        public override void PostMake()
+        {
+            base.PostMake();
+            if (this.evolutionLimit == 0)
+            {
+                this.evolutionLimit = 3;
+            }
         }
     }
 }
