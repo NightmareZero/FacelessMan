@@ -2,4 +2,7 @@
 <LanguageData>
     <nzflm.remove_endotype>clean endogenous genes</nzflm.remove_endotype>
     <nzflm.remove_xenotype>cull xenotype genes</nzflm.remove_xenotype>
+
+    <!-- 选择要表达的基因性状组合 -->
+    <nzflm.evolution_edit_topic>select gene to express</nzflm.evolution_edit_topic>
 </LanguageData>

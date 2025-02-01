@@ -15,4 +15,5 @@
     <!-- 进化相关 -->
     <nzflm.evolution_point_overflows>进化点使用溢出</nzflm.evolution_point_overflows>
     <nzflm.evolution_not_applicable>不可用: {0}</nzflm.evolution_not_applicable>
+    <nzflm.evolution_edit_topic>选择要表达的性状组合</nzflm.evolution_edit_topic>
 </LanguageData>

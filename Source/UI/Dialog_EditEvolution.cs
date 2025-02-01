@@ -87,7 +87,7 @@ namespace NzFaceLessManMod
             Rect rect3 = new Rect(rect2.x, rect2.y, rect2.width, 35f);
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.UpperLeft;
-            Widgets.Label(rect3, "VRE_EditGeneline");
+            Widgets.Label(rect3, "nzflm.evolution_edit_topic".Translate());
             Text.Font = GameFont.Small;
             float num3 = Text.LineHeight * 3f;
             rect2.y += 10;
