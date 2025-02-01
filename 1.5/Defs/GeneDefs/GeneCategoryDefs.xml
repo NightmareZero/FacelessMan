@@ -2,13 +2,13 @@
 <Defs>
   <GeneCategoryDef>
     <defName>Nzflm_GeneCategory</defName>
-    <label>facelessman</label>
+    <label>Facelessman</label>
     <displayPriorityInXenotype>501</displayPriorityInXenotype>
   </GeneCategoryDef>
 
   <GeneCategoryDef>
     <defName>Nzflm_GeneEvolution</defName>
-    <label>facelessman gene evolutions</label>
+    <label>Facelessman Gene Expression</label>
     <displayPriorityInXenotype>502</displayPriorityInXenotype>
   </GeneCategoryDef>
 </Defs>

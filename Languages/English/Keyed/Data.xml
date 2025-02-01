@@ -5,4 +5,7 @@
 
     <!-- 选择要表达的基因性状组合 -->
     <nzflm.evolution_edit_topic>select gene to express</nzflm.evolution_edit_topic>
+
+    <nzflm.evolution_stat_name>tolerance</nzflm.evolution_stat_name>
+    <nzflm.evolution_stat_desc>Although these genes have been integrated into your body, your body can only tolerate a part of them temporarily\n(As time goes on and other factors, your body may adapt to more genes)</nzflm.evolution_stat_desc>
 </LanguageData>

@@ -107,17 +107,6 @@ namespace NzFaceLessManMod
         //     return "VRE_GenelineName".Translate(letter);
         // }
 
-        static string GetLetter(int size)
-        {
-            string result = string.Empty;
-            while (--size >= 0)
-            {
-                result = (char)('A' + size % 26) + result;
-                size /= 26;
-            }
-            return result;
-        }
-
         public void Accept()
         {
             applyEvolutionToPawn(pawn, evolutionHediff);

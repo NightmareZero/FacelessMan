@@ -30,7 +30,7 @@ namespace NzFaceLessManMod
 
         public static readonly CachedTexture EvolutionTex = new CachedTexture("UI/Icons/Abilities/ViewGenes");
 
-        private static readonly IconConf iconConf = new IconConf("VRE_Evolutions", "VRE_EvolutionsDesc", EvolutionTex.Texture);
+        private static readonly IconConf iconConf = new IconConf("nzflm.evolution_stat_name", "nzflm.evolution_stat_desc", EvolutionTex.Texture);
 
         private static Dictionary<string, string> truncateCache = new Dictionary<string, string>();
         private static float MaxLabelWidth()
