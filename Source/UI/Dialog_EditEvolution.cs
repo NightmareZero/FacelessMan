@@ -66,8 +66,8 @@ namespace NzFaceLessManMod
 
         private List<EvolutionGeneDef> getSelectedGenesFromPawn(Evolution evolution)
         {
-            // TODO
-            return selectedGenes;
+            
+            return evolution.evolutions.ToList();
         }
 
         private Evolution getEvolutionHediff(Pawn pawn)
@@ -77,7 +77,30 @@ namespace NzFaceLessManMod
 
         private void applyEvolutionToPawn(Pawn pawn, Evolution evolution)
         {
-            // TODO
+            // 先进行保存
+            evolution.evolutions = selectedGenes.ToList();
+            var cache = selectedGenes.ToList();
+            
+            // 比对差异，进行修改
+            pawn.genes.GenesListForReading.ForEach(x =>
+            {
+                // 删除所有不在selectedGenes的进化基因
+                if (x.def is EvolutionGeneDef gene)
+                {
+                    if (!selectedGenes.Contains(gene))
+                    {
+                        pawn.genes.RemoveGene(x);
+                        cache.Remove(gene);
+                    }
+                }
+            });
+            // 添加所有在selectedGenes的进化基因
+            foreach (var gene in cache)
+            {
+                pawn.genes.AddGene(gene,false);
+            }
+          
+            
         }
 
         public override void DoWindowContents(Rect rect)
