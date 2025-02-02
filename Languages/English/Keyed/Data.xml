@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+    <nzflm.category_facelessman>FacelessMan</nzflm.category_facelessman>
+    <nzflm.no_xenotype>no xenotype</nzflm.no_xenotype>
+    <nzflm.no_xenotype_selected>no xenotype selected</nzflm.no_xenotype_selected>
+    <nzflm.no_endotype_selected>no endogenous selected</nzflm.no_endotype_selected>
     <nzflm.remove_endotype>clean endogenous genes</nzflm.remove_endotype>
     <nzflm.remove_xenotype>cull xenotype genes</nzflm.remove_xenotype>
 
+    <nzflm.evolutionGene>express gene</nzflm.evolutionGene>
+    <nzflm.evolutionGeneDesc>These genetic traits obtained from animals, insects, and laboratories have been integrated into the genes of the faceless people. You can choose some of them to express.</nzflm.evolutionGeneDesc>
+
     <!-- 选择要表达的基因性状组合 -->
+    <nzflm.evolution_button_label>express gene</nzflm.evolution_button_label>
+    <nzflm.evolution_button_desc>select gene to express</nzflm.evolution_button_desc>
+
+    <nzflm.evolution_point_overflows>evolution points overflow</nzflm.evolution_point_overflows>
+    <nzflm.evolution_not_applicable>not applicable: {0}</nzflm.evolution_not_applicable>
     <nzflm.evolution_edit_topic>select gene to express</nzflm.evolution_edit_topic>
 
     <nzflm.evolution_stat_name>tolerance</nzflm.evolution_stat_name>
     <nzflm.evolution_stat_desc>Although these genes have been integrated into your body, your body can only tolerate a part of them temporarily\n(As time goes on and other factors, your body may adapt to more genes)</nzflm.evolution_stat_desc>
+    <nzflm.evolution_start_button>start mutation</nzflm.evolution_start_button>
 </LanguageData>

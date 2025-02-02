@@ -124,12 +124,6 @@ namespace NzFaceLessManMod
             DoBottomButtons(bottomAreaRect);
         }
 
-        // private string GetGenelineName()
-        // {
-        //     var letter = GetLetter(geneline.id);
-        //     return "VRE_GenelineName".Translate(letter);
-        // }
-
         public void Accept()
         {
             applyEvolutionToPawn(pawn, evolutionHediff);
@@ -480,7 +474,7 @@ namespace NzFaceLessManMod
             var saveGenelineRect = new Rect(textInputRect.xMax + 10, textInputRect.y, 150, 32);
             var cannotReasonRect = new Rect(saveGenelineRect.xMax + 10, rect.y,
                 rect.width - (textInputRect.width + saveGenelineRect.width + 20), 50);
-            if (Widgets.ButtonText(saveGenelineRect, "VRE_SaveGeneline".Translate()) && CanAccept())
+            if (Widgets.ButtonText(saveGenelineRect, "nzflm.evolution_start_button".Translate()) && CanAccept())
             {
                 Accept();
                 return;
@@ -493,18 +487,18 @@ namespace NzFaceLessManMod
                 string text = "GenesConflict".Translate() + ": " + "GenesConflictDesc".Translate(geneLeftChosenGroup.leftChosen.Named("FIRST"), geneLeftChosenGroup.overriddenGenes[0].Named("SECOND")).CapitalizeFirst() + ((num > 1) ? (" +" + (num - 1)) : string.Empty);
                 DrawCannotReason(cannotReasonRect, text);
             }
-            else if (UseEvolution != TotalEvolution)
+            else if (UseEvolution > TotalEvolution)
             {
-                DrawCannotReason(cannotReasonRect, "VRE_NeedEqualAmount".Translate());
+                DrawCannotReason(cannotReasonRect, "nzflm.evolution_point_overflows".Translate());
             }
 
             Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Tiny;
             var explanationRect = new Rect(rect.x, saveGenelineRect.yMax + 15, rect.width, 50);
             GUI.color = Color.grey;
-            Widgets.Label(explanationRect, "VRE_ChangingGenelineExplanation".Translate());
-            GUI.color = Color.white;
-            Text.Font = GameFont.Small;
+            // Widgets.Label(explanationRect, "VRE_ChangingGenelineExplanation".Translate());
+            // GUI.color = Color.white;
+            // Text.Font = GameFont.Small;
         }
 
         private static void DrawCannotReason(Rect rect, string text)
