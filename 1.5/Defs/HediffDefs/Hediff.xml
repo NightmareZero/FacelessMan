@@ -12,19 +12,19 @@
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <setMax>0.5</setMax>
+                        <setMax>0.9</setMax>
                     </li>
                     <li>
                         <capacity>Metabolism</capacity>
-                        <setMax>0.5</setMax>
+                        <setMax>0.7</setMax>
                     </li>
                     <li>
                         <capacity>BloodPumping</capacity>
-                        <setMax>0.5</setMax>
+                        <setMax>0.7</setMax>
                     </li>
                     <li>
                         <capacity>BloodFiltration</capacity>
-                        <setMax>0.5</setMax>
+                        <setMax>0.7</setMax>
                     </li>
                 </capMods>
             </li>
@@ -52,7 +52,7 @@
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
-                        <offset>-0.3</offset>
+                        <offset>-0.2</offset>
                     </li>
                     <li>
                         <capacity>BloodFiltration</capacity>
