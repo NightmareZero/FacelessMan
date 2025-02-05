@@ -3,7 +3,7 @@
     <HediffDef>
         <defName>Flm_GeneticInstability</defName>
         <label>genetic instability</label>
-        <description>The genes in this person's body have undergone changes. These genes need time to integrate into the host and modify the genes and chemicals of various tissues throughout the body. During this period, this person will be very weak. </description>
+        <description>The genes in this person's body have undergone changes. These genes need time to integrate into the host and modify the genes and chemicals of various tissues throughout the body. During this period, this person will be very weak.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <initialSeverity>0.001</initialSeverity>
         <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
