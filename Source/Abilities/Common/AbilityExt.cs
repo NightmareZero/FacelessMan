@@ -9,6 +9,17 @@ namespace NzFaceLessManMod
 {
     public class AbilityExt : Ability
     {
+
+        public virtual void BeforeStartCooldown(int ticks)
+        {
+        }
+
+        public virtual void BeforeNotify_GroupStartedCooldown(AbilityGroupDef group, int ticks)
+        {
+        }
+
+
+
         public AbilityExt() : base()
         {
         }

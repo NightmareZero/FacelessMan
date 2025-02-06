@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 变色龙皮肤 -->
+    <!-- TODO 修改原版隐形 -->
+    <AbilityDef ParentName="PsycastBase">
+        <defName>NzFlm_ChameleonSkin</defName>
+        <label>chameleon skin</label>
+        <!-- TODO -->
+        <description>Psychically manipulate the visual centers of everyone nearby, rendering them unable to perceive a particular individual for a short time.</description>
+        <!-- <level>5</level> -->
+        <!-- TODO -->
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <hotKey>Misc12</hotKey>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>45</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.03</Ability_PsyfocusCost>
+            <Ability_Duration>15</Ability_Duration>
+        </statBases>
+        <verbProperties>
+        <warmupTime>1</warmupTime>
+        <range>19.9</range>
+        <onlyManualCast>True</onlyManualCast>
+        <targetParams>
+            <canTargetSelf>True</canTargetSelf>
+            <canTargetAnimals>True</canTargetAnimals>
+        </targetParams>
+        </verbProperties>
+        <comps>
+        <li Class = "CompProperties_AbilityGiveHediff">
+            <compClass>CompAbilityEffect_GiveHediff</compClass>
+            <hediffDef>PsychicInvisibility</hediffDef>
+            <psychic>True</psychic>
+        </li>
+        <li Class="CompProperties_AbilityFleckOnTarget">
+            <fleckDef>PsycastPsychicEffect</fleckDef>
+        </li>
+        </comps>
+     </AbilityDef>
+
+</Defs>
