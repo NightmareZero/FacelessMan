@@ -51,7 +51,7 @@ namespace NzFaceLessManMod
                         // 如果是超级载体则设置为包含所有基因
                         if (gene.defName == XmlDefs.Flm_GeneMaster.defName)
                         {
-                            GeneXenoModExtension modExt = new GeneXenoModExtension
+                            GeneXenoModExt modExt = new GeneXenoModExt
                             {
                                 containXeno = AvaliableXenotypeDef.ToDictionary(x => x.defName, x => x)
                             };
@@ -81,7 +81,7 @@ namespace NzFaceLessManMod
         public static GeneDef GetGenePackGeneFromXenotype(XenoGeneTemplateDef template, XenotypeDef xeno, int displayOrderBase)
         {
 
-            GeneXenoModExtension modExt = new GeneXenoModExtension
+            GeneXenoModExt modExt = new GeneXenoModExt
             {
                 xenotypeDef = xeno
             };

@@ -5,7 +5,7 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-    public class GeneModExt : DefModExtension
+    public class GeneDefExt : DefModExtension
     {
         // 强制设置性别
         public bool forceFemale = false;
@@ -16,16 +16,16 @@ namespace NzFaceLessManMod
         public bool hediffRemove = true;
 
 
-        public static void applyAddGeneModExt(GeneExt gene)
+        public static void ApplyAddGeneDefExt(GeneExt gene)
         {
-            GeneModExt geneModExt = gene.def.GetModExtension<GeneModExt>();
-            if (geneModExt == null)
+            GeneDefExt geneDefExt = gene.def.GetModExtension<GeneDefExt>();
+            if (geneDefExt == null)
             {
                 return;
             }
 
             // 处理性别
-            if (geneModExt.forceFemale)
+            if (geneDefExt.forceFemale)
             {
                 gene.pawn.gender = Gender.Female;
                 if (gene.pawn.story?.bodyType == BodyTypeDefOf.Male)
@@ -33,7 +33,7 @@ namespace NzFaceLessManMod
                     gene.pawn.story.bodyType = BodyTypeDefOf.Female;
                 }
             }
-            else if (geneModExt.forceMale)
+            else if (geneDefExt.forceMale)
             {
                 gene.pawn.gender = Gender.Male;
                 if (gene.pawn.story?.bodyType == BodyTypeDefOf.Female)
@@ -44,25 +44,25 @@ namespace NzFaceLessManMod
             }
 
             // 处理绑定状态
-            if (geneModExt.hediffDef != null)
+            if (geneDefExt.hediffDef != null)
             {
-                gene.pawn.health.AddHediff(geneModExt.hediffDef);
+                gene.pawn.health.AddHediff(geneDefExt.hediffDef);
             }
         }
 
         public static void applyRemoveGeneModExt(GeneExt gene)
         {
-            GeneModExt geneModExt = gene.def.GetModExtension<GeneModExt>();
-            if (geneModExt == null)
+            GeneDefExt geneDefExt = gene.def.GetModExtension<GeneDefExt>();
+            if (geneDefExt == null)
             {
                 return;
             }
 
             // 处理绑定状态
-            if (geneModExt.hediffDef != null)
+            if (geneDefExt.hediffDef != null)
             {
-                Hediff hediff = gene.pawn.health.hediffSet.GetFirstHediffOfDef(geneModExt.hediffDef);
-                if (hediff != null && geneModExt.hediffRemove)
+                Hediff hediff = gene.pawn.health.hediffSet.GetFirstHediffOfDef(geneDefExt.hediffDef);
+                if (hediff != null && geneDefExt.hediffRemove)
                 {
                     gene.pawn.health.RemoveHediff(hediff);
                 }

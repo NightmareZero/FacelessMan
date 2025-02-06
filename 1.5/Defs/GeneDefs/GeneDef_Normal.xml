@@ -47,7 +47,7 @@
 			<li>Nzflm_MaleOnly</li>
 		</exclusionTags>
 		<modExtensions>
-			<li Class="NzFaceLessManMod.GeneModExt">
+			<li Class="NzFaceLessManMod.GeneDefExt">
 				<forceFemale>true</forceFemale>
 			</li>
 		</modExtensions>
@@ -66,7 +66,7 @@
 			<li>Nzflm_FemaleOnly</li>
 		</exclusionTags>
 		<modExtensions>
-			<li Class="NzFaceLessManMod.GeneModExt">
+			<li Class="NzFaceLessManMod.GeneDefExt">
 				<forceMale>true</forceMale>
 			</li>
 		</modExtensions>

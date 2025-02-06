@@ -5,7 +5,7 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-    public class GeneXenoModExtension : DefModExtension
+    public class GeneXenoModExt : DefModExtension
     {
 
         public XenotypeDef xenotypeDef = null;

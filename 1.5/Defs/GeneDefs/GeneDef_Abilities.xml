@@ -70,7 +70,7 @@
 		<biostatMet>6</biostatMet>
 		<biostatArc>3</biostatArc>
 		<modExtensions>
-			<li Class="NzFaceLessManMod.GeneModExt">
+			<li Class="NzFaceLessManMod.GeneDefExt">
 				<hediffDef>Flm_Evolution</hediffDef>
 				<hediffRemove>false</hediffRemove>
 			</li>

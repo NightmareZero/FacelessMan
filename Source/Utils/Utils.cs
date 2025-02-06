@@ -113,7 +113,7 @@ namespace NzFaceLessManMod
         /// </summary>
         public static bool isGeneXenotype(GeneDef geneDef)
         {
-            var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
+            var genoXeno = geneDef.GetModExtension<GeneXenoModExt>();
 
             return genoXeno != null;
         }
@@ -123,7 +123,7 @@ namespace NzFaceLessManMod
         /// </summary>
         public static Dictionary<string, XenotypeDef> getGeneXenotype(GeneDef geneDef)
         {
-            var genoXeno = geneDef.GetModExtension<GeneXenoModExtension>();
+            var genoXeno = geneDef.GetModExtension<GeneXenoModExt>();
 
             return genoXeno.GetContainGenes();
         }

@@ -28,9 +28,9 @@ namespace NzFaceLessManMod
         public override void PostAdd()
         {
             // 调用逻辑
-            if (this.def.HasModExtension<GeneModExt>())
+            if (this.def.HasModExtension<GeneDefExt>())
             {
-                GeneModExt.applyAddGeneModExt(this);
+                GeneDefExt.ApplyAddGeneDefExt(this);
             }
 
             base.PostAdd();
