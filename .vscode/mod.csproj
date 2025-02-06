@@ -35,15 +35,16 @@
 
 	<ItemGroup>
 		<!-- Mod -->
-		<Compile Include="../Source/*" />
-		<Compile Include="../Source/Harmony/*" />
-		<Compile Include="../Source/Defs/*" />
-		<Compile Include="../Source/Utils/*" />
-		<Compile Include="../Source/Abilities/*" />
-		<Compile Include="../Source/ModExtension/*" />
-		<Compile Include="../Source/Genes/*" />
-		<Compile Include="../Source/Hediffs/*" />
-		<Compile Include="../Source/UI/*" />
+		<Compile Include="../Source/*.cs" />
+		<Compile Include="../Source/Harmony/*.cs" />
+		<Compile Include="../Source/Defs/*.cs" />
+		<Compile Include="../Source/Utils/*.cs" />
+		<Compile Include="../Source/Abilities/*.cs" />
+		<Compile Include="../Source/Abilities/Common/*.cs" />
+		<Compile Include="../Source/ModExtension/*.cs" />
+		<Compile Include="../Source/Genes/*.cs" />
+		<Compile Include="../Source/Hediffs/*.cs" />
+		<Compile Include="../Source/UI/*.cs" />
 
 		<!-- Rimworld -->
 		<Reference Include="../../../RimWorldWin64_Data/Managed/*.dll">

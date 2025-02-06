@@ -6,9 +6,45 @@
     <displayPriorityInXenotype>501</displayPriorityInXenotype>
   </GeneCategoryDef>
 
+  <!-- 通用进化 -->
   <GeneCategoryDef>
-    <defName>Nzflm_GeneEvolution</defName>
+    <defName>Nzflm_Gene_Ev_Base</defName>
     <label>Facelessman Gene Expression</label>
     <displayPriorityInXenotype>502</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 特工机关 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Spy</defName>
+    <label>spy gene</label>
+    <displayPriorityInXenotype>503</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 生物技术 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Bio</defName>
+    <label>biotechnology gene</label>
+    <displayPriorityInXenotype>504</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 虫群领主 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Insect</defName>
+    <label>insect lord gene</label>
+    <displayPriorityInXenotype>505</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 虚空技术 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Anomaly</defName>
+    <label>anomaly gene</label>
+    <displayPriorityInXenotype>506</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 灵能技术 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Psionic</defName>
+    <label>psionic gene</label>
+    <displayPriorityInXenotype>507</displayPriorityInXenotype>
   </GeneCategoryDef>
 </Defs>

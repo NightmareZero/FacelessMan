@@ -4,7 +4,7 @@
         <defName>Nzflm_Ev_ChameleonSkin</defName>
         <label>chameleon skin</label>
         <!-- 变色龙皮肤 -->
-        <displayCategory>Nzflm_GeneEvolution</displayCategory>
+        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
         <!-- 你的皮肤可以像变色龙一样根据周围的环境变色，这让你可以让自己迅速隐形 -->
         <description>Your skin can change color like a chameleon, allowing you to blend in with your surroundings and disappear quickly.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>

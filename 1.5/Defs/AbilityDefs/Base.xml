@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <AbilityDef Name="Nz_Flm_AbilityBase" Abstract="True">
+		<abilityClass>NzFaceLessManMod.AbilityExt</abilityClass>
+		<category>Nzflm_AbilityCategory</category>
+		<statBases>
+            <!-- 60秒 -->
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		<warmupSound>PsycastCastLoop</warmupSound>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<!-- <verbClass></verbClass> -->
+			<range>4.9</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+                <canTargetPawns>True</canTargetPawns>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetAnimals>False</canTargetAnimals>
+				<!-- <thingCategory>Item</thingCategory> -->
+				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+</Defs>
