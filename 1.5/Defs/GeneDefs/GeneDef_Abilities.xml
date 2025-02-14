@@ -89,6 +89,7 @@
 		</abilities>
 		<statFactors>
 			<InjuryHealingFactor>3</InjuryHealingFactor>
+			<ImmunityGainSpeed>2</ImmunityGainSpeed>
 			<IncomingDamageFactor>0.85</IncomingDamageFactor>
 		</statFactors>
 		<biostatCpx>1</biostatCpx>
