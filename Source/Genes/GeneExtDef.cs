@@ -5,11 +5,14 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-    public class GeneExtDef : GeneDef
+    public class GeneExtDef : GeneDef, IComparable<EvolutionGeneDef>
     {
         public new Type geneClass = typeof(GeneExt);
 
-        
+        public int CompareTo(EvolutionGeneDef other)
+        {
+            return this.displayOrderInCategory.CompareTo(other.displayOrderInCategory);
+        }
     }
 
     public class EvolutionGeneDef : GeneExtDef

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <!-- 变色龙皮肤 -->
     <HediffDef>
         <defName>NzFlm_He_ChameleonSkin</defName>
         <label>chameleon skin</label>
@@ -20,6 +21,91 @@
                 <statFactors>
                     <MoveSpeed>0.8</MoveSpeed>
                 </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- 干细胞耗损 -->
+    <HediffDef>
+        <defName>NzFlm_He_StemCellConsumption</defName>
+        <label>stem cell consumption</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 你使用了你的干细胞治疗了自己或者他人，现在你感觉有点虚弱 -->
+        <description>You used your stem cells to treat yourself or others, and now you feel a little weak.</description>
+        <isBad>false</isBad>
+        <initialSeverity>1.5</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-1</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <!-- 缓解 -->
+                <label>relief</label>
+                <painOffset>0.07</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <!-- 虚弱 -->
+                <label>weak</label>
+                <painOffset>0.1</painOffset>
+                <minSeverity>0.6</minSeverity>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <!-- 耗尽 -->
+                <label>exhausted</label>
+                <painOffset>0.15</painOffset>
+                <minSeverity>1.1</minSeverity>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
             </li>
         </stages>
     </HediffDef>

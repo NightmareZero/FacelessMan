@@ -20,17 +20,130 @@
             </targetParams>
         </verbProperties>
         <comps>
-        <li Class = "CompProperties_AbilityGiveHediff">
-            <compClass>CompAbilityEffect_GiveHediff</compClass>
-            <hediffDef>NzFlm_He_ChameleonSkin</hediffDef>
-            <psychic>False</psychic>
-            <!-- 3小时 -->
-            <durationSecondsOverride>125</durationSecondsOverride>
-        </li>
+            <li Class = "CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_ChameleonSkin</hediffDef>
+                <psychic>False</psychic>
+                <!-- 3小时 -->
+                <durationSecondsOverride>125</durationSecondsOverride>
+            </li>
         <!-- <li Class="CompProperties_AbilityFleckOnTarget">
             <fleckDef>PsycastPsychicEffect</fleckDef>
         </li> -->
         </comps>
      </AbilityDef>
 
+    <!-- 跳跃 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_Longjump</defName>
+        <label>longjump</label>
+        <!-- 使用你有力而富有弹性的双腿跳到远处。 -->
+        <description>Jump to a distance with your powerful and elastic legs.</description>
+        <iconPath>UI/Abilities/Longjump</iconPath>
+        <cooldownTicksRange>180</cooldownTicksRange>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityJump</verbClass>
+            <label>jump</label>
+            <violent>false</violent>
+            <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+            <warmupTime>0</warmupTime>
+            <range>19.9</range>
+            <requireLineOfSight>true</requireLineOfSight>
+            <soundCast>Longjump_Jump</soundCast>
+            <soundLanding>Longjump_Land</soundLanding>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <jobDef>CastJump</jobDef>
+        <comps>
+
+        </comps>
+    </AbilityDef>
+
+    <!-- 容貌伪装 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+		<defName>Flm_Disguise</defName>
+		<label>disguise</label>
+		<cooldownTicksRange>10000</cooldownTicksRange>
+		<description>Manipulating your flesh and blood to change the color of one's skin and
+			regenerate or lose one's hair, Disguise as a selected target.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+		<iconPath>UI/Icons/Abilities/Disguise</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<aiCanUse>false</aiCanUse>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>true</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>4</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_AbilityDisguise" />
+		</comps>
+	</AbilityDef>
+
+    <!-- 干细胞治疗 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+		<defName>NzFlm_StemCellTherapy</defName>
+		<label>stem cell therapy</label>
+		<cooldownTicksRange>60000</cooldownTicksRange>
+        <!-- 从你体内取出少量干细胞，用于治疗目标一处最严重的伤口 -->
+		<description>Take a small amount of stem cells from your body to treat the most serious wound of the target.</description>
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<category>Nzflm_AbilityCategory</category>
+		<displayOrder>500</displayOrder>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>4</warmupTime>
+			<stunTargetOnCastStart>true</stunTargetOnCastStart>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_FixWorstHealthCondition" />
+            <li Class = "CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_StemCellConsumption</hediffDef>
+                <psychic>False</psychic>
+                <!-- 3小时 -->
+                <!-- <durationSecondsOverride>125</durationSecondsOverride> -->
+                <applyToTarget>False</applyToTarget>
+                <applyToSelf>True</applyToSelf>
+            </li>
+		</comps>
+	</AbilityDef>
 </Defs>

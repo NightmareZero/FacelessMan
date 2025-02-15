@@ -84,9 +84,6 @@
 		<iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
 		<geneClass>Gene_Clotting</geneClass>
-		<abilities>
-			<li>Flm_Disguise</li>
-		</abilities>
 		<statFactors>
 			<InjuryHealingFactor>3</InjuryHealingFactor>
 			<ImmunityGainSpeed>2</ImmunityGainSpeed>

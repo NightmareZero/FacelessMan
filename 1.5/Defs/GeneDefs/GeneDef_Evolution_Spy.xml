@@ -1,17 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+    <!-- 变色龙皮肤 -->
     <NzFaceLessManMod.EvolutionGeneDef>
         <defName>Nzflm_Ev_ChameleonSkin</defName>
         <label>chameleon skin</label>
-        <!-- 变色龙皮肤 -->
-        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
         <!-- 你的皮肤可以像变色龙一样根据周围的环境变色，这让你可以让自己迅速隐形 -->
         <description>Your skin can change color like a chameleon, allowing you to blend in with your surroundings and disappear quickly.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
-        <displayOrderInCategory>1</displayOrderInCategory>
+        <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
             <li>NzFlm_ChameleonSkin</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 充能肌腱 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ChargedTendon</defName>
+        <label>charged tendon</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你改善了腿部的供血，使你的肌腱有更多的能量可以使用，让你移动更快 -->
+        <description>You have improved blood supply to your legs, giving your tendons more energy to use, allowing you to move faster.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>20</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <MoveSpeed>1.3</MoveSpeed>
+        </statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 弹性肌腱 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ElasticTendon</defName>
+        <label>elastic tendon</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你的腿部变得有力，让你可以跳跃到更远的地方 -->
+        <description>Your legs have become stronger, allowing you to jump further.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_Longjump</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 容貌伪装 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_Disguise</defName>
+        <label>disguise</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你可以改变你的容貌，让你可以迅速伪装成其他人 -->
+        <description>You can change your appearance, allowing you to quickly disguise yourself as someone else.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_Disguise</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 再生骨髓 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_RegenerativeBoneMarrow</defName>
+        <label>regenerative bone marrow</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你可以从你的骨髓中取出少量干细胞，用于治疗自己或他人 -->
+        <description>You can extract a small amount of stem cells from your bone marrow for self-treatment or treatment of others.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_StemCellTherapy</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

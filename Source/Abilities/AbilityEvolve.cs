@@ -7,7 +7,6 @@ using Verse.Sound;
 
 namespace NzFaceLessManMod
 {
-    [StaticConstructorOnStartup]
     public class CompAbilityEvolve : CompAbilityEffect
     {
 
