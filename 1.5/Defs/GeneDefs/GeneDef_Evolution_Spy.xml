@@ -10,5 +10,8 @@
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>1</displayOrderInCategory>
         <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_ChameleonSkin</li>
+        </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>
