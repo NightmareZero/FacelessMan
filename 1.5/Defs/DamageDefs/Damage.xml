@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 麻醉钉刺 -->
+    <DamageDef ParentName="Bite">
+        <defName>NzFlm_Porj_AnestheticSpike</defName>
+        <label>anesthetic spike</label>
+        <additionalHediffs>
+            <li>
+                <hediff>Anesthetic</hediff>
+                <severityPerDamageDealt>0.6</severityPerDamageDealt>
+                <victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+                <inverseStatScaling>true</inverseStatScaling>
+                <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+            </li>
+        </additionalHediffs>
+        <applyAdditionalHediffsIfHuntingForFood>false</applyAdditionalHediffsIfHuntingForFood>
+        <impactSoundType>Toxic</impactSoundType>
+        <damageEffecter>Impact_Toxic</damageEffecter>
+    </DamageDef>
+</Defs>

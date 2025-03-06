@@ -74,4 +74,19 @@
             <li>NzFlm_StemCellTherapy</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 麻醉针腺体 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_AnestheticNeedleGland</defName>
+        <label>anesthetic needle gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 一种位于颈部结构及其复杂的器关，其毒素配方和灵感来自于某个部落的麻醉吹箭，配合可以在空气中迅速硬化的分泌物，你可以迅速瘫痪不远处的生物目标 -->
+        <description>A complex organ located in the neck, its toxin formula and inspiration come from a tribal anesthetic blow dart, combined with a secretion that can quickly harden in the air, allowing you to quickly paralyze nearby biological targets.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_AnestheticSpike</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>
