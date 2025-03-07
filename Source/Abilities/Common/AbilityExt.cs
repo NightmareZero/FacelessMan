@@ -10,6 +10,8 @@ namespace NzFaceLessManMod
 {
     public class AbilityExt : Ability
     {
+        // : public override void AbilityTick()
+
 
         public virtual void BeforeStartCooldown(int ticks)
         {
