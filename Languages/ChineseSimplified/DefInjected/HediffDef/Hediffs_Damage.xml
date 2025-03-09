@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- EN: anesthetic spike wound -->
+    <NzFlm_AnestheticSpikeWound.label>麻醉钉刺伤</NzFlm_AnestheticSpikeWound.label>
+    <!-- EN: A wound caused by an anesthetic spike. -->
+    <NzFlm_AnestheticSpikeWound.description>由麻醉钉刺造成的伤口。</NzFlm_AnestheticSpikeWound.description>
+    <!-- EN: set -->
+    <NzFlm_AnestheticSpikeWound.comps.HediffComp_TendDuration.labelSolidTendedWell>已简单处理</NzFlm_AnestheticSpikeWound.comps.HediffComp_TendDuration.labelSolidTendedWell>
+    <!-- EN: bandaged -->
+    <NzFlm_AnestheticSpikeWound.comps.HediffComp_TendDuration.labelTendedWell>已包扎</NzFlm_AnestheticSpikeWound.comps.HediffComp_TendDuration.labelTendedWell>
+    <!-- EN: sutured -->
+    <NzFlm_AnestheticSpikeWound.comps.HediffComp_TendDuration.labelTendedWellInner>已缝合</NzFlm_AnestheticSpikeWound.comps.HediffComp_TendDuration.labelTendedWellInner>
+    <!-- EN: anesthetic spike scar -->
+    <NzFlm_AnestheticSpikeWound.comps.HediffComp_GetsPermanent.permanentLabel>麻醉钉刺疤痕</NzFlm_AnestheticSpikeWound.comps.HediffComp_GetsPermanent.permanentLabel>
+    <!-- EN: Spiked off -->
+    <NzFlm_AnestheticSpikeWound.injuryProps.destroyedLabel>被刺掉</NzFlm_AnestheticSpikeWound.injuryProps.destroyedLabel>
+    <!-- EN: Spiked out -->
+    <NzFlm_AnestheticSpikeWound.injuryProps.destroyedOutLabel>被刺出</NzFlm_AnestheticSpikeWound.injuryProps.destroyedOutLabel>
+    <!-- EN: an anesthetic spike wound -->
+    <NzFlm_AnestheticSpikeWound.labelNoun>麻醉钉刺伤</NzFlm_AnestheticSpikeWound.labelNoun>
+    <!-- EN: {0} in the {1} -->
+    <NzFlm_AnestheticSpikeWound.labelNounPretty>{1}中的{0}</NzFlm_AnestheticSpikeWound.labelNounPretty>
+</LanguageData>

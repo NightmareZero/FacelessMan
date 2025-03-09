@@ -69,7 +69,7 @@
 
     <!-- 容貌伪装 -->
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
-        <defName>Flm_Disguise</defName>
+        <defName>NzFlm_Disguise</defName>
         <label>disguise</label>
         <cooldownTicksRange>10000</cooldownTicksRange>
         <description>Manipulating your flesh and blood to change the color of one's skin and
@@ -191,7 +191,7 @@
         <graphicData>
             <texPath>Things/Projectile/PiercingSpine</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <color>(0.6, 0, 0, 1)</color> <!-- 血红色 -->
+            <color>(0, 1, 0.6, 1)</color> <!-- 碧绿色 -->
         </graphicData>
         <projectile>
             <!-- 麻醉针 -->

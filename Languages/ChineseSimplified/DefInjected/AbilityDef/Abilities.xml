@@ -12,6 +12,6 @@
     <Flm_Evolve.label>拥抱进化</Flm_Evolve.label>
     <Flm_Evolve.description>定制一个异种胚芽，并注入目标体内，但是即使是强大的基因主宰，也会变得虚弱。</Flm_Evolve.description>
 
-    <Flm_Disguise.label>伪装</Flm_Disguise.label>
-    <Flm_Disguise.description>操纵自己的血肉之躯，改变皮肤颜色，再生或脱发，伪装成选定的目标。</Flm_Disguise.description>
+    <NzFlm_Disguise.label>伪装</NzFlm_Disguise.label>
+    <NzFlm_Disguise.description>操纵自己的血肉之躯，改变皮肤颜色，再生或脱发，伪装成选定的目标。</NzFlm_Disguise.description>
 </LanguageData>
