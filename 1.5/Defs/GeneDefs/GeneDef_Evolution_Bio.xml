@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 蓄电器官 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_BatteryOrgan</defName>
+        <label>battery organ</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一个可以储存电能的器官，可以在需要的时候释放出来。 -->
+        <description>An organ that can store electrical energy and release it when needed.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_EMPBlast</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+</Defs>

@@ -1,4 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    
+    <!-- EMP喷射 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_EMPBlast</defName>
+        <label>EMP blast</label>
+        <!-- 发射一团粘稠的电浆，命中目标后造成范围性的电磁干扰。 -->
+        <description>Launch a blob of viscous plasma that causes a wide range of electromagnetic interference
+            upon hitting the target.</description>
+        <level>1</level>
+        <!-- TODO -->
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>True</targetRequired>
+        <cooldownTicksRange>900</cooldownTicksRange>
+        <verbProperties>
+            <verbClass>Verb_AbilityShoot</verbClass>
+            <ai_IsWeapon>False</ai_IsWeapon>
+            <warmupTime>0.2</warmupTime>
+            <range>8</range>
+            <targetParams>
+                <canTargetSelf>False</canTargetSelf>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetMechs>True</canTargetMechs>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+            <!-- TODO 更换为更合适的 -->
+            <defaultProjectile>Proj_EMPBlast</defaultProjectile>
+        </verbProperties>
+        <comps>
+            <!-- <li Class="NzFaceLessManMod.CompProperties_AbilityExplosive">
+                <explosiveRadius>4.66</explosiveRadius>
+                <explosiveDamageType>EMP</explosiveDamageType>
+            </li> -->
+
+        </comps>
+    </AbilityDef>
+
+    <!-- 电浆炸弹 -->
+    <ThingDef ParentName="BaseGrenadeProjectile">
+        <defName>Proj_EMPBlast</defName>
+        <label>EMP blast</label>
+        <thingClass>Projectile_Explosive</thingClass>
+        <graphicData>
+            <!-- TODO 替换材质 -->
+            <texPath>Things/Projectile/GrenadeEMP</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <explosionRadius>5.5</explosionRadius>
+            <damageDef>EMP</damageDef>
+            <!-- Use default damage from explosion def -->
+            <explosionDelay>30</explosionDelay>
+        </projectile>
+    </ThingDef>
 </Defs>
