@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <!-- EN: anesthetic spike -->
+    <NzFlm_Dm_AnestheticSpike.label>麻醉钉刺</NzFlm_Dm_AnestheticSpike.label>
+    <!-- EN: {0} has been paralyzed. -->
+    <NzFlm_Dm_AnestheticSpike.deathMessage>{0} 被麻痹致死。</NzFlm_Dm_AnestheticSpike.deathMessage>
+</LanguageData>

@@ -142,8 +142,8 @@
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
                 <hediffDef>NzFlm_He_StemCellConsumption</hediffDef>
                 <psychic>False</psychic>
-                <!-- 3小时 -->
-                <!-- <durationSecondsOverride>125</durationSecondsOverride> -->
+                <!-- 12小时 -->
+                <durationSecondsOverride>500</durationSecondsOverride>
                 <applyToTarget>False</applyToTarget>
                 <applyToSelf>True</applyToSelf>
             </li>
@@ -162,7 +162,7 @@
         <iconPath>UI/Abilities/Invisibility</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>True</targetRequired>
-        <cooldownTicksRange>1800</cooldownTicksRange>
+        <cooldownTicksRange>900</cooldownTicksRange>
         <verbProperties>
             <warmupTime>0.2</warmupTime>
             <onlyManualCast>True</onlyManualCast>
@@ -184,7 +184,7 @@
         </comps>
     </AbilityDef>
 
-    <!-- 麻醉钉刺 -->
+    <!-- 麻醉钉刺 子弹 -->
     <ThingDef ParentName="BaseBullet">
         <defName>NzFlm_Porj_AnestheticSpike</defName>
         <label>anesthetic spike</label>

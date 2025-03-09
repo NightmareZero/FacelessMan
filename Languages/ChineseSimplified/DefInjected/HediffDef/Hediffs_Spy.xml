@@ -2,11 +2,9 @@
 <LanguageData>
     <NzFlm_He_ChameleonSkin.label>变色龙皮肤</NzFlm_He_ChameleonSkin.label>
     <NzFlm_He_ChameleonSkin.description>你的皮肤会像变色龙一样改变颜色，但是移动速度会受到影响。</NzFlm_He_ChameleonSkin.description>
-
     <NzFlm_He_StemCellConsumption.label>干细胞耗损</NzFlm_He_StemCellConsumption.label>
     <NzFlm_He_StemCellConsumption.description>你使用了你的干细胞治疗了自己或者他人，现在你感觉有点虚弱。</NzFlm_He_StemCellConsumption.description>
-    <NzFlm_He_StemCellConsumption.stages.relief.label>缓解</NzFlm_He_StemCellConsumption.stages.li.label>
-    <NzFlm_He_StemCellConsumption.stages.weak.label>虚弱</NzFlm_He_StemCellConsumption.stages.li.label>
-    <NzFlm_He_StemCellConsumption.stages.exhausted.label>耗竭</NzFlm_He_StemCellConsumption.stages.li.label>
-
+    <NzFlm_He_StemCellConsumption.stages.relief.label>缓解</NzFlm_He_StemCellConsumption.stages.relief.label>
+    <NzFlm_He_StemCellConsumption.stages.weak.label>虚弱</NzFlm_He_StemCellConsumption.stages.weak.label>
+    <NzFlm_He_StemCellConsumption.stages.exhausted.label>耗竭</NzFlm_He_StemCellConsumption.stages.exhausted.label>
 </LanguageData>

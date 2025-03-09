@@ -4,7 +4,7 @@
     <DamageDef ParentName="Bite">
         <defName>NzFlm_Dm_AnestheticSpike</defName>
         <label>anesthetic spike</label>
-        <deathMessage>{0} has been paralyzed.</deathMessage>
+        <deathMessage>{0} was paralyzed to death</deathMessage>
         <additionalHediffs>
             <li>
                 <hediff>Anesthetic</hediff>

@@ -2,4 +2,10 @@
 <LanguageData>
     <NzFlm_ChameleonSkin.label>变色龙皮肤</NzFlm_ChameleonSkin.label>
     <NzFlm_ChameleonSkin.description>将自身的皮肤像变色龙一样改变颜色，使周围的人无法感知到你一段时间，由于变色需要时间，你的移动速度会受到影响。</NzFlm_ChameleonSkin.description>
+
+    <NzFlm_AnestheticSpike.label>麻醉钉刺</NzFlm_AnestheticSpike.label>
+    <NzFlm_AnestheticSpike.description>从口腔中的腺体中发射一枚刺针，其中包裹着麻醉毒素，可以让目标迅速麻痹。</NzFlm_AnestheticSpike.description>
+
+    <NzFlm_StemCellTherapy.label>干细胞治疗</NzFlm_StemCellTherapy.label>
+    <NzFlm_StemCellTherapy.description>从你体内取出少量干细胞，用于治疗目标一处最严重的伤口。</NzFlm_StemCellTherapy.description>
 </LanguageData>

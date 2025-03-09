@@ -5,4 +5,8 @@
     
     <Flm_GeneLossDizzy.label>基因丢失眩晕</Flm_GeneLossDizzy.label>
     <Flm_GeneLossDizzy.description>这个人的基因最近被移除或排出。这使得这个人的新陈代谢和激素不稳定，暂时使他们虚弱和昏昏欲睡，免疫系统也变得虚弱。</Flm_GeneLossDizzy.description>
+
+    <Flm_Evolution.label>进化</Flm_Evolution.label>
+    <Flm_Evolution.description>随着时间积累，身体会逐渐适应，并允许表达更多的基因</Flm_Evolution.description>
+
 </LanguageData>
