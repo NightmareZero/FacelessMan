@@ -11,6 +11,7 @@
         <minValue>0</minValue>
     </StatDef>
 
+    <!-- 射程全放大系数 -->
     <StatDef ParentName="NzFlm_ManStatBase">
         <defName>NzFlm_SkillRangeMultiplier</defName>
         <label>Gene Skill Range Multiplier</label>
@@ -20,9 +21,10 @@
         <displayPriorityInCategory>10003</displayPriorityInCategory>
     </StatDef>
 
+    <!-- 射程半放大系数 -->
     <StatDef ParentName="NzFlm_ManStatBase">
         <defName>NzFlm_SkillRangeMultiplierHalf</defName>
-        <label>Gene Skill Range Multiplier half</label>
+        <label>Gene Skill Range Multiplier 2</label>
         <!-- 部分基因技能射程放大系数 -->
         <description>Multiplier for the range of certain gene skills.</description>
         <toStringStyle>PercentZero</toStringStyle>
