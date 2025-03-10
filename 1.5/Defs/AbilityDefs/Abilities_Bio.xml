@@ -15,6 +15,7 @@
         <cooldownTicksRange>900</cooldownTicksRange>
         <verbProperties>
             <verbClass>Verb_AbilityShoot</verbClass>
+            <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
             <ai_IsWeapon>False</ai_IsWeapon>
             <warmupTime>0.2</warmupTime>
             <range>8</range>

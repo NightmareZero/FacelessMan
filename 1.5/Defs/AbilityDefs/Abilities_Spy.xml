@@ -167,6 +167,8 @@
             <warmupTime>0.2</warmupTime>
             <onlyManualCast>True</onlyManualCast>
             <range>6</range>
+            <!-- 射程放大系数 -->
+            <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
             <targetParams>
                 <canTargetSelf>False</canTargetSelf>
                 <canTargetPawns>True</canTargetPawns>
