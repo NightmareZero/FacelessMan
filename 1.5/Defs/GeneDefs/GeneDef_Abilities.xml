@@ -73,6 +73,7 @@
 			<li Class="NzFaceLessManMod.GeneDefExt">
 				<hediffDef>Flm_Evolution</hediffDef>
 				<hediffRemove>false</hediffRemove>
+				<mustEndogene>True</mustEndogene>
 			</li>
 		</modExtensions>
 	</GeneDef>

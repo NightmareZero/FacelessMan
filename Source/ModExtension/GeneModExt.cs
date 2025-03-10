@@ -15,11 +15,33 @@ namespace NzFaceLessManMod
         public HediffDef hediffDef = null;
         public bool hediffRemove = true;
 
+        public bool mustEndogene = false; // 必须是内源基因
+
+        // 调整基因的位置
+        private static bool CanAdd(Gene gene, Pawn pawn, GeneDefExt geneDefExt)
+        {
+            if (geneDefExt.mustEndogene)
+            {
+                if (pawn.genes.HasXenogene(gene.def))
+                {
+                    pawn.genes.RemoveGene(gene);
+                    return false;
+                }
+            }
+            return true;
+        }
+
 
         public static void ApplyAddGeneDefExt(GeneExt gene)
         {
             GeneDefExt geneDefExt = gene.def.GetModExtension<GeneDefExt>();
             if (geneDefExt == null)
+            {
+                return;
+            }
+
+            // 如果为仅内源基因，则移除
+            if (!CanAdd(gene, gene.pawn, geneDefExt))
             {
                 return;
             }
@@ -32,7 +54,7 @@ namespace NzFaceLessManMod
                 {
                     listener.Notify_OnGeneChange(gene, -1); // 通知基因新增
                 }
-            }            
+            }
 
             // 处理性别
             if (geneDefExt.forceFemale)

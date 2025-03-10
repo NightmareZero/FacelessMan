@@ -42,7 +42,7 @@ namespace NzFaceLessManMod
         }
 
         private void onGeneDirty()
-        { 
+        {
             GeneUtil.ApplyEvolutionToPawn(this, this.pawn); // 重新应用进化
         }
 
