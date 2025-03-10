@@ -5,37 +5,31 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
+
     public class GeneExt : Gene
     {
-
-        // TODO 这部分应该放在Hediff里面，用来保护Gene防止被移除
-        private bool dirty = false;
-
-        public override void Tick()
-        {
-            base.Tick();
-            if (dirty)
-            {
-                OnDirty();
-                dirty = false;
-            }
-        }
-
-        public virtual void OnDirty() { 
-
-        }
-
         public override void PostAdd()
         {
             // 调用逻辑
-            if (this.def.HasModExtension<GeneDefExt>())
+            GeneDefExt gDef = this.def.GetModExtension<GeneDefExt>();
+            if (gDef != null)
             {
-                GeneDefExt.ApplyAddGeneDefExt(this);
+                GeneDefExt.ApplyAddGeneDefExt(this); // 处理基因新增逻辑
             }
 
-            base.PostAdd();
+            base.PostAdd(); // renderer
         }
 
-        public override void PostRemove() { }
+        public override void PostRemove()
+        {
+
+            GeneDefExt gDef = this.def.GetModExtension<GeneDefExt>();
+            if (gDef != null)
+            { 
+                GeneDefExt.ApplyRemoveGeneModExt(this); // 处理基因移除逻辑
+            }
+
+            base.PostRemove(); // renderer
+        }
     }
 }

@@ -13,11 +13,6 @@ namespace NzFaceLessManMod
         // 冷却速度加成属性
         public List<StatModifier> cooldownAddStatModifiers = new List<StatModifier>();
 
-        // 射程加成属性
-        public List<StatModifier> rangeAddStatModifiers = new List<StatModifier>();
-        // 射程加成属性乘数
-        public float rangeAddStatMultiplier = 1f;
-
         // 范围加成属性
         public List<StatModifier> areaAddStatModifiers = new List<StatModifier>();
         // 范围加成属性乘数

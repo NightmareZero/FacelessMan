@@ -24,6 +24,16 @@ namespace NzFaceLessManMod
                 return;
             }
 
+            // 处理绑定状态
+            if (geneDefExt.hediffDef != null)
+            {
+                Hediff hediff = gene.pawn.health.GetOrAddHediff(geneDefExt.hediffDef);
+                if (hediff is IGeneChangeListener listener)
+                {
+                    listener.Notify_OnGeneChange(gene, -1); // 通知基因新增
+                }
+            }            
+
             // 处理性别
             if (geneDefExt.forceFemale)
             {
@@ -42,15 +52,9 @@ namespace NzFaceLessManMod
                 }
 
             }
-
-            // 处理绑定状态
-            if (geneDefExt.hediffDef != null)
-            {
-                gene.pawn.health.AddHediff(geneDefExt.hediffDef);
-            }
         }
 
-        public static void applyRemoveGeneModExt(GeneExt gene)
+        public static void ApplyRemoveGeneModExt(GeneExt gene)
         {
             GeneDefExt geneDefExt = gene.def.GetModExtension<GeneDefExt>();
             if (geneDefExt == null)
@@ -62,9 +66,13 @@ namespace NzFaceLessManMod
             if (geneDefExt.hediffDef != null)
             {
                 Hediff hediff = gene.pawn.health.hediffSet.GetFirstHediffOfDef(geneDefExt.hediffDef);
+                if (hediff is IGeneChangeListener listener)
+                {
+                    listener.Notify_OnGeneChange(gene, -1); // 通知基因移除
+                }
                 if (hediff != null && geneDefExt.hediffRemove)
                 {
-                    gene.pawn.health.RemoveHediff(hediff);
+                    gene.pawn.health.RemoveHediff(hediff); // 执行移除
                 }
             }
         }
