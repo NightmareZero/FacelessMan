@@ -40,9 +40,11 @@ namespace NzFaceLessManMod
                 return;
             }
 
-            // 如果为仅内源基因，则移除
+            // 如果为仅内源基因，则移除，添加到內源中
             if (!CanAdd(gene, gene.pawn, geneDefExt))
             {
+                Log.Error("Gene " + gene.def.defName + " must be endogene.");
+                gene.pawn.genes.AddGene(gene.def,false);
                 return;
             }
 
