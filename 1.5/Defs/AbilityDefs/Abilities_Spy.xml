@@ -35,6 +35,40 @@
         </comps>
     </AbilityDef>
 
+    <!-- 肾上腺爆发 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_AdrenalineRush</defName>
+        <label>adrenaline rush</label>
+        <!-- 你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度 -->
+        <description>Your adrenal glands rapidly secrete a substance similar to a stimulant, giving
+            you faster reaction speed.</description>
+        <level>1</level>
+        <!-- TODO -->
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <cooldownTicksRange>30000</cooldownTicksRange>
+        <verbProperties>
+            <warmupTime>4</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_AdrenalineRush</hediffDef>
+                <psychic>False</psychic>
+                <durationSecondsOverride>1200</durationSecondsOverride>
+            </li>
+            <!-- <li Class="CompProperties_AbilityFleckOnTarget">
+            <fleckDef>PsycastPsychicEffect</fleckDef>
+        </li> -->
+        </comps>
+    </AbilityDef>
+
     <!-- 跳跃 -->
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_Longjump</defName>

@@ -109,4 +109,72 @@
             </li>
         </stages>
     </HediffDef>
+
+    <!-- 肾上腺爆发 -->
+    <!-- TODO -->
+    <HediffDef>
+        <defName>NzFlm_He_AdrenalineRush</defName>
+        <label>adrenaline rush</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 你现在感觉到了一股强烈的兴奋感，你的速度和力量都得到了提升 -->
+        <description>You now feel a strong sense of excitement, and your speed and strength have been enhanced.</description>
+        <isBad>false</isBad>
+        <initialSeverity>0.6</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-1</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <!-- 疲劳 -->
+                <label>fatigue</label>
+                <painOffset>0.07</painOffset>
+                <capMods>
+                    <!-- TODO 修改 -->
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <!-- 爆发 -->
+                <label>burst</label>
+                <painOffset>-0.4</painOffset>
+                <minSeverity>0.2</minSeverity>
+                <capMods>
+                    <!-- TODO 修改 -->
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
 </Defs>

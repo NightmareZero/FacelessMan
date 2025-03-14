@@ -89,4 +89,22 @@
             <li>NzFlm_AnestheticSpike</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 发达肾上腺 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_DevelopedAdrenalGland</defName>
+        <label>developed adrenal gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你的肾上腺变得更发达，并且可以分泌一种更加强大的物质，让你可以在危险时更快地反应 -->
+        <description>Your adrenal glands have become more developed, allowing you to react more quickly in dangerous situations.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>60</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <!-- <GlobalLearningFactor>1.2</GlobalLearningFactor> -->
+        </statFactors>
+        <abilities>
+            <li>NzFlm_AdrenalineRush</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>
