@@ -114,42 +114,6 @@
 			</li>
 		</comps>
 	</AbilityDef>
-	<AbilityDef>
-		<defName>Flm_Evolve</defName>
-		<label>embrace evolution</label>
-		<!-- <cooldownTicksRange>120000</cooldownTicksRange> -->
-		<description>Customize an xenotype and inject it into the target, but even the mighty gene master will become weakened.</description>
-		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
-		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
-		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
-		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
-		<aiCanUse>false</aiCanUse>
-		<jobDef>CastAbilityOnThing</jobDef>
-		<targetRequired>true</targetRequired>
-		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
-		<stunTargetWhileCasting>True</stunTargetWhileCasting>
-		<showPsycastEffects>False</showPsycastEffects>
-		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
-		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
-		<verbProperties>
-			<verbClass>Verb_CastAbility</verbClass>
-			<warmupTime>4</warmupTime>
-			<range>2</range>
-			<drawAimPie>False</drawAimPie>
-			<requireLineOfSight>False</requireLineOfSight>
-			<targetParams>
-				<canTargetSelf>false</canTargetSelf>
-				<canTargetPawns>true</canTargetPawns>
-				<canTargetBuildings>false</canTargetBuildings>
-				<canTargetAnimals>false</canTargetAnimals>
-				<canTargetHumans>true</canTargetHumans>
-				<canTargetMechs>false</canTargetMechs>
-			</targetParams>
-		</verbProperties>
-		<comps>
-			<li Class="NzFaceLessManMod.CompProperties_AbilityEvolve" />
-		</comps>
-	</AbilityDef>
+	
 	
 </Defs>

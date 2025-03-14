@@ -30,4 +30,34 @@
 			<IncomingDamageFactor>0.45</IncomingDamageFactor>
 		</statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 火囊 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_FireSac</defName>
+        <label>fire sac</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一种可以储存可燃液体并在必要时喷射的器官， 相比炎魔种，恢复更快 -->
+        <description>An organ that can store flammable liquid and spray it when needed, with faster recovery than the Impid Xenotype.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_FireBreath</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 基因控制 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_GeneControl</defName>
+        <label>gene control</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 你可以像使用一个基因实验室一样使用体内器官来生成一个异种胚芽，并注入目标体内，但是这会让你变得非常疲劳。 -->
+        <description>You can use the organs in your body to generate a xenogerm and inject it into the target, but this will make you very tired.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>Flm_Evolve</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

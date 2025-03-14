@@ -5,7 +5,8 @@
         <defName>NzFlm_EMPBlast</defName>
         <label>EMP blast</label>
         <!-- 发射一团粘稠的电浆，命中目标后造成范围性的电磁干扰。 -->
-        <description>Launch a blob of viscous plasma that causes a wide range of electromagnetic interference
+        <description>Launch a blob of viscous plasma that causes a wide range of electromagnetic
+            interference
             upon hitting the target.</description>
         <level>1</level>
         <!-- TODO -->
@@ -54,4 +55,74 @@
             <explosionDelay>30</explosionDelay>
         </projectile>
     </ThingDef>
+
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_FireBreath</defName>
+        <label>firebreath</label>
+        <!-- 经由一种相比 Impid 更好的，基于生物技术优化过的腺体，喷洒出高温易燃的液体。以迅速点燃目标 -->
+        <description>Spew flammable liquid from a gland that has been optimized with biotechnology
+            to be better than the Impid, igniting the target quickly.</description>
+        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <warmupStartSound>FireSpew_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>5.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>FireSpew_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <!-- TODO 替换版本,要兼容NzFlm_SkillRangeMultiplierHalf,同时要能突破一小部分火焰抗性(1.0)  -->
+            <li Class="CompProperties_AbilityFireSpew">
+                <range>5.9</range>
+                <lineWidthEnd>3</lineWidthEnd>
+                <filthDef>Filth_FlammableBile</filthDef>
+                <effecterDef>Fire_Spew</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <AbilityDef>
+        <defName>Flm_Evolve</defName>
+        <label>gene control</label>
+        <!-- <cooldownTicksRange>120000</cooldownTicksRange> -->
+        <!-- 定制一个异种基因并注入目标，但这会让你变得非常疲劳 -->
+        <description>Customize an xenogerm and inject it into the target, but this will make you very
+            tired.</description>
+        <!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <aiCanUse>false</aiCanUse>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <targetRequired>true</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <stunTargetWhileCasting>True</stunTargetWhileCasting>
+        <showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <warmupTime>4</warmupTime>
+            <range>-1</range>
+            <drawAimPie>False</drawAimPie>
+            <requireLineOfSight>False</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilityEvolve" />
+        </comps>
+    </AbilityDef>
 </Defs>
