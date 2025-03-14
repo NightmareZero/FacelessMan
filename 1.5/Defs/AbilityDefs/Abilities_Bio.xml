@@ -154,7 +154,7 @@
                 <hediffDef>NzFlm_He_Cryptobiosis</hediffDef>
                 <psychic>False</psychic>
                 <!-- 3小时 -->
-                <durationSecondsOverride>125</durationSecondsOverride>
+                <durationSecondsOverride>99999</durationSecondsOverride>
             </li>
         </comps>
     </AbilityDef>
