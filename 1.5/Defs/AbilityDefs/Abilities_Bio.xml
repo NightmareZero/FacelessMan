@@ -88,6 +88,7 @@
         </comps>
     </AbilityDef>
 
+    <!-- 基因控制 -->
     <AbilityDef>
         <defName>Flm_Evolve</defName>
         <label>gene control</label>
@@ -125,4 +126,37 @@
             <li Class="NzFaceLessManMod.CompProperties_AbilityEvolve" />
         </comps>
     </AbilityDef>
+
+    <!-- 隐生 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_Cryptobiosis</defName>
+        <label>cryptobiosis</label>
+        <!-- 通过进入一种特殊状态，来大幅度减少食物消耗，提升高温/低温/毒素抗性，以便撑过一些艰难的日子 -->
+        <description>By entering a special state, greatly reduce food consumption, improve high
+            temperature/low temperature/toxin resistance, in order to get through some difficult days.</description>
+        <level>1</level>
+        <!-- TODO -->
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <!-- TODO 替换为隐生Hediff -->
+                <hediffDef>NzFlm_He_Cryptobiosis</hediffDef>
+                <psychic>False</psychic>
+                <!-- 3小时 -->
+                <durationSecondsOverride>125</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+
 </Defs>

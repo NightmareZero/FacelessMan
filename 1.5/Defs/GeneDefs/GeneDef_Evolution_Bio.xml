@@ -60,4 +60,19 @@
             <li>Flm_Evolve</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 隐生 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_Cryptobiosis</defName>
+        <label>cryptobiosis</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一种从熊、蛙类、昆虫和蜥蜴身上提取的混合定制基因，让你可以进入“隐生”状态，以撑过一些艰难的日子。 -->
+        <description>A custom gene extracted from bears, frogs, insects, and lizards that allows you to enter a "camouflage" state to get through some difficult days.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_Cryptobiosis</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 隐生 -->
+    <HediffDef>
+        <defName>NzFlm_He_Cryptobiosis</defName>
+        <label>cryptobiosis</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 你进入了 “隐生” 状态，现在你的活动几乎停滞了 -->
+        <description>You have entered the "cryptobiosis" state, and now your metabolism has almost stopped.</description>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_DisappearsOnDeath" />
+        </comps>
+        <stages>
+            <!-- TODO -->
+            <!-- 意识 -->
+            <!-- 血液循环 -->
+            <!-- 过滤 -->
+            <!-- 食物消耗 -->
+            <!-- 休息 -->
+            <!-- 温度 -->
+            <li>
+                <statFactors>
+                    <MoveSpeed>0.8</MoveSpeed>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>
