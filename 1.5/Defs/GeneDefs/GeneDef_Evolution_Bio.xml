@@ -14,4 +14,20 @@
             <li>NzFlm_EMPBlast</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 鳞片皮肤 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ScaledSkin</defName>
+        <label>scaled skin</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 来自于蜥蜴的鳞片，或者说 "巨龙" 的鳞片，其带来的改变不仅限于皮肤表层，也包括了一些腺体，能大幅度降低受到的伤害。 -->
+        <description>Scales grow on the skin, providing additional defense.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>20</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+			<InjuryHealingFactor>0.95</InjuryHealingFactor>
+			<IncomingDamageFactor>0.45</IncomingDamageFactor>
+		</statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>
