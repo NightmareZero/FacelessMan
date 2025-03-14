@@ -14,6 +14,8 @@ namespace NzFaceLessManMod
         // 不可自选
         public bool cannotBeChosen;
 
+        public new bool canGenerateInGeneSet = false;
+
         // 前置要求
         public List<EvolutionGeneDef> requireGene = new List<EvolutionGeneDef>();
 
