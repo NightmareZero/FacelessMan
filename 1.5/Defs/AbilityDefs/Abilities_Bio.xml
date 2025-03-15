@@ -93,7 +93,7 @@
     </AbilityDef>
 
     <!-- 基因控制 -->
-    <AbilityDef>
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>Flm_Evolve</defName>
         <label>gene control</label>
         <!-- <cooldownTicksRange>120000</cooldownTicksRange> -->

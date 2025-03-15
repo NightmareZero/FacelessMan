@@ -152,9 +152,9 @@ namespace NzFaceLessManMod
             {
                 if (Props.damMultiplierStat != null)
                 {
-                    return Mathf.RoundToInt(Props.damAmount * Caster.GetStatValue(Props.damMultiplierStat));
+                    return Mathf.RoundToInt(Props.damageAmount * Caster.GetStatValue(Props.damMultiplierStat));
                 }
-                return Props.damAmount;
+                return Props.damageAmount;
             }
         }
     }

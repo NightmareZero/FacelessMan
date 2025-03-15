@@ -60,9 +60,6 @@
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
 		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
 		<displayOrderInCategory>1000</displayOrderInCategory>
-		<abilities>
-			<li>Flm_Evolve</li>
-		</abilities>
 		<exclusionTags>
 			<li>Flm_GeneMaster</li>
 		</exclusionTags>

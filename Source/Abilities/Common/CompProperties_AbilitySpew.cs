@@ -16,7 +16,7 @@ namespace NzFaceLessManMod
 
         public DamageDef damageType;
 
-        public int damAmount = -1;
+        public int damageAmount = -1;
 
         public float armorPenetration = 0.1f;
 

@@ -8,7 +8,7 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-    public static class Utils
+    public static partial class Utils
     {
         static Dictionary<string, XenotypeIconDef> xenotypeIconCache = new Dictionary<string, XenotypeIconDef>();
 
