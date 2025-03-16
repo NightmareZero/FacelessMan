@@ -8,4 +8,7 @@
 
     <NzFlm_StemCellTherapy.label>干细胞治疗</NzFlm_StemCellTherapy.label>
     <NzFlm_StemCellTherapy.description>从你体内取出少量干细胞，用于治疗目标一处最严重的伤口。</NzFlm_StemCellTherapy.description>
+
+    <NzFlm_AdrenalineRush.label>肾上腺爆发</NzFlm_AdrenalineRush.label>
+    <NzFlm_AdrenalineRush.description>你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度,并提高作战能力。</NzFlm_AdrenalineRush.description>
 </LanguageData>

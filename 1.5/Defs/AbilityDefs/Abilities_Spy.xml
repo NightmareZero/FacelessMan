@@ -39,17 +39,18 @@
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_AdrenalineRush</defName>
         <label>adrenaline rush</label>
-        <!-- 你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度 -->
+        <!-- 你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度,并提高作战能力 -->
         <description>Your adrenal glands rapidly secrete a substance similar to a stimulant, giving
-            you faster reaction speed.</description>
+            you faster reaction speed and improved combat capabilities.</description>
         <level>1</level>
-        <!-- TODO -->
+        <!-- TODO 图标 -->
         <iconPath>UI/Abilities/Invisibility</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>30000</cooldownTicksRange>
         <verbProperties>
-            <warmupTime>4</warmupTime>
+            <!-- TODO 声音 -->
+            <warmupTime>0.2</warmupTime>
             <onlyManualCast>True</onlyManualCast>
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>
@@ -60,8 +61,8 @@
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
                 <hediffDef>NzFlm_He_AdrenalineRush</hediffDef>
+                <severity>0.3</severity>
                 <psychic>False</psychic>
-                <durationSecondsOverride>1200</durationSecondsOverride>
             </li>
             <!-- <li Class="CompProperties_AbilityFleckOnTarget">
             <fleckDef>PsycastPsychicEffect</fleckDef>
