@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.Sound;
+
+namespace NzFaceLessManMod
+{
+    public class Verb_AbilityShootX : Verb_AbilityShoot
+    {
+        public float AdjustedRange(Verb ownerVerb, Pawn attacker)
+        {
+            if (verbProps.rangeStat == null)
+            {
+                return verbProps.range;
+            }
+            else if (verbProps.rangeStat != null && verbProps.range == 0)
+            {
+                return attacker.GetStatValue(verbProps.rangeStat);
+            }
+
+
+            return attacker.GetStatValue(verbProps.rangeStat) * verbProps.range;
+        }
+
+        public override float EffectiveRange => AdjustedRange(this, CasterPawn);
+    }
+}

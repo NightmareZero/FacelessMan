@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Nzflm_Ev_BatteryOrgan.label>蓄电器官</Nzflm_Ev_BatteryOrgan.label>
+    <Nzflm_Ev_BatteryOrgan.description>一个可以储存电能的器官，可以在需要的时候释放出来。</Nzflm_Ev_BatteryOrgan.description>
+
+    <Nzflm_Ev_ScaledSkin.label>鳞片皮肤</Nzflm_Ev_ScaledSkin.label>
+    <Nzflm_Ev_ScaledSkin.description>来自于蜥蜴的鳞片，或者说 "巨龙" 的鳞片，其带来的改变不仅限于皮肤表层，也包括了一些腺体，能大幅度降低受到的伤害。</Nzflm_Ev_ScaledSkin.description>
+</LanguageData>

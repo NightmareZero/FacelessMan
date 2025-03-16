@@ -15,7 +15,7 @@
         <targetRequired>True</targetRequired>
         <cooldownTicksRange>900</cooldownTicksRange>
         <verbProperties>
-            <verbClass>Verb_AbilityShoot</verbClass>
+            <verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
             <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
             <ai_IsWeapon>False</ai_IsWeapon>
             <warmupTime>0.2</warmupTime>

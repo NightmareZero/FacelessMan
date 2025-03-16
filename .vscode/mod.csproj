@@ -41,6 +41,7 @@
 		<Compile Include="../Source/Utils/*.cs" />
 		<Compile Include="../Source/Abilities/*.cs" />
 		<Compile Include="../Source/Abilities/Common/*.cs" />
+		<Compile Include="../Source/Abilities/Verb/*.cs" />
 		<Compile Include="../Source/ModExtension/*.cs" />
 		<Compile Include="../Source/Genes/*.cs" />
 		<Compile Include="../Source/Hediffs/*.cs" />
