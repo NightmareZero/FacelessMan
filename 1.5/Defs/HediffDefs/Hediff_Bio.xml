@@ -6,22 +6,48 @@
         <label>cryptobiosis</label>
         <hediffClass>HediffWithComps</hediffClass>
         <!-- 你进入了 “隐生” 状态，现在你的活动几乎停滞了 -->
-        <description>You have entered the "cryptobiosis" state, and now your metabolism has almost stopped.</description>
+        <description>You have entered the "cryptobiosis" state, and now your metabolism has almost
+            stopped.</description>
         <isBad>false</isBad>
         <comps>
+            <!-- TODO 添加一个移除按钮 -->
             <li Class="HediffCompProperties_DisappearsOnDeath" />
         </comps>
         <stages>
-            <!-- TODO -->
-            <!-- 意识 -->
-            <!-- 血液循环 -->
-            <!-- 过滤 -->
-            <!-- 食物消耗 -->
-            <!-- 休息 -->
-            <!-- 温度 -->
             <li>
+                <capMods>
+                    <li>
+                        <!-- 意识 -->
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.3</setMax>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                    <li>
+                        <!-- 血液循环 -->
+                        <capacity>BloodPumping</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                    <li>
+                        <!-- 过滤 -->
+                        <capacity>BloodFiltration</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <!-- 温度 -->
+                    <ComfyTemperatureMin>-60</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>40</ComfyTemperatureMax>
+                    <ToxicResistance>1</ToxicResistance>
+                </statOffsets>
+                <!-- 食物消耗 -->
+                <hungerRateFactor>0.01</hungerRateFactor>
                 <statFactors>
-                    <MoveSpeed>0.8</MoveSpeed>
+                    <!-- 休息 -->
+                    <BedRestEffectiveness>0.05</BedRestEffectiveness>
+                    <MoveSpeed>0.1</MoveSpeed>
                 </statFactors>
             </li>
         </stages>

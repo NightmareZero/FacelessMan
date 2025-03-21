@@ -195,7 +195,6 @@
                 <!-- TODO 替换为隐生Hediff -->
                 <hediffDef>NzFlm_He_Cryptobiosis</hediffDef>
                 <psychic>False</psychic>
-                <!-- 3小时 -->
                 <durationSecondsOverride>99999</durationSecondsOverride>
             </li>
         </comps>
