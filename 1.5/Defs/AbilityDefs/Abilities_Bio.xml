@@ -118,7 +118,7 @@
                 <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
                 <damageType>AcidBurn</damageType>
                 <damageAmount>23</damageAmount>
-                <armorPenetration>1.0</armorPenetration>
+                <armorPenetration>2.0</armorPenetration>
                 <range>5.9</range>
                 <lineWidthEnd>6</lineWidthEnd>
                 <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
