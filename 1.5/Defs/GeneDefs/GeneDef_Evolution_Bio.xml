@@ -90,4 +90,22 @@
             <li>NzFlm_Cryptobiosis</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 昏迷毒腺 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_StunGland</defName>
+        <label>stun gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间(最多1年)，也可以反向注入解毒剂，立即结束目标的麻痹症效果。 -->
+        <description>A modified version of the toxin from spiders in nature that can cause the target to be stunned for a long time (up to 1 year), or can be injected with an antidote in reverse to immediately end the target's paralysis effect.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>60</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <!-- 麻痹毒素 -->
+            <li>NzFlm_ParalysisToxin</li>
+            <!-- 麻痹解毒剂 -->
+            <li>NzFlm_ParalysisAntidote</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

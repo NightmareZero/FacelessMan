@@ -201,4 +201,76 @@
         </comps>
     </AbilityDef>
 
+    <!-- 麻痹毒素 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+		<defName>NzFlm_ParalysisToxin</defName>
+		<label>paralysis toxin</label>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+        <!-- 一种来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间 -->
+		<description>A modified version of the toxin from spiders in nature that can cause the target to be stunned for a long time.</description>
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<displayOrder>500</displayOrder>
+		<hostile>true</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>4</warmupTime>
+			<stunTargetOnCastStart>true</stunTargetOnCastStart>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_SwitchGiveHediff">
+                <hediffDef>Abasia</hediffDef>
+                <psychic>False</psychic>
+                <durationSecondsOverride>60000</durationSecondsOverride>
+            </li>
+		</comps>
+	</AbilityDef>
+
+    <!-- 麻痹解毒剂 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+		<defName>NzFlm_ParalysisAntidote</defName>
+		<label>paralysis antidote</label>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+        <!-- 一种基于原毒剂的逆向解毒剂，可以立即结束目标的麻痹症效果 -->
+		<description>A reverse antidote based on the original toxin that can immediately end the target's abasia effect.</description>
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<displayOrder>500</displayOrder>
+		<hostile>true</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>4</warmupTime>
+			<stunTargetOnCastStart>true</stunTargetOnCastStart>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_SwitchGiveHediff">
+                <hediffDef>Abasia</hediffDef>
+                <type>remove</type>
+                <psychic>False</psychic>
+            </li>
+		</comps>
+	</AbilityDef>
+
 </Defs>
