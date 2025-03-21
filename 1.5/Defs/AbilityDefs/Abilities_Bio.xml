@@ -56,6 +56,7 @@
         </projectile>
     </ThingDef>
 
+    <!-- 火焰呼吸 -->
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_FireBreath</defName>
         <label>firebreath</label>
@@ -80,7 +81,7 @@
             <li Class="NzFaceLessManMod.CompProperties_AbilitySpew">
                 <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
                 <damageType>Flame</damageType>
-                <damageAmount>13</damageAmount>
+                <damageAmount>17</damageAmount>
                 <armorPenetration>1.0</armorPenetration>
                 <range>5.9</range>
                 <lineWidthEnd>3</lineWidthEnd>
@@ -91,6 +92,43 @@
             </li>
         </comps>
     </AbilityDef>
+
+    <!-- 酸息 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_AcidBreath</defName>
+        <label>acid breath</label>
+        <!-- 通过一种特殊的腺体，喷洒出一种强酸性液体以腐蚀目标 -->
+        <description>Spew a highly acidic liquid from a special gland to corrode the target.</description>
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>6.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>AcidSpray_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilitySpew">
+                <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
+                <damageType>AcidBurn</damageType>
+                <damageAmount>23</damageAmount>
+                <armorPenetration>1.0</armorPenetration>
+                <range>5.9</range>
+                <lineWidthEnd>6</lineWidthEnd>
+                <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+                <filthDef>Filth_AcidicBile</filthDef>
+                <effecterDef>AcidSpray_Directional</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+            </li>
+        </comps>
+    </AbilityDef>
+
 
     <!-- 基因控制 -->
     <AbilityDef ParentName="Nz_Flm_AbilityBase">

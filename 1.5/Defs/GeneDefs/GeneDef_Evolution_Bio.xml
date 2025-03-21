@@ -46,6 +46,21 @@
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 
+    <!-- 酸液囊 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_AcidSac</defName>
+        <label>acid sac</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一种可以储存腐蚀性液体并在必要时喷射的器官, 不含毒性，但是胜在其强力腐蚀性 -->
+        <description>An organ that can store corrosive liquid and spray it when needed, without toxicity, but with strong corrosiveness.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>35</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_AcidBreath</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
     <!-- 基因控制 -->
     <NzFaceLessManMod.EvolutionGeneDef>
         <defName>Nzflm_Ev_GeneControl</defName>
