@@ -14,5 +14,18 @@
             <li>NzFlm_BattlePheromone</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 超声波器官 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_UltrasonicOrgan</defName>
+        <label>ultrasonic organ</label>
+        <displayCategory>Nzflm_Gene_Ev_Insect</displayCategory>
+        <!-- 一种位于口腔中的，可以发出超声波的器官，可以用来探测周围的环境，让你忽略黑暗对视觉的影响 -->
+        <description>An organ located in the mouth that can emit ultrasonic waves, which can be used to detect the surrounding environment and ignore the visual effects of darkness.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>20</displayOrderInCategory>
+        <evolution>1</evolution>
+        <ignoreDarkness>true</ignoreDarkness>
+    </NzFaceLessManMod.EvolutionGeneDef>
     
 </Defs>
