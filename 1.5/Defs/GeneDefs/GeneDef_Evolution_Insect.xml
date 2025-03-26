@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 母巢腺体 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_NestGland</defName>
+        <label>nest gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Insect</displayCategory>
+        <!-- 提取自虫族女皇的基因，加以改进，现在可以刺激周围的友方生物，增强其战斗力 -->
+        <description>Extracted from the genes of the insect queen and improved, it can now stimulate surrounding friendly creatures to enhance their combat effectiveness.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_BattlePheromone</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+    
+</Defs>

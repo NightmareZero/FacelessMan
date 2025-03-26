@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 战斗信息素 NzFlm_BattlePheromone -->
+    <AbilityDef>
+        <defName>NzFlm_BattlePheromone</defName>
+        <label>Battle Pheromone</label>
+        <description>Release a pheromone that stimulates surrounding friendly creatures, enhancing
+            their combat effectiveness.</description>
+        <icon>UI/Icons/Abilities/ViewGenes</icon>
+        <targetClass>AbilityTarget</targetClass>
+        <requireTargets>False</requireTargets>
+        <cooldownTicksRange>10000</cooldownTicksRange>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>0</range>
+            <requireLineOfSight>False</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+            <!-- TODO -->
+            <!-- <soundCast>RI_Sound_FireRing_A</soundCast> -->
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_BattlePheromone_Self</hediffDef>
+                <psychic>False</psychic>
+                <!-- 4小时 -->
+                <durationSecondsOverride>167</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+
+</Defs>
