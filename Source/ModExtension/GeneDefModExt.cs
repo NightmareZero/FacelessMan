@@ -5,7 +5,7 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-    public class GeneDefExt : DefModExtension
+    public class GeneDefModExt : DefModExtension
     {
         // 强制设置性别
         public bool forceFemale = false;
@@ -18,9 +18,9 @@ namespace NzFaceLessManMod
         public bool mustEndogene = false; // 必须是内源基因
 
         // 调整基因的位置
-        private static bool CanAdd(Gene gene, Pawn pawn, GeneDefExt geneDefExt)
+        private static bool CanAdd(Gene gene, Pawn pawn, GeneDefModExt geneDefModExt)
         {
-            if (geneDefExt.mustEndogene)
+            if (geneDefModExt.mustEndogene)
             {
                 if (pawn.genes.HasXenogene(gene.def))
                 {
@@ -32,16 +32,16 @@ namespace NzFaceLessManMod
         }
 
 
-        public static void ApplyAddGeneDefExt(GeneExt gene)
+        public static void ApplyGeneAdded(GeneExt gene)
         {
-            GeneDefExt geneDefExt = gene.def.GetModExtension<GeneDefExt>();
-            if (geneDefExt == null)
+            GeneDefModExt geneDefModExt = gene.def.GetModExtension<GeneDefModExt>();
+            if (geneDefModExt == null)
             {
                 return;
             }
 
             // 如果为仅内源基因，则移除，添加到內源中
-            if (!CanAdd(gene, gene.pawn, geneDefExt))
+            if (!CanAdd(gene, gene.pawn, geneDefModExt))
             {
                 Log.Error("Gene " + gene.def.defName + " must be endogene.");
                 gene.pawn.genes.AddGene(gene.def,false);
@@ -49,9 +49,9 @@ namespace NzFaceLessManMod
             }
 
             // 处理绑定状态
-            if (geneDefExt.hediffDef != null)
+            if (geneDefModExt.hediffDef != null)
             {
-                Hediff hediff = gene.pawn.health.GetOrAddHediff(geneDefExt.hediffDef);
+                Hediff hediff = gene.pawn.health.GetOrAddHediff(geneDefModExt.hediffDef);
                 if (hediff is IGeneChangeListener listener)
                 {
                     listener.Notify_OnGeneChange(gene, -1); // 通知基因新增
@@ -59,7 +59,7 @@ namespace NzFaceLessManMod
             }
 
             // 处理性别
-            if (geneDefExt.forceFemale)
+            if (geneDefModExt.forceFemale)
             {
                 gene.pawn.gender = Gender.Female;
                 if (gene.pawn.story?.bodyType == BodyTypeDefOf.Male)
@@ -67,7 +67,7 @@ namespace NzFaceLessManMod
                     gene.pawn.story.bodyType = BodyTypeDefOf.Female;
                 }
             }
-            else if (geneDefExt.forceMale)
+            else if (geneDefModExt.forceMale)
             {
                 gene.pawn.gender = Gender.Male;
                 if (gene.pawn.story?.bodyType == BodyTypeDefOf.Female)
@@ -80,21 +80,21 @@ namespace NzFaceLessManMod
 
         public static void ApplyRemoveGeneModExt(GeneExt gene)
         {
-            GeneDefExt geneDefExt = gene.def.GetModExtension<GeneDefExt>();
-            if (geneDefExt == null)
+            GeneDefModExt geneDefModExt = gene.def.GetModExtension<GeneDefModExt>();
+            if (geneDefModExt == null)
             {
                 return;
             }
 
             // 处理绑定状态
-            if (geneDefExt.hediffDef != null)
+            if (geneDefModExt.hediffDef != null)
             {
-                Hediff hediff = gene.pawn.health.hediffSet.GetFirstHediffOfDef(geneDefExt.hediffDef);
+                Hediff hediff = gene.pawn.health.hediffSet.GetFirstHediffOfDef(geneDefModExt.hediffDef);
                 if (hediff is IGeneChangeListener listener)
                 {
                     listener.Notify_OnGeneChange(gene, -1); // 通知基因移除
                 }
-                if (hediff != null && geneDefExt.hediffRemove)
+                if (hediff != null && geneDefModExt.hediffRemove)
                 {
                     gene.pawn.health.RemoveHediff(hediff); // 执行移除
                 }

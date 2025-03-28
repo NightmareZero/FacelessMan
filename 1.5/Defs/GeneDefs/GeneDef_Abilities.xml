@@ -67,7 +67,7 @@
 		<biostatMet>6</biostatMet>
 		<biostatArc>3</biostatArc>
 		<modExtensions>
-			<li Class="NzFaceLessManMod.GeneDefExt">
+			<li Class="NzFaceLessManMod.GeneDefModExt">
 				<hediffDef>Flm_Evolution</hediffDef>
 				<hediffRemove>false</hediffRemove>
 				<mustEndogene>True</mustEndogene>
