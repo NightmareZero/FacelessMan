@@ -65,7 +65,7 @@ namespace NzFaceLessManMod
             {
                 for (int i = 0; i < comps.Count; i++)
                 {
-                    comps[i].CompPostAdd();
+                    comps[i].CompPostPostAdd();
                 }
             }
         }
@@ -84,7 +84,7 @@ namespace NzFaceLessManMod
             {
                 for (int i = 0; i < comps.Count; i++)
                 {
-                    comps[i].CompPostRemoved();
+                    comps[i].CompPostPostRemoved();
                 }
             }
         }
@@ -96,7 +96,7 @@ namespace NzFaceLessManMod
             {
                 for (int i = 0; i < comps.Count; i++)
                 {
-                    comps[i].CompTick();
+                    comps[i].CompPostTick();
                 }
             }
         }

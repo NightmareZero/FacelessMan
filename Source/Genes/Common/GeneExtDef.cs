@@ -16,8 +16,39 @@ namespace NzFaceLessManMod
 
         public int CompareTo(GeneExtDef other)
         {
-            
+
             return this.displayOrderInCategory.CompareTo(other.displayOrderInCategory);
+        }
+        
+        public override void ResolveReferences()
+        {
+            base.ResolveReferences();
+            if (comps != null)
+            {
+                foreach (var comp in comps)
+                {
+                    comp.ResolveReferences(this);
+                }
+            }
+        }
+
+        public override IEnumerable<string> ConfigErrors()
+        {
+            base.ConfigErrors();
+            if (comps == null)
+            {
+                yield return "comps is null";
+            }
+            else
+            {
+                foreach (var comp in comps)
+                {
+                    foreach (var error in comp.ConfigErrors(this))
+                    {
+                        yield return error;
+                    }
+                }
+            }
         }
     }
 

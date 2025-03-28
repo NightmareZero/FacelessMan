@@ -42,8 +42,11 @@
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
         <comps>
-            <!-- TODO 通过comp添加仿生体 -->
-            <!-- <li Class="CompProperties_BionicPartAdd"></li> -->
+            <li Class="NzFaceLessManMod.CompProperties_BionicPartAdd">
+                <hediffDef>TODO</hediffDef>
+                <bodyPartDef>Hand</bodyPartDef>
+                <installCount>-1</installCount>
+            </li>
         </comps>
     </NzFaceLessManMod.EvolutionGeneDef>
 

@@ -23,7 +23,7 @@ namespace NzFaceLessManMod
         {
         }
 
-        public virtual void CompTick()
+        public virtual void CompPostTick()
         {
         }
 
@@ -32,11 +32,11 @@ namespace NzFaceLessManMod
 
         }
 
-        public virtual void CompPostAdd()
+        public virtual void CompPostPostAdd()
         {
         }
 
-        public virtual void CompPostRemoved()
+        public virtual void CompPostPostRemoved()
         {
         }
 
