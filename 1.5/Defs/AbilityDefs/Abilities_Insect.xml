@@ -33,4 +33,46 @@
         </comps>
     </AbilityDef>
 
+    <!-- 撕裂 -->
+    <AbilityDef ParentName="RI_PsycastBase">
+        <defName>NzRI_Zd_ShakeMountainFist</defName>
+        <label>shake mountain fist</label>
+        <!-- 蓄力并打出重如山岳的一拳，对敌人造成大量伤害 -->
+        <description>Charge and hit a punch as heavy as a mountain, causing a lot of damage to the
+            enemy.</description>
+        <iconPath>Ability/ZdE4</iconPath>
+        <cooldownTicksRange>120</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
+        <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <!-- TODO -->
+        <!-- <warmupStartSound>NzRI_FireSpew_Warmup</warmupStartSound> -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <range>-1</range>
+            <warmupTime>2</warmupTime>
+            <!-- <soundCast>FireSpew_Resolve</soundCast> -->
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <statBases>
+            <Ability_Duration>600</Ability_Duration>
+        </statBases>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_Hit">
+                <damageDef>Scratch</damageDef>
+                <damageAmountBase>101</damageAmountBase>
+                <damageMultiplierStat>MeleeDamageFactor</damageMultiplierStat>
+                <armorPenetrationBase>2</armorPenetrationBase>
+                <stunTicks>60</stunTicks>
+                <hitPart>Body</hitPart>
+            </li>
+
+        </comps>
+    </AbilityDef>
+
 </Defs>

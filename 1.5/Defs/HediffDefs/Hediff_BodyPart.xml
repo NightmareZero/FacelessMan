@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <HediffDef Name="NzFlm_BodyPartBase" ParentName="ImplantHediffBase" Abstract="True">
+        <hediffClass>Hediff_AddedPart</hediffClass>
+        <priceImpact>false</priceImpact>
+        <stages>
+            <!-- <li>
+                <statFactors>
+                    <NzRI_ZhengDePowerMultiplier>1.1</NzRI_ZhengDePowerMultiplier>
+                </statFactors>
+            </li> -->
+        </stages>
+    </HediffDef>
+
+    <!-- 撕裂利爪 -->
+    <HediffDef ParentName="NzFlm_BodyPartBase">
+        <defName>Nzflm_RippingClaws</defName>
+        <label>ripping claws</label>
+        <labelNoun>ripping claws</labelNoun>
+        <description>A claw made of chitin and hardened bones, replacing the hands, the force
+            contained in it can even tear the enemy in half.</description>
+        <defaultInstallPart>Hand</defaultInstallPart>
+        <tags>
+            <li>NzRI_ZhengDe_BodyPart</li>
+            <li>NzRI_ZhengDe_Restraint</li>
+        </tags>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>claw</label>
+                        <capacities>
+                            <li>Scratch</li>
+                        </capacities>
+                        <power>43</power>
+                        <armorPenetration>1.0</armorPenetration>
+                        <cooldownTime>0.8</cooldownTime>
+                        <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+                        <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <!-- 普通工作速度 -->
+                    <GeneralLaborSpeed>0.9</GeneralLaborSpeed>
+                </statFactors>
+                <statOffsets>
+                </statOffsets>
+            </li>
+        </stages>
+        <aptitudes>
+            <Melee>12</Melee>
+            <Mining>8</Mining>
+            <Plants>4</Plants>
+            <Crafting>-4</Crafting>
+            <Medicine>-4</Medicine>
+            <Artistic>-4</Artistic>
+        </aptitudes>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>1.50</partEfficiency>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+</Defs>

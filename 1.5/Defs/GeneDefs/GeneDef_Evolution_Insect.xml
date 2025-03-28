@@ -43,11 +43,14 @@
         <evolution>1</evolution>
         <comps>
             <li Class="NzFaceLessManMod.CompProperties_BionicPartAdd">
-                <hediffDef>TODO</hediffDef>
+                <hediffDef>Nzflm_RippingClaws</hediffDef>
                 <bodyPartDef>Hand</bodyPartDef>
                 <installCount>-1</installCount>
             </li>
         </comps>
+        <statOffsets>
+            <MeleeDamageFactor>1.25</MeleeDamageFactor>
+        </statOffsets>
     </NzFaceLessManMod.EvolutionGeneDef>
 
 </Defs>
