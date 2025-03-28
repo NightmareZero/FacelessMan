@@ -53,4 +53,23 @@
         </statOffsets>
     </NzFaceLessManMod.EvolutionGeneDef>
 
+    <!-- 女皇腺体 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_QueenGland</defName>
+        <label>queen gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Insect</displayCategory>
+        <!-- 地下深处虫巢女皇的腺体，可以分泌信息素，呼唤附近的虫族来帮你 -->
+        <description>taken from the queen of the underground nest, it can secrete pheromones to
+            call the nearby insect to help you.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <!-- 参考 <defName>Infestation</defName> -->
+            <!-- 技能支援信息素 -->
+            <!-- 技能，呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，一段时间后，这些生物会溶解死亡 -->
+            <li>NzFlm_SupportPheromone</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 </Defs>
