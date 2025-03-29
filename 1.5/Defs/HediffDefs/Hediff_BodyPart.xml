@@ -21,8 +21,6 @@
             contained in it can even tear the enemy in half.</description>
         <defaultInstallPart>Hand</defaultInstallPart>
         <tags>
-            <li>NzRI_ZhengDe_BodyPart</li>
-            <li>NzRI_ZhengDe_Restraint</li>
         </tags>
         <comps>
             <li Class="HediffCompProperties_VerbGiver">

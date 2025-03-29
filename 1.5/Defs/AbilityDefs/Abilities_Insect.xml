@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 战斗信息素 NzFlm_BattlePheromone -->
-    <AbilityDef>
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_BattlePheromone</defName>
         <label>Battle Pheromone</label>
         <description>Release a pheromone that stimulates surrounding friendly creatures, enhancing
             their combat effectiveness.</description>
-        <icon>UI/Icons/Abilities/ViewGenes</icon>
-        <targetClass>AbilityTarget</targetClass>
-        <requireTargets>False</requireTargets>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <targetRequired>False</targetRequired>
         <cooldownTicksRange>10000</cooldownTicksRange>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -34,7 +33,7 @@
     </AbilityDef>
 
     <!-- 撕裂 -->
-    <AbilityDef ParentName="RI_PsycastBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzRI_Zd_ShakeMountainFist</defName>
         <label>shake mountain fist</label>
         <!-- 蓄力并打出重如山岳的一拳，对敌人造成大量伤害 -->

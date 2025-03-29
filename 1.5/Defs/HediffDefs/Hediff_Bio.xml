@@ -12,10 +12,10 @@
         <comps>
             <!-- TODO 添加一个移除按钮 -->
             <li Class="HediffCompProperties_DisappearsOnDeath" />
-            <li Class="HediffCompProperties_GizmoBtnRemoveThis">
+            <li Class="NzFaceLessManMod.HediffCompProperties_GizmoBtnRemoveThis">
                 <label>Awaken</label>
                 <description>Awaken from cryptobiosis.</description>
-                <icon>UI/Icons/Abilities/ViewGenes</icon>
+                <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
                 <afterRemovedHediff>NzFlm_He_CryptobiosisWeak</afterRemovedHediff>
             </li>
         </comps>
@@ -69,9 +69,11 @@
         <isBad>false</isBad>
         <comps>
             <!-- 2小时后消失 -->
-            <li Class="HediffCompProperties_DisappearsInTicks">
-                <ticksToDisappear>5000</ticksToDisappear>
-            </li>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>5000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+			</li>
         </comps>
         <stages>
             <li>

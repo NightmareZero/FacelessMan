@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 战斗信息素(本体) -->
-    <HediffDef ParentName="RI_FireMethodHediff_Base">
+    <HediffDef>
 		<defName>NzFlm_He_BattlePheromone_Self</defName>
 		<label>Battle Pheromone</label>
         <!-- 你散发出一种奇怪的气味，在你周围的人会不由自主的感到振奋 -->
@@ -47,7 +47,7 @@
 		</renderNodeProperties> -->
 	</HediffDef>
 
-    <HediffDef ParentName="RI_FireMethodHediff_Base">
+    <HediffDef>
 		<defName>NzFlm_He_BattlePheromone_Target</defName>
         <!-- 信息素刺激 -->
 		<label>Battle Pheromone</label>
