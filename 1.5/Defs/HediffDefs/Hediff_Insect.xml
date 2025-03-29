@@ -7,6 +7,7 @@
         <!-- 你散发出一种奇怪的气味，在你周围的人会不由自主的感到振奋 -->
         <description>You emit a strange smell that makes people around you feel invigorated.</description>
 		<duplicationAllowed>false</duplicationAllowed>
+		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
 				<disappearsAfterTicks>5000</disappearsAfterTicks>
@@ -53,6 +54,7 @@
 		<label>Battle Pheromone</label>
 		<description>Stimulated by pheromones.</description>
 		<duplicationAllowed>false</duplicationAllowed>
+		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
 				<disappearsAfterTicks>7500</disappearsAfterTicks>

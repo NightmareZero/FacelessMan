@@ -20,9 +20,14 @@ namespace NzFaceLessManMod
 
         // 移除基因时恢复部位
         public bool recoverAfterRemoved = true;
-        
+
         // 安装到所有对应部位
         public bool InstallToAll => installCount < 0;
+        
+        public CompProperties_BionicPartAdd()
+        {
+            compClass = typeof(GeneExtComp_BionicPartAdd);
+        }
     }
 
     public class GeneExtComp_BionicPartAdd : GeneExtComp

@@ -35,11 +35,7 @@ namespace NzFaceLessManMod
         public override IEnumerable<string> ConfigErrors()
         {
             base.ConfigErrors();
-            if (comps == null)
-            {
-                yield return "comps is null";
-            }
-            else
+            if (comps != null)
             {
                 foreach (var comp in comps)
                 {

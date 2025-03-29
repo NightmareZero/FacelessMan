@@ -12,13 +12,8 @@ namespace NzFaceLessManMod
 
         private bool isXenoSelected = false;
 
-        public CompProperties_AbilityReimplantXeno Props
-        {
-            get
-            {
-                return (CompProperties_AbilityReimplantXeno)this.props;
-            }
-        }
+        public new CompProperties_AbilityReimplantXeno Props => (CompProperties_AbilityReimplantXeno)props;
+
         // private new CompProperties_AbilityReimplantXeno Props => (CompProperties_AbilityReimplantXeno)props;
 
         public override IEnumerable<PreCastAction> GetPreCastActions()
