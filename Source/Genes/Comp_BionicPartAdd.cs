@@ -37,14 +37,11 @@ namespace NzFaceLessManMod
         public override void CompPostMake()
         {
             base.CompPostMake();
-            if (Props.InstallToAll)
-            {
-                Props.installCount = 0;
-            }
         }
 
         public override void CompPostPostAdd()
         {
+            
             base.CompPostPostAdd();
 
             // 获取安装部位
@@ -66,10 +63,11 @@ namespace NzFaceLessManMod
                 Log.Error("GeneExtComp_BionicPartAdd: No installable body part.");
                 return;
             }
-
+Log.Message("!GeneExtComp_BionicPartAdd: CompPostPostAdd, installableBodyParts: " + installableBodyParts.Count);
             // 进行安装
             if (Props.InstallToAll)
             {
+                Log.Message("!GeneExtComp_BionicPartAdd: CompPostPostAdd, installToAll ");
                 foreach (var bodyPart in installableBodyParts)
                 {
                     InstallBionicPart(bodyPart);
@@ -77,6 +75,7 @@ namespace NzFaceLessManMod
             }
             else
             {
+                Log.Message("!GeneExtComp_BionicPartAdd: CompPostPostAdd, installCount: " + Props.installCount);
                 for (int i = 0; i < Props.installCount; i++)
                 {
                     if (installableBodyParts.Count <= 0)
