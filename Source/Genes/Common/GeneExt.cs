@@ -9,7 +9,7 @@ namespace NzFaceLessManMod
 
     public class GeneExt : Gene
     {
-        public GeneDefExt ExtDef => this.def.GetModExtension<GeneDefExt>();
+        public GeneDefExt ExtDef => def.GetModExtension<GeneDefExt>();
         public List<GeneExtComp> comps;
 
         public override string Label
@@ -61,10 +61,6 @@ namespace NzFaceLessManMod
             {
                 GeneDefExt.ApplyGeneAdded(this); // 处理基因新增逻辑
             }
-            // HediffWithComps
-            // HediffCompProperties
-
-
 
             if (comps != null)
             {
@@ -186,6 +182,7 @@ namespace NzFaceLessManMod
 
         private void InitializeComps()
         {
+
             if (ExtDef == null || ExtDef.comps == null || ExtDef.comps.Count == 0)
             {
                 return;

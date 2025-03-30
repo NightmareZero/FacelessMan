@@ -8,7 +8,6 @@ namespace NzFaceLessManMod
     
     public class EvolutionGeneDef : GeneDef, IComparable<EvolutionGeneDef>
     {
-        public new Type geneClass = typeof(GeneExt);
         // 取得该进化要求的点数
         public int evolution = 0;
 
@@ -28,6 +27,11 @@ namespace NzFaceLessManMod
 
         // 冲突标签
         public List<string> ExclusionTags => exclusionTags;
+
+        public EvolutionGeneDef()
+        { 
+            geneClass = typeof(GeneExt);
+        }
 
         public int CompareTo(EvolutionGeneDef other)
         {
