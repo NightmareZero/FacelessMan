@@ -86,7 +86,8 @@ namespace NzFaceLessManMod
 
             if (comps != null)
             {
-                for (int i = 0; i < comps.Count; i++)
+                // 倒序遍历，避免修改集合时引发异常
+                for (int i = comps.Count - 1; i >= 0; i--)
                 {
                     comps[i].CompPostPostRemoved();
                 }

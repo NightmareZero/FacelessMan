@@ -94,12 +94,16 @@ Log.Message("!GeneExtComp_BionicPartAdd: CompPostPostAdd, installableBodyParts: 
             base.CompPostPostRemoved();
             if (Props.recoverAfterRemoved)
             {
-                foreach (var hediff in Pawn.health.hediffSet.hediffs)
+                // 创建一个临时列表，存储需要恢复的部件
+                var partsToRecover = Pawn.health.hediffSet.hediffs
+                    .Where(hediff => hediff.def == Props.hediffDef && hediff.Part != null)
+                    .Select(hediff => hediff.Part)
+                    .ToList();
+
+                // 遍历临时列表，恢复部件
+                foreach (var part in partsToRecover)
                 {
-                    if (hediff.def == Props.hediffDef && hediff.Part != null)
-                    {
-                        RecoverBionicPart(hediff.Part);
-                    }
+                    RecoverBionicPart(part);
                 }
             }
         }

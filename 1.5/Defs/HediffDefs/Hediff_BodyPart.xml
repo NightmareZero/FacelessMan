@@ -59,7 +59,7 @@
         </aptitudes>
         <addedPartProps>
             <solid>true</solid>
-            <partEfficiency>1.50</partEfficiency>
+            <partEfficiency>0.95</partEfficiency>
             <betterThanNatural>true</betterThanNatural>
         </addedPartProps>
     </HediffDef>
