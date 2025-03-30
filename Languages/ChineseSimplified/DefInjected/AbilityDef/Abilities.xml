@@ -9,7 +9,7 @@
     <Flm_MorphingE.label>内源变形</Flm_MorphingE.label>
     <Flm_MorphingE.description>使用身上的基因包替换自己的可遗传内源基因。</Flm_MorphingE.description>
 
-    <Flm_Evolve.label>拥抱进化</Flm_Evolve.label>
+    <Flm_Evolve.label>基因操纵</Flm_Evolve.label>
     <Flm_Evolve.description>定制一个异种胚芽，并注入目标体内，但是即使是强大的基因主宰，也会变得虚弱。</Flm_Evolve.description>
 
     <NzFlm_Disguise.label>伪装</NzFlm_Disguise.label>
