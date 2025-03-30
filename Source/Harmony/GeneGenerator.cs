@@ -41,6 +41,9 @@ namespace NzFaceLessManMod
 
                 AvaliableXenotypeDef.ForEach(xeno =>
                 {
+#if DEBUG
+                    Log.Message("flm: working on xenotype: " + xeno.label.Translate());
+#endif
                     // 如果不是无面人异种，则生成一个对应基因包
                     if (xeno.defName != XmlDefs.Flm_FacelessMan.defName)
                     {
@@ -51,6 +54,7 @@ namespace NzFaceLessManMod
                         // 如果是超级载体则设置为包含所有基因
                         if (gene.defName == XmlDefs.Flm_GeneMaster.defName)
                         {
+
                             GeneXenoModExt modExt = new GeneXenoModExt
                             {
                                 containXeno = AvaliableXenotypeDef.ToDictionary(x => x.defName, x => x)
@@ -70,8 +74,8 @@ namespace NzFaceLessManMod
             }
             catch (Exception e)
             {
-                Log.Error("Error in Postfix of GeneDefGenerator.ImpliedGeneDefs: " + e.Message);
-                Log.Error("StackTrace: " + e.StackTrace);
+                Log.Error("!Error in Postfix of GeneDefGenerator.ImpliedGeneDefs: " + e.Message);
+                Log.Error("!StackTrace: " + e.StackTrace);
             }
 
 
@@ -107,15 +111,6 @@ namespace NzFaceLessManMod
 
                 descriptionHyperlinks = new List<DefHyperlink> { new DefHyperlink { def = template.ability } }
             };
-
-
-
-
-            // Debug模式则输出日志
-#if DEBUG
-            Log.Message("flm: geneDef: " + geneDef.label);
-#endif
-
 
             if (!template.exclusionTagPrefix.NullOrEmpty())
             {

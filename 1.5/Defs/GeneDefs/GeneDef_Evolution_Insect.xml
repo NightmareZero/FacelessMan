@@ -41,16 +41,20 @@
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
-        <comps>
-            <li Class="NzFaceLessManMod.CompProperties_BionicPartAdd">
-                <hediffDef>Nzflm_RippingClaws</hediffDef>
-                <bodyPartDef>Hand</bodyPartDef>
-                <installCount>-1</installCount>
-            </li>
-        </comps>
         <statOffsets>
             <MeleeDamageFactor>1.25</MeleeDamageFactor>
         </statOffsets>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_BionicPartAdd">
+                        <hediffDef>Nzflm_RippingClaws</hediffDef>
+                        <bodyPartDef>Hand</bodyPartDef>
+                        <installCount>-1</installCount>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
     </NzFaceLessManMod.EvolutionGeneDef>
 
     <!-- 女皇腺体 -->

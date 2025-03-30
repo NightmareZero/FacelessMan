@@ -12,9 +12,7 @@ namespace NzFaceLessManMod
         public GeneExtCompProp props;
 
         public Pawn Pawn => parent.pawn;
-
-        public GeneExtDef Def => parent.Def;
-
+        
         public virtual string Label => "";
 
         public virtual string LabelCap => Label.CapitalizeFirst();

@@ -17,7 +17,7 @@ namespace NzFaceLessManMod
         // 上一次增加点数的时间
         public int lastPointAddTick = 0;
 
-        const int pointAddInterval = 5 * 60000; // 5天增加一点
+        private int pointAddInterval = 5 * 60000; // 5天增加一点
 
         // 进化的基因
         public List<EvolutionGeneDef> evolutions = new List<EvolutionGeneDef>();
@@ -38,6 +38,9 @@ namespace NzFaceLessManMod
             {
                 this.evolutionLimit++; // 增加点数
                 this.lastPointAddTick = Find.TickManager.TicksGame; // 记录时间
+#if DEBUG
+                Log.Message("evolutionLimit added to " + this.evolutionLimit);
+#endif
             }
         }
 
@@ -100,6 +103,14 @@ namespace NzFaceLessManMod
             Scribe_Values.Look(ref geneDirty, "geneDirty");
             Scribe_Values.Look(ref geneDirtyTick, "geneDirtyTick");
             Scribe_Collections.Look(ref evolutions, "evolutions", LookMode.Def);
+
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+#if DEBUG
+                Log.Warning("pointAddInterval set to 1 hour");
+                pointAddInterval = 1 * 2500; // 每小时增加一点
+#endif
+            }
         }
 
         public override void PostMake()

@@ -9,8 +9,8 @@ namespace NzFaceLessManMod
 
     public class GeneExt : Gene
     {
-        public GeneExtDef Def => def as GeneExtDef;
-        public List<GeneExtComp> comps = new List<GeneExtComp>();
+        public GeneDefExt ExtDef => this.def.GetModExtension<GeneDefExt>();
+        public List<GeneExtComp> comps;
 
         public override string Label
         {
@@ -34,32 +34,37 @@ namespace NzFaceLessManMod
         {
             base.PostMake();
             InitializeComps();
-            for (int num = comps.Count - 1; num >= 0; num--)
+            if (comps != null)
             {
-                try
+                for (int num = comps.Count - 1; num >= 0; num--)
                 {
-                    comps[num].CompPostMake();
-                }
-                catch (Exception ex)
-                {
-                    Log.Error("Error in HediffComp.CompPostMake(): " + ex);
-                    comps.RemoveAt(num);
+                    try
+                    {
+                        comps[num].CompPostMake();
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Error("Error in HediffComp.CompPostMake(): " + ex);
+                        comps.RemoveAt(num);
+                    }
                 }
             }
         }
 
         public override void PostAdd()
         {
+
+            base.PostAdd(); // renderer only
+
             // 调用逻辑
-            GeneDefModExt gDef = this.def.GetModExtension<GeneDefModExt>();
-            if (gDef != null)
+            if (ExtDef != null)
             {
-                GeneDefModExt.ApplyGeneAdded(this); // 处理基因新增逻辑
+                GeneDefExt.ApplyGeneAdded(this); // 处理基因新增逻辑
             }
             // HediffWithComps
             // HediffCompProperties
 
-            base.PostAdd(); // renderer
+
 
             if (comps != null)
             {
@@ -68,24 +73,32 @@ namespace NzFaceLessManMod
                     comps[i].CompPostPostAdd();
                 }
             }
+
+            if (def.HasDefinedGraphicProperties)
+            {
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
+            }
         }
 
         public override void PostRemove()
         {
-
-            GeneDefModExt gDef = def.GetModExtension<GeneDefModExt>();
-            if (gDef != null)
+            base.PostRemove(); // renderer only
+            if (ExtDef != null)
             {
-                GeneDefModExt.ApplyRemoveGeneModExt(this); // 处理基因移除逻辑
+                GeneDefExt.ApplyRemoveGeneModExt(this); // 处理基因移除逻辑
             }
 
-            base.PostRemove(); // renderer
             if (comps != null)
             {
                 for (int i = 0; i < comps.Count; i++)
                 {
                     comps[i].CompPostPostRemoved();
                 }
+            }
+
+            if (def.HasDefinedGraphicProperties)
+            {
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
             }
         }
 
@@ -104,17 +117,20 @@ namespace NzFaceLessManMod
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            for (int i = 0; i < comps.Count; i++)
+            if (comps != null)
             {
-                IEnumerable<Gizmo> enumerable = comps[i].CompGetGizmos();
-                if (enumerable == null)
+                for (int i = 0; i < comps.Count; i++)
                 {
-                    continue;
-                }
+                    IEnumerable<Gizmo> enumerable = comps[i].CompGetGizmos();
+                    if (enumerable == null)
+                    {
+                        continue;
+                    }
 
-                foreach (Gizmo item in enumerable)
-                {
-                    yield return item;
+                    foreach (Gizmo item in enumerable)
+                    {
+                        yield return item;
+                    }
                 }
             }
         }
@@ -168,22 +184,21 @@ namespace NzFaceLessManMod
             }
         }
 
-
         private void InitializeComps()
         {
-            if (Def.comps == null)
+            if (ExtDef == null || ExtDef.comps == null || ExtDef.comps.Count == 0)
             {
                 return;
             }
 
             comps = new List<GeneExtComp>();
-            for (int i = 0; i < Def.comps.Count; i++)
+            for (int i = 0; i < ExtDef.comps.Count; i++)
             {
                 GeneExtComp geneComp = null;
                 try
                 {
-                    geneComp = (GeneExtComp)Activator.CreateInstance(Def.comps[i].compClass);
-                    geneComp.props = Def.comps[i];
+                    geneComp = (GeneExtComp)Activator.CreateInstance(ExtDef.comps[i].compClass);
+                    geneComp.props = ExtDef.comps[i];
                     geneComp.parent = this;
                     comps.Add(geneComp);
                 }
@@ -216,6 +231,11 @@ namespace NzFaceLessManMod
 
         public T GetComp<T>() where T : GeneExtComp
         {
+            if (comps == null)
+            {
+                return null;
+            }
+
             for (int i = 0; i < comps.Count; i++)
             {
                 if (comps[i] is T)

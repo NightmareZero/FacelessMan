@@ -10,11 +10,11 @@ namespace NzFaceLessManMod
         [TranslationHandle]
         public Type compClass;
 
-        public virtual void ResolveReferences(GeneExtDef parent)
+        public virtual void ResolveReferences(GeneDefExt parent)
         {
         }
 
-        public virtual IEnumerable<string> ConfigErrors(GeneExtDef parentDef)
+        public virtual IEnumerable<string> ConfigErrors(GeneDefExt parentDef)
         {
             if (compClass == null)
             {

@@ -6,8 +6,9 @@ using Verse;
 namespace NzFaceLessManMod
 { 
     
-    public class EvolutionGeneDef : GeneExtDef, IComparable<EvolutionGeneDef>
+    public class EvolutionGeneDef : GeneDef, IComparable<EvolutionGeneDef>
     {
+        public new Type geneClass = typeof(GeneExt);
         // 取得该进化要求的点数
         public int evolution = 0;
 
