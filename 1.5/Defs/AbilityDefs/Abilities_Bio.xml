@@ -18,6 +18,7 @@
             <verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
             <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
             <ai_IsWeapon>False</ai_IsWeapon>
+            <onlyManualCast>True</onlyManualCast>
             <warmupTime>0.2</warmupTime>
             <range>8</range>
             <targetParams>
