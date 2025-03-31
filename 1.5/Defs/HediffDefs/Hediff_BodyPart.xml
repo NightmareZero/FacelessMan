@@ -30,9 +30,9 @@
                         <capacities>
                             <li>Scratch</li>
                         </capacities>
-                        <power>37</power>
+                        <power>31</power>
                         <armorPenetration>1.0</armorPenetration>
-                        <cooldownTime>0.8</cooldownTime>
+                        <cooldownTime>0.9</cooldownTime>
                         <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
                         <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
                     </li>
