@@ -32,20 +32,18 @@
         </comps>
     </AbilityDef>
 
-    <!-- 撕裂 -->
+    <!-- 毁灭 -->
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
-        <defName>NzRI_Zd_ShakeMountainFist</defName>
-        <label>shake mountain fist</label>
-        <!-- 蓄力并打出重如山岳的一拳，对敌人造成大量伤害 -->
-        <description>Charge and hit a punch as heavy as a mountain, causing a lot of damage to the
-            enemy.</description>
-        <iconPath>Ability/ZdE4</iconPath>
-        <cooldownTicksRange>120</cooldownTicksRange>
+        <defName>NzRI_Zd_ClawDestroy</defName>
+        <label>destruction</label>
+        <!-- 尝试将目标撕成碎片，对敌人造成大量伤害 -->
+        <description>Try to tear the target into pieces, causing a lot of damage to the enemy.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <cooldownTicksRange>1250</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <ai_IsIncendiary>true</ai_IsIncendiary>
         <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
         <jobDef>CastAbilityOnThingMelee</jobDef>
-        <!-- TODO -->
         <!-- <warmupStartSound>NzRI_FireSpew_Warmup</warmupStartSound> -->
         <verbProperties>
             <verbClass>Verb_CastAbilityTouch</verbClass>
