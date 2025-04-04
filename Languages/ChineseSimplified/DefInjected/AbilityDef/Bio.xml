@@ -14,4 +14,10 @@
 
     <NzFlm_Cryptobiosis.label>隐生</NzFlm_Cryptobiosis.label>
     <NzFlm_Cryptobiosis.description>通过进入一种特殊状态，来大幅度减少食物消耗，提升高温/低温/毒素抗性，以便撑过一些艰难的日子</NzFlm_Cryptobiosis.description>
+
+    <NzFlm_ParalysisToxin.label>麻痹毒素</NzFlm_ParalysisToxin.label>
+    <NzFlm_ParalysisToxin.description>一种来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间</NzFlm_ParalysisToxin.description>
+
+    <NzFlm_ParalysisAntidote.label>麻痹解毒剂</NzFlm_ParalysisAntidote.label>
+    <NzFlm_ParalysisAntidote.description>一种基于原毒剂的逆向解毒剂，可以立即结束目标的麻痹症效果</NzFlm_ParalysisAntidote.description>
 </LanguageData>
