@@ -68,8 +68,8 @@ namespace NzFaceLessManMod
             AddNewGenes(target, xenotype);
 
             // 添加基因不稳定hediff
-            target.health.AddHediff(XmlDefs.Flm_GeneticInstability);
-            caster.health.AddHediff(XmlDefs.Flm_GeneLossDizzy);
+            caster.health.AddHediff(XmlDefs.Flm_GeneticInstability);
+            target.health.AddHediff(XmlDefs.Flm_GeneLossDizzy);
 
             // 更新异种基因复制
             GeneUtility.UpdateXenogermReplication(target);

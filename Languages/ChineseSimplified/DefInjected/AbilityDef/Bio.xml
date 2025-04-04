@@ -2,4 +2,10 @@
 <LanguageData>
     <NzFlm_EMPBlast.label>EMP爆破</NzFlm_EMPBlast.label>
     <NzFlm_EMPBlast.description>发射一团粘稠的电浆，命中目标后造成范围性的电磁干扰。</NzFlm_EMPBlast.description>
+
+    <NzFlm_FireBreath.label>火焰呼吸</NzFlm_FireBreath.label>
+    <NzFlm_FireBreath.description>经由一种相比炎魔种更好的，基于生物技术优化过的腺体，喷洒出高温易燃的液体。以迅速点燃目标</NzFlm_FireBreath.description>
+
+    <NzFlm_AcidBreath.label>浓酸呼吸</NzFlm_AcidBreath.label>
+    <NzFlm_AcidBreath.description>通过特殊的腺体，喷洒出一种无毒的强酸性液体以腐蚀目标</NzFlm_AcidBreath.description>
 </LanguageData>

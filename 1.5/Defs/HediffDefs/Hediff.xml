@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <!-- 基因控制导致 -->
     <HediffDef>
         <defName>Flm_GeneticInstability</defName>
         <label>genetic instability</label>
@@ -35,8 +36,11 @@
                 <showRemainingTime>true</showRemainingTime>
                 <canUseDecimalsShortForm>true</canUseDecimalsShortForm>
             </li>
+            <li Class="NzFaceLessManMod.Comp_ZeroSeverityOnRemove"/>
         </comps>
     </HediffDef>
+
+    <!-- 基因注入导致 -->
     <HediffDef>
         <defName>Flm_GeneLossDizzy</defName>
         <label>gene loss dizzy</label>
@@ -63,9 +67,10 @@
         </stages>
         <comps>
             <li Class="HediffCompProperties_Disappears">
-                <disappearsAfterTicks>120000</disappearsAfterTicks>
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
                 <showRemainingTime>true</showRemainingTime>
             </li>
+            <li Class="NzFaceLessManMod.Comp_ZeroSeverityOnRemove"/>
         </comps>
     </HediffDef>
 

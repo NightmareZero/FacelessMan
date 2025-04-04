@@ -98,8 +98,8 @@
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_AcidBreath</defName>
         <label>acid breath</label>
-        <!-- 通过一种特殊的腺体，喷洒出一种强酸性液体以腐蚀目标 -->
-        <description>Spew a highly acidic liquid from a special gland to corrode the target.</description>
+        <!-- 通过特殊的腺体，喷洒出一种无毒的强酸性液体以腐蚀目标 -->
+        <description>Spew a non-toxic strong acid liquid through a special gland to corrode the target.</description>
         <iconPath>UI/Abilities/AcidSpray</iconPath>
         <cooldownTicksRange>600</cooldownTicksRange>
         <aiCanUse>false</aiCanUse>

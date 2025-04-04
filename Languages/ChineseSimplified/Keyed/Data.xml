@@ -23,4 +23,5 @@
     <nzflm.evolution_stat_desc>虽然这些基因已经整合进了你的体内，但是你的身体暂时只能承受一部分\n(随着时间推移和其他因素，你的身体可能会适应更多的基因)</nzflm.evolution_stat_desc>
     <nzflm.evolution_start_button>开始突变</nzflm.evolution_start_button>
 
+    <nzflm.has_target_status>处于 '{0}' 状态</nzflm.has_target_status>
 </LanguageData>

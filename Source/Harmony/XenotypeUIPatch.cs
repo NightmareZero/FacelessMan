@@ -117,11 +117,16 @@ namespace NzFaceLessManMod
     [HarmonyPatch(typeof(GeneUtility), "GenesInOrder", MethodType.Getter)]
     public static class GeneUtility_GenesInOrder_Patch
     {
+        private static bool logPrinted = false; // 添加静态布尔字段
         [HarmonyPriority(int.MinValue + 1)]
         public static void Postfix(ref List<GeneDef> __result)
         {
 #if DEBUG
-            Log.Message("flm: 无面人突变基因将不会被隐藏起来");
+            if (!logPrinted) // 检查是否已经打印过日志
+            {
+                Log.Warning("flm: 无面人突变基因将不会被隐藏起来");
+                logPrinted = true; // 设置为已打印
+            }
 #else      
             var window = Find.WindowStack.WindowOfType<GeneCreationDialogBase>();
             if (window != null)
