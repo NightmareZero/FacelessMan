@@ -5,4 +5,13 @@
 
     <Nzflm_Ev_ScaledSkin.label>鳞片皮肤</Nzflm_Ev_ScaledSkin.label>
     <Nzflm_Ev_ScaledSkin.description>来自于蜥蜴的鳞片，或者说 "巨龙" 的鳞片，其带来的改变不仅限于皮肤表层，也包括了一些腺体，能大幅度降低受到的伤害。</Nzflm_Ev_ScaledSkin.description>
+
+    <Nzflm_Ev_FireSac.label>火囊</Nzflm_Ev_FireSac.label>
+    <Nzflm_Ev_FireSac.description>一种可以储存可燃液体并在必要时喷射的器官， 相比炎魔种，恢复更快</Nzflm_Ev_FireSac.description>
+
+    <Nzflm_Ev_AcidSac.label>酸液囊</Nzflm_Ev_AcidSac.label>
+    <Nzflm_Ev_AcidSac.description>一种可以储存腐蚀性液体并在必要时喷射的器官, 不含毒性，但是胜在其强力腐蚀性</Nzflm_Ev_AcidSac.description>
+
+    <Nzflm_Ev_GeneControl.label>基因控制</Nzflm_Ev_GeneControl.label>
+    <Nzflm_Ev_GeneControl.description>你可以像使用一个基因实验室一样使用体内器官来生成一个异种胚芽，并注入目标体内，但是这会让你变得非常疲劳。</Nzflm_Ev_GeneControl.description>
 </LanguageData>

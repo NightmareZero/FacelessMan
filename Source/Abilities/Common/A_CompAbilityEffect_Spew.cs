@@ -140,7 +140,7 @@ namespace NzFaceLessManMod
             {
                 if (Props.rangeStat != null)
                 {
-                    return Props.lineWidthEnd * (Caster.GetStatValue(Props.rangeStat) / 2);
+                    return Props.lineWidthEnd * Caster.GetStatValue(Props.rangeStat);
                 }
                 return Props.lineWidthEnd;
             }

@@ -6,7 +6,7 @@ using RimWorld;
 namespace NzFaceLessManMod
 {
     // CompAbilityEffect_FireSpew
-    public abstract class CompAbilityEffect_Spew : Abstract_CompAbilityEffect_Spew
+    public class CompAbilityEffect_Spew : Abstract_CompAbilityEffect_Spew
     {
         private new CompProperties_AbilitySpew Props => (CompProperties_AbilitySpew)props;
 

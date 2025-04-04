@@ -69,7 +69,7 @@
         <aiCanUse>false</aiCanUse>
         <warmupStartSound>FireSpew_Warmup</warmupStartSound>
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
             <range>5.9</range>
             <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
             <warmupTime>0.5</warmupTime>
@@ -85,7 +85,7 @@
                 <damageAmount>17</damageAmount>
                 <armorPenetration>1.0</armorPenetration>
                 <range>5.9</range>
-                <lineWidthEnd>3</lineWidthEnd>
+                <lineWidthEnd>4.3</lineWidthEnd>
                 <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
                 <filthDef>Filth_FlammableBile</filthDef>
                 <effecterDef>Fire_Spew</effecterDef>
@@ -105,7 +105,7 @@
         <aiCanUse>false</aiCanUse>
         <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
         <verbProperties>
-            <verbClass>Verb_CastAbility</verbClass>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
             <range>6.9</range>
             <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
             <warmupTime>0.5</warmupTime>
@@ -121,9 +121,9 @@
                 <damageAmount>23</damageAmount>
                 <armorPenetration>2.0</armorPenetration>
                 <range>5.9</range>
-                <lineWidthEnd>6</lineWidthEnd>
+                <lineWidthEnd>4.3</lineWidthEnd>
                 <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
-                <filthDef>Filth_AcidicBile</filthDef>
+                <filthDef>Filth_SpentAcid</filthDef>
                 <effecterDef>AcidSpray_Directional</effecterDef>
                 <canHitFilledCells>true</canHitFilledCells>
             </li>
