@@ -14,4 +14,7 @@
 
     <Nzflm_Ev_GeneControl.label>基因控制</Nzflm_Ev_GeneControl.label>
     <Nzflm_Ev_GeneControl.description>你可以像使用一个基因实验室一样使用体内器官来生成一个异种胚芽，并注入目标体内，但是这会让你变得非常疲劳。</Nzflm_Ev_GeneControl.description>
+
+    <Nzflm_Ev_Cryptobiosis.label>隐生</Nzflm_Ev_Cryptobiosis.label>
+    <Nzflm_Ev_Cryptobiosis.description>一种从熊、蛙类、昆虫和蜥蜴身上提取的混合定制基因，让你可以进入“隐生”状态，以撑过一些艰难的日子。</Nzflm_Ev_Cryptobiosis.description>
 </LanguageData>

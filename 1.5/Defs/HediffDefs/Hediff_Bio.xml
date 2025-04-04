@@ -18,6 +18,10 @@
                 <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
                 <afterRemovedHediff>NzFlm_He_CryptobiosisWeak</afterRemovedHediff>
             </li>
+            <li Class="NzFaceLessManMod.HediffCompProperties_MaxNeed">
+                <maxSleep>0.3</maxSleep>
+                <initSleep>0.1</initSleep>
+            </li>
         </comps>
         <stages>
             <li>
@@ -53,7 +57,7 @@
                 <statFactors>
                     <!-- 休息 -->
                     <BedRestEffectiveness>0.05</BedRestEffectiveness>
-                    <MoveSpeed>0.1</MoveSpeed>
+                    <MoveSpeed>0.5</MoveSpeed>
                 </statFactors>
             </li>
         </stages>

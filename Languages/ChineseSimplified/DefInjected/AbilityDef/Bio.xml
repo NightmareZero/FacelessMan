@@ -8,4 +8,10 @@
 
     <NzFlm_AcidBreath.label>浓酸呼吸</NzFlm_AcidBreath.label>
     <NzFlm_AcidBreath.description>通过特殊的腺体，喷洒出一种无毒的强酸性液体以腐蚀目标</NzFlm_AcidBreath.description>
+
+    <Flm_Evolve.label>基因操纵</Flm_Evolve.label>
+    <Flm_Evolve.description>定制一个异种胚芽，并注入目标体内，这会让你会变得虚弱。</Flm_Evolve.description>
+
+    <NzFlm_Cryptobiosis.label>隐生</NzFlm_Cryptobiosis.label>
+    <NzFlm_Cryptobiosis.description>通过进入一种特殊状态，来大幅度减少食物消耗，提升高温/低温/毒素抗性，以便撑过一些艰难的日子</NzFlm_Cryptobiosis.description>
 </LanguageData>
