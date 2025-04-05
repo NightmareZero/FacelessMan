@@ -17,6 +17,7 @@
         <defName>Nzflm_RippingClaws</defName>
         <label>ripping claws</label>
         <labelNoun>ripping claws</labelNoun>
+        <!-- 甲壳和硬骨制成的爪子，取代了手部，内含的力量甚至可以撕裂敌人成两半 -->
         <description>A claw made of chitin and hardened bones, replacing the hands, the force
             contained in it can even tear the enemy in half.</description>
         <defaultInstallPart>Hand</defaultInstallPart>
@@ -59,7 +60,7 @@
         </aptitudes>
         <addedPartProps>
             <solid>true</solid>
-            <partEfficiency>0.95</partEfficiency>
+            <partEfficiency>0.9</partEfficiency>
             <betterThanNatural>true</betterThanNatural>
         </addedPartProps>
     </HediffDef>

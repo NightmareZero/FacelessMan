@@ -37,11 +37,8 @@ namespace NzFaceLessManMod
             }
 
             // 击打部位
-            BodyPartRecord hitPartRcord = null;
-            if (Props.hitPart != null)
-            {
-                hitPartRcord = target.Pawn.health.hediffSet.GetNotMissingParts().FirstOrDefault(x => x.def == Props.hitPart);
-            }
+            BodyPartRecord hitPartRcord = Props.GetHitPart(target.Pawn);
+            Log.Message($"hitPartRcord: {hitPartRcord != null}");
 
 
             // 造成伤害

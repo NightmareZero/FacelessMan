@@ -44,6 +44,9 @@
         <statOffsets>
             <MeleeDamageFactor>1.25</MeleeDamageFactor>
         </statOffsets>
+        <abilities>
+            <li>NzRI_Zd_ClawDestroy</li>
+        </abilities>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
                 <comps>

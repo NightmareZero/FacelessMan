@@ -62,11 +62,17 @@
         <comps>
             <li Class="NzFaceLessManMod.CompProperties_Hit">
                 <damageDef>Scratch</damageDef>
-                <damageAmountBase>101</damageAmountBase>
+                <damageAmountBase>87</damageAmountBase>
                 <damageMultiplierStat>MeleeDamageFactor</damageMultiplierStat>
                 <armorPenetrationBase>2</armorPenetrationBase>
                 <stunTicks>60</stunTicks>
-                <hitPart>Body</hitPart>
+                <hitParts>
+                    <li>Torso</li>
+                    <li>Body</li>
+                    <li>MechanicalCentipedeBodyFirstRing</li>
+                    <li>MechanicalThorax</li>
+                    <li>MechanicalThoraxCanManipulate</li>
+                </hitParts>
             </li>
 
         </comps>

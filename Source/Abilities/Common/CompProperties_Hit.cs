@@ -1,5 +1,6 @@
 using RimWorld;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
@@ -8,7 +9,7 @@ using Verse;
 namespace NzFaceLessManMod
 {
     public class CompProperties_Hit : CompProperties_AbilityEffect
-    { 
+    {
         // 伤害类型
         public DamageDef damageDef;
         public DamageDef DamageDef
@@ -32,7 +33,41 @@ namespace NzFaceLessManMod
         // 穿甲放大
         public StatDef armorPenetrationMultiplierStat;
         // 打击部位
-        public BodyPartDef hitPart = null;
+        public List<BodyPartDef> hitParts = null;
+        // 随机/顺序获取
+        public bool hitPartRandom = false;
+
+        public BodyPartRecord GetHitPart(Pawn target)
+        {
+
+            if (hitParts == null || hitParts.Count == 0)
+            {
+                // 随机获取
+                return target.health?.hediffSet?.GetNotMissingParts().RandomElement();
+            }
+            if (hitPartRandom)
+            {
+                // 选定部位随机获取
+                return target.health?.hediffSet?.GetNotMissingParts()
+                    .Where(x => hitParts.Contains(x.def))
+                    .RandomElement();
+            }
+            else
+            {
+                // 选定部位顺序获取
+                foreach (var partDef in hitParts)
+                {
+                    var part = target.health?.hediffSet?.GetNotMissingParts()
+                        .FirstOrDefault(x => x.def == partDef);
+                    if (part != null)
+                    {
+                        return part;
+                    }
+                }
+                return null; // 如果没有找到匹配的部位，返回 null
+            }
+
+        }
         // 声音
         public SoundDef soundHitPawn;
 

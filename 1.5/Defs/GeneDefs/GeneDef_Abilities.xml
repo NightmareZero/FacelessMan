@@ -4,7 +4,7 @@
 		<defName>Flm_GermlineReimplanter</defName>
 		<label>genepack reimplanter</label>
 		<labelShortAdj>reimplanter</labelShortAdj>
-		<description>Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ. </description>
+		<description>Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath> -->
 		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
