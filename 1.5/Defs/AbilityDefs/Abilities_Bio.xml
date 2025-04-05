@@ -177,7 +177,6 @@
         <!-- 通过进入一种特殊状态，来大幅度减少食物消耗，提升高温/低温/毒素抗性，以便撑过一些艰难的日子 -->
         <description>By entering a special state, greatly reduce food consumption, improve high
             temperature/low temperature/toxin resistance, in order to get through some difficult days.</description>
-        <level>1</level>
         <!-- TODO -->
         <iconPath>UI/Abilities/Invisibility</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -187,7 +186,6 @@
             <onlyManualCast>True</onlyManualCast>
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>
-                <canTargetAnimals>True</canTargetAnimals>
             </targetParams>
         </verbProperties>
         <comps>
