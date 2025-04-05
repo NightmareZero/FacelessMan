@@ -33,6 +33,9 @@ namespace NzFaceLessManMod
 
         public static HediffDef Flm_Evolution;
 
+        // 支援信息素
+        public static HediffDef NzFlm_He_SupportPheromone_Target;
+
 
         static XmlDefs()
         {

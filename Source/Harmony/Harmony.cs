@@ -25,6 +25,23 @@ namespace NzFaceLessManMod
         }
     }
 
+        public class FacelessManModComponent : GameComponent
+    {
+        public FacelessManModComponent(Game game)
+        {
+        }
+        public override void ExposeData()
+        {
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                // 读取数据
+                AnimalCaches.Clear();
+            }
+        }
+
+
+    }
+
     [StaticConstructorOnStartup]
     public static class Main
     {

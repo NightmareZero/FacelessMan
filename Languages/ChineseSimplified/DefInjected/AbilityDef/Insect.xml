@@ -3,5 +3,6 @@
     <NzRI_Zd_ClawDestroy.label>毁灭</NzRI_Zd_ClawDestroy.label>
     <NzRI_Zd_ClawDestroy.description>尝试将目标撕成碎片，对敌人造成大量伤害</NzRI_Zd_ClawDestroy.description>
 
-    
+    <NzFlm_SupportPheromone.label>支援信息素</NzFlm_SupportPheromone.label>
+    <NzFlm_SupportPheromone.description>呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。</NzFlm_SupportPheromone.description>
 </LanguageData>

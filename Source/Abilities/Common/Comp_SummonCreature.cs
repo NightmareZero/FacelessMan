@@ -49,13 +49,11 @@ namespace NzFaceLessManMod
             if (pawn != null)
             {
                 IntVec3 cell = Props.onTarget ? target.Cell : parent.pawn.Position;
-                // pawn.SpawnSetup(parent.pawn.Map, true);
                 GenSpawn.Spawn(pawn, cell, parent.pawn.Map);
                 if (Props.addHediff != null)
                 {
                     pawn.health.AddHediff(Props.addHediff);
                 }
-
             }
         }
     }

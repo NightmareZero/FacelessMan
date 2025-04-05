@@ -69,6 +69,7 @@
                 <hitParts>
                     <li>Torso</li>
                     <li>Body</li>
+                    <li>Shell</li>
                     <li>MechanicalCentipedeBodyFirstRing</li>
                     <li>MechanicalThorax</li>
                     <li>MechanicalThoraxCanManipulate</li>
@@ -83,7 +84,7 @@
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_SupportPheromone</defName>
         <label>support pheromone</label>
-        <!-- 技能，呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
+        <!-- 呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
         <description>Call a few giant spiders to attack your enemies. Due to the stimulation of special pheromones, they will be more violent. After a period of time, these creatures will dissolve and die.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <cooldownTicksRange>30000</cooldownTicksRange>
@@ -97,15 +98,12 @@
             <verbClass>Verb_CastAbility</verbClass>
             <violent>false</violent>
             <warmupTime>2</warmupTime>
-
+            <!-- TODO 更换声音 -->
             <soundCast>Longjump_Jump</soundCast>
             <onlyManualCast>True</onlyManualCast>
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>
             </targetParams>
-            <!-- <warmupEffecter>EmergencePointSustained2X2</warmupEffecter> -->
-            <!-- <warmupEffecter>EmergencePointComplete2X2</warmupEffecter> -->
-            <!-- <beamEndEffecterDef>EmergencePointComplete2X2</beamEndEffecterDef> -->
         </verbProperties>
         <comps>
             <li Class="NzFaceLessManMod.CompProperties_AbilityEffecter">
@@ -118,6 +116,7 @@
                 <countMin>4</countMin>
                 <countMax>6</countMax>
                 <onTarget>False</onTarget>
+                <addHediff>NzFlm_He_SupportPheromone_Target</addHediff>
             </li>
         </comps>
     </AbilityDef>
