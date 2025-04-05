@@ -40,31 +40,39 @@ namespace NzFaceLessManMod
         public BodyPartRecord GetHitPart(Pawn target)
         {
 
-            if (hitParts == null || hitParts.Count == 0)
+            try
             {
-                // 随机获取
-                return target.health?.hediffSet?.GetNotMissingParts().RandomElement();
-            }
-            if (hitPartRandom)
-            {
-                // 选定部位随机获取
-                return target.health?.hediffSet?.GetNotMissingParts()
-                    .Where(x => hitParts.Contains(x.def))
-                    .RandomElement();
-            }
-            else
-            {
-                // 选定部位顺序获取
-                foreach (var partDef in hitParts)
+                if (hitParts == null || hitParts.Count == 0)
                 {
-                    var part = target.health?.hediffSet?.GetNotMissingParts()
-                        .FirstOrDefault(x => x.def == partDef);
-                    if (part != null)
-                    {
-                        return part;
-                    }
+                    // 随机获取
+                    return target.health?.hediffSet?.GetNotMissingParts().RandomElement();
                 }
-                return null; // 如果没有找到匹配的部位，返回 null
+                if (hitPartRandom)
+                {
+                    // 选定部位随机获取
+                    return target.health?.hediffSet?.GetNotMissingParts()
+                        .Where(x => hitParts.Contains(x.def))
+                        .RandomElement();
+                }
+                else
+                {
+                    // 选定部位顺序获取
+                    foreach (var partDef in hitParts)
+                    {
+                        var part = target.health?.hediffSet?.GetNotMissingParts()
+                            .FirstOrDefault(x => x.def == partDef);
+                        if (part != null)
+                        {
+                            return part;
+                        }
+                    }
+                    return null; // 如果没有找到匹配的部位，返回 null
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Error($"NzFaceLessManMod: GetHitPart error: {e}");
+                return null;
             }
 
         }
