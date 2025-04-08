@@ -120,4 +120,44 @@
             </li>
         </comps>
     </AbilityDef>
+
+    <!-- 凝胶喷射 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_GelSpray</defName>
+        <label>gel spray</label>
+        <!-- 快速喷洒出大量的凝胶，这种凝胶会快速凝固，限制目标的动作 -->
+        <description>Quickly spray a large amount of gel, which will quickly solidify and restrict the target's actions.</description>
+        <!-- TODO 替换 -->
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
+            <range>6.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>AcidSpray_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilitySpew">
+                <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
+                <damageType>AcidBurn</damageType>
+                <damageAmount>0</damageAmount>
+                <range>5.9</range>
+                <lineWidthEnd>4.3</lineWidthEnd>
+                <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+                <!-- TODO 替换为消防泡沫 -->
+                <filthDef>Filth_SpentAcid</filthDef>
+                <!-- TODO 替换为消防泡沫 -->
+                <effecterDef>AcidSpray_Directional</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+                <!-- 减速凝胶 -->
+                <hediff>NzFlm_He_GelSpray</hediff>
+            </li>
+        </comps>
+    </AbilityDef>
 </Defs>

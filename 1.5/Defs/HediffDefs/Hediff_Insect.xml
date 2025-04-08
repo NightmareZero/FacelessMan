@@ -133,9 +133,9 @@
 		</graphicData>
 	</ThingDef>
 
+	<!-- 信息素狂暴 -->
 	<HediffDef>
 		<defName>NzFlm_He_SupportPheromone_Target</defName>
-        <!-- 信息素狂暴 -->
 		<label>pheromone rage</label>
 		<!-- 大量的激素导致这只虫子处于极度兴奋状态，大量毒素在其体中流动，这会导致一段时间或其死亡后，溶解为一团粘液 -->
 		<description>A large amount of hormones causes this insect to be in an extremely excited state, and a large amount of toxins flow in its body, which will cause it to dissolve into a mass of mucus after a period of time or after death.</description>
@@ -185,4 +185,59 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<!-- 减速凝胶 -->
+	<HediffDef>
+		<!-- TODO 想办法加上消防泡沫的特效 -->
+		<defName>NzFlm_He_GelSpray</defName>
+		<label>slow gel</label>
+		<!-- 被喷了一身的减速凝胶，这些凝胶会花费一小段时间凝固，大幅度降低移动和攻击速度 -->
+		<description>Sprayed with a body of slow gel, these gels will take a short time to solidify, greatly reducing movement and attack speed.</description>
+		<duplicationAllowed>false</duplicationAllowed>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>0.34</initialSeverity>
+		<comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-3</severityPerDay>
+            </li>
+        </comps>
+		<stages>
+			<li>
+				<!-- 破碎 -->
+				<label>shattered</label>
+				<!-- 几乎已经破碎，不怎么起作用了 -->
+				<description>almost shattered, not much effect</description>
+                <statFactors>
+					<AimingDelayFactor>1.3</AimingDelayFactor>
+                    <MeleeCooldownFactor>1.3</MeleeCooldownFactor>
+					<MoveSpeed>0.7</MoveSpeed>
+                </statFactors>   
+			</li>
+			<li>
+				<minSeverity>0.04</minSeverity>
+				<!-- 凝固 -->
+				<label>solidified</label>
+				<!-- 全身被凝固在坚固的胶体中，几乎无法动弹 -->
+				<description>Frozen in a solid gel, almost unable to move</description>
+				<statFactors>
+					<AimingDelayFactor>2.5</AimingDelayFactor>
+					<MeleeCooldownFactor>2.5</MeleeCooldownFactor>
+					<MoveSpeed>0.3</MoveSpeed>
+				</statFactors>
+			</li>
+			<li>
+				<minSeverity>0.33</minSeverity>
+				<!-- 凝固中 -->
+				<label>solidifying</label>
+				<!-- 凝固中，移动速度和攻击速度大幅度降低 -->
+				<description>Solidifying, movement and attack speed greatly reduced</description>
+				<statFactors>
+					<AimingDelayFactor>1.2</AimingDelayFactor>
+					<MeleeCooldownFactor>1.2</MeleeCooldownFactor>
+					<MoveSpeed>0.8</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+
 </Defs>

@@ -76,4 +76,20 @@
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 
+    <!-- 凝胶腺 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_GelGland</defName>
+        <label>gel gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Insect</displayCategory>
+        <!-- 从虫族分泌茧的基因中，获得了分泌喷洒快速凝固的胶体的基因，这种胶体触碰到目标之后，会快速凝固，限制目标的动作 -->
+        <description>Obtained the gene that secretes and sprays rapidly solidified colloid from the insect
+            secretion cocoon. This colloid will quickly solidify after touching the target, restricting the target's actions.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_GelSpray</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 </Defs>
