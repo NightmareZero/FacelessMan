@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 变色龙皮肤 -->
-    <!-- TODO 修改原版隐形 -->
     <AbilityDef ParentName="Nz_Flm_AbilityBase">
         <defName>NzFlm_ChameleonSkin</defName>
         <label>chameleon skin</label>

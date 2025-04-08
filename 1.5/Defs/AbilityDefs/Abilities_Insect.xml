@@ -160,4 +160,37 @@
             </li>
         </comps>
     </AbilityDef>
+
+    <!-- 外骨骼铠甲 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+        <defName>NzFlm_ExoskeletonArmor</defName>
+        <label>exoskeleton armor</label>
+        <!-- 激活你的外骨骼腺体，使其快速分泌一种液体，在你体外形成一层外骨骼，这些外骨骼需要一小段时间才会凝固变硬，在一段时间之后干裂消失 -->
+        <description>activate your exoskeleton glands to quickly secrete a liquid that forms a layer of exoskeleton outside your body. These exoskeletons need a short period of time to solidify and harden, and will crack and disappear after a period of time.</description>
+        <cooldownTicksRange>30000</cooldownTicksRange>
+        <!-- TODO -->
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <verbProperties>
+            <warmupTime>4</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_ExoskeletonArmor</hediffDef>
+                <psychic>False</psychic>
+                <!-- 3小时 -->
+                <!-- <durationSecondsOverride>125</durationSecondsOverride> -->
+            </li>
+            <!-- <li Class="CompProperties_AbilityFleckOnTarget">
+            <fleckDef>PsycastPsychicEffect</fleckDef>
+        </li> -->
+        </comps>
+    </AbilityDef>
 </Defs>
