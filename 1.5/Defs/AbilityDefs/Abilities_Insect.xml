@@ -193,4 +193,37 @@
         </li> -->
         </comps>
     </AbilityDef>
+
+    <!-- 棘刺腺体 -->
+	<AbilityDef ParentName="Nz_Flm_AbilityBase">
+		<defName>NzFlm_SpikeShot</defName>
+		<label>spike shot</label>
+        <!-- 快速发射出多枚刺针，对你的敌人造成大量伤害 -->
+		<description>Quickly launch multiple spines, causing a lot of damage to your enemies.</description>
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>120~300</cooldownTicksRange>
+		<displayOrder>200</displayOrder>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>		
+			<range>22.9</range>
+			<warmupTime>0.2</warmupTime>
+			<soundCast>PiercingSpine_Launch</soundCast>
+			<accuracyTouch>1.0</accuracyTouch>
+			<accuracyShort>1.0</accuracyShort>
+			<accuracyMedium>0.95</accuracyMedium>
+			<accuracyLong>0.9</accuracyLong>
+			<burstShotCount>6</burstShotCount>
+			<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+			<defaultProjectile>PiercingSpine</defaultProjectile>
+			<verbClass>Verb_AbilityShoot</verbClass>
+			<ai_IsWeapon>false</ai_IsWeapon>
+			<!-- <onlyManualCast>true</onlyManualCast> -->
+			<minRange>1.5</minRange>
+		</verbProperties>
+		<comps>
+		</comps>
+	</AbilityDef>
 </Defs>

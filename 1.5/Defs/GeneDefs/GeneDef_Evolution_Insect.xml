@@ -108,4 +108,22 @@
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 
+    <!-- 棘刺腺体 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_SpikeGland</defName>
+        <label>spike gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Insect</displayCategory>
+        <!-- 由一大堆虫子的基因，辅以研究员的天才想法，我们复原了古老传说中一种叫做"刺蛇"的相关生物的基因 -->
+        <description>
+            By a large number of insect genes, with the genius idea of the researcher, we restored the ancient legend
+            of a kind of 'hydralisk' related biological genes.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>70</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <!-- 针刺连射 -->
+            <li>NzFlm_SpikeShot</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 </Defs>
