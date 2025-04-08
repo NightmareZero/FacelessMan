@@ -201,7 +201,7 @@
         <!-- 快速发射出多枚刺针，对你的敌人造成大量伤害 -->
 		<description>Quickly launch multiple spines, causing a lot of damage to your enemies.</description>
         <iconPath>UI/Abilities/AcidSpray</iconPath>
-		<cooldownTicksRange>120~300</cooldownTicksRange>
+		<cooldownTicksRange>240~360</cooldownTicksRange>
 		<displayOrder>200</displayOrder>
 		<aiCanUse>true</aiCanUse>
 		<verbProperties>
@@ -209,6 +209,7 @@
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>		
 			<range>22.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
 			<warmupTime>0.2</warmupTime>
 			<soundCast>PiercingSpine_Launch</soundCast>
 			<accuracyTouch>1.0</accuracyTouch>
@@ -218,7 +219,7 @@
 			<burstShotCount>6</burstShotCount>
 			<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
 			<defaultProjectile>PiercingSpine</defaultProjectile>
-			<verbClass>Verb_AbilityShoot</verbClass>
+			<verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
 			<ai_IsWeapon>false</ai_IsWeapon>
 			<!-- <onlyManualCast>true</onlyManualCast> -->
 			<minRange>1.5</minRange>
