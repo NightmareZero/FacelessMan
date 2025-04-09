@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- EMP喷射 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_EMPBlast</defName>
         <label>EMP blast</label>
         <!-- 发射一团粘稠的电浆，命中目标后造成范围性的电磁干扰。 -->
@@ -58,7 +58,7 @@
     </ThingDef>
 
     <!-- 火焰呼吸 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_FireBreath</defName>
         <label>firebreath</label>
         <!-- 经由一种相比 Impid 更好的，基于生物技术优化过的腺体，喷洒出高温易燃的液体。以迅速点燃目标 -->
@@ -95,7 +95,7 @@
     </AbilityDef>
 
     <!-- 酸息 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_AcidBreath</defName>
         <label>acid breath</label>
         <!-- 通过特殊的腺体，喷洒出一种无毒的强酸性液体以腐蚀目标 -->
@@ -132,7 +132,7 @@
 
 
     <!-- 基因控制 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>Flm_Evolve</defName>
         <label>gene control</label>
         <!-- <cooldownTicksRange>120000</cooldownTicksRange> -->
@@ -171,7 +171,7 @@
     </AbilityDef>
 
     <!-- 隐生 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_Cryptobiosis</defName>
         <label>cryptobiosis</label>
         <!-- 通过进入一种特殊状态，来大幅度减少食物消耗，提升高温/低温/毒素抗性，以便撑过一些艰难的日子 -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 变色龙皮肤 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_ChameleonSkin</defName>
         <label>chameleon skin</label>
         <description>Change the color of your skin like a chameleon, making people around you unable
@@ -35,7 +35,7 @@
     </AbilityDef>
 
     <!-- 肾上腺爆发 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_AdrenalineRush</defName>
         <label>adrenaline rush</label>
         <!-- 你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度,并提高作战能力 -->
@@ -70,7 +70,7 @@
     </AbilityDef>
 
     <!-- 跳跃 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_Longjump</defName>
         <label>longjump</label>
         <!-- 使用你有力而富有弹性的双腿跳到远处。 -->
@@ -102,7 +102,7 @@
     </AbilityDef>
 
     <!-- 容貌伪装 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_Disguise</defName>
         <label>disguise</label>
         <cooldownTicksRange>10000</cooldownTicksRange>
@@ -185,7 +185,7 @@
     </AbilityDef>
 
     <!-- 麻醉钉刺 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_AnestheticSpike</defName>
         <label>anesthetic spike</label>
         <!-- 从口腔中的腺体中发射一枚刺针，其中包裹着麻醉毒素，可以让目标迅速麻痹 -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <!-- 战斗信息素 NzFlm_BattlePheromone -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_BattlePheromone</defName>
         <label>Battle Pheromone</label>
         <description>Release a pheromone that stimulates surrounding friendly creatures, enhancing
@@ -33,7 +33,7 @@
     </AbilityDef>
 
     <!-- 毁灭 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzRI_Zd_ClawDestroy</defName>
         <label>destruction</label>
         <!-- 尝试将目标撕成碎片，对敌人造成大量伤害 -->
@@ -81,7 +81,7 @@
 
     <!-- 支援信息素 -->
     <!-- 参考 <defName>Infestation</defName> -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_SupportPheromone</defName>
         <label>support pheromone</label>
         <!-- 呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
@@ -122,7 +122,7 @@
     </AbilityDef>
 
     <!-- 凝胶喷射 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_GelSpray</defName>
         <label>gel spray</label>
         <!-- 快速喷洒出大量的凝胶，这种凝胶会快速凝固，限制目标的动作 -->
@@ -162,7 +162,7 @@
     </AbilityDef>
 
     <!-- 外骨骼铠甲 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityBase">
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_ExoskeletonArmor</defName>
         <label>exoskeleton armor</label>
         <!-- 激活你的外骨骼腺体，使其快速分泌一种液体，在你体外形成一层外骨骼，这些外骨骼需要一小段时间才会凝固变硬，在一段时间之后干裂消失 -->
@@ -195,7 +195,7 @@
     </AbilityDef>
 
     <!-- 棘刺腺体 -->
-	<AbilityDef ParentName="Nz_Flm_AbilityBase">
+	<AbilityDef ParentName="Nz_Flm_AbilityEv">
 		<defName>NzFlm_SpikeShot</defName>
 		<label>spike shot</label>
         <!-- 快速发射出多枚刺针，对你的敌人造成大量伤害 -->

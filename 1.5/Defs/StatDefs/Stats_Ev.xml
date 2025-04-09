@@ -2,9 +2,9 @@
 <Defs>
     <StatDef Abstract="True" Name="NzFlm_ManStatBase">
         <category>PawnCombat</category>
-        <showOnAnimals>false</showOnAnimals>
+        <showOnAnimals>true</showOnAnimals>
         <showOnHumanlikes>true</showOnHumanlikes>
-        <showOnMechanoids>false</showOnMechanoids>
+        <showOnMechanoids>true</showOnMechanoids>
         <showIfUndefined>true</showIfUndefined>
         <defaultBaseValue>1</defaultBaseValue>
         <hideAtValue>1</hideAtValue>
@@ -27,6 +27,16 @@
         <label>Gene Skill Range Multiplier Half</label>
         <!-- 部分基因技能射程放大系数 -->
         <description>Multiplier for the range of certain gene skills.</description>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>10003</displayPriorityInCategory>
+    </StatDef>
+
+    <!-- 进化技能冷却时间 -->
+    <StatDef ParentName="NzFlm_ManStatBase">
+        <defName>NzFlm_EvSkillCooldownTime</defName>
+        <label>Gene Skill Cooldown Time</label>
+        <!-- 部分基因技能冷却时间 -->
+        <description>Cooldown time for certain gene skills.</description>
         <toStringStyle>PercentZero</toStringStyle>
         <displayPriorityInCategory>10003</displayPriorityInCategory>
     </StatDef>

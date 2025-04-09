@@ -36,6 +36,9 @@ namespace NzFaceLessManMod
         // 支援信息素
         public static HediffDef NzFlm_He_SupportPheromone_Target;
 
+        // 进化技能冷却时间
+        public static StatDef NzFlm_EvSkillCooldownTime;
+
 
         static XmlDefs()
         {

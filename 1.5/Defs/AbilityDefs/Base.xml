@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<!-- 常规技能 -->
     <AbilityDef Name="Nz_Flm_AbilityBase" Abstract="True">
 		<abilityClass>NzFaceLessManMod.AbilityExt</abilityClass>
+		<category>Nzflm_AbilityCategory</category>
+		<statBases>
+            <!-- 60秒 -->
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		<warmupSound>PsycastCastLoop</warmupSound>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<!-- 需要具备暴力能力 -->
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<writeCombatLog>True</writeCombatLog>
+		<verbProperties>
+			<!-- TODO 换一个 -->
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+                <canTargetPawns>True</canTargetPawns>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetAnimals>False</canTargetAnimals>
+				<!-- <thingCategory>Item</thingCategory> -->
+				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
+
+	<!-- 进化技能 -->
+	<AbilityDef Name="Nz_Flm_AbilityEv" Abstract="True">
+		<abilityClass>NzFaceLessManMod.EvAbility</abilityClass>
 		<category>Nzflm_AbilityCategory</category>
 		<statBases>
             <!-- 60秒 -->

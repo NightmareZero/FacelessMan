@@ -15,4 +15,20 @@
             <NzFlm_SkillRangeMultiplierHalf>1.3</NzFlm_SkillRangeMultiplierHalf>
         </statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 高速分泌 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>NzFlm_EvSkillCooldownTime</defName>
+        <label>fast secretion</label>
+        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <!-- 为你身上时所有的大部分喷射类腺体提供更高的喷射速度 -->
+        <description>Provides higher jet speed for most of the jet glands on your body.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <NzFlm_SkillCooldownTime>0.6</NzFlm_SkillCooldownTime>
+        </statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
+        
 </Defs>
