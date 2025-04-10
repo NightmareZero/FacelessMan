@@ -189,7 +189,6 @@
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
-                <!-- TODO 替换为隐生Hediff -->
                 <hediffDef>NzFlm_He_Cryptobiosis</hediffDef>
                 <psychic>False</psychic>
                 <durationSecondsOverride>99999</durationSecondsOverride>
