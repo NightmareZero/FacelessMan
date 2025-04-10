@@ -30,5 +30,75 @@
             <NzFlm_SkillCooldownTime>0.6</NzFlm_SkillCooldownTime>
         </statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 强健身躯 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+		<defName>Flm_Ev_SturdyBody</defName>
+		<label>sturdy body</label>
+		<displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <!-- 由于基因上的悉心调制，你的身体正在以一种更加高效的方式运作，同时会迅速止血，伤疤也会逐渐自动修复 -->
+        <description>Your body is working in a more efficient way due to the careful modulation of genes.</description>
+		<iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
+		<displayOrderInCategory>40</displayOrderInCategory>
+		<statFactors>
+			<InjuryHealingFactor>2</InjuryHealingFactor>
+			<ImmunityGainSpeed>2</ImmunityGainSpeed>
+			<IncomingDamageFactor>0.85</IncomingDamageFactor>
+		</statFactors>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Manipulation</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>BloodPumping</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+            <li>
+                <capacity>Metabolism</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+            <li>
+                <capacity>BloodFiltration</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+            <li>
+                <capacity>Breathing</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+        </capMods>
+		<evolution>2</evolution>
+        <!-- 防止永久伤口 -->
+		<preventPermanentWounds>true</preventPermanentWounds>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_Clotting">
+                        <clotCheckInterval>360</clotCheckInterval>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+	</NzFaceLessManMod.EvolutionGeneDef>
         
 </Defs>

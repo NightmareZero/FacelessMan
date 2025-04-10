@@ -140,6 +140,14 @@
                         <postFactor>0.9</postFactor>
                     </li>
                     <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.85</postFactor>
+                    </li>
+                    <li>
                         <capacity>BloodPumping</capacity>
                         <postFactor>0.9</postFactor>
                     </li>
@@ -149,10 +157,6 @@
                     </li>
                     <li>
                         <capacity>BloodFiltration</capacity>
-                        <postFactor>0.9</postFactor>
-                    </li>
-                    <li>
-                        <capacity>Sight</capacity>
                         <postFactor>0.9</postFactor>
                     </li>
                 </capMods>
@@ -170,7 +174,15 @@
                     </li>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>1.4</postFactor>
+                        <postFactor>1.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Sight</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>1.3</postFactor>
                     </li>
                     <li>
                         <capacity>BloodPumping</capacity>
@@ -179,10 +191,6 @@
                     <li>
                         <capacity>Metabolism</capacity>
                         <postFactor>1.4</postFactor>
-                    </li>
-                    <li>
-                        <capacity>Sight</capacity>
-                        <postFactor>1.2</postFactor>
                     </li>
                 </capMods>
                 <statOffsets>

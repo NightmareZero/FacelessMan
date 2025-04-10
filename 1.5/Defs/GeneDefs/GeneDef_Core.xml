@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+	<!-- 基因注入 -->
 	<GeneDef>
 		<defName>Flm_GermlineReimplanter</defName>
 		<label>genepack reimplanter</label>
@@ -17,6 +18,7 @@
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>-2</biostatMet>
 	</GeneDef>
+	<!-- 异种变身 -->
 	<GeneDef>
 		<defName>Flm_Morphs</defName>
 		<label>xenotpye morphing</label>
@@ -34,9 +36,10 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 	</GeneDef>
+	<!-- 内联变身 -->
 	<GeneDef>
 		<defName>Flm_MorphsE</defName>
-		<label>endotpye morphing</label>
+		<label>endogenous morphing</label>
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
 		<description>Carriers of this gene can choose one of their gene pack to instead of their inheritable gene, it only works on inheritable gene pack.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
@@ -51,6 +54,8 @@
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
 	</GeneDef>
+
+	<!-- 基因大师 -->
 	<GeneDef>
 		<defName>Flm_GeneMaster</defName>
 		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
@@ -74,22 +79,5 @@
 			</li>
 		</modExtensions>
 	</GeneDef>
-	<GeneDef>
-		<defName>Flm_FleshMaster</defName>
-		<label>flesh master</label>
-		<displayCategory>Nzflm_GeneCategory</displayCategory>
-		<description>Carriers of this gene specializes in controlling their's cells, allowing the body to heal quickly and become more resilient, and bleeding wounds close very quickly.</description>
-		<iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
-		<displayOrderInCategory>1000</displayOrderInCategory>
-		<geneClass>Gene_Clotting</geneClass>
-		<statFactors>
-			<InjuryHealingFactor>3</InjuryHealingFactor>
-			<ImmunityGainSpeed>2</ImmunityGainSpeed>
-			<IncomingDamageFactor>0.85</IncomingDamageFactor>
-		</statFactors>
-		<biostatCpx>1</biostatCpx>
-		<biostatMet>-2</biostatMet>
-		<biostatArc>2</biostatArc>
-		<preventPermanentWounds>true</preventPermanentWounds>
-	</GeneDef>
+
 </Defs>
