@@ -8,7 +8,6 @@
         <description>Launch a blob of viscous plasma that causes a wide range of electromagnetic
             interference
             upon hitting the target.</description>
-        <level>1</level>
         <!-- TODO -->
         <iconPath>UI/Abilities/Invisibility</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -139,7 +138,6 @@
         <!-- 定制一个异种基因并注入目标，但这会让你变得非常疲劳 -->
         <description>Customize an xenogerm and inject it into the target, but this will make you very
             tired.</description>
-        <!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>

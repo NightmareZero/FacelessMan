@@ -43,6 +43,7 @@
 		<description>Morph into a different xenotype.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+		<category>Nzflm_AbilityCategory</category>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
 		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
 		<aiCanUse>false</aiCanUse>
@@ -82,6 +83,7 @@
 		<description>Morph into a different endogenous.</description>
 		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
 		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+		<category>Nzflm_AbilityCategory</category>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
 		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
 		<aiCanUse>false</aiCanUse>

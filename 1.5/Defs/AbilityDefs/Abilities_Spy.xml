@@ -7,7 +7,6 @@
         <description>Change the color of your skin like a chameleon, making people around you unable
             to perceive you for a while. Due to the time required for color change, your movement
             speed will be affected.</description>
-        <level>1</level>
         <!-- TODO -->
         <iconPath>UI/Abilities/Invisibility</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -151,7 +150,6 @@
         <iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
-        <category>Nzflm_AbilityCategory</category>
         <displayOrder>500</displayOrder>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
