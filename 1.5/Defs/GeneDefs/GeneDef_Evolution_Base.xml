@@ -37,9 +37,9 @@
         <defName>Flm_Ev_SturdyBody</defName>
         <label>sturdy body</label>
         <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
-        <!-- 由于基因上的悉心调制，你的身体正在以一种更加高效的方式运作，同时会迅速止血，伤疤也会逐渐自动修复 -->
-        <description>Your body is working in a more efficient way due to the careful modulation of
-            genes.</description>
+        <!-- 由于基因上的悉心调制，你的身体正在以一种更加高效的方式运作，可以迅速止血，伤疤和慢性病也会逐渐自动修复(6~10天) -->
+        <description>your body is working in a more efficient way due to the careful modulation of genes,
+            which can quickly stop bleeding, and scars and chronic diseases will gradually heal automatically (6~10 days).</description>
         <iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
         <displayOrderInCategory>40</displayOrderInCategory>
         <statFactors>
@@ -98,6 +98,7 @@
                     <li Class="NzFaceLessManMod.CompProperties_Clotting">
                         <clotCheckInterval>360</clotCheckInterval>
                     </li>
+                    <li Class="NzFaceLessManMod.CompProperties_Healing"></li>
                 </comps>
             </li>
         </modExtensions>
