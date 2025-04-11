@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <HediffDef Name="NzFlm_BodyPartBase" ParentName="ImplantHediffBase" Abstract="True">
+        <hediffClass>Hediff_AddedPart</hediffClass>
+        <priceImpact>false</priceImpact>
+        <stages>
+            <!-- <li>
+                <statFactors>
+                    <NzRI_ZhengDePowerMultiplier>1.1</NzRI_ZhengDePowerMultiplier>
+                </statFactors>
+            </li> -->
+        </stages>
+    </HediffDef>
+
     <HediffDef>
         <defName>NzFlm_He_CellReagent</defName>
         <label>cell reagent</label>

@@ -6,7 +6,6 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-
     public class GeneExt : Gene
     {
         public GeneDefExt ExtDef => def.GetModExtension<GeneDefExt>();

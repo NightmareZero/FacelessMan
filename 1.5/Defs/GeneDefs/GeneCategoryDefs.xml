@@ -35,14 +35,14 @@
   </GeneCategoryDef>
 
   <!-- 虚空技术 -->
-  <GeneCategoryDef>
+  <GeneCategoryDef MayRequire="Ludeon.RimWorld.Anomaly">
     <defName>Nzflm_Gene_Ev_Anomaly</defName>
     <label>anomaly gene</label>
     <displayPriorityInXenotype>506</displayPriorityInXenotype>
   </GeneCategoryDef>
 
   <!-- 灵能技术 -->
-  <GeneCategoryDef>
+  <GeneCategoryDef MayRequire="Ludeon.RimWorld.Royalty">
     <defName>Nzflm_Gene_Ev_Psionic</defName>
     <label>psionic gene</label>
     <displayPriorityInXenotype>507</displayPriorityInXenotype>

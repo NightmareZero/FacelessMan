@@ -46,6 +46,7 @@
 		<Compile Include="../Source/Genes/*.cs" />
 		<Compile Include="../Source/Genes/Common/*.cs" />
 		<Compile Include="../Source/Hediffs/*.cs" />
+		<Compile Include="../Source/Things/*.cs" />
 		<Compile Include="../Source/UI/*.cs" />
 
 		<!-- Rimworld -->

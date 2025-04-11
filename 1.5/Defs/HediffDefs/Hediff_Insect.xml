@@ -182,7 +182,7 @@
 				<statFactors>
 					<MeleeDamageFactor>2</MeleeDamageFactor>
 					<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
-					<IncomingDamageFactor>0.34</IncomingDamageFactor>
+					<IncomingDamageFactor>0.35</IncomingDamageFactor>
 				</statFactors>
 			</li>
 		</stages>

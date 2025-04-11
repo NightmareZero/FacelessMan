@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <HediffDef Name="NzFlm_BodyPartBase" ParentName="ImplantHediffBase" Abstract="True">
-        <hediffClass>Hediff_AddedPart</hediffClass>
-        <priceImpact>false</priceImpact>
-        <stages>
-            <!-- <li>
-                <statFactors>
-                    <NzRI_ZhengDePowerMultiplier>1.1</NzRI_ZhengDePowerMultiplier>
-                </statFactors>
-            </li> -->
-        </stages>
-    </HediffDef>
+    
 
     <!-- 撕裂利爪 -->
     <HediffDef ParentName="NzFlm_BodyPartBase">
@@ -63,5 +53,34 @@
             <partEfficiency>0.9</partEfficiency>
             <betterThanNatural>true</betterThanNatural>
         </addedPartProps>
+    </HediffDef>
+
+    <!-- 活铁皮层 -->
+    <HediffDef ParentName="NzFlm_BodyPartBase" MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_He_BioferriteSkinLayer</defName>
+        <label>bioferrite skin layer</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 在你的皮下形成多层活铁护甲，略微降低你承受的伤害，但是会使你变得易燃。 -->
+        <description>Form multiple layers of bioferrite armor under your skin, significantly
+            reducing the damage you take, but making you more susceptible to catching fire.</description>
+        <isBad>false</isBad>
+        <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+        <comps>
+            <li Class="NzFaceLessManMod.HediffCompProperties_GlancingHit" />
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <NzFlm_GlancingHitPoint>3</NzFlm_GlancingHitPoint>
+                </statOffsets>
+                <statFactors>
+                    <InjuryHealingFactor>2</InjuryHealingFactor>
+                    <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+                </statFactors>
+            </li>
+        </stages>
+        <damageFactors>
+            <Flame>1.5</Flame>
+        </damageFactors>
     </HediffDef>
 </Defs>

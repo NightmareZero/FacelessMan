@@ -39,6 +39,9 @@ namespace NzFaceLessManMod
         // 进化技能冷却时间
         public static StatDef NzFlm_EvSkillCooldownTime;
 
+        // 承伤减值
+        public static StatDef NzFlm_GlancingHitPoint;
+
 
         static XmlDefs()
         {
