@@ -39,6 +39,26 @@ namespace NzFaceLessManMod
         }
     }
 
+    [HarmonyPatch(typeof(JobGiver_Wander))]
+    [HarmonyPatch("TryGiveJob")]
+    public static class JobGiver_Wander_TryGiveJob_Patch
+    {
+        [HarmonyPrefix]
+        public static bool PreventWanderingWhenDrafted(Pawn pawn, ref Job __result)
+        {
+            // 检查是否是可征召的动物，并且已被征召
+            if (AnimalCaches.draftable_animals.Contains(pawn) && pawn.Drafted)
+            {
+                // 阻止游荡任务
+                __result = JobMaker.MakeJob(JobDefOf.Wait, 600); // 让动物站立待命 600 tick
+                return false;
+            }
+
+            // 允许原方法继续执行
+            return true;
+        }
+    }
+
 
     [HarmonyPatch(typeof(PawnUtility))]
     [HarmonyPatch("IsFighting")]

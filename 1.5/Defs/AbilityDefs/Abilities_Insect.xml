@@ -84,8 +84,8 @@
     <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_SupportPheromone</defName>
         <label>support pheromone</label>
-        <!-- 呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
-        <description>Call a few giant spiders to attack your enemies. Due to the stimulation of special pheromones, they will be more violent. After a period of time, these creatures will dissolve and die.</description>
+        <!-- 呼唤几只可控的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
+        <description>Call a few controllable giant spiders to attack your enemies. Due to the stimulation of special pheromones, they will be more violent and will dissolve and die after a period of time.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <cooldownTicksRange>30000</cooldownTicksRange>
         <hostile>false</hostile>
@@ -131,13 +131,13 @@
         <iconPath>UI/Abilities/AcidSpray</iconPath>
         <cooldownTicksRange>600</cooldownTicksRange>
         <aiCanUse>false</aiCanUse>
-        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+        <warmupStartSound>FoamSpray_Warmup</warmupStartSound>
         <verbProperties>
             <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
-            <range>6.9</range>
+            <range>7.9</range>
             <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
             <warmupTime>0.5</warmupTime>
-            <soundCast>AcidSpray_Resolve</soundCast>
+            <soundCast>FoamSpray_Resolve</soundCast>
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>
@@ -147,13 +147,13 @@
                 <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
                 <damageType>AcidBurn</damageType>
                 <damageAmount>0</damageAmount>
-                <range>5.9</range>
-                <lineWidthEnd>4.3</lineWidthEnd>
+                <range>7.9</range>
+                <lineWidthEnd>5.1</lineWidthEnd>
                 <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
                 <!-- TODO 替换为消防泡沫 -->
-                <filthDef>Filth_SpentAcid</filthDef>
+                <filthDef>NzFlm_Filth_StickyFoam</filthDef>
                 <!-- TODO 替换为消防泡沫 -->
-                <effecterDef>AcidSpray_Directional</effecterDef>
+                <effecterDef>FoamSpray_Directional</effecterDef>
                 <canHitFilledCells>true</canHitFilledCells>
                 <!-- 减速凝胶 -->
                 <hediff>NzFlm_He_GelSpray</hediff>

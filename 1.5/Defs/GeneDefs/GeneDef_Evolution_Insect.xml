@@ -97,9 +97,9 @@
         <defName>Nzflm_Ev_ExoskeletonGland</defName>
         <label>exoskeleton gland</label>
         <displayCategory>Nzflm_Gene_Ev_Insect</displayCategory>
-        <!-- 替换你的汗腺，使其可以快速分泌一种液体，在你体外形成外骨骼，大幅度降低你受到的伤害，但是会降低移动速度 -->
-        <description>Replaced your sweat glands so that they can quickly secrete a liquid that forms an exoskeleton
-            outside your body, greatly reducing the damage you take, but reducing your movement speed.</description>
+        <!-- 替换你的汗腺，使其可以快速分泌另一种液体，在你体外形成外骨骼，大幅度降低你受到的伤害，但是会降低移动速度 -->
+        <description>Replaced your sweat glands so that it can quickly secrete another liquid to form an exoskeleton outside your body,
+            greatly reducing the damage you take, but reducing your movement speed.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>60</displayOrderInCategory>
         <evolution>1</evolution>

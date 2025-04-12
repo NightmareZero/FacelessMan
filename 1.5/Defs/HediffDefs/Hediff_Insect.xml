@@ -235,6 +235,21 @@
 				</statFactors>
 			</li>
 		</stages>
+		<!-- <renderNodeProperties>
+			<li Class="PawnRenderNodeProperties">
+				<workerClass>PawnRenderNodeWorker_HediffEye</workerClass>
+				<useGraphic>true</useGraphic>
+				<drawSize>2.0</drawSize>
+				<texPath>Things/Filth/FireFoam</texPath>
+				<shaderTypeDef>MoteGlow</shaderTypeDef>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties> -->
 	</HediffDef>
 
 	<!-- 外骨骼装甲 -->

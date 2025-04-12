@@ -30,7 +30,7 @@ namespace NzFaceLessManMod
             { 
                 var pawnNum = Utils.ApplyPawnInAffectedArea(Caster.Map, affected, delegate (Pawn p)
                 {
-                    if (p != Caster && p.Faction != Caster.Faction)
+                    if (p != Caster)
                     {
                         // 附加一个30秒的剧痛Hediff
                         Hediff hediff = HediffMaker.MakeHediff(Props.hediff, p);

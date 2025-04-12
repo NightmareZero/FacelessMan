@@ -105,7 +105,7 @@
         <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
         <verbProperties>
             <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
-            <range>6.9</range>
+            <range>5.9</range>
             <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
             <warmupTime>0.5</warmupTime>
             <soundCast>AcidSpray_Resolve</soundCast>
