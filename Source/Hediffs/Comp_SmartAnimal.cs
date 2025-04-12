@@ -34,6 +34,10 @@ namespace NzFaceLessManMod
                     {
                         parent.pawn.drafter = new Pawn_DraftController(parent.pawn);
                     }
+                    if (parent.pawn.equipment is null)
+                    {
+                        parent.pawn.equipment = new Pawn_EquipmentTracker(parent.pawn);
+                    }
                 }
                 if (Props.nonFleeing)
                 {
@@ -101,6 +105,10 @@ namespace NzFaceLessManMod
                         if (parent.pawn.drafter is null)
                         {
                             parent.pawn.drafter = new Pawn_DraftController(parent.pawn);
+                        }
+                        if (parent.pawn.equipment is null)
+                        {
+                            parent.pawn.equipment = new Pawn_EquipmentTracker(parent.pawn);
                         }
                     }
                     if (Props.nonFleeing)

@@ -45,7 +45,7 @@
         <thingClass>Projectile_Explosive</thingClass>
         <graphicData>
             <!-- TODO 替换材质 -->
-            <texPath>Things/Projectile/GrenadeEMP</texPath>
+            <texPath>Things/Projectile/EMP_Ball</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <projectile>

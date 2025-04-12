@@ -208,8 +208,6 @@
 			<li>
 				<!-- 破碎 -->
 				<label>shattered</label>
-				<!-- 几乎已经破碎，不怎么起作用了 -->
-				<description>almost shattered, not much effect</description>
 				<statFactors>
 					<AimingDelayFactor>1.3</AimingDelayFactor>
 					<MeleeCooldownFactor>1.3</MeleeCooldownFactor>
@@ -220,8 +218,6 @@
 				<minSeverity>0.04</minSeverity>
 				<!-- 凝固 -->
 				<label>solidified</label>
-				<!-- 全身被凝固在坚固的胶体中，几乎无法动弹 -->
-				<description>Frozen in a solid gel, almost unable to move</description>
 				<statFactors>
 					<AimingDelayFactor>2.5</AimingDelayFactor>
 					<MeleeCooldownFactor>2.5</MeleeCooldownFactor>
@@ -232,8 +228,6 @@
 				<minSeverity>0.33</minSeverity>
 				<!-- 凝固中 -->
 				<label>solidifying</label>
-				<!-- 凝固中，移动速度和攻击速度大幅度降低 -->
-				<description>Solidifying, movement and attack speed greatly reduced</description>
 				<statFactors>
 					<AimingDelayFactor>1.2</AimingDelayFactor>
 					<MeleeCooldownFactor>1.2</MeleeCooldownFactor>
@@ -263,7 +257,6 @@
 				<!-- 破碎 -->
 				<label>shattered</label>
 				<!-- 几乎已经破碎，不怎么起作用了 -->
-				<description>almost shattered, not much effect</description>
 				<statOffsets>
 					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
 					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
@@ -278,7 +271,6 @@
 				<!-- 凝固 -->
 				<label>solidified</label>
 				<!-- 盔甲已经自动编织形成，轻便耐用 -->
-				<description>Frozen in a solid gel, almost unable to move</description>
 				<statOffsets>
 					<ArmorRating_Sharp>1.3</ArmorRating_Sharp>
 					<ArmorRating_Blunt>0.9</ArmorRating_Blunt>
@@ -295,7 +287,6 @@
 				<!-- 凝固中 -->
 				<label>solidifying</label>
 				<!-- 凝固中，仅提供少量护甲 -->
-				<description>Solidifying, only provides a small amount of armor</description>
 				<statOffsets>
 					<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
 					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>

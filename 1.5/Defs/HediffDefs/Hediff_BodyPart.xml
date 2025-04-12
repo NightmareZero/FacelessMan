@@ -79,8 +79,5 @@
                 </statFactors>
             </li>
         </stages>
-        <damageFactors>
-            <Flame>1.5</Flame>
-        </damageFactors>
     </HediffDef>
 </Defs>

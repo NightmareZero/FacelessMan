@@ -28,7 +28,7 @@
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
         <statFactors>
-            <NzFlm_SkillCooldownTime>0.6</NzFlm_SkillCooldownTime>
+            <NzFlm_EvSkillCooldownTime>0.6</NzFlm_EvSkillCooldownTime>
         </statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
 
