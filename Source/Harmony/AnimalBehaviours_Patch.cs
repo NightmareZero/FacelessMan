@@ -132,7 +132,7 @@ namespace NzFaceLessManMod
 
         }
     }
-    
+
     [HarmonyPatch(typeof(FloatMenuMakerMap))]
     [HarmonyPatch("AddJobGiverWorkOrders")]
     public static class FloatMenuMakerMap_AddJobGiverWorkOrders_Patch
@@ -148,6 +148,24 @@ namespace NzFaceLessManMod
             }
             return true;
 
+        }
+    }
+    
+    [HarmonyPatch(typeof(SchoolUtility))]
+    [HarmonyPatch("CanTeachNow")]
+
+    public static class SchoolUtility_CanTeachNow_Patch
+    {
+        [HarmonyPrefix]
+        public static bool RemoveTeaching(Pawn teacher)
+
+        {
+            if (AnimalCaches.draftable_animals.Contains(teacher))
+            {
+                return false;
+
+            }
+            else return true;
         }
     }
 }
