@@ -22,8 +22,9 @@
         <defName>NzFlm_EvSkillCooldownTime</defName>
         <label>fast secretion</label>
         <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
-        <!-- 为你身上时所有的大部分喷射类腺体提供更高的喷射速度 -->
-        <description>Provides higher jet speed for most of the jet glands on your body.</description>
+        <!-- 你分泌特殊物质的速度加快了，这是你可以更早的再次使用特定技能 -->
+        <description>the speed of your secretion of special substances has increased,
+            which allows you to use specific skills again earlier.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>

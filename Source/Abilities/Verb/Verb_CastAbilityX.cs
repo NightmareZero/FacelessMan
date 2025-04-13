@@ -18,7 +18,7 @@ namespace NzFaceLessManMod
                 return ownerVerb.verbProps.range;
             }
 
-            return ownerVerb.verbProps.range * attacker.GetStatValue(ownerVerb.verbProps.rangeStat, true);
+            return ownerVerb.verbProps.range * attacker.GetStatValue(ownerVerb.verbProps.rangeStat, true, cacheStaleAfterTicks: 600);
         }
     }
 }

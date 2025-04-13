@@ -84,11 +84,11 @@ namespace NzFaceLessManMod
             armorPenetration = Props.armorPenetration;
             if (Props.damageFactorStat != null)
             {
-                damage *= (int)Caster.GetStatValue(Props.damageFactorStat);
+                damage *= (int)Caster.GetStatValue(Props.damageFactorStat, cacheStaleAfterTicks: 600);
             }
             if (Props.armorPenetrationFactorStat != null)
             {
-                armorPenetration *= Caster.GetStatValue(Props.armorPenetrationFactorStat);
+                armorPenetration *= Caster.GetStatValue(Props.armorPenetrationFactorStat, cacheStaleAfterTicks: 600);
             }
         }
 

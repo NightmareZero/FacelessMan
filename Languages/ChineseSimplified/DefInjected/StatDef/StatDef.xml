@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <NzFlm_SkillRangeMultiplier.label>基因技能射程放大系数</NzFlm_SkillRangeMultiplier.label>
+    <NzFlm_SkillRangeMultiplier.description>部分基因技能射程放大系数</NzFlm_SkillRangeMultiplier.description>
+
+    <NzFlm_SkillRangeMultiplierHalf.label>基因技能射程半放大系数</NzFlm_SkillRangeMultiplierHalf.label>
+    <NzFlm_SkillRangeMultiplierHalf.description>部分基因技能射程放大系数</NzFlm_SkillRangeMultiplierHalf.description>
+
+    <NzFlm_EvSkillCooldownTime.label>基因技能冷却时间</NzFlm_EvSkillCooldownTime.label>
+    <NzFlm_EvSkillCooldownTime.description>部分基因技能冷却时间</NzFlm_EvSkillCooldownTime.description>
+
+    <NzFlm_GlancingHitPoint.label>偏斜值</NzFlm_GlancingHitPoint.label>
+    <NzFlm_GlancingHitPoint.description>受到的所有来自敌人的伤害，在计算承伤系数后，都再次会被减少特定值</NzFlm_GlancingHitPoint.description>
+</LanguageData>

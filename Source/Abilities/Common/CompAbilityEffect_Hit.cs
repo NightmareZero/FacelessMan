@@ -22,12 +22,12 @@ namespace NzFaceLessManMod
             var damAmount = Props.damageAmountBase;
             if (Props.damageMultiplierStat != null)
             {
-                damAmount = Mathf.RoundToInt(damAmount * parent.pawn.GetStatValue(Props.damageMultiplierStat));
+                damAmount = Mathf.RoundToInt(damAmount * parent.pawn.GetStatValue(Props.damageMultiplierStat, cacheStaleAfterTicks: 600));
             }
             var damArmorPenetration = Props.armorPenetrationBase;
             if (Props.armorPenetrationMultiplierStat != null)
             {
-                damArmorPenetration = Mathf.RoundToInt(damArmorPenetration * parent.pawn.GetStatValue(Props.armorPenetrationMultiplierStat));
+                damArmorPenetration = Mathf.RoundToInt(damArmorPenetration * parent.pawn.GetStatValue(Props.armorPenetrationMultiplierStat, cacheStaleAfterTicks: 600));
             }
 
             // 击晕

@@ -128,7 +128,7 @@ namespace NzFaceLessManMod
             {
                 if (Props.rangeStat != null)
                 {
-                    return Caster.GetStatValue(Props.rangeStat) * Props.range;
+                    return Caster.GetStatValue(Props.rangeStat, cacheStaleAfterTicks: 600) * Props.range;
                 }
                 return Props.range;
             }
@@ -140,7 +140,7 @@ namespace NzFaceLessManMod
             {
                 if (Props.rangeStat != null)
                 {
-                    return Props.lineWidthEnd * Caster.GetStatValue(Props.rangeStat);
+                    return Props.lineWidthEnd * Caster.GetStatValue(Props.rangeStat, cacheStaleAfterTicks: 600);
                 }
                 return Props.lineWidthEnd;
             }
@@ -152,7 +152,7 @@ namespace NzFaceLessManMod
             {
                 if (Props.damMultiplierStat != null)
                 {
-                    return Mathf.RoundToInt(Props.damageAmount * Caster.GetStatValue(Props.damMultiplierStat));
+                    return Mathf.RoundToInt(Props.damageAmount * Caster.GetStatValue(Props.damMultiplierStat, cacheStaleAfterTicks: 600));
                 }
                 return Props.damageAmount;
             }

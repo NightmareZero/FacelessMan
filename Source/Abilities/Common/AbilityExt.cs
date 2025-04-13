@@ -13,11 +13,11 @@ namespace NzFaceLessManMod
         // : public override void AbilityTick()
 
 
-        public virtual void BeforeStartCooldown(int ticks)
+        public virtual void BeforeStartCooldown(ref int ticks)
         {
         }
 
-        public virtual void BeforeNotify_GroupStartedCooldown(AbilityGroupDef group, int ticks)
+        public virtual void BeforeNotify_GroupStartedCooldown(AbilityGroupDef group,ref int ticks)
         {
         }
 

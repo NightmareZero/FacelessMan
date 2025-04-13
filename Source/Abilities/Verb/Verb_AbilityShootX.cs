@@ -17,11 +17,11 @@ namespace NzFaceLessManMod
             }
             else if (verbProps.rangeStat != null && verbProps.range == 0)
             {
-                return attacker.GetStatValue(verbProps.rangeStat);
+                return attacker.GetStatValue(verbProps.rangeStat, cacheStaleAfterTicks: 600);
             }
 
 
-            return attacker.GetStatValue(verbProps.rangeStat) * verbProps.range;
+            return attacker.GetStatValue(verbProps.rangeStat, cacheStaleAfterTicks: 600) * verbProps.range;
         }
 
         public override float EffectiveRange => AdjustedRange(this, CasterPawn);
