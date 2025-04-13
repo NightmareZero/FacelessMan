@@ -71,9 +71,10 @@
         <stages>
             <li>
                 <statOffsets>
-                    <NzFlm_GlancingHitPoint>3</NzFlm_GlancingHitPoint>
+                    <NzFlm_GlancingHitPoint>6</NzFlm_GlancingHitPoint>
                 </statOffsets>
                 <statFactors>
+                    <IncomingDamageFactor>0.85</IncomingDamageFactor>
                     <InjuryHealingFactor>2</InjuryHealingFactor>
                     <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
                 </statFactors>

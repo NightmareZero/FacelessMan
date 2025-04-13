@@ -47,7 +47,7 @@
         <label>glancing hit point</label>
         <!-- 受到的所有来自敌人的伤害，都会被减少 -->
         <description>All damage received from enemies will be reduced.</description>
-        <toStringStyle>PercentZero</toStringStyle>
+        <toStringStyle>Integer</toStringStyle>
         <displayPriorityInCategory>10003</displayPriorityInCategory>
         <showOnAnimals>true</showOnAnimals>
         <showOnHumanlikes>true</showOnHumanlikes>

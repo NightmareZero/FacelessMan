@@ -12,8 +12,8 @@
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
         <statFactors>
-            <NzFlm_SkillRangeMultiplier>1.6</NzFlm_SkillRangeMultiplier>
-            <NzFlm_SkillRangeMultiplierHalf>1.3</NzFlm_SkillRangeMultiplierHalf>
+            <NzFlm_SkillRangeMultiplier>1.8</NzFlm_SkillRangeMultiplier>
+            <NzFlm_SkillRangeMultiplierHalf>1.4</NzFlm_SkillRangeMultiplierHalf>
         </statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
 

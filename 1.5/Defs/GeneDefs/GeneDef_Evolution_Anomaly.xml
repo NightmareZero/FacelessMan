@@ -3,17 +3,13 @@
     <!-- 活铁皮层 -->
     <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Anomaly">
         <defName>Nzflm_Ev_BioferriteSkinLayer</defName>
-        <label>>bioferrite skin layer</label>
-        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
-        <!-- 在你的皮下形成多层活铁护甲，大幅度降低你承受的伤害，但是会使你变得易燃。 -->
-        <description>Form multiple layers of bioferrite armor under your skin, significantly
-            reducing the damage you take, but making you more susceptible to catching fire.</description>
+        <label>bioferrite skin layer</label>
+        <displayCategory>Nzflm_Gene_Ev_Anomaly</displayCategory>
+        <!-- 在你的皮下形成多层活铁护甲，降低你承受的最终伤害，但是会使你变得易燃。 -->
+        <description>multi-layered bioferrite armor is formed under your skin, reducing the final damage you take, but making you more flammable.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
-        <statFactors>
-            <IncomingDamageFactor>0.85</IncomingDamageFactor>
-        </statFactors>
         <damageFactors>
             <Flame>1.5</Flame>
         </damageFactors>
