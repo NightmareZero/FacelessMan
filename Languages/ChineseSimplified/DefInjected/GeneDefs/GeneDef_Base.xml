@@ -5,4 +5,10 @@
 
     <NzFlm_EvSkillCooldownTime.label>高速分泌</NzFlm_EvSkillCooldownTime.label>
     <NzFlm_EvSkillCooldownTime.description>你分泌特殊物质的速度加快了，这是你可以更早的再次使用特定技能</NzFlm_EvSkillCooldownTime.description>
+
+    <Flm_Ev_SturdyBody.label>强健身躯</Flm_Ev_SturdyBody.label>
+    <Flm_Ev_SturdyBody.description>由于基因上的悉心调制，你的身体正在以一种更加高效的方式运作，可以迅速止血，伤疤和慢性病也会逐渐自动修复(6~10天)</Flm_Ev_SturdyBody.description>
+
+    <Flm_Ev_CellReagent.label>细胞制剂</Flm_Ev_CellReagent.label>
+    <Flm_Ev_CellReagent.description>你可以通过接触目标的皮肤，将自己的一小团细胞注入到目标体内，以帮助目标快速愈合</Flm_Ev_CellReagent.description>
 </LanguageData>

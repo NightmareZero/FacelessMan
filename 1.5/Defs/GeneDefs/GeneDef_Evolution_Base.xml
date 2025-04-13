@@ -115,7 +115,7 @@
             to help the target heal quickly.</description>
         <iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
         <displayOrderInCategory>40</displayOrderInCategory>
-        <evolution>2</evolution>
+        <evolution>1</evolution>
         <abilities>
             <li>NzFlm_InjectCellReagent</li>
         </abilities>
