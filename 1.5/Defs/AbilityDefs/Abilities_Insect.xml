@@ -4,6 +4,7 @@
     <AbilityDef ParentName="Nz_Flm_AbilityEv">
         <defName>NzFlm_BattlePheromone</defName>
         <label>Battle Pheromone</label>
+        <!-- 呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击 -->
         <description>Release a pheromone that stimulates surrounding friendly creatures, enhancing
             their combat effectiveness.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
@@ -216,7 +217,7 @@
 			<accuracyShort>1.0</accuracyShort>
 			<accuracyMedium>0.95</accuracyMedium>
 			<accuracyLong>0.9</accuracyLong>
-			<burstShotCount>6</burstShotCount>
+			<burstShotCount>7</burstShotCount>
 			<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
 			<defaultProjectile>PiercingSpine</defaultProjectile>
 			<verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>

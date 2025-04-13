@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+    <NzFlm_BattlePheromone.label>战斗信息素</NzFlm_BattlePheromone.label>
+    <NzFlm_BattlePheromone.description>呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击</NzFlm_BattlePheromone.description>
+
     <NzRI_Zd_ClawDestroy.label>毁灭</NzRI_Zd_ClawDestroy.label>
     <NzRI_Zd_ClawDestroy.description>尝试将目标撕成碎片，对敌人造成大量伤害</NzRI_Zd_ClawDestroy.description>
 
     <NzFlm_SupportPheromone.label>支援信息素</NzFlm_SupportPheromone.label>
     <NzFlm_SupportPheromone.description>呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。</NzFlm_SupportPheromone.description>
+
+    <NzFlm_GelSpray.label>凝胶喷射</NzFlm_GelSpray.label>
+    <NzFlm_GelSpray.description>快速喷洒出大量的凝胶，这种凝胶会快速凝固，限制目标的动作</NzFlm_GelSpray.description>
+
+    <NzFlm_ExoskeletonArmor.label>外骨骼护甲</NzFlm_ExoskeletonArmor.label>
+    <NzFlm_ExoskeletonArmor.description>激活你的外骨骼腺体，使其快速分泌一种液体，在你体外形成一层外骨骼，这些外骨骼需要一小段时间才会凝固变硬，在一段时间之后干裂消失</NzFlm_ExoskeletonArmor.description>
+
+    <NzFlm_SpikeShot.label>尖刺射击</NzFlm_SpikeShot.label>
+    <NzFlm_SpikeShot.description>快速发射出多枚刺针，对你的敌人造成大量伤害</NzFlm_SpikeShot.description>
 </LanguageData>
