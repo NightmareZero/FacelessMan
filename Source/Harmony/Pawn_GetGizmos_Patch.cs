@@ -16,60 +16,34 @@ using RimWorld.Planet;
 using HarmonyLib;
 
 namespace NzFaceLessManMod
-{ 
+{
     public interface PawnGizmoProvider
     {
         IEnumerable<Gizmo> GetGizmos();
     }
 
-    [HarmonyPatch(typeof(Pawn), "GetGizmos")]
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.GetGizmos))]
     public static class Pawn_GetGizmos_Patch
     {
-        public static string toggleCache = "CommandToggleDraftDesc".Translate().ToString();
+        static string toggleDesc = "CommandToggleDraftDesc".Translate().ToString();
 
-        public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
+        public static IEnumerable<Gizmo> AddGizmoButton(IEnumerable<Gizmo> __result, Pawn __instance)
         {
             var pawn = __instance;
-            bool isDraftableAnimal = AnimalControl.CanDraftAndCtrl(pawn);
-            bool alreadyHasVanillaDraftButton = false;
-            foreach (var g in __result)
+            var gizmos = __result;
+
+            bool isAnimalAndDraftable = AnimalControl.CanDraftAndCtrl(pawn);
+            bool hasDraftButtonAlready = false;
+            foreach (var g in gizmos)
             {
-                if (g is Command_Toggle command && command.defaultDesc == toggleCache)
+                if (g is Command_Toggle command && command.defaultDesc == toggleDesc)
                 {
-                    alreadyHasVanillaDraftButton = true;
+                    hasDraftButtonAlready = true;
                 }
                 yield return g;
             }
 
-            if (pawn.abilities != null && !isDraftableAnimal && AnimalControl.CanUseAbility(pawn))
-            {
-                if (!DebugSettings.godMode || (DebugSettings.godMode && !DebugSettings.ShowDevGizmos))
-                {
-                    foreach (Ability a in pawn.abilities.AllAbilitiesForReading)
-                    {
-
-                        bool visibleSecondary = (pawn.Drafted || a.def.displayGizmoWhileUndrafted) && a.GizmosVisible();
-
-                        foreach (Command gizmo in a.GetGizmos())
-                        {
-                            Command_Ability command_Ability;
-                            if ((command_Ability = gizmo as Command_Ability) != null)
-                            {
-                                command_Ability.devGizmo = !visibleSecondary && DebugSettings.ShowDevGizmos;
-                            }
-                            yield return gizmo;
-                        }
-
-
-                        foreach (Gizmo item in a.GetGizmosExtra())
-                        {
-                            yield return item;
-                        }
-                    }
-                }
-            }
-  
-            if (!alreadyHasVanillaDraftButton && isDraftableAnimal && pawn.drafter != null)
+            if (!hasDraftButtonAlready && isAnimalAndDraftable && pawn.drafter != null)
             {
 
                 Command_Toggle drafting_command = new Command_Toggle();
@@ -86,6 +60,35 @@ namespace NzFaceLessManMod
                 drafting_command.groupKey = 81729172;
                 drafting_command.turnOffSound = SoundDefOf.DraftOff;
                 yield return drafting_command;
+            }
+
+            if (pawn.abilities != null && !isAnimalAndDraftable && AnimalControl.CanUseAbility(pawn))
+            {
+                foreach (Ability a in pawn.abilities.AllAbilitiesForReading)
+                {
+
+                    bool showGizmo = (pawn.Drafted || a.def.displayGizmoWhileUndrafted) && a.GizmosVisible();
+                    if (!showGizmo)
+                    {
+                        continue;
+                    }
+
+                    foreach (Command gizmo in a.GetGizmos())
+                    {
+                        Command_Ability command_Ability;
+                        if ((command_Ability = gizmo as Command_Ability) != null)
+                        {
+                            command_Ability.devGizmo = !showGizmo && DebugSettings.ShowDevGizmos;
+                        }
+                        yield return gizmo;
+                    }
+
+
+                    foreach (Gizmo item in a.GetGizmosExtra())
+                    {
+                        yield return item;
+                    }
+                }
             }
 
             foreach (var comp in __instance.AllComps)
