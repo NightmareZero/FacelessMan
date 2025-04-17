@@ -104,12 +104,8 @@ namespace NzFaceLessManMod
                 biostatArc = template.biostatArc,
                 displayCategory = template.displayCategory,
                 displayOrderInCategory = displayOrderBase + template.displayOrderOffset,
-                minAgeActive = template.minAgeActive,
                 modContentPack = template.modContentPack,
-
                 modExtensions = new List<DefModExtension> { modExt },
-
-                descriptionHyperlinks = new List<DefHyperlink> { new DefHyperlink { def = template.ability } }
             };
 
             if (!template.exclusionTagPrefix.NullOrEmpty())

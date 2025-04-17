@@ -27,15 +27,11 @@ namespace NzFaceLessManMod {
 
         public int biostatArc;
 
-        public float minAgeActive;
-
         public GeneCategoryDef displayCategory;
 
         public int displayOrderOffset;
 
         public float selectionWeight = 0f;
-
-        public AbilityDef ability;
 
 
         [MustTranslate]
@@ -55,7 +51,7 @@ namespace NzFaceLessManMod {
             }
             if (!typeof(Gene).IsAssignableFrom(geneClass))
             {
-                yield return "geneClass is not Gene or child thereof.";
+                yield return "geneClass is not Gene or subclass thereof.";
             }
         }
     }

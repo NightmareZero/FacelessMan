@@ -22,20 +22,10 @@ namespace NzFaceLessManMod
     public static class Pawn_MindState_StartFleeingBecauseOfPawnAction_Patch
     {
         [HarmonyPrefix]
-        public static bool DontFlee(Pawn_MindState __instance)
-
+        public static bool CanStartFlee(Pawn_MindState __instance)
         {
-
-            bool flagDoesCReatureNotFlee = AnimalCaches.nofleeing_animals.Contains(__instance.pawn);
-
-            if (flagDoesCReatureNotFlee)
-            {
-
-                return false;
-            }
-            else return true;
-
-
+            // 如果禁止逃跑则，不允许开始逃跑
+            return !AnimalControl.NoEscape(__instance.pawn);
         }
     }
 
@@ -47,7 +37,7 @@ namespace NzFaceLessManMod
         public static bool PreventWanderingWhenDrafted(Pawn pawn, ref Job __result)
         {
             // 检查是否是可征召的动物，并且已被征召
-            if (AnimalCaches.draftable_animals.Contains(pawn) && pawn.Drafted)
+            if (AnimalControl.CanDraft(pawn) && pawn.Drafted)
             {
                 // 阻止游荡任务
                 __result = JobMaker.MakeJob(JobDefOf.Wait, 600); // 让动物站立待命 600 tick
@@ -61,36 +51,25 @@ namespace NzFaceLessManMod
 
 
     [HarmonyPatch(typeof(PawnUtility))]
-    [HarmonyPatch("IsFighting")]
+    [HarmonyPatch(nameof(PawnUtility.IsFighting))]
     public static class PawnUtility_IsFighting_Patch
     {
         [HarmonyPostfix]
         public static void DontFlee(Pawn pawn, ref bool __result)
-
         {
-            if (pawn != null && AnimalCaches.nofleeing_animals.Contains(pawn) && pawn.CurJob != null) { __result = true; }
-
-
-
+            if (pawn != null && AnimalControl.NoEscape(pawn) && pawn.CurJob != null) { __result = true; }
         }
     }
 
     [HarmonyPatch(typeof(PawnComponentsUtility))]
-    [HarmonyPatch("AddAndRemoveDynamicComponents")]
+    [HarmonyPatch(nameof(PawnComponentsUtility.AddAndRemoveDynamicComponents))]
     public static class PawnComponentsUtility_AddAndRemoveDynamicComponents_Patch
     {
         [HarmonyPostfix]
-        public static void AddDraftability(Pawn pawn)
+        public static void InitController(Pawn pawn)
         {
-            //These two flags detect if the creature is part of the colony and if it has the custom class
-            bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction.IsPlayer;
-            bool flagIsCreatureDraftable = AnimalCaches.draftable_animals.Contains(pawn);
-
-
-            if (flagIsCreatureMine && flagIsCreatureDraftable)
+            if (pawn?.Faction?.IsPlayer == true && AnimalControl.CanDraft(pawn))
             {
-                //Log.Message("Patching "+ pawn.kindDef.ToString() + " with a draft controller and equipment tracker");
-                //If everything goes well, add drafter and equipment to the pawn 
                 if (pawn.drafter is null)
                 {
                     pawn.drafter = new Pawn_DraftController(pawn);
@@ -104,14 +83,13 @@ namespace NzFaceLessManMod
     }
 
     [HarmonyPatch(typeof(Pawn))]
-    [HarmonyPatch("WorkTypeIsDisabled")]
+    [HarmonyPatch(nameof(Pawn.WorkTypeIsDisabled))]
     public static class Pawn_WorkTypeIsDisabled_Patch
     {
         [HarmonyPostfix]
-        public static void RemoveTendFromAnimals(WorkTypeDef w, Pawn __instance, ref bool __result)
+        public static void AnimalNoDoctor(WorkTypeDef w, Pawn __instance, ref bool __result)
         {
-            if (w == WorkTypeDefOf.Doctor && AnimalCaches.draftable_animals.Contains(__instance)
-                && __instance.RaceProps.IsMechanoid is false)
+            if (w == WorkTypeDefOf.Doctor && AnimalControl.CanDraft(__instance))
             {
                 __result = true;
             }
@@ -123,11 +101,9 @@ namespace NzFaceLessManMod
     public static class Pawn_IsColonistPlayerControlled_Patch
     {
         [HarmonyPostfix]
-        public static void AddAnimalAsColonist(Pawn __instance, ref bool __result)
+        public static void AnimalCanCtrl(Pawn __instance, ref bool __result)
         {
-            bool flagIsCreatureDraftable = AnimalCaches.draftable_animals.Contains(__instance);
-
-            if (flagIsCreatureDraftable)
+            if (AnimalControl.CanDraft(__instance))
             {
                 __result = __instance.Spawned && __instance.HostFaction == null && __instance.Faction == Faction.OfPlayer;
             }
@@ -139,13 +115,10 @@ namespace NzFaceLessManMod
     public static class FloatMenuMakerMap_CanTakeOrder_Patch
     {
         [HarmonyPostfix]
-        public static void MakePawnControllable(Pawn pawn, ref bool __result)
+        public static void AnimalAllowsFloatMenu(Pawn pawn, ref bool __result)
 
         {
-            bool flagIsCreatureMine = pawn.Faction != null && pawn.Faction?.IsPlayer == true;
-            bool flagIsCreatureDraftable = AnimalCaches.draftable_animals.Contains(pawn);
-
-            if (flagIsCreatureDraftable && flagIsCreatureMine)
+            if (pawn.Faction?.IsPlayer == true &&  AnimalControl.CanDraft(pawn))
             {
                 __result = true;
             }
@@ -158,11 +131,11 @@ namespace NzFaceLessManMod
     public static class FloatMenuMakerMap_AddJobGiverWorkOrders_Patch
     {
         [HarmonyPrefix]
-        public static bool SkipIfAnimal(Pawn pawn)
+        public static bool AnimalNoWorkOrder(Pawn pawn)
 
         {
 
-            if (AnimalCaches.draftable_animals.Contains(pawn))
+            if (AnimalControl.CanDraft(pawn))
             {
                 return false;
             }
@@ -177,10 +150,10 @@ namespace NzFaceLessManMod
     public static class SchoolUtility_CanTeachNow_Patch
     {
         [HarmonyPrefix]
-        public static bool RemoveTeaching(Pawn teacher)
+        public static bool AnimalNoTeaching(Pawn teacher)
 
         {
-            if (AnimalCaches.draftable_animals.Contains(teacher))
+            if (AnimalControl.CanDraft(teacher))
             {
                 return false;
 

@@ -5,87 +5,68 @@ using Verse;
 namespace NzFaceLessManMod
 {
     [StaticConstructorOnStartup]
-    public static class AnimalCaches
+    public static class AnimalControl
     {
-        public static HashSet<Pawn> draftable_animals = new HashSet<Pawn>();
+        private static HashSet<Pawn> canDraft = new HashSet<Pawn>();
 
-        public static HashSet<Pawn> nofleeing_animals = new HashSet<Pawn>();
+        private static HashSet<Pawn> noEscape = new HashSet<Pawn>();
 
-        // A list of animals that can use abilities
-        public static HashSet<Pawn> abilityUsing_animals = new HashSet<Pawn>();
+        private static HashSet<Pawn> canUseAbility = new HashSet<Pawn>();
 
         public static void Clear()
-        { 
-            draftable_animals.Clear();
-            nofleeing_animals.Clear();
-            abilityUsing_animals.Clear();
+        {
+            canDraft.Clear();
+            noEscape.Clear();
+            canUseAbility.Clear();
         }
 
-        public static bool IsDraftableAnimal(this Pawn pawn)
+        public static bool CanDraft(Pawn pawn)
         {
-            return draftable_animals.Contains(pawn);
-        }
-        public static bool IsAbilityUserAnimal(this Pawn pawn)
-        {
-            return abilityUsing_animals.Contains(pawn) && pawn.Faction?.IsPlayer == true && pawn.MentalState is null;
-        }
-        public static bool IsDraftableControllableAnimal(this Pawn pawn)
-        {
-            return pawn.IsDraftableAnimal() && pawn.Faction != null && pawn.Faction.IsPlayer && pawn.MentalState is null;
+            return canDraft.Contains(pawn);
         }
 
-        public static void AddDraftableAnimalToList(Pawn pawn)
+        public static void SetCanDraft(Pawn pawn)
         {
-
-            if (!draftable_animals.Contains(pawn))
-            {
-                draftable_animals.Add(pawn);
-            }
+            canDraft.Add(pawn);
         }
 
-        public static void RemoveDraftableAnimalFromList(Pawn pawn)
+        public static void ResetCanDraft(Pawn pawn)
         {
-            if (draftable_animals.Contains(pawn))
-            {
-                draftable_animals.Remove(pawn);
-            }
-
+            canDraft.Remove(pawn);
         }
 
-        public static void AddAbilityUsingAnimalToList(Pawn pawn)
+        public static bool CanDraftAndCtrl(Pawn pawn)
         {
-
-            if (!abilityUsing_animals.Contains(pawn))
-            {
-                abilityUsing_animals.Add(pawn);
-            }
+            return CanDraft(pawn) && pawn.Faction?.IsPlayer == true && pawn.MentalState is null;
+        }
+        public static bool CanUseAbility(Pawn pawn)
+        {
+            return canUseAbility.Contains(pawn) && pawn.Faction?.IsPlayer == true && pawn.MentalState is null;
         }
 
-        public static void RemoveAbilityUsingFromList(Pawn pawn)
+        public static void SetCanUseAbility(Pawn pawn)
         {
-            if (abilityUsing_animals.Contains(pawn))
-            {
-                abilityUsing_animals.Remove(pawn);
-            }
-
+            canUseAbility.Add(pawn);
         }
 
-        public static void AddNotFleeingAnimalToList(Pawn pawn)
+        public static void ResetCanUseAbility(Pawn pawn)
         {
-
-            if (!nofleeing_animals.Contains(pawn))
-            {
-                nofleeing_animals.Add(pawn);
-            }
+            canUseAbility.Remove(pawn);
         }
 
-        public static void RemoveNotFleeingAnimalFromList(Pawn pawn)
+        public static bool NoEscape(Pawn pawn)
         {
-            if (nofleeing_animals.Contains(pawn))
-            {
-                nofleeing_animals.Remove(pawn);
-            }
+            return noEscape.Contains(pawn);
+        }
 
+        public static void SetNoEscape(Pawn pawn)
+        {
+            noEscape.Add(pawn);
+        }
+
+        public static void ResetNoEscape(Pawn pawn)
+        {
+            noEscape.Remove(pawn);
         }
     }
 }

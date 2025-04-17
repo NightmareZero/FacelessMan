@@ -29,7 +29,7 @@ namespace NzFaceLessManMod
             {
                 if (Props.canDraft)
                 {
-                    AnimalCaches.AddDraftableAnimalToList(this.parent.pawn);
+                    AnimalControl.SetCanDraft(this.parent.pawn);
                     if (parent.pawn.drafter is null)
                     {
                         parent.pawn.drafter = new Pawn_DraftController(parent.pawn);
@@ -41,11 +41,11 @@ namespace NzFaceLessManMod
                 }
                 if (Props.nonFleeing)
                 {
-                    AnimalCaches.AddNotFleeingAnimalToList(this.parent.pawn);
+                    AnimalControl.SetNoEscape(this.parent.pawn);
                 }
                 if (Props.usingAbility)
                 {
-                    AnimalCaches.AddAbilityUsingAnimalToList(this.parent.pawn);
+                    AnimalControl.SetCanUseAbility(this.parent.pawn);
                 }
                 if (Props.train)
                 {
@@ -79,15 +79,15 @@ namespace NzFaceLessManMod
             {
                 if (Props.canDraft)
                 {
-                    AnimalCaches.RemoveDraftableAnimalFromList(this.parent.pawn);
+                    AnimalControl.ResetCanDraft(this.parent.pawn);
                 }
                 if (Props.nonFleeing)
                 {
-                    AnimalCaches.RemoveNotFleeingAnimalFromList(this.parent.pawn);
+                    AnimalControl.ResetNoEscape(this.parent.pawn);
                 }
                 if (Props.usingAbility)
                 {
-                    AnimalCaches.RemoveAbilityUsingFromList(this.parent.pawn);
+                    AnimalControl.ResetCanUseAbility(this.parent.pawn);
                 }
             }
         }
@@ -101,7 +101,7 @@ namespace NzFaceLessManMod
                 {
                     if (Props.canDraft)
                     {
-                        AnimalCaches.AddDraftableAnimalToList(this.parent.pawn);
+                        AnimalControl.SetCanDraft(this.parent.pawn);
                         if (parent.pawn.drafter is null)
                         {
                             parent.pawn.drafter = new Pawn_DraftController(parent.pawn);
@@ -113,11 +113,11 @@ namespace NzFaceLessManMod
                     }
                     if (Props.nonFleeing)
                     {
-                        AnimalCaches.AddNotFleeingAnimalToList(this.parent.pawn);
+                        AnimalControl.SetNoEscape(this.parent.pawn);
                     }
                     if (Props.usingAbility)
                     {
-                        AnimalCaches.AddAbilityUsingAnimalToList(this.parent.pawn);
+                        AnimalControl.SetCanUseAbility(this.parent.pawn);
                     }
                 }
             }

@@ -30,7 +30,7 @@ namespace NzFaceLessManMod
         public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
         {
             var pawn = __instance;
-            bool isDraftableAnimal = pawn.IsDraftableControllableAnimal();
+            bool isDraftableAnimal = AnimalControl.CanDraftAndCtrl(pawn);
             bool alreadyHasVanillaDraftButton = false;
             foreach (var g in __result)
             {
@@ -41,7 +41,7 @@ namespace NzFaceLessManMod
                 yield return g;
             }
 
-            if (pawn.abilities != null && !isDraftableAnimal && pawn.IsAbilityUserAnimal())
+            if (pawn.abilities != null && !isDraftableAnimal && AnimalControl.CanUseAbility(pawn))
             {
                 if (!DebugSettings.godMode || (DebugSettings.godMode && !DebugSettings.ShowDevGizmos))
                 {

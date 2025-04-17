@@ -35,7 +35,7 @@ namespace NzFaceLessManMod
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 // 读取数据
-                AnimalCaches.Clear();
+                AnimalControl.Clear();
             }
         }
 

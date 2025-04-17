@@ -6,13 +6,11 @@
 		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
 		<!-- <exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix> -->
 		<displayCategory>Nzflm_GeneCategory</displayCategory>
-		<selectionWeight>0</selectionWeight>
 		<label>GenePack: {0}</label>
 		<description>Carriers of this gene possess the complete genetic of {0} xenotype within them.</description>
 		<displayOrderOffset>0</displayOrderOffset>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-1</biostatMet>
-		<!-- <ability>VRE_Morph</ability> -->
 	</NzFaceLessManMod.XenoGeneTemplateDef>
 	<GeneDef>
 		<defName>Nzflm_Strong</defName>

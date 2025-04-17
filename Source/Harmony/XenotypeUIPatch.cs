@@ -117,7 +117,10 @@ namespace NzFaceLessManMod
     [HarmonyPatch(typeof(GeneUtility), "GenesInOrder", MethodType.Getter)]
     public static class GeneUtility_GenesInOrder_Patch
     {
+#if DEBUG        
         private static bool logPrinted = false; // 添加静态布尔字段
+#endif        
+
         [HarmonyPriority(int.MinValue + 1)]
         public static void Postfix(ref List<GeneDef> __result)
         {
