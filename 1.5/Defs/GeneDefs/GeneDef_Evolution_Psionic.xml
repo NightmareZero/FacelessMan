@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 灵能觉醒 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_PsychicAwakening</defName>
+        <label>psychic awakening</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 通过其他方式觉醒灵能不够稳定，启灵装置又太过昂贵，所以经过数十年的努力，我们合成出了一种新型的基因，能够让你觉醒灵能，比其他方式更加普适 -->
+        <description>The awakening of psychic through other means is not stable enough, and the
+            psychic amplifier is too expensive, so after decades of efforts, we have synthesized a
+            new type of gene that can awaken psychic, which is more universal than other methods.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>2</evolution>
+        <suppressedTraits>
+            <li>
+                <def>PsychicAbility_Deaf</def>
+            </li>
+            <li>
+                <def>PsychicAbility_Dull</def>
+            </li>
+        </suppressedTraits>
+        <modExtensions>
+			<li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_BionicPartAdd">
+                        <hediffDef>PsychicAmplifier</hediffDef>
+                        <bodyPartDef>Brain</bodyPartDef>
+                        <installCount>-1</installCount>
+                    </li>
+                </comps>
+            </li>
+		</modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+</Defs>
