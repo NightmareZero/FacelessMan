@@ -42,6 +42,9 @@ namespace NzFaceLessManMod
         // 承伤减值
         public static StatDef NzFlm_GlancingHitPoint;
 
+        // 唯心主义
+        public static EvolutionGeneDef Nzflm_Ev_Idealism;
+
 
         static XmlDefs()
         {
