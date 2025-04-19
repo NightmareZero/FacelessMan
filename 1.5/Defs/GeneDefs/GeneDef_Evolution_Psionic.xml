@@ -36,11 +36,32 @@
         <label>idealism</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
         <!-- 你相信心灵的力量胜过物理规律，这使你的身体也发生了改变，现在你的精神力量随着时间而逐渐恢复，精神力越高，回复越快 -->
-        <description>You believe that the power of the mind is greater than the laws of physics, which
+        <description>You believe that the power of the mind is greater than the laws of physics,
+            which
             has changed your body. Now your mental power gradually recovers over time, and the
             higher your mental power, the faster it recovers.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心胜于物 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindOverMatter</defName>
+        <label>mind over matter</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你相信心灵的力量胜过物理规律，这使你的身体也发生了改变，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
+        <description>You believe that the power of the mind is greater than the laws of physics,
+            which
+            has changed your body. Now your mental power gradually recovers over time, and the
+            higher your mental power, the faster it recovers.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <hediffDef>Nzflm_He_MindOverMatter</hediffDef>
+            </li>
+        </modExtensions>
     </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

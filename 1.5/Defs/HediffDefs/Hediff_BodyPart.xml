@@ -35,6 +35,8 @@
                 <statFactors>
                     <!-- 普通工作速度 -->
                     <GeneralLaborSpeed>0.9</GeneralLaborSpeed>
+                    <PlantWorkSpeed>1.60</PlantWorkSpeed>
+                    <MiningSpeed>1.90</MiningSpeed>
                 </statFactors>
                 <statOffsets>
                 </statOffsets>
