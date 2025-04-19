@@ -35,11 +35,9 @@
         <defName>Nzflm_Ev_Idealism</defName>
         <label>idealism</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
-        <!-- 你相信心灵的力量胜过物理规律，这使你的身体也发生了改变，现在你的精神力量随着时间而逐渐恢复，精神力越高，回复越快 -->
-        <description>You believe that the power of the mind is greater than the laws of physics,
-            which
-            has changed your body. Now your mental power gradually recovers over time, and the
-            higher your mental power, the faster it recovers.</description>
+        <!-- 将灵能技巧编码于基因中使其成为本能，现在你的精神力量随着时间而逐渐恢复，精神力越高，回复越快 -->
+        <description>The psychic skills are encoded in the gene, making them instinctive. Now your mental power
+            gradually recovers over time, and the higher your mental power, the faster it recovers.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
@@ -50,11 +48,11 @@
         <defName>Nzflm_Ev_MindOverMatter</defName>
         <label>mind over matter</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
-        <!-- 你相信心灵的力量胜过物理规律，这使你的身体也发生了改变，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
-        <description>You believe that the power of the mind is greater than the laws of physics,
-            which
-            has changed your body. Now your mental power gradually recovers over time, and the
-            higher your mental power, the faster it recovers.</description>
+        <!-- 将记忆与灵能技巧编码于基因中使其成为本能，现在你相信心灵的力量胜过物理规律，战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
+        <description>The memory and psychic skills are encoded in the gene, making them instinctive. Now you
+            believe that the power of the mind is greater than the laws of physics, and your combat
+            ability, work efficiency, and damage resistance will improve with the improvement of
+            mental power.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
@@ -64,4 +62,28 @@
             </li>
         </modExtensions>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 漂浮 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_Float</defName>
+        <label>float</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 将灵能技巧编码于基因中使其成为本能，你可以在空中漂浮，无视艰难地形的影响，也不会踩到陷阱 -->
+        <description>The psychic skills are encoded in the gene, making them instinctive. You can float in the air,
+            ignoring the effects of difficult terrain and not stepping on traps.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <PawnTrapSpringChance>0</PawnTrapSpringChance>
+          </statFactors>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_CanFloat" />
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 </Defs>

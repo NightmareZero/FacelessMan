@@ -36,6 +36,7 @@ namespace NzFaceLessManMod
             {
                 // 读取数据
                 AnimalControl.Clear();
+                PawnControl.Clear();
             }
         }
 
