@@ -17,6 +17,79 @@ using HarmonyLib;
 
 namespace NzFaceLessManMod
 {
+
+    [HarmonyPatch(typeof(Pawn), nameof(Pawn.GetGizmos))]
+    public static class Animal_Gizmos_Patch
+    {
+        static string toggleDesc = "CommandToggleDraftDesc".Translate().ToString();
+
+        public static IEnumerable<Gizmo> AddGizmoButton(IEnumerable<Gizmo> __result, Pawn __instance)
+        {
+            var pawn = __instance;
+            var gizmos = __result;
+
+            bool isAnimalAndDraftable = AnimalControl.CanDraftAndCtrl(pawn);
+            bool hasDraftButtonAlready = false;
+            foreach (var g in gizmos)
+            {
+                if (g is Command_Toggle command && command.defaultDesc == toggleDesc)
+                {
+                    hasDraftButtonAlready = true;
+                }
+                yield return g;
+            }
+
+            if (!hasDraftButtonAlready && isAnimalAndDraftable && pawn.drafter != null)
+            {
+
+                Command_Toggle drafting_command = new Command_Toggle();
+                drafting_command.toggleAction = delegate
+                {
+                    pawn.drafter.Drafted = !pawn.drafter.Drafted;
+                };
+                drafting_command.isActive = () => pawn.drafter.Drafted;
+                drafting_command.defaultLabel = (pawn.drafter.Drafted ? "CommandUndraftLabel" : "CommandDraftLabel").Translate();
+                drafting_command.hotKey = KeyBindingDefOf.Command_ColonistDraft;
+                drafting_command.defaultDesc = "CommandToggleDraftDesc".Translate();
+                drafting_command.icon = ContentFinder<Texture2D>.Get("ui/commands/Draft", true);
+                drafting_command.turnOnSound = SoundDefOf.DraftOn;
+                drafting_command.groupKey = 81729172;
+                drafting_command.turnOffSound = SoundDefOf.DraftOff;
+                yield return drafting_command;
+            }
+
+            if (pawn.abilities != null && !isAnimalAndDraftable && AnimalControl.CanUseAbility(pawn))
+            {
+                foreach (Ability a in pawn.abilities.AllAbilitiesForReading)
+                {
+
+                    bool showGizmo = (pawn.Drafted || a.def.displayGizmoWhileUndrafted) && a.GizmosVisible();
+                    if (!showGizmo)
+                    {
+                        continue;
+                    }
+
+                    foreach (Command gizmo in a.GetGizmos())
+                    {
+                        Command_Ability command_Ability;
+                        if ((command_Ability = gizmo as Command_Ability) != null)
+                        {
+                            command_Ability.devGizmo = !showGizmo && DebugSettings.ShowDevGizmos;
+                        }
+                        yield return gizmo;
+                    }
+
+
+                    foreach (Gizmo item in a.GetGizmosExtra())
+                    {
+                        yield return item;
+                    }
+                }
+            }
+
+        }
+    }
+
     [HarmonyPatch(typeof(Pawn_MindState))]
     [HarmonyPatch("StartFleeingBecauseOfPawnAction")]
     public static class Pawn_MindState_StartFleeingBecauseOfPawnAction_Patch
