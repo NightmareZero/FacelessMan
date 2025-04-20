@@ -1,37 +1,32 @@
 <Patch>
-    <Operation Class="PatchOperationFindMod">
-        <mods>
-            <li>Royalty</li>
-        </mods>
-        <match Class="PatchOperationSequence">
-            <operations>
-                <li Class="PatchOperationAdd">
-                    <xpath>Defs/AbilityDef[ParentName='Nz_Flm_AbilityBase']</xpath>
-                    <value>
-                        <warmupSound>PsycastCastLoop</warmupSound>
-                    </value>
-                </li>
-                <li Class="PatchOperationAdd">
-                    <xpath>Defs/AbilityDef[ParentName='Nz_Flm_AbilityEv']</xpath>
-                    <value>
-                        <warmupSound>PsycastCastLoop</warmupSound>
-                    </value>
-                </li>
-                <li Class="PatchOperationReplace">
-                    <xpath>
-                        Defs/AbilityDef[defName='NzFlm_ParalysisToxin']/comps/li/hediffDef[text()='NzFlm_Abasia']</xpath>
-                    <value>
-                        <hediffDef>Abasia</hediffDef>
-                    </value>
-                </li>
-                <li Class="PatchOperationReplace">
-                    <xpath>
-                        Defs/AbilityDef[defName='NzFlm_ParalysisAntidote']/comps/li/hediffDef[text()='NzFlm_Abasia']</xpath>
-                    <value>
-                        <hediffDef>Abasia</hediffDef>
-                    </value>
-                </li>
-            </operations>
-        </match>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <!-- <li Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+                <xpath>Defs/AbilityDef[@ParentName='Nz_Flm_AbilityBase']</xpath>
+                <value>
+                    <warmupSound>PsycastCastLoop</warmupSound>
+                </value>
+            </li> -->
+            <li Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+                <xpath>Defs/AbilityDef[@ParentName='Nz_Flm_AbilityEv']</xpath>
+                <value>
+                    <warmupSound>PsycastCastLoop</warmupSound>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+                <xpath>
+                    Defs/AbilityDef[defName='NzFlm_ParalysisToxin']/comps/li/hediffDef[text()='NzFlm_Abasia']</xpath>
+                <value>
+                    <hediffDef>Abasia</hediffDef>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
+                <xpath>
+                    Defs/AbilityDef[defName='NzFlm_ParalysisAntidote']/comps/li/hediffDef[text()='NzFlm_Abasia']</xpath>
+                <value>
+                    <hediffDef>Abasia</hediffDef>
+                </value>
+            </li>
+        </operations>
     </Operation>
 </Patch>

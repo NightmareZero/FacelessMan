@@ -106,7 +106,7 @@
             <li Class="NzFaceLessManMod.GeneDefExt">
                 <comps>
                     <li Class="NzFaceLessManMod.GeneCompProperties_DamageIgnore">
-                        <change>0.35</change>
+                        <chance>0.35</chance>
                     </li>
                 </comps>
             </li>
