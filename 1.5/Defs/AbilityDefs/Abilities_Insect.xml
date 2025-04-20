@@ -207,6 +207,11 @@
 		<aiCanUse>true</aiCanUse>
 		<verbProperties>
 			<targetParams>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMutants>true</canTargetMutants>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>		
 			<range>22.9</range>
