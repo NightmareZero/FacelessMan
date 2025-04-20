@@ -8,7 +8,7 @@
         <additionalHediffs>
             <li>
                 <hediff>Anesthetic</hediff>
-                <severityPerDamageDealt>0.6</severityPerDamageDealt>
+                <severityPerDamageDealt>0.9</severityPerDamageDealt>
                 <victimSeverityScaling>ToxicResistance</victimSeverityScaling>
                 <inverseStatScaling>true</inverseStatScaling>
                 <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>

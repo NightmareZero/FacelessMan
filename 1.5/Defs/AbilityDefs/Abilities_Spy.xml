@@ -196,9 +196,10 @@
         <targetRequired>True</targetRequired>
         <cooldownTicksRange>900</cooldownTicksRange>
         <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
             <warmupTime>0.2</warmupTime>
             <onlyManualCast>True</onlyManualCast>
-            <range>6</range>
+            <range>7</range>
             <!-- 射程放大系数 -->
             <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
             <targetParams>
@@ -230,7 +231,7 @@
         <projectile>
             <!-- 麻醉针 -->
             <damageDef>NzFlm_Dm_AnestheticSpike</damageDef>
-            <damageAmountBase>2</damageAmountBase>
+            <damageAmountBase>1</damageAmountBase>
             <armorPenetrationBase>2.0</armorPenetrationBase>
             <stoppingPower>0</stoppingPower>
             <speed>55</speed>
