@@ -55,7 +55,7 @@ namespace NzFaceLessManMod
         public List<EvolutionGeneDef> SelectedGenes => selectedGenes;
         protected List<EvolutionGeneDef> selectedGenes = new List<EvolutionGeneDef>();
 
-        public override Vector2 InitialSize => new Vector2(750, 800);
+        public override Vector2 InitialSize => new Vector2(Mathf.Min(UI.screenWidth, 1440), UI.screenHeight - 4);
         protected static readonly Vector2 ButSize = new Vector2(150f, 38f);
 
         public int TotalEvolution => evolutionHediff.evolutionLimit;

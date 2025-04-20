@@ -13,6 +13,7 @@ namespace NzFaceLessManMod
     public delegate void CustomGeneAction(CustomXenotype customXenotype);
     public class Dialog_CreateXenotype1 : Dialog_CreateXenotype
     {
+        public override Vector2 InitialSize => new Vector2(Mathf.Min(UI.screenWidth, 1440), UI.screenHeight - 4);
         private CustomGeneAction callback;
         public Dialog_CreateXenotype1(int index, CustomGeneAction onAccept) : base(index, null)
         {

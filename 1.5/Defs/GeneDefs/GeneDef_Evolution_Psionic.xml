@@ -40,6 +40,7 @@
             mental power
             gradually recovers over time, and the higher your mental power, the faster it recovers.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
     </NzFaceLessManMod.EvolutionGeneDef>
@@ -56,6 +57,7 @@
             ability, work efficiency, and damage resistance will improve with the improvement of
             mental power.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
         <modExtensions>
@@ -75,6 +77,7 @@
             float in the air,
             ignoring the effects of difficult terrain and not stepping on traps.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
         <statFactors>
@@ -100,6 +103,7 @@
             power can
             resist some damage.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
         <modExtensions>
