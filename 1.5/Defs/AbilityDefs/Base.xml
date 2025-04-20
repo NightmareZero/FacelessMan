@@ -8,7 +8,7 @@
             <!-- 60秒 -->
 			<Ability_Duration>60</Ability_Duration>
 		</statBases>
-		<warmupSound>PsycastCastLoop</warmupSound>
+		<!-- <warmupSound>PsycastCastLoop</warmupSound> -->
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<!-- 需要具备暴力能力 -->
@@ -38,7 +38,7 @@
             <!-- 60秒 -->
 			<Ability_Duration>60</Ability_Duration>
 		</statBases>
-		<warmupSound>PsycastCastLoop</warmupSound>
+		<!-- <warmupSound>PsycastCastLoop</warmupSound> -->
 		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		<!-- 需要具备暴力能力 -->

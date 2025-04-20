@@ -9,7 +9,7 @@
             interference
             upon hitting the target.</description>
         <!-- TODO -->
-        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>True</targetRequired>
         <cooldownTicksRange>900</cooldownTicksRange>
@@ -131,7 +131,7 @@
 
 
     <!-- 基因控制 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+    <AbilityDef ParentName="AbilityTouchBase">
         <defName>Flm_Evolve</defName>
         <label>gene control</label>
         <!-- <cooldownTicksRange>120000</cooldownTicksRange> -->
@@ -142,7 +142,7 @@
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <aiCanUse>false</aiCanUse>
-        <jobDef>CastAbilityOnThing</jobDef>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
         <targetRequired>true</targetRequired>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <stunTargetWhileCasting>True</stunTargetWhileCasting>
@@ -176,7 +176,7 @@
         <description>By entering a special state, greatly reduce food consumption, improve high
             temperature/low temperature/toxin resistance, in order to get through some difficult days.</description>
         <!-- TODO -->
-        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>
@@ -225,7 +225,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
-                <hediffDef>Abasia</hediffDef>
+                <hediffDef>NzFlm_Abasia</hediffDef>
                 <psychic>False</psychic>
                 <durationSecondsOverride>60000</durationSecondsOverride>
             </li>
@@ -261,7 +261,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
-                <hediffDef>Abasia</hediffDef>
+                <hediffDef>NzFlm_Abasia</hediffDef>
                 <type>remove</type>
                 <psychic>False</psychic>
             </li>

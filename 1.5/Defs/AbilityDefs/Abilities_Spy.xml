@@ -8,7 +8,7 @@
             to perceive you for a while. Due to the time required for color change, your movement
             speed will be affected.</description>
         <!-- TODO -->
-        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>
@@ -42,7 +42,7 @@
             you faster reaction speed and improved combat capabilities.</description>
         <level>1</level>
         <!-- TODO 图标 -->
-        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>30000</cooldownTicksRange>
@@ -191,7 +191,7 @@
             can quickly paralyze the target.</description>
         <level>1</level>
         <!-- TODO -->
-        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>True</targetRequired>
         <cooldownTicksRange>900</cooldownTicksRange>

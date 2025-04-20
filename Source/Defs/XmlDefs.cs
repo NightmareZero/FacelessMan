@@ -43,6 +43,7 @@ namespace NzFaceLessManMod
         public static StatDef NzFlm_GlancingHitPoint;
 
         // 唯心主义
+        [MayRequireRoyalty]
         public static EvolutionGeneDef Nzflm_Ev_Idealism;
 
 

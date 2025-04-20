@@ -170,7 +170,7 @@
         <description>activate your exoskeleton glands to quickly secrete a liquid that forms a layer of exoskeleton outside your body. These exoskeletons need a short period of time to solidify and harden, and will crack and disappear after a period of time.</description>
         <cooldownTicksRange>30000</cooldownTicksRange>
         <!-- TODO -->
-        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>

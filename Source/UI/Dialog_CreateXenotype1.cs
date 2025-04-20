@@ -17,6 +17,7 @@ namespace NzFaceLessManMod
         public Dialog_CreateXenotype1(int index, CustomGeneAction onAccept) : base(index, null)
         {
             callback = onAccept;
+            forcePause = true;
         }
 
         protected override void Accept()

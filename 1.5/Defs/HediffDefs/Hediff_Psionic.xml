@@ -4,6 +4,7 @@
 		<defName>Nzflm_He_MindOverMatter</defName>
 		<label>mind over matter</label>
         <!-- 你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
+		<description>you believe that the power of the mind is greater than the laws of physics, and now your combat ability, work efficiency, and damage resistance will increase with the improvement of mental strength</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>Hediff</hediffClass>
 		<initialSeverity>0.34</initialSeverity>

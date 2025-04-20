@@ -25,8 +25,10 @@ namespace NzFaceLessManMod
 
         private static float NoPass = 10240f;
         [HarmonyPostfix]
-        public static void Patch(Pawn pawn, IntVec3 target, ref float __result)
+        public static void Patch(Pawn pawn, IntVec3 c, ref float __result)
         {
+            var target = c;
+            
             // 节约一些资源，防止报错
             if (pawn.Map == null || pawn.Dead || pawn.Downed || !PawnControl.CanMoveNoCost(pawn))
             {
