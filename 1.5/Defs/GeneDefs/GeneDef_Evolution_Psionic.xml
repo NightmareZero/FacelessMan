@@ -117,4 +117,55 @@
         </modExtensions>
     </NzFaceLessManMod.EvolutionGeneDef>
 
+    <!-- 人格塑造 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_PersonalitySculpting</defName>
+        <label>personality sculpting</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 在你的大脑中，生成一个新的器官，能够生成一个辅助用的虚拟人格，能够帮助你进行思考和决策，减少你的睡眠需求，以及和你的仆从进行联络，同时还可以在你精神崩溃时唤醒你 -->
+        <description>A new organ is generated in your brain, which can generate an auxiliary virtual
+            personality to help you think and make decisions, reduce your sleep needs, and contact
+            your servants, and can also wake you up when you are mentally broken.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <statFactors>
+            <RestFallRateFactor>0.6</RestFallRateFactor>
+        </statFactors>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <postFactor>1.3</postFactor>
+            </li>
+        </capMods>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_AwakeMentalBreak">
+                        <ticks>180</ticks>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 虚拟心灵 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_VirtualMind</defName>
+        <label>virtual mind</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以为动物注入一个虚拟心灵，让他们获得更高的智力，目标的训练度会迅速充满，同时你可以征召他们为你战斗 -->
+        <description>You can inject a virtual mind into animals to give them higher intelligence,
+            and the target's training level will quickly fill up. At the same time, you can summon them
+            to fight for you.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <ablities>
+            <li>NzFlm_AnimalVirtualMind</li>
+        </ablities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 </Defs>

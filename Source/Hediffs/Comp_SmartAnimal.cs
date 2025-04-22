@@ -54,6 +54,17 @@ namespace NzFaceLessManMod
             }
         }
 
+        public override void CompPostTick(ref float severityAdjustment)
+        {
+            if (Props.train && this.parent.pawn?.Faction?.IsPlayer == true
+            && this.parent.pawn?.RaceProps?.Animal == true
+            && this.parent.pawn?.IsHashIntervalTick(30000) == true)
+            {
+                doTrain();
+            }
+        }
+
+
         private void doTrain()
         {
             // 确保召唤的动物属于玩家的Faction

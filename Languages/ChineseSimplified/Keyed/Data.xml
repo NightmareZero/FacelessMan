@@ -24,4 +24,6 @@
     <nzflm.evolution_start_button>开始突变</nzflm.evolution_start_button>
 
     <nzflm.has_target_status>处于 '{0}' 状态</nzflm.has_target_status>
+
+    <nzflm.mental_break_recovered_by>'{0}' 被虚拟人格从精神崩溃中唤醒</nzflm.mental_break_recovered_by>
 </LanguageData>

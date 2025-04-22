@@ -71,4 +71,25 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<!-- 信息素狂暴 -->
+	<HediffDef>
+		<defName>NzFlm_He_AnimalVirtualMind</defName>
+		<label>animal virtual mind</label>
+		<!-- 一个虚拟心智被注入到了这只动物的大脑中，现在它非常聪明 -->
+		<description>A virtual mind has been injected into the animal's brain, and now it is very smart</description>
+		<duplicationAllowed>false</duplicationAllowed>
+		<hediffClass>HediffWithComps</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>90000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="NzFaceLessManMod.HediffCompProperties_SmartAnimal">
+				<usingAbility>False</usingAbility>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>

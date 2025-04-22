@@ -23,4 +23,6 @@
     <nzflm.evolution_start_button>start mutation</nzflm.evolution_start_button>
 
     <nzflm.has_target_status>in '{0}' status</nzflm.has_target_status>
+
+    <nzflm.mental_break_recovered_by>'{0}' Awakened from mental breakdown by virtual personality</nzflm.mental_break_recovered_by>
 </LanguageData>
