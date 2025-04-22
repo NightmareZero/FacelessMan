@@ -25,4 +25,5 @@
     <nzflm.has_target_status>in '{0}' status</nzflm.has_target_status>
 
     <nzflm.mental_break_recovered_by>'{0}' Awakened from mental breakdown by virtual personality</nzflm.mental_break_recovered_by>
+    <hzflm.slave_free_by_master_dead>With the death of '{master}', '{slave}' is free.</hzflm.slave_free_by_master_dead>
 </LanguageData>

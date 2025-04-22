@@ -44,7 +44,7 @@ namespace NzFaceLessManMod
             }
         }
 
-        protected new void ApplyInner(Pawn target, Pawn other)
+        protected new void ApplyInner(Pawn target, Pawn caster)
         {
             if (target == null)
             {
@@ -89,7 +89,7 @@ namespace NzFaceLessManMod
             HediffComp_Link hediffComp_Link = hediff.TryGetComp<HediffComp_Link>();
             if (hediffComp_Link != null)
             {
-                hediffComp_Link.other = other;
+                hediffComp_Link.other = caster;
                 hediffComp_Link.drawConnection = target == parent.pawn;
             }
 

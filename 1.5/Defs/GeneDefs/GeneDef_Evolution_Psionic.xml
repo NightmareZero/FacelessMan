@@ -157,7 +157,8 @@
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
         <!-- 你可以为动物注入一个虚拟心灵，让他们获得更高的智力，目标的训练度会迅速充满，同时你可以征召他们为你战斗 -->
         <description>You can inject a virtual mind into animals to give them higher intelligence,
-            and the target's training level will quickly fill up. At the same time, you can summon them
+            and the target's training level will quickly fill up. At the same time, you can summon
+            them
             to fight for you.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
@@ -167,5 +168,24 @@
             <li>NzFlm_AnimalVirtualMind</li>
         </ablities>
     </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心灵蠕虫 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindWorm</defName>
+        <label>mind worm</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以为目标注入一个心灵蠕虫，这个心灵蠕虫会逐渐洗脑目标，使目标服从你的意志，称为你的仆从，你的虚拟人格会为你管理他们 -->
+        <description>You can inject a mind worm into the target, which will gradually brainwash the target
+            and make the target obey your will and become your servant. Your virtual personality will manage
+            them for you.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>2</evolution>
+        <ablities>
+            <li>NzFlm_MindWorm</li>
+        </ablities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 
 </Defs>

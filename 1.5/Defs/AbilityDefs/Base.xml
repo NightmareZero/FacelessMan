@@ -24,7 +24,8 @@
                 <canTargetPawns>True</canTargetPawns>
 				<canTargetBuildings>False</canTargetBuildings>
 				<canTargetAnimals>False</canTargetAnimals>
-				<!-- <thingCategory>Item</thingCategory> -->
+				<canTargetMutants>False</canTargetMutants>
+				<canTargetMechs>False</canTargetMechs>
 				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 			</targetParams>
 		</verbProperties>
@@ -54,6 +55,8 @@
                 <canTargetPawns>True</canTargetPawns>
 				<canTargetBuildings>False</canTargetBuildings>
 				<canTargetAnimals>False</canTargetAnimals>
+				<canTargetMutants>False</canTargetMutants>
+				<canTargetMechs>False</canTargetMechs>
 				<!-- <thingCategory>Item</thingCategory> -->
 				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 			</targetParams>

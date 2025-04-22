@@ -18,7 +18,7 @@
             <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>
-            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <verbClass>Verb_CastPsycast</verbClass>
             <drawAimPie>false</drawAimPie>
             <range>9.9</range>
             <warmupTime>6</warmupTime>
@@ -38,6 +38,52 @@
                 <psychic>True</psychic>
                 <!-- 3年 -->
                 <durationSecondsOverride>90000~180000</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 心灵蠕虫 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv" MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>NzFlm_MindWorm</defName>
+        <label>>inject mind worm</label>
+        <cooldownTicksRange>30000</cooldownTicksRange>
+        <!-- 你通过灵能，将一个心灵蠕虫注入目标脑中，心灵蠕虫会逐渐改写目标的思想，让目标愿意为你服务，但是这会造成幻觉和疼痛，可能导致目标精神崩溃 -->
+        <description>You can inject a mind worm into the target, which will gradually brainwash the target -->
+            and make the target obey your will and become your servant. Your virtual personality will manage -->
+            them for you.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <category>Nzflm_AbilityCategory</category>
+        <displayOrder>500</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_EntropyGain>100</Ability_EntropyGain>
+            <Ability_PsyfocusCost>0.33</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastPsycast</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>6.9</range>
+            <warmupTime>9</warmupTime>
+            <stunTargetOnCastStart>true</stunTargetOnCastStart>
+            <targetParams>
+                <onlyTargetColonistsOrPrisonersOrSlaves>true</onlyTargetColonistsOrPrisonersOrSlaves>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <!-- TODO -->
+                <hediffDef>NzFlm_He_MindWormAttack</hediffDef>
+                <psychic>True</psychic>
+                <!-- 3年 -->
+                <durationSecondsOverride>1500~3000</durationSecondsOverride>
             </li>
         </comps>
     </AbilityDef>
