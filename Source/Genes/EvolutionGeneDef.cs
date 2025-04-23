@@ -14,6 +14,10 @@ namespace NzFaceLessManMod
         // 不可自选
         public bool cannotBeChosen;
 
+        // 当移除时警告
+        public bool warnOnRemove = false;
+        public string warnOnRemoveText = null;
+
         public new bool canGenerateInGeneSet = false;
 
         // 前置要求

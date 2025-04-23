@@ -15,7 +15,9 @@ namespace NzFaceLessManMod
             this.pawn = pawn;
             this.callback = callback;
             evolutionHediff = getEvolutionHediff(pawn);
+            
             selectedGenes = getSelectedGenesFromPawn(evolutionHediff);
+            selectedGenesOld = selectedGenes.ToList();
 
             forcePause = true;
             absorbInputAroundWindow = true;
@@ -54,6 +56,8 @@ namespace NzFaceLessManMod
 
         public List<EvolutionGeneDef> SelectedGenes => selectedGenes;
         protected List<EvolutionGeneDef> selectedGenes = new List<EvolutionGeneDef>();
+        protected List<EvolutionGeneDef> selectedGenesOld = new List<EvolutionGeneDef>();
+        protected List<EvolutionGeneDef> removedGenes = new List<EvolutionGeneDef>();
 
         public override Vector2 InitialSize => new Vector2(Mathf.Min(UI.screenWidth, 1440), UI.screenHeight - 4);
         protected static readonly Vector2 ButSize = new Vector2(150f, 38f);
@@ -381,6 +385,10 @@ namespace NzFaceLessManMod
             {
                 text += "\n\n";
             }
+            if (geneDef.warnOnRemove)
+            {
+                text += geneDef.warnOnRemoveText.Translate().Colorize(ColorLibrary.RedReadable);
+            }
             return text + (selectedGenes.Contains(geneDef) ? "ClickToRemove" : "ClickToAdd").Translate().Colorize(ColoredText.SubtleGrayColor);
             static string GroupInfo(GeneLeftChosenGroup group)
             {
@@ -394,6 +402,7 @@ namespace NzFaceLessManMod
 
         public void OnGenesChanged()
         {
+            removedGenes = selectedGenesOld.Except(selectedGenes).ToList();
             selectedGenes.Sort(); // 排序
             leftChosenGroups.Clear();
             cachedOverriddenGenes.Clear();
