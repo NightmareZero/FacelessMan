@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
     <HediffDef ParentName="DiseaseBase">
-        <defName>NzFlm_Abasia</defName>
+        <defName>Abasia</defName>
         <label>paralytic abasia</label>
         <description>A condition that makes a person unable to walk by interfering with the motor
             cortex. After enough time, patients recover naturally as the brain rewires itself, but

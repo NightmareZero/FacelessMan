@@ -1,0 +1,8 @@
+<loadFolders>
+	<v1.5>
+		<li>/</li>
+		<li>1.5</li>
+		
+		<li IfModNotActive="Ludeon.RimWorld.Royalty">1.5/Mods/Royalty</li>	
+	</v1.5>
+</loadFolders>

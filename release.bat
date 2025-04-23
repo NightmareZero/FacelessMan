@@ -15,3 +15,4 @@ xcopy /E /I /Y .\About ..\FacelessMan-Release\About
 xcopy /E /I /Y .\Languages ..\FacelessMan-Release\Languages
 @REM xcopy /E /I /Y .\Sounds ..\FacelessMan-Release\Sounds
 xcopy /E /I /Y .\Textures ..\FacelessMan-Release\Textures
+xcopy /Y .\loadFolders.xml ..\FacelessMan-Release\
