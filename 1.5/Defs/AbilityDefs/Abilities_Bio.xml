@@ -225,7 +225,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
-                <hediffDef>NzFlm_Abasia</hediffDef>
+                <hediffDef>Abasia</hediffDef>
                 <psychic>False</psychic>
                 <durationSecondsOverride>60000</durationSecondsOverride>
             </li>
@@ -261,7 +261,7 @@
 		</verbProperties>
 		<comps>
 			<li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
-                <hediffDef>NzFlm_Abasia</hediffDef>
+                <hediffDef>Abasia</hediffDef>
                 <type>remove</type>
                 <psychic>False</psychic>
             </li>

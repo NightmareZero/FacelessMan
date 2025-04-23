@@ -13,20 +13,6 @@
                     <warmupSound>PsycastCastLoop</warmupSound>
                 </value>
             </li>
-            <li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-                <xpath>
-                    Defs/AbilityDef[defName='NzFlm_ParalysisToxin']/comps/li/hediffDef[text()='NzFlm_Abasia']</xpath>
-                <value>
-                    <hediffDef>Abasia</hediffDef>
-                </value>
-            </li>
-            <li Class="PatchOperationReplace" MayRequire="Ludeon.RimWorld.Royalty">
-                <xpath>
-                    Defs/AbilityDef[defName='NzFlm_ParalysisAntidote']/comps/li/hediffDef[text()='NzFlm_Abasia']</xpath>
-                <value>
-                    <hediffDef>Abasia</hediffDef>
-                </value>
-            </li>
         </operations>
     </Operation>
 </Patch>
