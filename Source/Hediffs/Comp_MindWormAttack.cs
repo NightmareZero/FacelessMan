@@ -53,39 +53,24 @@ namespace NzFaceLessManMod
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
-            if (!tryGetMaster())
+            if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
                 Log.Error("MindWormAttack: Failed to get master pawn for MindWormAttack Hediff on " + parent.pawn.Name.ToStringShort);
+                return;
             }
         }
 
         public override void CompPostPostRemoved()
         {
             base.CompPostPostRemoved();
-            if (!tryGetMaster() || master.Dead)
+            if ((master == null && !parent.TryGetCompLinkedOtherPawn(out master)) || master.Dead)
             {
                 return;
             }
-            Messages.Message("hzflm.slave_slaved_and_worm_grow".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
-            // TODO 添加成熟的心灵蠕虫Hediff
-            // TODO 成熟的心灵蠕虫会将Slave添加到主人的列表中，以便控制
-        }
-
-        private bool tryGetMaster()
-        {
-            if (master != null)
-            {
-                return true;
-            }
-
-            HediffComp_Link link = parent.TryGetComp<HediffComp_Link>();
-            if (link == null || link.OtherPawn == null)
-            {
-                return false;
-            }
-
-            master = link.OtherPawn;
-            return true;
+            Messages.Message("hzflm.slave_slaved_and_worm_growth".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+            // 添加成熟的心灵蠕虫Hediff
+            parent.pawn.AddHediffExt(XmlDefs.NzFlm_He_MindWormParasitic, master,
+            bodyPartRecord: this.parent?.pawn?.health.hediffSet?.GetBrain(), replaceExisting: true);
         }
 
         public override void CompPostTick(ref float severityAdjustment)
@@ -111,7 +96,7 @@ namespace NzFaceLessManMod
             // 处理主人的逻辑
             if (parent.pawn.IsHashIntervalTick(1800))
             {
-                if (!tryGetMaster())
+                if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
                 {
                     Log.Error("MindWormAttack: Failed to get master pawn for MindWormAttack Hediff on " + parent.pawn.Name.ToStringShort);
                     parent.pawn?.health?.RemoveHediff(parent); // 移除this Hediff

@@ -206,5 +206,6 @@ namespace NzFaceLessManMod
         {
             return Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(out formerFaction, tryMedievalOrBetter: false, allowDefeated: true);
         }
+
     }
 }

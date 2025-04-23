@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThoughtDef>
+        <defName>NzFlm_Tk_ObsessedWithMaster</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <!-- <workerClass>ThoughtWorker_Precept_PreferredXenotype_Social</workerClass> -->
+        <stages>
+          <li>
+            <label>obsessed with master.</label>
+            <baseOpinionOffset>110</baseOpinionOffset>
+          </li>
+        </stages>
+      </ThoughtDef>
+</Defs>

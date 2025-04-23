@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <HediffDef>
+	<HediffDef>
 		<defName>Nzflm_He_MindOverMatter</defName>
 		<label>mind over matter</label>
-        <!-- 你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
-		<description>you believe that the power of the mind is greater than the laws of physics, and now your combat ability, work efficiency, and damage resistance will increase with the improvement of mental strength</description>
+		<!-- 你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
+		<description>you believe that the power of the mind is greater than the laws of physics, and
+			now your combat ability, work efficiency, and damage resistance will increase with the
+			improvement of mental strength</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>Hediff</hediffClass>
 		<initialSeverity>0.34</initialSeverity>
 		<stages>
-            <li>
+			<li>
 				<statOffsets>
-                    <ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>-1</ShootingAccuracyPawn>
 					<AimingDelayFactor>0.1</AimingDelayFactor>
 					<MeleeHitChance>2</MeleeHitChance>
 					<MeleeDodgeChance>2</MeleeDodgeChance>
 				</statOffsets>
-                <statFactors>
-                    <WorkSpeedGlobal>0.95</WorkSpeedGlobal>
-                    <MoveSpeed>0.9</MoveSpeed>
+				<statFactors>
+					<WorkSpeedGlobal>0.95</WorkSpeedGlobal>
+					<MoveSpeed>0.9</MoveSpeed>
 				</statFactors>
 			</li>
 			<li>
-                <minSeverity>0.25</minSeverity>
+				<minSeverity>0.25</minSeverity>
 				<statOffsets>
-                    <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>5</ShootingAccuracyPawn>
 					<AimingDelayFactor>-0.1</AimingDelayFactor>
 					<MeleeHitChance>7</MeleeHitChance>
 					<MeleeDodgeChance>7</MeleeDodgeChance>
@@ -33,14 +35,14 @@
 					<MeleeDamageFactor>1.25</MeleeDamageFactor>
 					<MeleeCooldownFactor>0.9</MeleeCooldownFactor>
 					<IncomingDamageFactor>0.9</IncomingDamageFactor>
-                    <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
-                    <MoveSpeed>1.2</MoveSpeed>
+					<WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+					<MoveSpeed>1.2</MoveSpeed>
 				</statFactors>
 			</li>
 			<li>
 				<minSeverity>0.5</minSeverity>
 				<statOffsets>
-                    <ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
 					<AimingDelayFactor>-0.2</AimingDelayFactor>
 					<MeleeHitChance>15</MeleeHitChance>
 					<MeleeDodgeChance>15</MeleeDodgeChance>
@@ -49,14 +51,14 @@
 					<MeleeDamageFactor>1.5</MeleeDamageFactor>
 					<MeleeCooldownFactor>0.8</MeleeCooldownFactor>
 					<IncomingDamageFactor>0.8</IncomingDamageFactor>
-                    <WorkSpeedGlobal>1.4</WorkSpeedGlobal>
-                    <MoveSpeed>1.35</MoveSpeed>
+					<WorkSpeedGlobal>1.4</WorkSpeedGlobal>
+					<MoveSpeed>1.35</MoveSpeed>
 				</statFactors>
 			</li>
 			<li>
 				<minSeverity>0.75</minSeverity>
 				<statOffsets>
-                    <ShootingAccuracyPawn>15</ShootingAccuracyPawn>
+					<ShootingAccuracyPawn>15</ShootingAccuracyPawn>
 					<AimingDelayFactor>-0.3</AimingDelayFactor>
 					<MeleeHitChance>22</MeleeHitChance>
 					<MeleeDodgeChance>22</MeleeDodgeChance>
@@ -65,8 +67,8 @@
 					<MeleeDamageFactor>1.75</MeleeDamageFactor>
 					<MeleeCooldownFactor>0.75</MeleeCooldownFactor>
 					<IncomingDamageFactor>0.75</IncomingDamageFactor>
-                    <WorkSpeedGlobal>1.65</WorkSpeedGlobal>
-                    <MoveSpeed>1.5</MoveSpeed>
+					<WorkSpeedGlobal>1.65</WorkSpeedGlobal>
+					<MoveSpeed>1.5</MoveSpeed>
 				</statFactors>
 			</li>
 		</stages>
@@ -77,7 +79,8 @@
 		<defName>NzFlm_He_AnimalVirtualMind</defName>
 		<label>animal virtual mind</label>
 		<!-- 一个虚拟心智被注入到了这只动物的大脑中，现在它非常聪明 -->
-		<description>A virtual mind has been injected into the animal's brain, and now it is very smart</description>
+		<description>A virtual mind has been injected into the animal's brain, and now it is very
+			smart</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
@@ -98,7 +101,8 @@
 		<defName>NzFlm_He_MindWormAttack</defName>
 		<label>mind worm attack</label>
 		<!-- 你的思想中有个东西，在逐渐改写你的意志，你无法拒绝它，除非你和施放者的死亡 -->
-		<description>There is something in your mind that is gradually rewriting your will, and you cannot refuse it unless you or the caster dies</description>
+		<description>There is something in your mind that is gradually rewriting your will, and you
+			cannot refuse it unless you or the caster dies</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
@@ -108,14 +112,44 @@
 				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
 			</li>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
-			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormAttack">
-				<usingAbility>False</usingAbility>
-			</li>
+			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormAttack" />
 			<li Class="HediffCompProperties_Link">
 				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
-        		<maxDistance>0</maxDistance>
+				<maxDistance>0</maxDistance>
 			</li>
 		</comps>
-	</HediffDef> 
+	</HediffDef>
+
+	<!-- 蠕虫寄生 -->
+	<HediffDef>
+		<defName>NzFlm_He_MindWormParasitic</defName>
+		<label>mind worm parasitic</label>
+		<!-- 你现在不再在意心灵蠕虫的存在，它是主人宠爱你的标志 -->
+		<description>You no longer care about the existence of the mind worm, it is a sign that the
+			master loves you</description>
+		<duplicationAllowed>false</duplicationAllowed>
+		<hediffClass>HediffWithComps</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormSlave" />
+			<li Class="HediffCompProperties_Link">
+				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+				<maxDistance>0</maxDistance>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<!-- 蠕虫领主 -->
+	<HediffDef>
+		<defName>NzFlm_He_MindWormLord</defName>
+		<label>mind worm lord</label>
+		<!-- 你是心灵蠕虫的主人，你可以随意操控它们 -->
+		<description>You are the master of the mind worm, and you can control them at will</description>
+		<duplicationAllowed>false</duplicationAllowed>
+		<hediffClass>NzFaceLessManMod.Hediff_MindWormMaster</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+		</comps>
+	</HediffDef>
 
 </Defs>

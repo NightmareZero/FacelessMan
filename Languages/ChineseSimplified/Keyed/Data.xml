@@ -27,4 +27,5 @@
 
     <nzflm.mental_break_recovered_by>'{0}' 被虚拟人格从精神崩溃中唤醒</nzflm.mental_break_recovered_by>
     <hzflm.slave_free_by_master_dead>由于主人 '{master}' 的死亡 '{slave}' 自由了</hzflm.slave_free_by_master_dead>
+    <hzflm.slave_slaved_and_worm_growth>蠕虫得到了足够的成长，现在 '{slave}' 为 'master' 效忠了</hzflm.slave_slaved_and_worm_growth>
 </LanguageData>

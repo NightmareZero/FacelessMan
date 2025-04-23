@@ -46,6 +46,14 @@ namespace NzFaceLessManMod
         [MayRequireRoyalty]
         public static EvolutionGeneDef Nzflm_Ev_Idealism;
 
+        // 蠕虫_迷恋主人
+        [MayRequireRoyalty]
+        public static ThoughtDef NzFlm_Tk_ObsessedWithMaster;
+
+        // 蠕虫寄生
+        [MayRequireRoyalty]
+        public static HediffDef NzFlm_He_MindWormParasitic;
+
 
         static XmlDefs()
         {
