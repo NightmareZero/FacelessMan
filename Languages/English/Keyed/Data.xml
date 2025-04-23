@@ -26,4 +26,7 @@
 
     <nzflm.mental_break_recovered_by>'{0}' Awakened from mental breakdown by virtual personality</nzflm.mental_break_recovered_by>
     <hzflm.slave_free_by_master_dead>With the death of '{master}', '{slave}' is free.</hzflm.slave_free_by_master_dead>
+    <hzflm.slave_slaved_and_worm_growth>The worm has grown enough, that '{slave}' is now loyal to 'master'.</hzflm.slave_slaved_and_worm_growth>
+    <nzflm.slaves_count>({0} worms)</nzflm.slaves_count>
+    <nzflm.slaves_names>wroms:\n {0}</nzflm.slaves_names>
 </LanguageData>
