@@ -99,6 +99,10 @@ namespace NzFaceLessManMod
             }
         }
 
+        /// <summary>
+        /// 更新缓存
+        /// </summary>
+        /// <param name="force"></param>
         public void updateCaches(bool force = false)
         {
             if (!dirtyCaches && !force)
@@ -117,7 +121,7 @@ namespace NzFaceLessManMod
                 }
 
             }
-            
+
             finally
             {
                 dirtyCaches = false;

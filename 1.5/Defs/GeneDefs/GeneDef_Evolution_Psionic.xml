@@ -175,8 +175,10 @@
         <label>mind worm</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
         <!-- 你可以为目标注入一个心灵蠕虫，这个心灵蠕虫会逐渐洗脑目标，使目标服从你的意志，称为你的仆从，你的虚拟人格会为你管理他们 -->
-        <description>You can inject a mind worm into the target, which will gradually brainwash the target
-            and make the target obey your will and become your servant. Your virtual personality will manage
+        <description>You can inject a mind worm into the target, which will gradually brainwash the
+            target
+            and make the target obey your will and become your servant. Your virtual personality
+            will manage
             them for you.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
@@ -185,6 +187,11 @@
         <ablities>
             <li>NzFlm_MindWorm</li>
         </ablities>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <hediffDef>NzFlm_He_MindWormLord</hediffDef>
+            </li>
+        </modExtensions>
     </NzFaceLessManMod.EvolutionGeneDef>
 
 
