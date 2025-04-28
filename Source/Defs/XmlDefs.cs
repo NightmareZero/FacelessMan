@@ -50,10 +50,15 @@ namespace NzFaceLessManMod
         [MayRequireRoyalty]
         public static ThoughtDef NzFlm_Tk_ObsessedWithMaster;
 
+        // 蠕虫攻击
+        [MayRequireRoyalty]
+        public static HediffDef NzFlm_He_MindWormAttack; 
         // 蠕虫寄生
         [MayRequireRoyalty]
         public static HediffDef NzFlm_He_MindWormParasitic;
-
+        // 蠕虫之主
+        [MayRequireRoyalty]
+        public static HediffDef NzFlm_He_MindWormLord;
 
         static XmlDefs()
         {

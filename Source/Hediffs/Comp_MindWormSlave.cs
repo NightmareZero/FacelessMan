@@ -30,6 +30,8 @@ namespace NzFaceLessManMod
 
         private Pawn wormMaster = null; // 主人
 
+        private Hediff_MindWormMaster masterHediff = null; // 主人的Hediff
+
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
@@ -39,7 +41,14 @@ namespace NzFaceLessManMod
                 return;
             }
 
-            // TODO 成熟的心灵蠕虫会将Slave添加到主人的列表中，以便控制
+            // 成熟的心灵蠕虫会将Slave添加到主人的列表中，以便控制
+            this.masterHediff = (Hediff_MindWormMaster)wormMaster.health?.GetOrAddHediff(XmlDefs.NzFlm_He_MindWormLord);
+            if (this.masterHediff == null)
+            {
+                Log.Error("MindWormSlave: Failed to get master Hediff for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
+                return;
+            }
+            masterHediff?.AddWorm(this);
 
             // 添加想法
             Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(XmlDefs.NzFlm_Tk_ObsessedWithMaster);
@@ -50,28 +59,45 @@ namespace NzFaceLessManMod
         public override void CompPostPostRemoved()
         {
             base.CompPostPostRemoved();
+            if (wormMaster == null && !parent.TryGetCompLinkedOtherPawn(out wormMaster))
+            {
+                Log.Error("MindWormSlave: Failed to get master pawn for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
+                return;
+            }
 
-            // TODO 从主人的列表中移除Slave
+            // 移除主人的列表中的自己
+            this.masterHediff = (Hediff_MindWormMaster)wormMaster.health?.hediffSet.GetFirstHediffOfDef(XmlDefs.NzFlm_He_MindWormLord);
+            masterHediff?.RemoveWorm(this);
 
             // 移除想法
             parent.pawn?.needs?.mood?.thoughts?.memories?.RemoveMemoriesOfDef(XmlDefs.NzFlm_Tk_ObsessedWithMaster);
         }
 
         /// <summary>
-        /// 失去主人时
+        /// 失去主人时，移除自身，把后续的逻辑交给CompPostPostRemoved
         /// </summary>
         public void DoLostMaster()
         {
-            // TODO 陷入昏迷
+            if (wormMaster == null && !parent.TryGetCompLinkedOtherPawn(out wormMaster))
+            {
+                Log.Error("MindWormSlave: Failed to get master pawn for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
+                return;
+            }
 
+            parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
+
+            parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: wormMaster, part, ticksToDisappear: 60000);
             // 移除自身
             parent.pawn?.health?.RemoveHediff(this.parent);
+            
+            Messages.Message("hzflm.slave_free_by_master_dead_wg".Translate(wormMaster.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
         }
-        
+
         public override void CompExposeData()
         {
             base.CompExposeData();
             Scribe_References.Look(ref wormMaster, "wormMaster", false);
+            Scribe_References.Look(ref masterHediff, "masterHediff", false);
         }
 
 

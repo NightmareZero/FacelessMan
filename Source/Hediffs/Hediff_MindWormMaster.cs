@@ -9,21 +9,27 @@ namespace NzFaceLessManMod
 {
     public class Hediff_MindWormMaster : HediffWithComps
     {
-        private HashSet<Hediff> mindWorms = new HashSet<Hediff>(); // 心灵蠕虫列表
+        private HashSet<HediffComp_MindWormSlave> mindWorms = new HashSet<HediffComp_MindWormSlave>(); // 心灵蠕虫列表
 
         private HashSet<Pawn> slaves = new HashSet<Pawn>(); // 奴隶列表
 
         private bool dirtyCaches = true; // 是否需要更新缓存
 
-        public bool addWorm(Hediff worm)
+        public bool AddWorm(HediffComp_MindWormSlave worm)
         {
+            if (worm == null || worm.parent == null || worm.parent.pawn == null)
+            {
+                Log.Error("MindWormMaster: addWorm failed, worm or its parent pawn is null.");
+                return false;
+            }
+
             if (mindWorms.Contains(worm))
             {
                 Log.Error("MindWormMaster: addWorm failed, worm already exists in mindWorms list.");
                 mindWorms.TryGetValue(worm, out var existingWorm);
-                if (existingWorm.pawn != null)
+                if (existingWorm.parent.pawn != null)
                 {
-                    Log.Error("MindWormMaster: Existing worm master is " + existingWorm.pawn.Name.ToStringShort);
+                    Log.Error("MindWormMaster: Existing worm master is " + existingWorm.parent.pawn.Name.ToStringShort);
                 }
                 else
                 {
@@ -33,15 +39,15 @@ namespace NzFaceLessManMod
                 return false;
             }
             mindWorms.Add(worm);
-            if (worm.pawn != null && !slaves.Contains(worm.pawn))
+            if (worm.parent.pawn != null && !slaves.Contains(worm.parent.pawn))
             {
-                slaves.Add(worm.pawn); // 添加到奴隶列表
+                slaves.Add(worm.parent.pawn); // 添加到奴隶列表
             }
 
             return true;
         }
 
-        public bool delWorm(Hediff worm)
+        public bool RemoveWorm(HediffComp_MindWormSlave worm)
         {
             if (!mindWorms.Contains(worm))
             {
@@ -50,9 +56,9 @@ namespace NzFaceLessManMod
             }
 
             mindWorms.Remove(worm);
-            if (worm.pawn != null)
+            if (worm.parent.pawn != null)
             {
-                slaves.Remove(worm.pawn); // 从奴隶列表中移除
+                slaves.Remove(worm.parent.pawn); // 从奴隶列表中移除
             }
             else
             {
@@ -60,7 +66,7 @@ namespace NzFaceLessManMod
             }
 
             dirtyCaches = true; // 标记缓存需要更新
-            updateCaches(); // 更新缓存
+            UpdateCaches(); // 更新缓存
 
             return true;
         }
@@ -70,9 +76,9 @@ namespace NzFaceLessManMod
             slaves.Clear();
             foreach (var worm in mindWorms.ToList())
             {
-                if (worm != null && worm.pawn != null)
+                if (worm != null && worm?.parent?.pawn != null)
                 {
-                    slaves.Add(worm.pawn); // 添加到奴隶列表
+                    slaves.Add(worm.parent.pawn); // 添加到奴隶列表
                 }
             }
         }
@@ -83,7 +89,7 @@ namespace NzFaceLessManMod
 
             foreach (var worm in mindWorms.ToList())
             {
-                worm.pawn?.health?.hediffSet?.GetHediffComps<HediffComp_MindWormSlave>()?.ToList()
+                worm?.parent?.pawn?.health?.hediffSet?.GetHediffComps<HediffComp_MindWormSlave>()?.ToList()
                 .ForEach(x => x.DoLostMaster()); // 失去主人时，调用Slave的DoLostMaster方法
             }
         }
@@ -95,7 +101,7 @@ namespace NzFaceLessManMod
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 updateSlavesFromMindWorms();
-                updateCaches();
+                UpdateCaches();
             }
         }
 
@@ -103,7 +109,7 @@ namespace NzFaceLessManMod
         /// 更新缓存
         /// </summary>
         /// <param name="force"></param>
-        public void updateCaches(bool force = false)
+        public void UpdateCaches(bool force = false)
         {
             if (!dirtyCaches && !force)
             {
@@ -149,7 +155,7 @@ namespace NzFaceLessManMod
                 string baseDescription = base.Description;
                 if (slaves.Count > 0)
                 {
-                    updateCaches(); // 更新缓存
+                    UpdateCaches(); // 更新缓存
                     return baseDescription + "\n" + "nzflm.slaves_names".Translate(cacheDescription);
                 }
                 return baseDescription;

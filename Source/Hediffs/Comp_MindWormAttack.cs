@@ -63,10 +63,17 @@ namespace NzFaceLessManMod
         public override void CompPostPostRemoved()
         {
             base.CompPostPostRemoved();
-            if ((master == null && !parent.TryGetCompLinkedOtherPawn(out master)) || master.Dead)
+            if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
+                Log.Error("MindWormAttack: Failed to get master pawn on " + parent.pawn.Name.ToStringShort);
                 return;
             }
+            if (master.Dead)
+            {
+                Messages.Message("hzflm.slave_free_by_master_dead".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+                return;
+            }
+
             Messages.Message("hzflm.slave_slaved_and_worm_growth".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
             // 添加成熟的心灵蠕虫Hediff
             parent.pawn.AddHediffExt(XmlDefs.NzFlm_He_MindWormParasitic, master,
@@ -105,7 +112,7 @@ namespace NzFaceLessManMod
                 else if (master.Dead)
                 {
                     parent.pawn?.health?.RemoveHediff(parent); // 移除this Hediff
-                    Messages.Message("hzflm.slaveFreeAfterMasterDead".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+                    Messages.Message("hzflm.slave_free_by_master_dead".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
                 }
             }
         }

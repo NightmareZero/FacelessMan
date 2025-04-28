@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <nzflm.category_facelessman>无面人</nzflm.category_facelessman>
     <nzflm.no_xenotype>无异种类型</nzflm.no_xenotype>
@@ -6,7 +6,7 @@
     <nzflm.no_endotype_selected>内源类型未选择</nzflm.no_endotype_selected>
     <nzflm.remove_endotype>移除系谱基因</nzflm.remove_endotype>
     <nzflm.remove_xenotype>移除异种基因</nzflm.remove_xenotype>
-    
+
     <nzflm.evolutionGene>基因表达</nzflm.evolutionGene>
     <nzflm.evolutionGeneDesc>这些从动物、虫族、实验室中获取的基因性状，已经整合进了无面人的基因中，你可以从中选择一些来表达</nzflm.evolutionGeneDesc>
 
@@ -14,11 +14,11 @@
     <nzflm.evolution_button_label>基因选择</nzflm.evolution_button_label>
     <nzflm.evolution_button_desc>选择你想要表达的基因</nzflm.evolution_button_desc>
 
-    
+
     <nzflm.evolution_point_overflows>进化点使用溢出</nzflm.evolution_point_overflows>
     <nzflm.evolution_not_applicable>不可用: {0}</nzflm.evolution_not_applicable>
     <nzflm.evolution_edit_topic>选择要表达的性状组合</nzflm.evolution_edit_topic>
-    
+
     <nzflm.evolution_stat_name>承受能力</nzflm.evolution_stat_name>
     <nzflm.evolution_stat_desc>虽然这些基因已经整合进了你的体内，但是你的身体暂时只能承受一部分\n(随着时间推移和其他因素，你的身体可能会适应更多的基因)</nzflm.evolution_stat_desc>
     <nzflm.evolution_start_button>开始突变</nzflm.evolution_start_button>
@@ -26,7 +26,8 @@
     <nzflm.has_target_status>处于 '{0}' 状态</nzflm.has_target_status>
 
     <nzflm.mental_break_recovered_by>'{0}' 被虚拟人格从精神崩溃中唤醒</nzflm.mental_break_recovered_by>
-    <hzflm.slave_free_by_master_dead>由于主人 '{master}' 的死亡 '{slave}' 自由了</hzflm.slave_free_by_master_dead>
+    <hzflm.slave_free_by_master_dead>由于主人 '{master}' 的死亡,未成熟的蠕虫消亡了, '{slave}' 自由了</hzflm.slave_free_by_master_dead>
+    <hzflm.slave_free_by_master_dead_wg>由于主人 '{master}' 的死亡,蠕虫消亡了， '{slave}' 自由了，但是之前的精神影响仍在继续</hzflm.slave_free_by_master_dead_wg>
     <hzflm.slave_slaved_and_worm_growth>蠕虫得到了足够的成长，现在 '{slave}' 为 'master' 效忠了</hzflm.slave_slaved_and_worm_growth>
     <nzflm.slaves_count>({0}个蠕虫)</nzflm.slaves_count>
     <nzflm.slaves_names>蠕虫:\n {0}</nzflm.slaves_names>
