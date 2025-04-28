@@ -22,10 +22,10 @@ namespace NzFaceLessManMod
         public new bool canGenerateInGeneSet = false;
 
         // 前置要求
-        public List<EvolutionGeneDef> requireGene = new List<EvolutionGeneDef>();
+        public List<EvolutionGeneDef> requireGene = new();
 
         // 排除要求
-        public List<EvolutionGeneDef> excludeGene = new List<EvolutionGeneDef>();
+        public List<EvolutionGeneDef> excludeGene = new();
 
         // 前置要求
         public GeneDef Prerequisite => prerequisite;
