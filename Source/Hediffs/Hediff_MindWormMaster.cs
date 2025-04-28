@@ -15,6 +15,12 @@ namespace NzFaceLessManMod
 
         private bool dirtyCaches = true; // 是否需要更新缓存
 
+        public bool canMindCtrl = false; // 可以使用心智操纵
+
+        public bool canMindShaping = false; // 可以使用心智塑形
+
+        public bool canMindcoverage = false; // 可以使用心智覆盖
+
         public bool AddWorm(HediffComp_MindWormSlave worm)
         {
             if (worm == null || worm.parent == null || worm.parent.pawn == null)
@@ -94,10 +100,34 @@ namespace NzFaceLessManMod
             }
         }
 
+        public bool CanCtrl
+        {
+            get
+            {
+                // 检查是否可以控制人物
+                return !pawn.DeadOrDowned && !pawn.InMentalState && !pawn.IsPrisoner;
+            }
+        }
+
+        public override void PostTick()
+        {
+            base.PostTick();
+
+            // 处理派系问题
+            if (pawn?.Faction != null && !pawn.Faction.IsPlayer)
+            {
+                pawn?.SetFaction(Faction.OfPlayerSilentFail); // 设置为玩家派系
+            }
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Collections.Look(ref mindWorms, "mindWorms", LookMode.Reference);
+            // Scribe_Collections.Look(ref slaves, "slaves", LookMode.Reference);
+            Scribe_Values.Look(ref canMindCtrl, "canMindCtrl", false);
+            Scribe_Values.Look(ref canMindShaping, "canMindShaping", false);
+            Scribe_Values.Look(ref canMindcoverage, "canMindcoverage", false);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 updateSlavesFromMindWorms();
@@ -127,7 +157,6 @@ namespace NzFaceLessManMod
                 }
 
             }
-
             finally
             {
                 dirtyCaches = false;

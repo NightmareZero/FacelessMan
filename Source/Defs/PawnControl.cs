@@ -32,7 +32,7 @@ namespace NzFaceLessManMod
 
         public static bool CanMoveFloat(Pawn pawn)
         {
-            if (pawn == null || pawn.Dead || pawn.Downed || pawn.InMentalState)
+            if (pawn == null || pawn.DeadOrDowned || pawn.InMentalState)
             {
                 return false;
             }

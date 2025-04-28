@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace NzFaceLessManMod
 {
-    public class HediffCompProperties_MindWormSlave : HediffCompProperties
+    public partial class HediffCompProperties_MindWormSlave : HediffCompProperties
     {
         public HediffCompProperties_MindWormSlave()
         {
