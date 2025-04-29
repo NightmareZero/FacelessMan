@@ -15,11 +15,25 @@ namespace NzFaceLessManMod
 
         private bool dirtyCaches = true; // 是否需要更新缓存
 
-        public bool canMindCtrl = false; // 可以使用心智操纵
+        /// <summary>
+        /// 是否可以使用心智操纵
+        /// </summary>
+        public bool CanMindCtrl = false;
 
-        public bool canMindShaping = false; // 可以使用心智塑形
+        /// <summary>
+        /// 是否可以使用心智塑形
+        /// </summary>
+        public bool CanMindShaping = false;
 
-        public bool canMindcoverage = false; // 可以使用心智覆盖
+        /// <summary>
+        /// 是否可以使用心智覆盖
+        /// </summary>
+        public bool CanMindCoverage = false;
+
+        /// <summary>
+        /// 是否可以使用任何心智能力
+        /// </summary>        
+        public bool CanMindAnything => CanMindCtrl || CanMindShaping || CanMindCoverage;
 
         public bool AddWorm(HediffComp_MindWormSlave worm)
         {
@@ -125,9 +139,9 @@ namespace NzFaceLessManMod
             base.ExposeData();
             Scribe_Collections.Look(ref mindWorms, "mindWorms", LookMode.Reference);
             // Scribe_Collections.Look(ref slaves, "slaves", LookMode.Reference);
-            Scribe_Values.Look(ref canMindCtrl, "canMindCtrl", false);
-            Scribe_Values.Look(ref canMindShaping, "canMindShaping", false);
-            Scribe_Values.Look(ref canMindcoverage, "canMindcoverage", false);
+            Scribe_Values.Look(ref CanMindCtrl, "canMindCtrl", false);
+            Scribe_Values.Look(ref CanMindShaping, "canMindShaping", false);
+            Scribe_Values.Look(ref CanMindCoverage, "canMindcoverage", false);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 updateSlavesFromMindWorms();

@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace NzFaceLessManMod
 {
-    public partial class HediffCompProperties_MindWormSlave : HediffCompProperties
+    public class HediffCompProperties_MindWormSlave : HediffCompProperties
     {
         public HediffCompProperties_MindWormSlave()
         {
@@ -24,25 +24,25 @@ namespace NzFaceLessManMod
         }
     }
 
-    public class HediffComp_MindWormSlave : HediffComp
+    public partial class HediffComp_MindWormSlave : HediffComp
     {
         private HediffCompProperties_MindWormSlave Props => (HediffCompProperties_MindWormSlave)props;
 
-        private Pawn wormMaster = null; // 主人
+        private Pawn master = null; // 主人
 
         private Hediff_MindWormMaster masterHediff = null; // 主人的Hediff
 
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
-            if (wormMaster == null && !parent.TryGetCompLinkedOtherPawn(out wormMaster))
+            if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
                 Log.Error("MindWormSlave: Failed to get master pawn for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
                 return;
             }
 
             // 成熟的心灵蠕虫会将Slave添加到主人的列表中，以便控制
-            this.masterHediff = (Hediff_MindWormMaster)wormMaster.health?.GetOrAddHediff(XmlDefs.NzFlm_He_MindWormLord);
+            this.masterHediff = (Hediff_MindWormMaster)master.health?.GetOrAddHediff(XmlDefs.NzFlm_He_MindWormLord);
             if (this.masterHediff == null)
             {
                 Log.Error("MindWormSlave: Failed to get master Hediff for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
@@ -52,21 +52,21 @@ namespace NzFaceLessManMod
 
             // 添加想法
             Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(XmlDefs.NzFlm_Tk_ObsessedWithMaster);
-            thought.otherPawn = wormMaster;
-            parent.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought, wormMaster);
+            thought.otherPawn = master;
+            parent.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought, master);
         }
 
         public override void CompPostPostRemoved()
         {
             base.CompPostPostRemoved();
-            if (wormMaster == null && !parent.TryGetCompLinkedOtherPawn(out wormMaster))
+            if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
                 Log.Error("MindWormSlave: Failed to get master pawn for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
                 return;
             }
 
             // 移除主人的列表中的自己
-            this.masterHediff = (Hediff_MindWormMaster)wormMaster.health?.hediffSet.GetFirstHediffOfDef(XmlDefs.NzFlm_He_MindWormLord);
+            this.masterHediff = (Hediff_MindWormMaster)master.health?.hediffSet.GetFirstHediffOfDef(XmlDefs.NzFlm_He_MindWormLord);
             masterHediff?.RemoveWorm(this);
 
             // 移除想法
@@ -78,7 +78,7 @@ namespace NzFaceLessManMod
         /// </summary>
         public void DoLostMaster()
         {
-            if (wormMaster == null && !parent.TryGetCompLinkedOtherPawn(out wormMaster))
+            if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
                 Log.Error("MindWormSlave: Failed to get master pawn for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
                 return;
@@ -86,17 +86,17 @@ namespace NzFaceLessManMod
 
             parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
 
-            parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: wormMaster, part, ticksToDisappear: 60000);
+            parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: master, part, ticksToDisappear: 60000);
             // 移除自身
             parent.pawn?.health?.RemoveHediff(this.parent);
             
-            Messages.Message("hzflm.slave_free_by_master_dead_wg".Translate(wormMaster.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+            Messages.Message("hzflm.slave_free_by_master_dead_wg".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
         }
 
         public override void CompExposeData()
         {
             base.CompExposeData();
-            Scribe_References.Look(ref wormMaster, "wormMaster", false);
+            Scribe_References.Look(ref master, "wormMaster", false);
             Scribe_References.Look(ref masterHediff, "masterHediff", false);
         }
 
