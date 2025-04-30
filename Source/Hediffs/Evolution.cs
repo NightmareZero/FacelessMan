@@ -86,7 +86,7 @@ namespace NzFaceLessManMod
                         // Find.WindowStack.Add(new FloatMenu(options));
                     }
                 };
-                if (pawn.health.hediffSet.GetFirstHediffOfDef(XmlDefs.Flm_GeneticInstability) != null)
+                if (pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefsOf.Flm_GeneticInstability) != null)
                 {
                     manageEvolution.Disable("VRE_MetapodSicknessCannotChangeGeneline".Translate());
                 }

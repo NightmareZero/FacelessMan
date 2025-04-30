@@ -24,9 +24,9 @@ namespace NzFaceLessManMod
         public override bool GizmoDisabled(out string reason)
         {
             reason = "";
-            if (parent.pawn.health.hediffSet.GetFirstHediffOfDef(XmlDefs.Flm_GeneticInstability) != null)
+            if (parent.pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefsOf.Flm_GeneticInstability) != null)
             {
-                reason = XmlDefs.Flm_GeneticInstability.label;
+                reason = HediffDefsOf.Flm_GeneticInstability.label;
                 return true;
             }
             return false;
@@ -68,8 +68,8 @@ namespace NzFaceLessManMod
             AddNewGenes(target, xenotype);
 
             // 添加基因不稳定hediff
-            caster.health.AddHediff(XmlDefs.Flm_GeneticInstability);
-            target.health.AddHediff(XmlDefs.Flm_GeneLossDizzy);
+            caster.health.AddHediff(HediffDefsOf.Flm_GeneticInstability);
+            target.health.AddHediff(HediffDefsOf.Flm_GeneLossDizzy);
 
             // 更新异种基因复制
             GeneUtility.UpdateXenogermReplication(target);

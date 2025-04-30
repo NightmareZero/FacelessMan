@@ -76,7 +76,7 @@ namespace NzFaceLessManMod
 
             Messages.Message("hzflm.slave_slaved_and_worm_growth".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
             // 添加成熟的心灵蠕虫Hediff
-            parent.pawn.AddHediffExt(XmlDefs.NzFlm_He_MindWormParasitic, master,
+            parent.pawn.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormParasitic, master,
             bodyPartRecord: this.parent?.pawn?.health.hediffSet?.GetBrain(), replaceExisting: true);
         }
 

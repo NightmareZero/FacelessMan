@@ -49,7 +49,7 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
-                if (xeno.Value.defName == XmlDefs.Flm_FacelessMan.defName)
+                if (xeno.Value.defName == DefsOf.Flm_FacelessMan.defName)
                 {
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace NzFaceLessManMod
             // 修复变身技能
             fixMorphAbility(caster);
             // 播放声音
-            XmlDefs.FoamSpray_Resolve.PlayOneShot(new TargetInfo(caster.Position, caster.Map, false));
+            DefsOf.FoamSpray_Resolve.PlayOneShot(new TargetInfo(caster.Position, caster.Map, false));
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace NzFaceLessManMod
         private static void fixMorphAbility(Pawn caster)
         { 
             // 检查caster是否有变身技能
-            Ability morphAbility = caster.abilities?.abilities?.Find(a => a.def == XmlDefs.Flm_Morphing);
+            Ability morphAbility = caster.abilities?.abilities?.Find(a => a.def == DefsOf.Flm_Morphing);
             if (morphAbility != null) // 如果有，则不需要修复
             { 
                 return; 
@@ -131,10 +131,10 @@ namespace NzFaceLessManMod
                 {
                     gene.def.abilities.ForEach(abilityDef =>
                     {
-                        if (abilityDef == XmlDefs.Flm_Morphing)
+                        if (abilityDef == DefsOf.Flm_Morphing)
                         {
                             // 添加变身技能
-                            Ability ability = new Ability(caster,XmlDefs.Flm_Morphing);
+                            Ability ability = new Ability(caster,DefsOf.Flm_Morphing);
                             caster.abilities.abilities.Add(ability);
                             return; // 找到一个就可以了
                         }
@@ -148,10 +148,10 @@ namespace NzFaceLessManMod
                 {
                     gene.def.abilities.ForEach(abilityDef =>
                     {
-                        if (abilityDef == XmlDefs.Flm_Morphing)
+                        if (abilityDef == DefsOf.Flm_Morphing)
                         {
                             // 添加变身技能
-                            Ability ability = new Ability(caster, XmlDefs.Flm_Morphing);
+                            Ability ability = new Ability(caster, DefsOf.Flm_Morphing);
                             caster.abilities.abilities.Add(ability);
                             return; // 找到一个就可以了
                         }
@@ -173,7 +173,7 @@ namespace NzFaceLessManMod
 
             foreach (GeneDef gene in xenotype.AllGenes)
             {
-                if (gene.defName == XmlDefs.Flm_MorphsE.defName)
+                if (gene.defName == DefsOf.Flm_MorphsE.defName)
                 {
                     continue;
                 }

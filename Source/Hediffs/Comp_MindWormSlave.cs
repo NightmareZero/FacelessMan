@@ -42,7 +42,7 @@ namespace NzFaceLessManMod
             }
 
             // 成熟的心灵蠕虫会将Slave添加到主人的列表中，以便控制
-            this.masterHediff = (Hediff_MindWormMaster)master.health?.GetOrAddHediff(XmlDefs.NzFlm_He_MindWormLord);
+            this.masterHediff = (Hediff_MindWormMaster)master.health?.GetOrAddHediff(HediffDefsOf.NzFlm_He_MindWormLord);
             if (this.masterHediff == null)
             {
                 Log.Error("MindWormSlave: Failed to get master Hediff for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
@@ -51,7 +51,7 @@ namespace NzFaceLessManMod
             masterHediff?.AddWorm(this);
 
             // 添加想法
-            Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(XmlDefs.NzFlm_Tk_ObsessedWithMaster);
+            Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(DefsOf.NzFlm_Tk_ObsessedWithMaster);
             thought.otherPawn = master;
             parent.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought, master);
         }
@@ -66,11 +66,11 @@ namespace NzFaceLessManMod
             }
 
             // 移除主人的列表中的自己
-            this.masterHediff = (Hediff_MindWormMaster)master.health?.hediffSet.GetFirstHediffOfDef(XmlDefs.NzFlm_He_MindWormLord);
+            this.masterHediff = (Hediff_MindWormMaster)master.health?.hediffSet.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormLord);
             masterHediff?.RemoveWorm(this);
 
             // 移除想法
-            parent.pawn?.needs?.mood?.thoughts?.memories?.RemoveMemoriesOfDef(XmlDefs.NzFlm_Tk_ObsessedWithMaster);
+            parent.pawn?.needs?.mood?.thoughts?.memories?.RemoveMemoriesOfDef(DefsOf.NzFlm_Tk_ObsessedWithMaster);
         }
 
         /// <summary>

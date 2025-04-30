@@ -34,7 +34,7 @@ namespace NzFaceLessManMod
             try
             {
                 // 从xml中获取template
-                XenoGeneTemplateDef template = XmlDefs.xenoGeneTemplateDef;
+                XenoGeneTemplateDef template = DefsOf.xenoGeneTemplateDef;
 
                 AvaliableXenotypeDef = DefDatabase<XenotypeDef>.AllDefs.Where(element => !Utils.XenotypeContainsGene(element, DefDatabase<GeneDef>.GetNamedSilentFail("VREA_Power"))
                 && element.defName != "AG_RandomCustom").ToList();
@@ -45,14 +45,14 @@ namespace NzFaceLessManMod
                     Log.Message("flm: working on xenotype: " + xeno.label.Translate());
 #endif
                     // 如果不是无面人异种，则生成一个对应基因包
-                    if (xeno.defName != XmlDefs.Flm_FacelessMan.defName)
+                    if (xeno.defName != DefsOf.Flm_FacelessMan.defName)
                     {
                         genes.Add(GetGenePackGeneFromXenotype(template, xeno, genes.Count()));
                     }
                     xeno.AllGenes.ForEach(gene =>
                     {
                         // 如果是超级载体则设置为包含所有基因
-                        if (gene.defName == XmlDefs.Flm_GeneMaster.defName)
+                        if (gene.defName == DefsOf.Flm_GeneMaster.defName)
                         {
 
                             GeneXenoModExt modExt = new GeneXenoModExt

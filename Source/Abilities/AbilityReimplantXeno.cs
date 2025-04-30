@@ -54,7 +54,7 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
-                if (xeno.Value.defName == XmlDefs.Flm_FacelessMan.defName)
+                if (xeno.Value.defName == DefsOf.Flm_FacelessMan.defName)
                 {
                     continue;
                 }
@@ -146,7 +146,7 @@ namespace NzFaceLessManMod
 
 
             // 添加基因不稳定hediff
-            target.health.AddHediff(XmlDefs.Flm_GeneticInstability);
+            target.health.AddHediff(HediffDefsOf.Flm_GeneticInstability);
             // 添加基因不稳定hediff
             // SetExtractGermline(caster);
             // 更新异种基因复制
@@ -218,7 +218,7 @@ namespace NzFaceLessManMod
         /// </summary>
         public static void SetExtractGermline(Pawn caster, int overrideDurationTicks = -1)
         {
-            caster.health.AddHediff(XmlDefs.Flm_GeneLossDizzy);
+            caster.health.AddHediff(HediffDefsOf.Flm_GeneLossDizzy);
             if (GeneUtility.PawnWouldDieFromReimplanting(caster))
             {
                 caster.genes.SetXenotype(XenotypeDefOf.Baseliner);

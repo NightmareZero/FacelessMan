@@ -43,7 +43,7 @@ namespace NzFaceLessManMod
             }
 
             // 获取偏斜值
-            float gh = parent.GetStatValue(XmlDefs.NzFlm_GlancingHitPoint, cacheStaleAfterTicks: 600);
+            float gh = parent.GetStatValue(DefsOf.NzFlm_GlancingHitPoint, cacheStaleAfterTicks: 600);
             if (dinfo.Amount < gh)
             {
 // #if DEBUG

@@ -55,7 +55,7 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in endoGenes)
             {
                 var xeno = xeno_;
-                if (xeno.Value.defName == XmlDefs.Flm_FacelessMan.defName)
+                if (xeno.Value.defName == DefsOf.Flm_FacelessMan.defName)
                 {
                     continue;
                 } else if (xeno.Value.inheritable == false)
@@ -111,7 +111,7 @@ namespace NzFaceLessManMod
             // 添加新基因
             AddNewEndotypeGenes(target, xeno);
             // 播放声音
-            XmlDefs.FoamSpray_Resolve.PlayOneShot(new TargetInfo(target.Position, target.Map, false));
+            DefsOf.FoamSpray_Resolve.PlayOneShot(new TargetInfo(target.Position, target.Map, false));
         }
 
         /// <summary>

@@ -13,7 +13,7 @@ namespace NzFaceLessManMod
         public override void BeforeStartCooldown(ref int ticks)
         {
 
-            float cdVal = pawn.GetStatValue(XmlDefs.NzFlm_EvSkillCooldownTime, true, cacheStaleAfterTicks: 600);
+            float cdVal = pawn.GetStatValue(DefsOf.NzFlm_EvSkillCooldownTime, true, cacheStaleAfterTicks: 600);
             int fTicks = (int)(ticks * cdVal);
 #if DEBUG
             Log.Message($"[NzFaceLessManMod] EvAbility.BeforeStartCooldown: {ticks} -> {fTicks}");
@@ -24,7 +24,7 @@ namespace NzFaceLessManMod
 
         public override void BeforeNotify_GroupStartedCooldown(AbilityGroupDef group,ref int ticks)
         {
-            float cdVal = pawn.GetStatValue(XmlDefs.NzFlm_EvSkillCooldownTime, true, cacheStaleAfterTicks: 600);
+            float cdVal = pawn.GetStatValue(DefsOf.NzFlm_EvSkillCooldownTime, true, cacheStaleAfterTicks: 600);
             int fTicks = (int)(ticks * cdVal);
             ticks = fTicks;
             base.BeforeNotify_GroupStartedCooldown(group,ref ticks);

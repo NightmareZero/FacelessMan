@@ -15,7 +15,7 @@ namespace NzFaceLessManMod
 
             // 检查是否满足条件： 包含特定Gene
             // TODO 之后采用性能更好的方案
-            if (pawn?.genes.HasActiveGene(XmlDefs.Nzflm_Ev_Idealism) == true)
+            if (pawn?.genes.HasActiveGene(HediffDefsOf.Nzflm_Ev_Idealism) == true)
             {
                 // 将精神力衰减翻转
                 __result = -__result;

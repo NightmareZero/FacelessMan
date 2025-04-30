@@ -52,7 +52,7 @@ namespace NzFaceLessManMod
             // 设置胡须
             caster.story.furDef = target.story.furDef;
             // 播放声音
-            XmlDefs.FoamSpray_Resolve.PlayOneShot(new TargetInfo(target.Position, target.Map, false));
+            DefsOf.FoamSpray_Resolve.PlayOneShot(new TargetInfo(target.Position, target.Map, false));
 
 			// 重新渲染caster
 			caster.Drawer.renderer.SetAllGraphicsDirty();

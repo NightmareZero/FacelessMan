@@ -76,7 +76,7 @@ namespace NzFaceLessManMod
 
         private Evolution getEvolutionHediff(Pawn pawn)
         {
-            return (Evolution)(pawn.health.hediffSet.GetFirstHediffOfDef(XmlDefs.Flm_Evolution) as HediffWithComps);
+            return (Evolution)(pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefsOf.Flm_Evolution) as HediffWithComps);
         }
 
         private void applyEvolutionToPawn(Pawn pawn, Evolution evolution)
