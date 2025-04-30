@@ -36,6 +36,19 @@ namespace NzFaceLessManMod
         [MayRequireRoyalty]
         public static ThoughtDef NzFlm_Tk_ObsessedWithMaster;
 
+        // 蠕虫/心智操纵
+        [MayRequireRoyalty]
+        public static EvolutionGeneDef Nzflm_Ev_MindManipulation;
+
+        // 蠕虫/心智覆盖
+        [MayRequireRoyalty]
+        public static EvolutionGeneDef Nzflm_Ev_MindCover;
+
+        // 蠕虫/心智塑形
+        [MayRequireRoyalty]
+        public static EvolutionGeneDef Nzflm_Ev_MindShaping;
+
+
         static DefsOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(DefsOf));

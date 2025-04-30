@@ -129,6 +129,9 @@
 			master loves you</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
+		<disablesNeeds>
+			<li MayRequire="Ludeon.RimWorld.Ideology">Suppression</li>
+		</disablesNeeds>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormSlave" />
@@ -144,11 +147,43 @@
 		<defName>NzFlm_He_MindWormCover</defName>
 		<label>mind worm cover</label>
 		<!-- 你的自由意志被心灵蠕虫压制了，现在它代替了你驱使你的身体和记忆 -->
-		<description>You have lost your free will, and the mind worm has replaced you to drive your body and
+		<description>You have lost your free will, and the mind worm has replaced you to drive your
+			body and
 			memory</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<clearsEgo>true</clearsEgo>
 		<hediffClass>HediffWithComps</hediffClass>
+		<disablesNeeds>
+			<li>Beauty</li>
+			<li>Outdoors</li>
+			<li>Comfort</li>
+			<li>Rest</li>
+			<li>Joy</li>
+			<li>Mood</li>
+			<li>Indoors</li>
+			<li>DrugDesire</li>
+			<li>RoomSize</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">KillThirst</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">Learning</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">Play</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">Authority</li>
+		</disablesNeeds>
+		<stages>
+			<li>
+				<painOffset>-0.6</painOffset>
+				<opinionOfOthersFactor>0</opinionOfOthersFactor>
+				<statOffsets>
+					<ComfyTemperatureMin>-16</ComfyTemperatureMin>
+					<ComfyTemperatureMax>16</ComfyTemperatureMax>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>0.85</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormCover" />

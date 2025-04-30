@@ -194,5 +194,81 @@
         </modExtensions>
     </NzFaceLessManMod.EvolutionGeneDef>
 
+    <!-- 心智操纵 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindManipulation</defName>
+        <label>mind manipulation</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以借助心灵蠕虫的力量，对你的仆从进行一些简单的操作 -->
+        <description>You can use the power of the mind worm to perform some simple operations on
+            your servants.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_SetItDirty">
+                        <hediffs>
+                            <li>NzFlm_He_MindWormLord</li>
+                        </hediffs>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心智覆盖 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindCover</defName>
+        <label>mind cover</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以借助心灵蠕虫的力量，让它代替你的仆人操作自己的身体，你的仆人将不会再有人的各种想法和情感 -->
+        <description>You can use the power of the mind worm to let it operate your servant's body
+            instead of
+            you. Your servant will no longer have various human thoughts and emotions.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>2</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_SetItDirty">
+                        <hediffs>
+                            <li>NzFlm_He_MindWormLord</li>
+                        </hediffs>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心智塑形 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindShaping</defName>
+        <label>mind shaping</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以借助心灵蠕虫的力量，像修改纸张上面的文字一样，修改你的仆人的记忆和技艺 -->
+        <description>You can use the power of the mind worm to modify your servant's memory and
+            skills like modifying the text on paper.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>2</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_SetItDirty">
+                        <hediffs>
+                            <li>NzFlm_He_MindWormLord</li>
+                        </hediffs>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
 
 </Defs>

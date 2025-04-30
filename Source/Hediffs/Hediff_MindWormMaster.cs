@@ -7,7 +7,7 @@ using Verse;
 
 namespace NzFaceLessManMod
 {
-    public class Hediff_MindWormMaster : HediffWithComps
+    public class Hediff_MindWormMaster : HediffWithComps, ISetDirty
     {
         private HashSet<HediffComp_MindWormSlave> mindWorms = new HashSet<HediffComp_MindWormSlave>(); // 心灵蠕虫列表
 
@@ -170,12 +170,30 @@ namespace NzFaceLessManMod
                     }
                 }
 
+                // 检查有没有基因
+                CanMindCtrl = pawn.genes?.HasActiveGene(DefsOf.Nzflm_Ev_MindManipulation) ?? false;
+                CanMindShaping = pawn.genes?.HasActiveGene(DefsOf.Nzflm_Ev_MindShaping) ?? false;
+                CanMindCoverage = pawn.genes?.HasActiveGene(DefsOf.Nzflm_Ev_MindCover) ?? false;
+
             }
             finally
             {
                 dirtyCaches = false;
             }
         }
+
+        /// <summary>
+        /// implement ISetDirty interface
+        /// </summary>
+        /// <param name="trigger"></param>
+        /// <param name="condition"></param>
+        /// <param name="obj"></param>
+        public void SetDirty(DirtyTrigger trigger = DirtyTrigger.None, DirtyCondition condition = DirtyCondition.None, object obj = null)
+        {
+            dirtyCaches = true; // 设置为脏
+            UpdateCaches(force: true);
+        }
+
         private string cacheDescription = null; // 描述
 
         public override string LabelBase
