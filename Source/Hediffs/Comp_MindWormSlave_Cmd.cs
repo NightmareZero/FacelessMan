@@ -99,6 +99,44 @@ namespace NzFaceLessManMod
         }
 
         private void AddCoverageCmd(List<FloatMenuOption> menu)
-        { }
+        {
+            if (parent?.pawn?.health?.hediffSet?.HasHediff(HediffDefsOf.NzFlm_He_MindWormCover) == true)
+            {
+                // 解除心智覆盖
+                menu.Add(new FloatMenuOption("nzflm.slaves_psychic_coverage_remove".Translate(),
+                 action: delegate
+                {
+                    // 移除心智覆盖Hediff
+                    if (parent?.pawn?.health?.hediffSet?.TryGetHediff(HediffDefsOf.NzFlm_He_MindWormCover, out var hediff) == true)
+                    {
+                        parent?.pawn?.health?.RemoveHediff(hediff);
+                    }
+                    // 添加想法
+                    Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(DefsOf.NzFlm_Tk_ObsessedWithMaster);
+                    thought.otherPawn = master;
+                    parent.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought, master);
+                    // 输出消息
+                    Messages.Message("nzflm.slaves_psychic_coverage_remove_msg".Translate(parent.pawn.LabelCap),
+                        MessageTypeDefOf.NeutralEvent);
+                },
+                itemIcon: null,
+                iconColor: Color.white
+                ));
+            }
+            else
+            {
+                // 心智覆盖
+                menu.Add(new FloatMenuOption("nzflm.slaves_psychic_coverage".Translate(),
+                 action: delegate
+                {
+                    parent?.pawn?.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormCover, master);
+                    Messages.Message("nzflm.slaves_psychic_coverage_msg".Translate(parent.pawn.LabelCap),
+                        MessageTypeDefOf.NeutralEvent);
+                },
+                itemIcon: null,
+                iconColor: Color.white
+                ));
+            }
+        }
     }
 }

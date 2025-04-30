@@ -71,6 +71,12 @@ namespace NzFaceLessManMod
 
             // 移除想法
             parent.pawn?.needs?.mood?.thoughts?.memories?.RemoveMemoriesOfDef(DefsOf.NzFlm_Tk_ObsessedWithMaster);
+
+            // 移除心智覆盖
+            if (parent.pawn?.health?.hediffSet?.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormCover) is Hediff cover)
+            {
+                parent.pawn.health.RemoveHediff(cover);
+            }
         }
 
         /// <summary>

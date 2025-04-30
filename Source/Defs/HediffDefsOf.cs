@@ -34,6 +34,10 @@ namespace NzFaceLessManMod
         // 蠕虫之主
         [MayRequireRoyalty]
         public static HediffDef NzFlm_He_MindWormLord;
+
+        // 心智覆盖
+        [MayRequireRoyalty]
+        public static HediffDef NzFlm_He_MindWormCover;
         
 
         static HediffDefsOf()

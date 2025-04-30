@@ -139,6 +139,26 @@
 		</comps>
 	</HediffDef>
 
+	<!-- 心智覆盖 -->
+	<HediffDef>
+		<defName>NzFlm_He_MindWormCover</defName>
+		<label>mind worm cover</label>
+		<!-- 你的自由意志被心灵蠕虫压制了，现在它代替了你驱使你的身体和记忆 -->
+		<description>You have lost your free will, and the mind worm has replaced you to drive your body and
+			memory</description>
+		<duplicationAllowed>false</duplicationAllowed>
+		<clearsEgo>true</clearsEgo>
+		<hediffClass>HediffWithComps</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormCover" />
+			<li Class="HediffCompProperties_Link">
+				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+				<maxDistance>0</maxDistance>
+			</li>
+		</comps>
+	</HediffDef>
+
 	<!-- 蠕虫领主 -->
 	<HediffDef>
 		<defName>NzFlm_He_MindWormLord</defName>

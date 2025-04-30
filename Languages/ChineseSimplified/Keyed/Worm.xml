@@ -13,4 +13,9 @@
 
     <nzflm.slaves_psychic_soothe>心灵抚慰</nzflm.slaves_psychic_soothe>
     <nzflm.slaves_psychic_soothe_msg>由于心灵抚慰， {0} 的一部分精神状态恢复了</nzflm.slaves_psychic_soothe_msg>
+
+    <nzflm.slaves_psychic_coverage>心灵覆盖</nzflm.slaves_psychic_coverage>
+    <nzflm.slaves_psychic_coverage_msg>由于心灵覆盖，{0} 的精神暂时被蠕虫取代了。</nzflm.slaves_psychic_coverage_msg>
+    <nzflm.slaves_psychic_coverage_remove>移除心灵覆盖</nzflm.slaves_psychic_coverage_remove>
+    <nzflm.slaves_psychic_coverage_remove_msg>{0} 重新取回了自己身体的控制权。</nzflm.slaves_psychic_coverage_remove_msg>
 </LanguageData>

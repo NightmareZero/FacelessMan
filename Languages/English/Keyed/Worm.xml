@@ -13,4 +13,9 @@
 
     <nzflm.slaves_psychic_soothe>Psychic Soothe</nzflm.slaves_psychic_soothe>
     <nzflm.slaves_psychic_soothe_msg>Due to psychic soothing, part of {0}'s mental state was restored.</nzflm.slaves_psychic_soothe_msg>
+
+    <nzflm.slaves_psychic_coverage>Psychic Coverage</nzflm.slaves_psychic_coverage>
+    <nzflm.slaves_psychic_coverage_msg>Due to psychic coverage, {0}'s mind has temporarily been replaced by the worm.</nzflm.slaves_psychic_coverage_msg>
+    <nzflm.slaves_psychic_coverage_remove>Remove Psychic Coverage</nzflm.slaves_psychic_coverage_remove>
+    <nzflm.slaves_psychic_coverage_remove_msg>{0} has regained control of their body.</nzflm.slaves_psychic_coverage_remove_msg>
 </LanguageData>
