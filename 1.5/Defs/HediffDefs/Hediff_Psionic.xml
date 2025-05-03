@@ -3,13 +3,16 @@
 	<HediffDef>
 		<defName>Nzflm_He_MindOverMatter</defName>
 		<label>mind over matter</label>
-		<!-- 你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
-		<description>you believe that the power of the mind is greater than the laws of physics, and
-			now your combat ability, work efficiency, and damage resistance will increase with the
-			improvement of mental strength</description>
+		<!-- 将灵能技巧编码于基因中使其成为本能，你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
+		<description>Encoding psychic skills into genes makes them instinctive. You believe that the power of
+			the mind is greater than the laws of physics. Now your combat ability, work efficiency,
+			and damage tolerance will improve with the improvement of psychic power</description>
 		<duplicationAllowed>false</duplicationAllowed>
-		<hediffClass>Hediff</hediffClass>
+		<hediffClass>HediffWithComps</hediffClass>
 		<initialSeverity>0.34</initialSeverity>
+		<comps>
+			<li Class="NzFaceLessManMod.HediffCompProperties_SeverityByPsyfocus"/>
+		</comps>
 		<stages>
 			<li>
 				<statOffsets>
@@ -112,7 +115,14 @@
 				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
 			</li>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
-			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormAttack" />
+			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormAttack">
+				<mentalBreaks>
+					<li>Wander_Sad</li>
+					<li>Manhunter</li>
+					<li>BerserkWarcall</li>
+					<li>PanicFlee</li>
+				</mentalBreaks>
+			</li>
 			<li Class="HediffCompProperties_Link">
 				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
 				<maxDistance>0</maxDistance>

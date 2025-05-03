@@ -11,4 +11,7 @@
 
     <NzFlm_GlancingHitPoint.label>偏斜值</NzFlm_GlancingHitPoint.label>
     <NzFlm_GlancingHitPoint.description>受到的所有来自敌人的伤害，在计算承伤系数后，都再次会被减少特定值</NzFlm_GlancingHitPoint.description>
+
+    <NzFlm_PsychicRecovery.label>心灵恢复</NzFlm_PsychicRecovery.label>
+    <NzFlm_PsychicRecovery.description>你的精神力恢复速度的倍数</NzFlm_PsychicRecovery.description>
 </LanguageData>

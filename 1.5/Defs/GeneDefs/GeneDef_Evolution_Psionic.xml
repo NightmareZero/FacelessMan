@@ -5,10 +5,10 @@
         <defName>Nzflm_Ev_PsychicAwakening</defName>
         <label>psychic awakening</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
-        <!-- 通过其他方式觉醒灵能不够稳定，启灵装置又太过昂贵，所以经过数十年的努力，我们合成出了一种新型的基因，能够让你觉醒灵能，比其他方式更加普适 -->
-        <description>The awakening of psychic through other means is not stable enough, and the
-            psychic amplifier is too expensive, so after decades of efforts, we have synthesized a
-            new type of gene that can awaken psychic, which is more universal than other methods.</description>
+        <!-- 通过其他方式觉醒灵能不够稳定，启灵装置又太过昂贵，所以经过数十年的努力，我们合成出了一种新型的基因，能够让普通人觉醒灵能 -->
+        <description>The awakening of psychic power through other means is not stable, and the
+            psychic awakening device is too expensive. After decades of efforts, we have synthesized
+            a new type of gene that can awaken ordinary people to psychic power.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>2</evolution>
@@ -43,6 +43,9 @@
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
+        <statOffsets>
+            <NzFlm_PsychicRecovery>2</NzFlm_PsychicRecovery>
+        </statOffsets>
     </NzFaceLessManMod.EvolutionGeneDef>
 
     <!-- 心胜于物 -->
@@ -122,10 +125,10 @@
         <defName>Nzflm_Ev_PersonalitySculpting</defName>
         <label>personality sculpting</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
-        <!-- 在你的大脑中，生成一个新的器官，能够生成一个辅助用的虚拟人格，能够帮助你进行思考和决策，减少你的睡眠需求，以及和你的仆从进行联络，同时还可以在你精神崩溃时唤醒你 -->
-        <description>A new organ is generated in your brain, which can generate an auxiliary virtual
-            personality to help you think and make decisions, reduce your sleep needs, and contact
-            your servants, and can also wake you up when you are mentally broken.</description>
+        <!-- 在你的大脑中，生成一个新的器官，能够生成一个虚拟人格，能够辅助你进行思考和决策，减少你的睡眠需求，以及和你的仆从进行联络，同时还可以在你精神崩溃时唤醒你 -->
+        <description>New organ is generated in your brain, which can generate a virtual personality
+            to assist you in thinking and decision-making, reduce your sleep needs, and communicate
+            with your servants. It can also wake you up when you are mentally broken.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
@@ -164,9 +167,9 @@
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
-        <ablities>
+        <abilities>
             <li>NzFlm_AnimalVirtualMind</li>
-        </ablities>
+        </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 
     <!-- 心灵蠕虫 -->
@@ -184,9 +187,9 @@
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>2</evolution>
-        <ablities>
+        <abilities>
             <li>NzFlm_MindWorm</li>
-        </ablities>
+        </abilities>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
                 <hediffDef>NzFlm_He_MindWormLord</hediffDef>

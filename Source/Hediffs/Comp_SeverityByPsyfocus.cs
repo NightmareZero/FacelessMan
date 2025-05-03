@@ -3,9 +3,9 @@ using RimWorld;
 
 namespace NzFaceLessManMod
 {
-    public class Comp_SeverityByPsyfocus : HediffCompProperties
+    public class HediffCompProperties_SeverityByPsyfocus : HediffCompProperties
     {
-        public Comp_SeverityByPsyfocus()
+        public HediffCompProperties_SeverityByPsyfocus()
         {
             compClass = typeof(HediffComp_SeverityByPsyfocus);
         }
@@ -13,7 +13,7 @@ namespace NzFaceLessManMod
 
     public class HediffComp_SeverityByPsyfocus : HediffComp
     {
-        public Comp_SeverityByPsyfocus Props => (Comp_SeverityByPsyfocus)props;
+        public HediffCompProperties_SeverityByPsyfocus Props => (HediffCompProperties_SeverityByPsyfocus)props;
 
         public override void CompPostTick(ref float severityAdjustment)
         {

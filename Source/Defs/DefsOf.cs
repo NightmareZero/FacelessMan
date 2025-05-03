@@ -32,6 +32,10 @@ namespace NzFaceLessManMod
         // 承伤减值
         public static StatDef NzFlm_GlancingHitPoint;
 
+        // 唯心主义精神力恢复倍数
+        [MayRequireRoyalty]
+        public static StatDef NzFlm_PsychicRecovery;
+
         // 蠕虫_迷恋主人
         [MayRequireRoyalty]
         public static ThoughtDef NzFlm_Tk_ObsessedWithMaster;

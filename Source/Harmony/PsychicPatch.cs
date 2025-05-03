@@ -10,16 +10,21 @@ namespace NzFaceLessManMod
         [HarmonyPostfix]
         public static void AdjustPsyfocusFall(ref float __result, Pawn ___pawn)
         {
-            var pawn = ___pawn;
-
-
-            // 检查是否满足条件： 包含特定Gene
-            // TODO 之后采用性能更好的方案
-            if (pawn?.genes.HasActiveGene(HediffDefsOf.Nzflm_Ev_Idealism) == true)
-            {
-                // 将精神力衰减翻转
-                __result = -__result;
+            // 未启用DLC
+            if (!ModsConfig.RoyaltyActive)
+            { 
+                return;
             }
+
+            var pawn = ___pawn;
+            var mup = pawn.GetStatValue(DefsOf.NzFlm_PsychicRecovery, true, 600);
+            if (mup == 0)
+            {
+                return;
+            }
+
+            Log.Message($"[NzFaceLessManMod] PsyfocusFallPerDay: {__result} * {-mup}");
+            __result = __result * __result < 0 ? mup : -mup;
         }
     }
 }

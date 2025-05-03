@@ -126,7 +126,7 @@
 		</mote>
 		<graphicData>
 			<graphicClass>Graphic_Mote</graphicClass>
-			<texPath>Things/Mote/CombatCommandMask</texPath>
+			<texPath>Things/Mote/CombatCommandMask_</texPath>
 			<shaderType>MoteGlow</shaderType>
 			<color>(173, 255, 47)</color>
 			<drawSize>20</drawSize>

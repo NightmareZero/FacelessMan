@@ -14,7 +14,7 @@ namespace NzFaceLessManMod
         public float mentalBreakChanceHour = 0.2f; // 每小时精神崩溃几率
 
         public List<MentalStateDef> mentalBreaks = new List<MentalStateDef>(); // 精神崩溃类型
-
+        
         public HediffCompProperties_MindWormAttack()
         {
             compClass = typeof(HediffComp_MindWormAttack);
