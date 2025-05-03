@@ -25,6 +25,8 @@ namespace NzFaceLessManMod
         // 爆炸的音效
         public SoundDef soundDef = null;
 
+        public bool deathOnRemove = false;
+
         public HediffCompProperties_NoCorpse()
         {
             compClass = typeof(HediffComp_NoCorpse);
@@ -81,6 +83,15 @@ namespace NzFaceLessManMod
             if (this.parent.pawn?.Corpse != null)
             {
                 this.parent.pawn.Corpse.Destroy(DestroyMode.Vanish);
+            }
+        }
+
+        public override void CompPostPostRemoved()
+        {
+            base.CompPostPostRemoved();
+            if (Props.deathOnRemove)
+            {
+                this.parent.pawn?.Kill(null, null);
             }
         }
     }

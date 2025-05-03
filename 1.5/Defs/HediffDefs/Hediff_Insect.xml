@@ -156,6 +156,7 @@
 			<li Class="NzFaceLessManMod.HediffCompProperties_NoCorpse">
 				<filthDef>Filth_BloodInsect</filthDef>
 				<radius>1.6</radius>
+				<deathOnRemove>True</deathOnRemove>
 			</li>
 		</comps>
 		<stages>
