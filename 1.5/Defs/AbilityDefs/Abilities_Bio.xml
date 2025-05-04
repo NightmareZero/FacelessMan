@@ -221,6 +221,7 @@
 				<canTargetSelf>false</canTargetSelf>
 				<canTargetBuildings>false</canTargetBuildings>
 				<canTargetMechs>false</canTargetMechs>
+                <neverTargetHostileFaction>true</neverTargetHostileFaction>
 			</targetParams>
 		</verbProperties>
 		<comps>
@@ -229,6 +230,7 @@
                 <psychic>False</psychic>
                 <durationSecondsOverride>60000</durationSecondsOverride>
             </li>
+            <li Class="NzFaceLessManMod.CompProperties_MustNoResisting"/>
 		</comps>
 	</AbilityDef>
 
