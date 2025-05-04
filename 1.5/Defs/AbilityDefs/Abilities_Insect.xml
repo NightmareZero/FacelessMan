@@ -19,8 +19,7 @@
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>
             </targetParams>
-            <!-- TODO -->
-            <!-- <soundCast>RI_Sound_FireRing_A</soundCast> -->
+            <soundCast>Pawn_Megascarab_Call</soundCast>
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityGiveHediff">
@@ -100,7 +99,7 @@
             <violent>false</violent>
             <warmupTime>2</warmupTime>
             <!-- TODO 更换声音 -->
-            <soundCast>Longjump_Jump</soundCast>
+            <soundCast>Pawn_Megascarab_Call</soundCast>
             <onlyManualCast>True</onlyManualCast>
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>

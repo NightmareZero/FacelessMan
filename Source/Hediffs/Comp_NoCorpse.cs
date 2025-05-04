@@ -91,7 +91,11 @@ namespace NzFaceLessManMod
             base.CompPostPostRemoved();
             if (Props.deathOnRemove)
             {
-                this.parent.pawn?.Kill(null, null);
+                if (this.parent?.pawn?.Dead == false)
+                {
+                    this.parent.pawn?.Kill(null, null);
+                    this.Notify_PawnDied(null, null);
+                }
             }
         }
     }
