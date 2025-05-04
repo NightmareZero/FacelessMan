@@ -8,4 +8,10 @@
 
     <Nzflm_Ev_Idealism.label>唯心主义</Nzflm_Ev_Idealism.label>
     <Nzflm_Ev_Idealism.description>将灵能技巧编码于基因中使其成为本能，现在你的精神力量随着时间而逐渐恢复，精神力越高，回复越快</Nzflm_Ev_Idealism.description>
+
+    <Nzflm_Ev_Float.label>飘浮</Nzflm_Ev_Float.label>
+    <Nzflm_Ev_Float.description>将灵能技巧编码于基因中使其成为本能，你将在空中漂浮，无视艰难地形的影响，也不会踩到陷阱</Nzflm_Ev_Float.description>
+
+    <Nzflm_Ev_WillBarrier.label>意志壁垒</Nzflm_Ev_WillBarrier.label>
+    <Nzflm_Ev_WillBarrier.description>将灵能技巧编码于基因中使其成为本能，你现在可以忽略物理规律般的无视一部分伤害</Nzflm_Ev_WillBarrier.description>
 </LanguageData>

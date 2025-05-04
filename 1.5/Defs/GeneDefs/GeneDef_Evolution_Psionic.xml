@@ -41,7 +41,7 @@
             gradually recovers over time, and the higher your mental power, the faster it recovers.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>20</displayOrderInCategory>
         <evolution>1</evolution>
         <statOffsets>
             <NzFlm_PsychicRecovery>2</NzFlm_PsychicRecovery>
@@ -61,7 +61,7 @@
             mental power.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
@@ -81,7 +81,7 @@
             ignoring the effects of difficult terrain and not stepping on traps.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>40</displayOrderInCategory>
         <evolution>1</evolution>
         <statFactors>
             <PawnTrapSpringChance>0</PawnTrapSpringChance>
@@ -100,20 +100,18 @@
         <defName>Nzflm_Ev_WillBarrier</defName>
         <label>will barrier</label>
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
-        <!-- 将灵能技巧编码于基因中使其成为本能，你的精神力可以抵挡一部分伤害 -->
-        <description>The psychic skills are encoded in the gene, making them instinctive. Your
-            mental
-            power can
-            resist some damage.</description>
+        <!-- 将灵能技巧编码于基因中使其成为本能，你现在可以忽略物理规律般的无视一部分伤害 -->
+        <description>The psychic skills are encoded in the gene, making them instinctive. Your now 
+            can ignore some damage ,ignore the laws of physics.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
-        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <prerequisite>Nzflm_Ev_Idealism</prerequisite>
+        <displayOrderInCategory>50</displayOrderInCategory>
         <evolution>1</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
                 <comps>
                     <li Class="NzFaceLessManMod.GeneCompProperties_DamageIgnore">
-                        <chance>0.35</chance>
+                        <chance>0.4</chance>
                     </li>
                 </comps>
             </li>

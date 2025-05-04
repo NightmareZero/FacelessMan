@@ -42,6 +42,9 @@ namespace NzFaceLessManMod
             {
                 absorbed = true; // 忽略伤害
                 dinfo.SetAmount(0); // 设置伤害为 0
+#if DEBUG
+                Log.Message($"[NzFaceLessManMod] Damage ignored: {dinfo.Def} on {parentPawn.Name} with chance {chance}");
+#endif
             }
         }
     }
