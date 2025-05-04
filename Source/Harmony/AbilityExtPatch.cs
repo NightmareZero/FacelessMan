@@ -26,6 +26,9 @@ namespace NzFaceLessManMod
             if (__instance is AbilityExt abilityExt)
             {
                 abilityExt.BeforeStartCooldown(ref ticks);
+            } else if (__instance is AbilityExtPsycast abilityExtPsycast)
+            {
+                abilityExtPsycast.BeforeStartCooldown(ref ticks);
             }
         }
 
@@ -37,6 +40,9 @@ namespace NzFaceLessManMod
             if (__instance is AbilityExt abilityExt)
             {
                 abilityExt.BeforeNotify_GroupStartedCooldown(group, ref ticks);
+            } else if (__instance is AbilityExtPsycast abilityExtPsycast)
+            {
+                abilityExtPsycast.BeforeNotify_GroupStartedCooldown(group, ref ticks);
             }
         }
     }

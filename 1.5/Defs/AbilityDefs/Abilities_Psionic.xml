@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <AbilityDef ParentName="Nz_Flm_AbilityEv" MayRequire="Ludeon.RimWorld.Royalty">
+    <AbilityDef ParentName="Nz_Flm_AbilityEvPsycast" MayRequire="Ludeon.RimWorld.Royalty">
         <defName>NzFlm_AnimalVirtualMind</defName>
         <label>inject virtual mind</label>
         <cooldownTicksRange>300</cooldownTicksRange>
@@ -39,11 +39,14 @@
                 <!-- 3年 -->
                 <durationSecondsOverride>90000~180000</durationSecondsOverride>
             </li>
+            <li Class="CompProperties_AbilityFleckOnTarget">
+                <fleckDef>PsycastPsychicEffect</fleckDef>
+            </li>
         </comps>
     </AbilityDef>
 
     <!-- 心灵蠕虫 -->
-    <AbilityDef ParentName="Nz_Flm_AbilityEv" MayRequire="Ludeon.RimWorld.Royalty">
+    <AbilityDef ParentName="Nz_Flm_AbilityEvPsycast" MayRequire="Ludeon.RimWorld.Royalty">
         <defName>NzFlm_MindWorm</defName>
         <label>>inject mind worm</label>
         <cooldownTicksRange>30000</cooldownTicksRange>

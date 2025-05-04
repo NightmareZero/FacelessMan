@@ -55,10 +55,8 @@
         <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
         <!-- 将记忆与灵能技巧编码于基因中使其成为本能，现在你相信心灵的力量胜过物理规律，战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
         <description>The memory and psychic skills are encoded in the gene, making them instinctive.
-            Now you
-            believe that the power of the mind is greater than the laws of physics, and your combat
-            ability, work efficiency, and damage resistance will improve with the improvement of
-            mental power.</description>
+            Now you believe that the power of the mind is greater than the laws of physics, and your combat
+            ability, work efficiency, and damage resistance will improve with the improvement of mental power.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>30</displayOrderInCategory>
@@ -129,7 +127,7 @@
             with your servants. It can also wake you up when you are mentally broken.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>60</displayOrderInCategory>
         <statFactors>
             <RestFallRateFactor>0.6</RestFallRateFactor>
         </statFactors>
@@ -163,7 +161,7 @@
             to fight for you.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>70</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
             <li>NzFlm_AnimalVirtualMind</li>
@@ -183,7 +181,7 @@
             them for you.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>80</displayOrderInCategory>
         <evolution>2</evolution>
         <abilities>
             <li>NzFlm_MindWorm</li>
@@ -205,7 +203,7 @@
             your servants.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>90</displayOrderInCategory>
         <evolution>1</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
@@ -231,7 +229,7 @@
             you. Your servant will no longer have various human thoughts and emotions.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>100</displayOrderInCategory>
         <evolution>2</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
@@ -256,7 +254,7 @@
             skills like modifying the text on paper.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
-        <displayOrderInCategory>10</displayOrderInCategory>
+        <displayOrderInCategory>110</displayOrderInCategory>
         <evolution>2</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">

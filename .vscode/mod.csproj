@@ -41,6 +41,7 @@
 		<Compile Include="../Source/Utils/*.cs" />
 		<Compile Include="../Source/Abilities/*.cs" />
 		<Compile Include="../Source/Abilities/Common/*.cs" />
+		<Compile Include="../Source/Abilities/Core/*.cs" />
 		<Compile Include="../Source/Abilities/Verb/*.cs" />
 		<Compile Include="../Source/Abilities/Check/*.cs" />
 		<Compile Include="../Source/ModExtension/*.cs" />

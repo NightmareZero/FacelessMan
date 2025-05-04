@@ -62,4 +62,36 @@
 			</targetParams>
 		</verbProperties>
 	</AbilityDef>
+
+	<!-- 进化灵能技能 -->
+	<AbilityDef Name="Nz_Flm_AbilityEvPsycast" Abstract="True">
+		<abilityClass>NzFaceLessManMod.EvAbilityPsycast</abilityClass>
+		<category>Nzflm_AbilityCategory</category>
+		<statBases>
+            <!-- 60秒 -->
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		<warmupSound>PsycastCastLoop</warmupSound>
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<!-- 需要具备暴力能力 -->
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<writeCombatLog>True</writeCombatLog>
+		<verbProperties>
+			<!-- TODO 换一个 -->
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>4.9</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+                <canTargetPawns>True</canTargetPawns>
+				<canTargetBuildings>False</canTargetBuildings>
+				<canTargetAnimals>False</canTargetAnimals>
+				<canTargetMutants>False</canTargetMutants>
+				<canTargetMechs>False</canTargetMechs>
+				<!-- <thingCategory>Item</thingCategory> -->
+				<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+			</targetParams>
+		</verbProperties>
+	</AbilityDef>
 </Defs>
