@@ -61,7 +61,7 @@
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <statBases>
-            <Ability_EntropyGain>100</Ability_EntropyGain>
+            <Ability_EntropyGain>33</Ability_EntropyGain>
             <Ability_PsyfocusCost>0.33</Ability_PsyfocusCost>
         </statBases>
         <verbProperties>

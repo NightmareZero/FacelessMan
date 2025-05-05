@@ -22,6 +22,9 @@ namespace NzFaceLessManMod
                 yield return "HediffDef " + parentDef.defName + " needs a 'HediffComp_Link' to work properly.";
             }
         }
+
+
+
     }
 
     public partial class HediffComp_MindWormSlave : HediffComp
@@ -53,7 +56,17 @@ namespace NzFaceLessManMod
             // 添加想法
             Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(DefsOf.NzFlm_Tk_ObsessedWithMaster);
             thought.otherPawn = master;
-            parent.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought, master);
+            var mem = parent.pawn?.needs?.mood?.thoughts?.memories;
+            if (mem != null && thought != null)
+            {
+                mem.TryGainMemory(thought, master);
+            }
+            else
+            {
+                Log.Error("MindWormSlave: Failed to get memories for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
+            }
+
+
         }
 
         public override void CompPostPostRemoved()
@@ -95,7 +108,7 @@ namespace NzFaceLessManMod
             parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: master, part, ticksToDisappear: 60000);
             // 移除自身
             parent.pawn?.health?.RemoveHediff(this.parent);
-            
+
             Messages.Message("hzflm.slave_free_by_master_dead_wg".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
         }
 

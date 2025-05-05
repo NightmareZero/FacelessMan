@@ -39,7 +39,7 @@ namespace NzFaceLessManMod
                 this.evolutionLimit++; // 增加点数
                 this.lastPointAddTick = Find.TickManager.TicksGame; // 记录时间
 #if DEBUG
-                Log.Message("evolutionLimit added to " + this.evolutionLimit);
+                Log.WarningOnce("evolutionLimit added to " + this.evolutionLimit, 62489671);
 #endif
             }
         }

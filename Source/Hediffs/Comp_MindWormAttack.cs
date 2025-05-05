@@ -101,7 +101,7 @@ namespace NzFaceLessManMod
             }
 
             // 处理主人的逻辑
-            if (parent.pawn.IsHashIntervalTick(1800))
+            if (parent.pawn.IsHashIntervalTick(600))
             {
                 if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
                 {
@@ -116,6 +116,26 @@ namespace NzFaceLessManMod
                 }
             }
         }
+
+        public override IEnumerable<Gizmo> CompGetGizmos()
+        {
+            // 开发者模式下显示
+            if (Prefs.DevMode)
+            {
+                Command_Action command = new Command_Action
+                {
+                    defaultLabel = "immediate Ok",
+                    defaultDesc = "attack ok after 180ticks",
+                    action = delegate
+                    {
+                        HediffComp_Disappears hediffComp_Disappears = parent.TryGetComp<HediffComp_Disappears>();
+                        hediffComp_Disappears.ticksToDisappear = 180;
+                    }
+                };
+                yield return command;
+            }
+        }
+
 
         public override void CompExposeData()
         {

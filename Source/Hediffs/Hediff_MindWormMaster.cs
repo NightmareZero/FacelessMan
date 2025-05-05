@@ -9,9 +9,10 @@ namespace NzFaceLessManMod
 {
     public class Hediff_MindWormMaster : HediffWithComps, ISetDirty
     {
+        private HashSet<Pawn> slaves = new HashSet<Pawn>(); // 奴隶列表
         private HashSet<HediffComp_MindWormSlave> mindWorms = new HashSet<HediffComp_MindWormSlave>(); // 心灵蠕虫列表
 
-        private HashSet<Pawn> slaves = new HashSet<Pawn>(); // 奴隶列表
+
 
         private bool dirtyCaches = true; // 是否需要更新缓存
 
@@ -43,26 +44,16 @@ namespace NzFaceLessManMod
                 return false;
             }
 
-            if (mindWorms.Contains(worm))
+            var slave = worm.parent.pawn;
+            if (slaves.Contains(slave))
             {
-                Log.Error("MindWormMaster: addWorm failed, worm already exists in mindWorms list.");
-                mindWorms.TryGetValue(worm, out var existingWorm);
-                if (existingWorm.parent.pawn != null)
-                {
-                    Log.Error("MindWormMaster: Existing worm master is " + existingWorm.parent.pawn.Name.ToStringShort);
-                }
-                else
-                {
-                    mindWorms.Remove(existingWorm); // 移除已存在的蠕虫
-                    mindWorms.Add(worm); // 添加新的蠕虫
-                }
+                Log.Warning("MindWormMaster: addWorm failed, salve already exists in slave list.");
                 return false;
             }
+
+
+            slaves.Add(worm.parent.pawn); // 添加到奴隶列表
             mindWorms.Add(worm);
-            if (worm.parent.pawn != null && !slaves.Contains(worm.parent.pawn))
-            {
-                slaves.Add(worm.parent.pawn); // 添加到奴隶列表
-            }
 
             return true;
         }
@@ -82,7 +73,7 @@ namespace NzFaceLessManMod
             }
             else
             {
-                updateSlavesFromMindWorms(); // 更新奴隶列表
+                updateMindWormsFromSlaves(); // 更新奴隶列表
             }
 
             dirtyCaches = true; // 标记缓存需要更新
@@ -91,14 +82,28 @@ namespace NzFaceLessManMod
             return true;
         }
 
-        private void updateSlavesFromMindWorms()
+        private void updateMindWormsFromSlaves()
         {
-            slaves.Clear();
-            foreach (var worm in mindWorms.ToList())
+            mindWorms.Clear();
+            foreach (var slave in slaves.ToList())
             {
-                if (worm != null && worm?.parent?.pawn != null)
+                var ok = false;
+
+                var wormHediff = (HediffWithComps)slave.health?.hediffSet?.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormParasitic);
+                if (wormHediff != null)
                 {
-                    slaves.Add(worm.parent.pawn); // 添加到奴隶列表
+                    var worm = wormHediff?.GetComp<HediffComp_MindWormSlave>();
+                    if (worm != null)
+                    {
+                        mindWorms.Add(worm); // 添加到奴隶列表
+                        ok = true;
+                    }
+                }
+
+                if (!ok)
+                {
+                    Log.Error("MindWormMaster: updateMindWormsFromSlaves failed, slave wormHediff got null.");
+                    slaves.Remove(slave); // 移除奴隶
                 }
             }
         }
@@ -106,13 +111,24 @@ namespace NzFaceLessManMod
         public override void PostRemoved()
         {
             base.PostRemoved();
+            doOnThisDead(); // 处理死亡
+        }
 
+        public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
+        {
+            doOnThisDead(); // 处理死亡
+            base.Notify_PawnDied(dinfo, culprit);
+        }
+
+        private void doOnThisDead()
+        { 
             foreach (var worm in mindWorms.ToList())
             {
                 worm?.parent?.pawn?.health?.hediffSet?.GetHediffComps<HediffComp_MindWormSlave>()?.ToList()
                 .ForEach(x => x.DoLostMaster()); // 失去主人时，调用Slave的DoLostMaster方法
             }
         }
+
 
         public bool CanCtrl
         {
@@ -137,14 +153,14 @@ namespace NzFaceLessManMod
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Collections.Look(ref mindWorms, "mindWorms", LookMode.Reference);
-            // Scribe_Collections.Look(ref slaves, "slaves", LookMode.Reference);
+            Scribe_Collections.Look(ref slaves, "slaves", LookMode.Reference);
+            // Scribe_Collections.Look(ref mindWorms, "mindWorms", LookMode.Reference); // 这个不保存
             Scribe_Values.Look(ref CanMindCtrl, "canMindCtrl", false);
             Scribe_Values.Look(ref CanMindShaping, "canMindShaping", false);
             Scribe_Values.Look(ref CanMindCoverage, "canMindcoverage", false);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                updateSlavesFromMindWorms();
+                updateMindWormsFromSlaves();
                 UpdateCaches();
             }
         }
