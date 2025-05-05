@@ -3,7 +3,7 @@
     <AbilityDef ParentName="Nz_Flm_AbilityEvPsycast" MayRequire="Ludeon.RimWorld.Royalty">
         <defName>NzFlm_AnimalVirtualMind</defName>
         <label>inject virtual mind</label>
-        <cooldownTicksRange>300</cooldownTicksRange>
+        <cooldownTicksRange>60</cooldownTicksRange>
         <!-- 让你的虚拟心灵，生成一个更小的虚拟心灵，让目标动物拥有智慧，目标不再需要训练，而且可以征召战斗 -->
         <description>Let your virtual mind generate a smaller virtual mind, allowing the target
             animal to have wisdom, no longer need training, and can be summoned to fight.</description>
@@ -36,8 +36,8 @@
                 <compClass>CompAbilityEffect_GiveHediff</compClass>
                 <hediffDef>NzFlm_He_AnimalVirtualMind</hediffDef>
                 <psychic>True</psychic>
-                <!-- 3年 -->
-                <durationSecondsOverride>90000~180000</durationSecondsOverride>
+                <!-- 1年 -->
+                <durationSecondsOverride>30000~60000</durationSecondsOverride>
             </li>
             <li Class="CompProperties_AbilityFleckOnTarget">
                 <fleckDef>PsycastPsychicEffect</fleckDef>
