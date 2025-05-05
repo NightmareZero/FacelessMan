@@ -49,6 +49,8 @@ namespace NzFaceLessManMod
 
         private Pawn master = null; // 主人
 
+        private bool alreadyHasWorm = false; // 是否已经有心灵蠕虫
+
 
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
@@ -58,10 +60,22 @@ namespace NzFaceLessManMod
                 Log.Error("MindWormAttack: Failed to get master pawn for MindWormAttack Hediff on " + parent.pawn.Name.ToStringShort);
                 return;
             }
+
+            var l = parent.pawn.health?.hediffSet?.GetHediffComps<HediffComp_MindWormSlave>()?.ToList();
+            if (l != null && l.Count > 0)
+            {
+                alreadyHasWorm = true; // 已经有心灵蠕虫了
+            }
+            
         }
 
         public override void CompPostPostRemoved()
         {
+            if (alreadyHasWorm)
+            {
+                return; // 已经有心灵蠕虫了，不需要处理
+            }
+
             base.CompPostPostRemoved();
             if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
@@ -82,6 +96,12 @@ namespace NzFaceLessManMod
 
         public override void CompPostTick(ref float severityAdjustment)
         {
+            if (alreadyHasWorm)
+            {
+                this.parent.Severity = 0f;
+                Messages.Message("hzflm.slave_already_has_worm".Translate(), MessageTypeDefOf.NegativeEvent);
+                return;
+            }
             // 已经可以触发下一次精神崩溃了
             if (Find.TickManager.TicksGame - ticksSinceLastMentalBreak > Props.mentalBreakInterval)
             {

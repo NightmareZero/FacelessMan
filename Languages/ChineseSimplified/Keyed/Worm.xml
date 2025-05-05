@@ -18,4 +18,9 @@
     <nzflm.slaves_psychic_coverage_msg>由于心灵覆盖，{0} 的精神暂时被蠕虫取代了。</nzflm.slaves_psychic_coverage_msg>
     <nzflm.slaves_psychic_coverage_remove>移除心灵覆盖</nzflm.slaves_psychic_coverage_remove>
     <nzflm.slaves_psychic_coverage_remove_msg>{0} 重新取回了自己身体的控制权。</nzflm.slaves_psychic_coverage_remove_msg>
+
+    <hzflm.slave_already_has_worm>弱小的幼虫被成虫扼杀了</hzflm.slave_already_has_worm>
+
+    <NzFaceLessManMod.MindWormSlave_Gizmo>仆从控制</NzFaceLessManMod.MindWormSlave_Gizmo>
+    <NzFaceLessManMod.MindWormSlave_GizmoDesc>你可以通过灵能给蠕虫下简单的命令</NzFaceLessManMod.MindWormSlave_GizmoDesc>
 </LanguageData>

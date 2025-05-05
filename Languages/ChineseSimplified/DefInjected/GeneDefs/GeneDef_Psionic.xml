@@ -20,4 +20,10 @@
 
     <Nzflm_Ev_VirtualMind.label>虚拟心灵</Nzflm_Ev_VirtualMind.label>
     <Nzflm_Ev_VirtualMind.description>你可以为动物注入一个虚拟心灵，让他们获得更高的智力，目标的训练度会迅速充满，同时你可以征召他们为你战斗</Nzflm_Ev_VirtualMind.description>
+
+    <Nzflm_Ev_MindManipulation.label>心智操纵</Nzflm_Ev_MindManipulation.label>
+    <Nzflm_Ev_MindManipulation.description>你可以借助心灵蠕虫的力量，对你的仆从的心灵进行一些简单的操作</Nzflm_Ev_MindManipulation.description>
+
+    <Nzflm_Ev_MindCover.label>心智覆盖</Nzflm_Ev_MindCover.label>
+    <Nzflm_Ev_MindCover.description>你可以借助心灵蠕虫的力量，让它代替你的仆人操作自己的身体，你的仆人将不会再有人的各种想法和情感</Nzflm_Ev_MindCover.description>
 </LanguageData>

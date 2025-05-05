@@ -28,31 +28,39 @@ namespace NzFaceLessManMod
             // 获取主人
             if (master == null && !parent.TryGetCompLinkedOtherPawn(out master))
             {
-                Log.Error("MindWormCover: Failed to get master pawn for MindWormCover Hediff on " + parent.pawn.Name.ToStringShort);
+                Log.Error("MindWormCover: Failed to get master pawn for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
                 return;
             }
 
             // 获取蠕虫核心Hediff
-            if (!parent.TryGetComp(out this.wormHediff))
-            {
-                Log.Error("MindWormCover: Failed to get wormHediff for MindWormCover Hediff on " + parent.pawn.Name.ToStringShort);
-                return;
-            }
+            doGetHediff();
         }
-        
+
         public override void CompExposeData()
         {
             Scribe_References.Look(ref master, "master");
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                if (!parent.TryGetComp(out wormHediff))
-                {
-                    Log.Error("MindWormCover: Failed to get wormHediff for MindWormCover Hediff on " + parent.pawn.Name.ToStringShort);
-                    parent.pawn.health.RemoveHediff(parent);
-                    Log.Warning("MindWormCover: Removed MindWormCover Hediff on " + parent.pawn.Name.ToStringShort + " due to missing wormHediff.");
-                    return;
-                }
+                doGetHediff();
+
             }
         }
+
+        private void doGetHediff()
+        {
+            var l = parent.pawn.health?.hediffSet?.GetHediffComps<HediffComp_MindWormSlave>()?.ToList();
+            if (l != null && l.Count > 0)
+            {
+                this.wormHediff = l[0]; // 获取第一个蠕虫核心Hediff
+            }
+            else
+            {
+                Log.Error("MindWormCover: Failed to get wormHediff for MindWormCover Hediff on " + parent.pawn.Name.ToStringShort);
+                parent.pawn.health.RemoveHediff(parent);
+                Log.Warning("MindWormCover: Removed MindWormCover Hediff on " + parent.pawn.Name.ToStringShort + " due to missing wormHediff.");
+            }
+                
+        }
+        
     }
 }

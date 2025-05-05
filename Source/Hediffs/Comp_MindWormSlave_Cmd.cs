@@ -25,7 +25,8 @@ namespace NzFaceLessManMod
             {
                 defaultLabel = "NzFaceLessManMod.MindWormSlave_Gizmo".Translate(),
                 defaultDesc = "NzFaceLessManMod.MindWormSlave_GizmoDesc".Translate(),
-                icon = ContentFinder<Texture2D>.Get("UI/Commands/MindWormSlave"),
+                // TODO 修改
+                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
                 action = delegate
                 {
                     var cmdMenu = new List<FloatMenuOption>();
@@ -65,7 +66,8 @@ namespace NzFaceLessManMod
             menu.Add(new FloatMenuOption("nzflm.slaves_psychic_shock".Translate(),
              action: delegate
             {
-                parent?.pawn?.AddHediffExt(HediffDefOf.PsychicShock, master, ticksToDisappear: 15000);
+                parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
+                parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: master, part, ticksToDisappear: 2500);
                 Messages.Message("nzflm.slaves_psychic_shock_msg".Translate(parent.pawn.LabelCap),
                     MessageTypeDefOf.NeutralEvent);
             },
@@ -129,7 +131,8 @@ namespace NzFaceLessManMod
                 menu.Add(new FloatMenuOption("nzflm.slaves_psychic_coverage".Translate(),
                  action: delegate
                 {
-                    parent?.pawn?.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormCover, master);
+                    parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
+                    parent?.pawn?.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormCover, master, part);
                     Messages.Message("nzflm.slaves_psychic_coverage_msg".Translate(parent.pawn.LabelCap),
                         MessageTypeDefOf.NeutralEvent);
                 },
