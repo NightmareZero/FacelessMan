@@ -7,6 +7,7 @@
 		<!-- 你散发出一种奇怪的气味，在你周围的人会不由自主的感到振奋 -->
 		<description>You emit a strange smell that makes people around you feel invigorated.</description>
 		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
@@ -55,6 +56,7 @@
 		<description>Stimulated by pheromones.</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
 				<disappearsAfterTicks>7500</disappearsAfterTicks>
@@ -262,6 +264,7 @@
 			very conducive to joint movement.</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
 		<initialSeverity>0.4</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">

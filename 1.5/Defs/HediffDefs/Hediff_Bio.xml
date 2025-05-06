@@ -70,7 +70,7 @@
         <hediffClass>HediffWithComps</hediffClass>
         <!-- 你刚刚从 “隐生” 状态中苏醒，现在你的身体还没有完全恢复 -->
         <description>You have just awakened from the "cryptobiosis" state, and your body has not yet fully recovered.</description>
-        <isBad>false</isBad>
+        <isBad>true</isBad>
         <comps>
             <!-- 2小时后消失 -->
 			<li Class="HediffCompProperties_Disappears">

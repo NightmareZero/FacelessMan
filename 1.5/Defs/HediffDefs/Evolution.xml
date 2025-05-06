@@ -9,6 +9,7 @@
         <hediffClass>NzFaceLessManMod.Evolution</hediffClass>
         <initialSeverity>0.001</initialSeverity>
         <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <isBad>false</isBad>
         <!-- <stages>
             <li>
                 <capMods>

@@ -8,6 +8,7 @@
 			the mind is greater than the laws of physics. Now your combat ability, work efficiency,
 			and damage tolerance will improve with the improvement of psychic power</description>
 		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
 		<hediffClass>HediffWithComps</hediffClass>
 		<initialSeverity>0.34</initialSeverity>
 		<comps>
@@ -86,6 +87,7 @@
 			smart</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
 				<disappearsAfterTicks>90000</disappearsAfterTicks>
@@ -139,6 +141,7 @@
 			master loves you</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
 		<disablesNeeds>
 			<li MayRequire="Ludeon.RimWorld.Ideology">Suppression</li>
 		</disablesNeeds>
@@ -162,6 +165,7 @@
 			memory</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<clearsEgo>true</clearsEgo>
+		<isBad>false</isBad>
 		<hediffClass>HediffWithComps</hediffClass>
 		<disablesNeeds>
 			<li>Beauty</li>
@@ -211,6 +215,7 @@
 		<!-- 你是心灵蠕虫的主人，你可以随意操控它们 -->
 		<description>You are the master of the mind worm, and you can control them at will</description>
 		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>false</isBad>
 		<hediffClass>NzFaceLessManMod.Hediff_MindWormMaster</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
