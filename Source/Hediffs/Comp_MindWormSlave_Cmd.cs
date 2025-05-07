@@ -98,6 +98,11 @@ namespace NzFaceLessManMod
 
         private void AddShapingCmd(List<FloatMenuOption> menu)
         {
+            // 抽取知识 战斗(近战/远程)/智慧(智识，艺术，医疗)/工作(手工，采矿，种植)/(社交，驯兽)
+            // 传输知识 如上
+            // 抹除记忆(全部特质和记忆)
+            // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过5条)
+            // 记忆传输(从自己的特质中选一条，不能超过5条)
         }
 
         private void AddCoverageCmd(List<FloatMenuOption> menu)
