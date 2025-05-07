@@ -92,6 +92,25 @@ namespace NzFaceLessManMod
                 }
                 yield return manageEvolution;
             }
+            // 玩家处于上帝模式
+            if (DebugSettings.godMode)
+            {
+                var setPoint = new Command_Action
+                {
+                    defaultLabel = "set point 30",
+                    defaultDesc = "",
+                    icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
+                    action = () =>
+                    {
+                        this.evolutionLimit = 30;
+                        this.lastPointAddTick = Find.TickManager.TicksGame; // 记录时间
+#if DEBUG
+                        Log.Warning("evolutionLimit set to 30");
+#endif
+                    }
+                };
+
+            }
         }
 
         public override void ExposeData()
