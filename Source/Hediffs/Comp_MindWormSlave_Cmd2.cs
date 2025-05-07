@@ -24,13 +24,88 @@ namespace NzFaceLessManMod
                 Messages.Message("nzflm.slave_remove_memory".Translate(), MessageTypeDefOf.PositiveEvent);
             }, MenuOptionPriority.Default, null, null, 0f, null, null));
             // 抽取知识 战斗(近战，远程，医疗)/智慧(智识，艺术，手工)/劳作(建筑，采矿，种植，烹饪)/交流(社交，驯兽)
+            menu.Add(new FloatMenuOption("nzflm.slave_extract_knowledge".Translate(), delegate
+            {
+                SubMenu_ShapingCmd_ExtractKnowledge();
+            }));
             // 传输知识 如上
-            // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过5条)
-            // 记忆传输(从自己的特质中选一条，不能超过5条)
             menu.Add(new FloatMenuOption("nzflm.slave_transfer_knowledge".Translate(), delegate
             {
                 SubMenu_ShapingCmd_TransferKnowledge();
-            }, MenuOptionPriority.Default, null, null, 0f, null, null));
+            }));
+            // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过5条)
+
+            // 记忆传输(从自己的特质中选一条，不能超过5条)
+
+        }
+
+        // 抽取知识
+        private void SubMenu_ShapingCmd_ExtractKnowledge()
+        {
+            // 创建二级菜单
+            List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>
+            {
+                new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Fight".Translate(), delegate
+                {
+                    // 战斗技艺
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Melee);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Shooting);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Medicine);
+                    // 添加过载
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.35f,
+                        parent.pawn?.health?.hediffSet?.GetBrain());
+
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
+                    Messages.Message("nzflm.worm_extract_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                }),
+                new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Wisdom".Translate(), delegate
+                {
+                    // 智慧技艺
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Intellectual);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Artistic);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Crafting);
+                    // 添加过载
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.35f,
+                        parent.pawn?.health?.hediffSet?.GetBrain());
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
+                    Messages.Message("nzflm.worm_extract_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                }),
+                new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Work".Translate(), delegate
+                {
+                    // 劳作技艺
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Construction);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Mining);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Plants);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Cooking);
+                    // 添加过载
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.8f,
+                        parent.pawn?.health?.hediffSet?.GetBrain());
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
+                    Messages.Message("nzflm.worm_extract_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                }),
+                new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Communicate".Translate(), delegate
+                {
+                    // 交流技艺
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Social);
+                    doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Animals);
+                    // 添加过载
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                        parent.pawn?.health?.hediffSet?.GetBrain());
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
+                    Messages.Message("nzflm.worm_extract_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                })
+            };
+            FloatMenu menu = new FloatMenu(cmdMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+            };
+            Find.WindowStack.Add(menu);
         }
 
         // 传输知识
@@ -41,23 +116,56 @@ namespace NzFaceLessManMod
             {
                 new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Fight".Translate(), delegate
                 {
-                    // TODO
-                    Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                    // 战斗技艺
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Melee);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Shooting);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Medicine);
+                    // 添加过载
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                        master?.health?.hediffSet?.GetBrain());
+
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+                    Messages.Message("nzflm.worm_transfer_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
                 }),
                 new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Wisdom".Translate(), delegate
                 {
-                    // TODO
-                    Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                    // 智慧技艺
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Intellectual);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Artistic);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Crafting);
+                    // 添加过载
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                        master?.health?.hediffSet?.GetBrain());
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+                    Messages.Message("nzflm.worm_transfer_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
                 }),
                 new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Work".Translate(), delegate
                 {
-                    // TODO
-                    Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                    // 劳作技艺
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Construction);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Mining);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Plants);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Cooking);
+                    // 添加过载
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.2f,
+                        master?.health?.hediffSet?.GetBrain());
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+                    Messages.Message("nzflm.worm_transfer_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
                 }),
                 new FloatMenuOption("NzFLM.MindWormSlave_TransferKnowledge_Communicate".Translate(), delegate
                 {
-                    // TODO
-                    Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge".Translate(), MessageTypeDefOf.PositiveEvent);
+                    // 交流技艺
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Social);
+                    doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Animals);
+                    // 添加过载
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                        master?.health?.hediffSet?.GetBrain());
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+                    Messages.Message("nzflm.worm_transfer_knowledge".Translate(), MessageTypeDefOf.PositiveEvent);
                 })
             };
             FloatMenu menu = new FloatMenu(cmdMenu)
@@ -67,6 +175,34 @@ namespace NzFaceLessManMod
                 forcePause = true,
             };
             Find.WindowStack.Add(menu);
+        }
+
+        private void doTransferKnowledge(Pawn src, Pawn dst, float percent, SkillDef skillDef)
+        { 
+            // 获取源的技能
+            SkillRecord srcSkill = src?.skills?.GetSkill(skillDef);
+            if (srcSkill == null)
+            {
+                Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge_Fail".Translate(), MessageTypeDefOf.NegativeEvent);
+                return;
+            }
+            // 获取目标的技能
+            SkillRecord dstSkill = dst?.skills?.GetSkill(skillDef);
+            if (dstSkill == null)
+            {
+                Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge_Fail".Translate(), MessageTypeDefOf.NegativeEvent);
+                return;
+            }
+            // 如果目标技能已经大于等于源技能，不起作用
+            if (dstSkill.levelInt >= srcSkill.levelInt)
+            {
+                Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect".Translate(), MessageTypeDefOf.NeutralEvent);
+                return;
+            }
+            // 计算转移的技能值，最大获取到 dst - src 的值
+            float maxTransferValue = srcSkill.levelInt - dstSkill.levelInt;
+            float transferValue = Mathf.Min(srcSkill.levelInt * percent, maxTransferValue);
+            dstSkill.Learn(transferValue, true);
         }
 
         // 抹除记忆

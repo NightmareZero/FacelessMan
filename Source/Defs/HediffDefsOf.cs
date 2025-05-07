@@ -38,7 +38,10 @@ namespace NzFaceLessManMod
         // 心智覆盖
         [MayRequireRoyalty]
         public static HediffDef NzFlm_He_MindWormCover;
-        
+
+        // 脑部过载
+        [MayRequireRoyalty]
+        public static HediffDef NzFlm_He_MindWormOverload;        
 
         static HediffDefsOf()
         {

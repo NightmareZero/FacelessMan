@@ -24,7 +24,11 @@
     <!-- GUI -->
     <NzFLM.MindWormSlave_Gizmo>Servant Control</NzFLM.MindWormSlave_Gizmo>
     <NzFLM.MindWormSlave_GizmoDesc>You can give simple commands to the worm through psychic power.</NzFLM.MindWormSlave_GizmoDesc>
-    
+
+    <nzflm.slave_remove_memory>Remove Memory</nzflm.slave_remove_memory>
+    <nzflm.slave_extract_knowledge>Extract Knowledge</nzflm.slave_extract_knowledge>
+    <nzflm.slave_transfer_knowledge>Transfer Knowledge</nzflm.slave_transfer_knowledge>
+
     <NzFLM.MindWormSlave_TransferKnowledge_Fight>Fight</NzFLM.MindWormSlave_TransferKnowledge_Fight>
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>Wisdom</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
     <NzFLM.MindWormSlave_TransferKnowledge_Work>Work</NzFLM.MindWormSlave_TransferKnowledge_Work>

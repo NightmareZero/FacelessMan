@@ -26,6 +26,10 @@
     <NzFLM.MindWormSlave_Gizmo>仆从控制</NzFLM.MindWormSlave_Gizmo>
     <NzFLM.MindWormSlave_GizmoDesc>你可以通过灵能给蠕虫下简单的命令</NzFLM.MindWormSlave_GizmoDesc>
 
+    <nzflm.slave_remove_memory>移除记忆</nzflm.slave_remove_memory>
+    <nzflm.slave_extract_knowledge>提取知识</nzflm.slave_extract_knowledge>
+    <nzflm.slave_transfer_knowledge>传递知识</nzflm.slave_transfer_knowledge>
+
     <NzFLM.MindWormSlave_TransferKnowledge_Fight>战斗</NzFLM.MindWormSlave_TransferKnowledge_Fight>
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>智慧</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
     <NzFLM.MindWormSlave_TransferKnowledge_Work>工作</NzFLM.MindWormSlave_TransferKnowledge_Work>

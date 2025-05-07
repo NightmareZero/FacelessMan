@@ -4,7 +4,8 @@
 		<defName>Nzflm_He_MindOverMatter</defName>
 		<label>mind over matter</label>
 		<!-- 将灵能技巧编码于基因中使其成为本能，你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
-		<description>Encoding psychic skills into genes makes them instinctive. You believe that the power of
+		<description>Encoding psychic skills into genes makes them instinctive. You believe that the
+			power of
 			the mind is greater than the laws of physics. Now your combat ability, work efficiency,
 			and damage tolerance will improve with the improvement of psychic power</description>
 		<duplicationAllowed>false</duplicationAllowed>
@@ -12,7 +13,7 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<initialSeverity>0.34</initialSeverity>
 		<comps>
-			<li Class="NzFaceLessManMod.HediffCompProperties_SeverityByPsyfocus"/>
+			<li Class="NzFaceLessManMod.HediffCompProperties_SeverityByPsyfocus" />
 		</comps>
 		<stages>
 			<li>
@@ -222,4 +223,112 @@
 		</comps>
 	</HediffDef>
 
+	<!-- 脑部过载 -->
+	<HediffDef>
+		<defName>NzFlm_He_MindWormOverload</defName>
+		<label>mind worm overload</label>
+		<!-- 心灵蠕虫的过载 -->
+		<description>Overload of mind worms</description>
+		<duplicationAllowed>false</duplicationAllowed>
+		<isBad>true</isBad>
+		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>0.3</initialSeverity>
+		<lethalSeverity>3.0</lethalSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>30%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.3</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>60%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.6</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>90%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.9</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>1.2</minSeverity>
+				<label>120%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-1.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>1.5</minSeverity>
+				<label>150%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-1.5</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>1.8</minSeverity>
+				<label>180%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-1.8</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>2.1</minSeverity>
+				<label>210%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-2.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>2.4</minSeverity>
+				<label>240%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-2.4</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>2.7</minSeverity>
+				<label>270%</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-2.7</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>
