@@ -54,6 +54,12 @@ namespace NzFaceLessManMod
             masterHediff?.AddWorm(this);
 
             // 添加想法
+            addMasterMemory();
+
+        }
+
+        private void addMasterMemory()
+        { 
             Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(DefsOf.NzFlm_Tk_ObsessedWithMaster);
             thought.otherPawn = master;
             var mem = parent.pawn?.needs?.mood?.thoughts?.memories;
@@ -65,8 +71,6 @@ namespace NzFaceLessManMod
             {
                 Log.Error("MindWormSlave: Failed to get memories for MindWormSlave Hediff on " + parent.pawn.Name.ToStringShort);
             }
-
-
         }
 
         public override void CompPostPostRemoved()

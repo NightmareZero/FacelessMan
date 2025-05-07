@@ -23,8 +23,8 @@ namespace NzFaceLessManMod
 
             yield return new Command_Action
             {
-                defaultLabel = "NzFaceLessManMod.MindWormSlave_Gizmo".Translate(),
-                defaultDesc = "NzFaceLessManMod.MindWormSlave_GizmoDesc".Translate(),
+                defaultLabel = "NzFLM.MindWormSlave_Gizmo".Translate(),
+                defaultDesc = "NzFLM.MindWormSlave_GizmoDesc".Translate(),
                 // TODO 修改
                 icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
                 action = delegate
@@ -42,7 +42,6 @@ namespace NzFaceLessManMod
                         forcePause = true,
                         onCloseCallback = () =>
                         {
-                            // TODO
 #if DEBUG
                             Log.Message("flm: no select option");
 #endif
@@ -68,6 +67,10 @@ namespace NzFaceLessManMod
             {
                 parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
                 parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: master, part, ticksToDisappear: 2500);
+
+                // 播放音效
+                DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+
                 Messages.Message("nzflm.slaves_psychic_shock_msg".Translate(parent.pawn.LabelCap),
                     MessageTypeDefOf.NeutralEvent);
             },
@@ -88,21 +91,16 @@ namespace NzFaceLessManMod
                 {
                     parent?.pawn?.MentalState?.RecoverFromState();
                 }
+
+                // 播放音效
+                DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+
                 Messages.Message("nzflm.slaves_psychic_soothe_msg".Translate(parent.pawn.LabelCap),
                     MessageTypeDefOf.NeutralEvent);
             },
             itemIcon: null,
             iconColor: Color.white
             ));
-        }
-
-        private void AddShapingCmd(List<FloatMenuOption> menu)
-        {
-            // 抽取知识 战斗(近战/远程)/智慧(智识，艺术，医疗)/工作(手工，采矿，种植)/(社交，驯兽)
-            // 传输知识 如上
-            // 抹除记忆(全部特质和记忆)
-            // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过5条)
-            // 记忆传输(从自己的特质中选一条，不能超过5条)
         }
 
         private void AddCoverageCmd(List<FloatMenuOption> menu)
@@ -119,9 +117,10 @@ namespace NzFaceLessManMod
                         parent?.pawn?.health?.RemoveHediff(hediff);
                     }
                     // 添加想法
-                    Thought_MemorySocial thought = (Thought_MemorySocial)ThoughtMaker.MakeThought(DefsOf.NzFlm_Tk_ObsessedWithMaster);
-                    thought.otherPawn = master;
-                    parent.pawn?.needs?.mood?.thoughts?.memories?.TryGainMemory(thought, master);
+                    addMasterMemory();
+
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
                     // 输出消息
                     Messages.Message("nzflm.slaves_psychic_coverage_remove_msg".Translate(parent.pawn.LabelCap),
                         MessageTypeDefOf.NeutralEvent);
@@ -138,6 +137,10 @@ namespace NzFaceLessManMod
                 {
                     parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
                     parent?.pawn?.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormCover, master, part);
+
+                    // 播放音效
+                    DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+
                     Messages.Message("nzflm.slaves_psychic_coverage_msg".Translate(parent.pawn.LabelCap),
                         MessageTypeDefOf.NeutralEvent);
                 },

@@ -52,6 +52,10 @@ namespace NzFaceLessManMod
         [MayRequireRoyalty]
         public static EvolutionGeneDef Nzflm_Ev_MindShaping;
 
+        // 传送的声音
+        [MayRequireRoyalty]
+        public static SoundDef Psycast_Skip_Pulse;
+
 
         static DefsOf()
         {
