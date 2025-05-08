@@ -33,9 +33,9 @@ namespace NzFaceLessManMod
             {
                 SubMenu_ShapingCmd_TransferKnowledge();
             }));
-            // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过5条)
+            // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过6条)
 
-            // 记忆传输(从自己的特质中选一条，不能超过5条)
+            // 记忆传输(从自己的特质中选一条，不能超过6条)
 
         }
 
@@ -52,7 +52,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Shooting);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Medicine);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.35f,
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
 
                     // 播放音效
@@ -66,7 +66,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Artistic);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Crafting);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.35f,
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -80,7 +80,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Plants);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Cooking);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.8f,
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -92,7 +92,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Social);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Animals);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -108,7 +108,9 @@ namespace NzFaceLessManMod
             Find.WindowStack.Add(menu);
         }
 
-        // 传输知识
+        /// <summary>
+        /// 从'master'传输知识到'thisPawn'
+        /// </summary>
         private void SubMenu_ShapingCmd_TransferKnowledge()
         {
             // 创建二级菜单
@@ -121,7 +123,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Shooting);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Medicine);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         master?.health?.hediffSet?.GetBrain());
 
                     // 播放音效
@@ -135,7 +137,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Artistic);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Crafting);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         master?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -149,7 +151,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Plants);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Cooking);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 1.2f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.7f,
                         master?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -161,7 +163,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Social);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Animals);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                         master?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -177,8 +179,15 @@ namespace NzFaceLessManMod
             Find.WindowStack.Add(menu);
         }
 
+        /// <summary>
+        /// 传输知识 (对应SkillDef)
+        /// </summary>
+        /// <param name="src">来源</param>
+        /// <param name="dst">目标</param>
+        /// <param name="percent">占来源的百分比</param>
+        /// <param name="skillDef">技能类型</param>
         private void doTransferKnowledge(Pawn src, Pawn dst, float percent, SkillDef skillDef)
-        { 
+        {
             // 获取源的技能
             SkillRecord srcSkill = src?.skills?.GetSkill(skillDef);
             if (srcSkill == null)
