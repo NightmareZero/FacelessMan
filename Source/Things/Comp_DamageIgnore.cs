@@ -9,7 +9,18 @@ namespace NzFaceLessManMod
     {
         public float chance = 0.34f; // 34% chance to ignore damage
 
-        private static readonly Material BubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent, Color.white);
+        private static Material bubbleMat;
+        private static Material BubbleMat
+        {
+            get
+            {
+                if (bubbleMat == null)
+                {
+                    bubbleMat = MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent, Color.white);
+                }
+                return bubbleMat;
+            }
+        }
 
         private float minDrawSize = 1.2f;
 
