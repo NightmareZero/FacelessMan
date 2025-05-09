@@ -34,8 +34,105 @@ namespace NzFaceLessManMod
                 SubMenu_ShapingCmd_TransferKnowledge();
             }));
             // 记忆抽取(从目标的特质中选一条，加入自己的特质，不能超过6条)
+            menu.Add(new FloatMenuOption("nzflm.slave_extract_trait".Translate(), delegate
+            {
+                if (master?.story?.traits?.allTraits?.Count < 6 && parent.pawn?.story?.traits?.allTraits?.Count > 0)
+                {
+                    SubMenu_ExtractTrait();
+
+                }
+            }));
 
             // 记忆传输(从自己的特质中选一条，不能超过6条)
+            menu.Add(new FloatMenuOption("nzflm.slave_transfer_trait".Translate(), delegate
+            {
+                if (master?.story?.traits?.allTraits?.Count > 0 && parent.pawn?.story?.traits?.allTraits?.Count < 6)
+                {
+                    SubMenu_TransferTrait();
+                }
+            }));
+
+        }
+
+        private void SubMenu_TransferTrait()
+        {
+            List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
+            // 获取所有的特质
+            List<Trait> traits = master?.story?.traits?.allTraits;
+            if (traits != null && traits.Count > 0)
+            {
+                // 遍历所有的特质
+                for (int i = 0; i < traits.Count; i++)
+                {
+                    // 如果是基因的特质，跳过
+                    if (traits[i].sourceGene != null)
+                    {
+                        continue;
+                    }
+                    // 添加特质到菜单
+                    cmdMenu.Add(new FloatMenuOption(traits[i].LabelCap, delegate
+                    {
+                        // 添加特质到自己的特质列表
+                        parent.pawn?.story?.traits?.GainTrait(traits[i]);
+                        // 添加过载
+                        parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.5f,
+                            master?.health?.hediffSet?.GetBrain());
+                        // 播放音效
+                        DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
+                        Messages.Message("nzflm.slave_transfer_trait".Translate(), MessageTypeDefOf.PositiveEvent);
+                    }));
+                }
+            }
+            // 弹出菜单
+            FloatMenu menu = new FloatMenu(cmdMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+            };
+            Find.WindowStack.Add(menu);
+
+        }
+
+        private void SubMenu_ExtractTrait()
+        {
+            List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
+            // 获取所有的特质
+            List<Trait> traits = parent.pawn?.story?.traits?.allTraits;
+            if (traits != null && traits.Count > 0)
+            {
+                // 遍历所有的特质
+                for (int i = 0; i < traits.Count; i++)
+                {
+                    // 如果是基因的特质，跳过
+                    if (traits[i].sourceGene != null)
+                    {
+                        continue;
+                    }
+                    // 添加特质到菜单
+                    cmdMenu.Add(new FloatMenuOption(traits[i].LabelCap, delegate
+                    {
+                        // 添加特质到主人的特质列表
+                        master?.story?.traits?.GainTrait(traits[i]);
+                        // 删除自己的特质
+                        parent.pawn?.story?.traits?.RemoveTrait(traits[i]);
+                        // 添加过载
+                        master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                            parent.pawn?.health?.hediffSet?.GetBrain());
+                        // 播放音效
+                        DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+                        Messages.Message("nzflm.slave_extract_trait".Translate(), MessageTypeDefOf.PositiveEvent);
+                    }));
+                }
+            }
+            // 弹出菜单
+            FloatMenu menu = new FloatMenu(cmdMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+            };
+            Find.WindowStack.Add(menu);
 
         }
 

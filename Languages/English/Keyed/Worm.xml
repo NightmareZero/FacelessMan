@@ -28,6 +28,8 @@
     <nzflm.slave_remove_memory>Remove Memory</nzflm.slave_remove_memory>
     <nzflm.slave_extract_knowledge>Extract Knowledge</nzflm.slave_extract_knowledge>
     <nzflm.slave_transfer_knowledge>Transfer Knowledge</nzflm.slave_transfer_knowledge>
+    <nzflm.slave_extract_trait>Extract Trait</nzflm.slave_extract_trait>
+    <nzflm.slave_transfer_trait>Transfer Trait</nzflm.slave_transfer_trait>
 
     <NzFLM.MindWormSlave_TransferKnowledge_Fight>Fight</NzFLM.MindWormSlave_TransferKnowledge_Fight>
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>Wisdom</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
