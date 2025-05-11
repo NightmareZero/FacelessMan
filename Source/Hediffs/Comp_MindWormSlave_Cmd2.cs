@@ -51,6 +51,58 @@ namespace NzFaceLessManMod
                     SubMenu_TransferTrait();
                 }
             }));
+            // 记忆遗忘
+            menu.Add(new FloatMenuOption("nzflm.slave_remove_trait".Translate(), delegate
+            {
+                if (parent.pawn?.story?.traits?.allTraits?.Count > 0)
+                {
+                    SubMenu_RemoveTrait();
+                }
+            }));
+
+        }
+
+        private void SubMenu_RemoveTrait()
+        {
+            List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
+            // 获取所有的特质
+            List<Trait> traits = parent.pawn?.story?.traits?.allTraits.ToList();
+            if (traits != null && traits.Count > 0)
+            {
+                // 遍历所有的特质
+                for (int i = 0; i < traits.Count; i++)
+                {
+                    // 如果是基因的特质，跳过
+                    if (traits[i].sourceGene != null)
+                    {
+                        continue;
+                    }
+                    var thisTrait = traits[i];
+                    // 添加特质到菜单
+                    cmdMenu.Add(new FloatMenuOption(thisTrait.LabelCap, delegate
+                    {
+                        parent.pawn?.story?.traits?.RemoveTrait(thisTrait);
+                        // 添加过载
+                        parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.3f,
+                            master?.health?.hediffSet?.GetBrain());
+                        // 播放音效
+                        DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+                        Messages.Message("nzflm.slave_remove_trait".Translate(), MessageTypeDefOf.PositiveEvent);
+                    }));
+                }
+            }
+            else
+            {
+                return;
+            }
+            // 弹出菜单
+            FloatMenu menu = new FloatMenu(cmdMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+            };
+            Find.WindowStack.Add(menu);
 
         }
 
@@ -73,7 +125,7 @@ namespace NzFaceLessManMod
                     // 添加特质到菜单
                     cmdMenu.Add(new FloatMenuOption(thisTrait.LabelCap, delegate
                     {
-                         var newTrait = new Trait(thisTrait.def, thisTrait.Degree, true);
+                        var newTrait = new Trait(thisTrait.def, thisTrait.Degree, true);
                         // 添加特质到自己的特质列表
                         parent.pawn?.story?.traits?.GainTrait(newTrait);
                         // 添加过载
@@ -84,6 +136,10 @@ namespace NzFaceLessManMod
                         Messages.Message("nzflm.slave_transfer_trait".Translate(), MessageTypeDefOf.PositiveEvent);
                     }));
                 }
+            }
+            else
+            {
+                return;
             }
             // 弹出菜单
             FloatMenu menu = new FloatMenu(cmdMenu)
@@ -126,6 +182,10 @@ namespace NzFaceLessManMod
                         Messages.Message("nzflm.slave_extract_trait".Translate(), MessageTypeDefOf.PositiveEvent);
                     }));
                 }
+            }
+            else
+            {
+                return;
             }
             // 弹出菜单
             FloatMenu menu = new FloatMenu(cmdMenu)
