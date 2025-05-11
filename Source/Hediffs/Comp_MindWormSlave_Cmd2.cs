@@ -58,7 +58,7 @@ namespace NzFaceLessManMod
         {
             List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
             // 获取所有的特质
-            List<Trait> traits = master?.story?.traits?.allTraits;
+            List<Trait> traits = master?.story?.traits?.allTraits.ToList();
             if (traits != null && traits.Count > 0)
             {
                 // 遍历所有的特质
@@ -69,11 +69,13 @@ namespace NzFaceLessManMod
                     {
                         continue;
                     }
+                    var thisTrait = traits[i];
                     // 添加特质到菜单
-                    cmdMenu.Add(new FloatMenuOption(traits[i].LabelCap, delegate
+                    cmdMenu.Add(new FloatMenuOption(thisTrait.LabelCap, delegate
                     {
+                         var newTrait = new Trait(thisTrait.def, thisTrait.Degree, true);
                         // 添加特质到自己的特质列表
-                        parent.pawn?.story?.traits?.GainTrait(traits[i]);
+                        parent.pawn?.story?.traits?.GainTrait(newTrait);
                         // 添加过载
                         parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.5f,
                             master?.health?.hediffSet?.GetBrain());
@@ -98,7 +100,7 @@ namespace NzFaceLessManMod
         {
             List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
             // 获取所有的特质
-            List<Trait> traits = parent.pawn?.story?.traits?.allTraits;
+            List<Trait> traits = parent.pawn?.story?.traits?.allTraits.ToList();
             if (traits != null && traits.Count > 0)
             {
                 // 遍历所有的特质
@@ -109,13 +111,13 @@ namespace NzFaceLessManMod
                     {
                         continue;
                     }
+                    var thisTrait = traits[i];
                     // 添加特质到菜单
-                    cmdMenu.Add(new FloatMenuOption(traits[i].LabelCap, delegate
+                    cmdMenu.Add(new FloatMenuOption(thisTrait.LabelCap, delegate
                     {
+                        var newTrait = new Trait(thisTrait.def, thisTrait.Degree, true);
                         // 添加特质到主人的特质列表
-                        master?.story?.traits?.GainTrait(traits[i]);
-                        // 删除自己的特质
-                        parent.pawn?.story?.traits?.RemoveTrait(traits[i]);
+                        master?.story?.traits?.GainTrait(newTrait);
                         // 添加过载
                         master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                             parent.pawn?.health?.hediffSet?.GetBrain());
@@ -149,7 +151,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Shooting);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Medicine);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
 
                     // 播放音效
@@ -163,7 +165,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Artistic);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Crafting);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -177,7 +179,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Plants);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Cooking);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -189,7 +191,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Social);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Animals);
                     // 添加过载
-                    master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -300,15 +302,24 @@ namespace NzFaceLessManMod
                 return;
             }
             // 如果目标技能已经大于等于源技能，不起作用
-            if (dstSkill.levelInt >= srcSkill.levelInt)
+            if (dstSkill.Level >= srcSkill.Level)
             {
                 Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect".Translate(), MessageTypeDefOf.NeutralEvent);
                 return;
             }
-            // 计算转移的技能值，最大获取到 dst - src 的值
-            float maxTransferValue = srcSkill.levelInt - dstSkill.levelInt;
-            float transferValue = Mathf.Min(srcSkill.levelInt * percent, maxTransferValue);
-            dstSkill.Learn(transferValue, true);
+
+            // 计算源和目标的总经验
+            float srcTotalXp = srcSkill.XpTotalEarned + srcSkill.xpSinceLastLevel;
+            float dstTotalXp = dstSkill.XpTotalEarned + dstSkill.xpSinceLastLevel;
+
+            // 计算可转移的经验（不能超过两者经验差）
+            float maxTransferXp = srcTotalXp - dstTotalXp;
+            float transferXp = Mathf.Min(srcTotalXp * percent, maxTransferXp);
+
+            Log.Message($"maxTransferXp: {maxTransferXp}");
+            Log.Message($"transferXp: {transferXp}");
+
+            dstSkill.Learn(transferXp, true, true);
         }
 
         // 抹除记忆
