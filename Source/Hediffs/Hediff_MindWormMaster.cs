@@ -4,15 +4,14 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace NzFaceLessManMod
 {
     public class Hediff_MindWormMaster : HediffWithComps, ISetDirty
     {
         private HashSet<Pawn> slaves = new HashSet<Pawn>(); // 奴隶列表
-        private HashSet<HediffComp_MindWormSlave> mindWorms = new HashSet<HediffComp_MindWormSlave>(); // 心灵蠕虫列表
-
-
+        private Dictionary<Pawn, HediffComp_MindWormSlave> mindWorms = new Dictionary<Pawn, HediffComp_MindWormSlave>(); // 心灵蠕虫字典
 
         private bool dirtyCaches = true; // 是否需要更新缓存
 
@@ -47,34 +46,32 @@ namespace NzFaceLessManMod
             var slave = worm.parent.pawn;
             if (slaves.Contains(slave))
             {
-                Log.Warning("MindWormMaster: addWorm failed, salve already exists in slave list.");
+                Log.Warning("MindWormMaster: addWorm failed, slave already exists in slave list.");
                 return false;
             }
 
-
-            slaves.Add(worm.parent.pawn); // 添加到奴隶列表
-            mindWorms.Add(worm);
+            slaves.Add(slave); // 添加到奴隶列表
+            mindWorms[slave] = worm; // 添加到字典
 
             return true;
         }
 
         public bool RemoveWorm(HediffComp_MindWormSlave worm)
         {
-            if (!mindWorms.Contains(worm))
+            if (worm == null || worm.parent?.pawn == null)
             {
-                Log.Error("MindWormMaster: delWorm failed, worm not found in mindWorms list.");
+                Log.Error("MindWormMaster: delWorm failed, worm or its parent pawn is null.");
+                return false;
+            }
+            var slave = worm.parent.pawn;
+            if (!mindWorms.ContainsKey(slave))
+            {
+                Log.Error("MindWormMaster: delWorm failed, worm not found in mindWorms dict.");
                 return false;
             }
 
-            mindWorms.Remove(worm);
-            if (worm.parent.pawn != null)
-            {
-                slaves.Remove(worm.parent.pawn); // 从奴隶列表中移除
-            }
-            else
-            {
-                updateMindWormsFromSlaves(); // 更新奴隶列表
-            }
+            mindWorms.Remove(slave);
+            slaves.Remove(slave); // 从奴隶列表中移除
 
             dirtyCaches = true; // 标记缓存需要更新
             UpdateCaches(); // 更新缓存
@@ -95,7 +92,7 @@ namespace NzFaceLessManMod
                     var worm = wormHediff?.GetComp<HediffComp_MindWormSlave>();
                     if (worm != null)
                     {
-                        mindWorms.Add(worm); // 添加到奴隶列表
+                        mindWorms[slave] = worm; // 添加到字典
                         ok = true;
                     }
                 }
@@ -121,8 +118,8 @@ namespace NzFaceLessManMod
         }
 
         private void doOnThisDead()
-        { 
-            foreach (var worm in mindWorms.ToList())
+        {
+            foreach (var worm in mindWorms.Values.ToList())
             {
                 worm?.parent?.pawn?.health?.hediffSet?.GetHediffComps<HediffComp_MindWormSlave>()?.ToList()
                 .ForEach(x => x.DoLostMaster()); // 失去主人时，调用Slave的DoLostMaster方法
@@ -238,6 +235,156 @@ namespace NzFaceLessManMod
                 return baseDescription;
 
             }
+        }
+
+        public override IEnumerable<Gizmo> GetGizmos()
+        {
+            for (int i = 0; i < base.GetGizmos().Count(); i++)
+            {
+                yield return base.GetGizmos().ElementAt(i);
+            }
+
+            yield return new Command_Action
+            {
+                defaultLabel = "NzFLM.MindWormSlave_Gizmo".Translate(),
+                defaultDesc = "NzFLM.MindWormSlave_GizmoDesc".Translate(),
+                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
+                action = delegate
+                {
+                    List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
+                    this.AddMenuOptions(cmdMenu); // 添加菜单选项
+                    // 弹出菜单
+                    FloatMenu menu = new FloatMenu(cmdMenu)
+                    {
+                        vanishIfMouseDistant = false,
+                        // 弹出时暂停游戏
+                        forcePause = true,
+                    };
+                    Find.WindowStack.Add(menu);
+                },
+                hotKey = KeyBindingDefOf.Misc1,
+            };
+
+        }
+
+        private void AddMenuOptions(List<FloatMenuOption> menu)
+        {
+
+            if (this.CanMindShaping)
+            {
+                menu.Add(new FloatMenuOption("nzflm.slave_remove_trait".Translate(), delegate
+                {
+                    this.SubMenu_RemoveTrait();
+                }));
+            }
+            if (this.slaves != null && this.slaves.Count > 0)
+            {
+                menu.Add(new FloatMenuOption("nzflm.free_slaves".Translate(), delegate
+                {
+                    this.SubMenu_ManageSlave();
+                }));
+                menu.Add(new FloatMenuOption("nzflm.kill_slaves".Translate(), delegate
+                {
+                    this.SubMenu_ManageSlave(true);
+                }));
+            }
+        }
+
+        private void SubMenu_ManageSlave(bool kill = false)
+        {
+            List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
+            if (this.slaves != null && this.slaves.Count > 0)
+            {
+                //
+                // 遍历所有的奴隶
+                for (int i = 0; i < slaves.Count; i++)
+                {
+                    var thisSlave = slaves.ElementAt(i);
+                    // 添加奴隶到菜单
+                    cmdMenu.Add(new FloatMenuOption(thisSlave.Name.ToStringShort, delegate
+                    {
+                        if (kill)
+                        {
+                            thisSlave?.Kill(null, null);
+                        }
+                        else
+                        {
+                            var got = false;
+
+                            var wormHediff = (HediffWithComps)thisSlave.health?.hediffSet?.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormParasitic);
+                            if (wormHediff != null)
+                            {
+                                thisSlave?.health?.RemoveHediff(wormHediff); // 移除奴隶的心灵蠕虫
+                                
+                                got = true;
+                            }
+
+                            if (!got)
+                            {
+                                Log.Error("MindWormMaster: updateMindWormsFromSlaves failed, slave wormHediff got null.");
+                                slaves.Remove(thisSlave); // 移除奴隶
+                            }
+                        }
+                    }));
+                }
+            }
+
+            else
+            {
+                return;
+            }
+            // 弹出菜单
+            FloatMenu menu = new FloatMenu(cmdMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+            };
+            Find.WindowStack.Add(menu);
+        }
+
+        private void SubMenu_RemoveTrait()
+        {
+            List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
+            // 获取所有的特质
+            List<Trait> traits = pawn?.story?.traits?.allTraits.ToList();
+            if (traits != null && traits.Count > 0)
+            {
+                // 遍历所有的特质
+                for (int i = 0; i < traits.Count; i++)
+                {
+                    // 如果是基因的特质，跳过
+                    if (traits[i].sourceGene != null)
+                    {
+                        continue;
+                    }
+                    var thisTrait = traits[i];
+                    // 添加特质到菜单
+                    cmdMenu.Add(new FloatMenuOption(thisTrait.LabelCap, delegate
+                    {
+                        pawn?.story?.traits?.RemoveTrait(thisTrait);
+                        // 添加过载
+                        pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.3f,
+                            pawn?.health?.hediffSet?.GetBrain());
+                        // 播放音效
+                        DefsOf.Psycast_Skip_Pulse.PlayOneShot(pawn);
+                        Messages.Message("nzflm.slave_remove_trait".Translate(), MessageTypeDefOf.PositiveEvent);
+                    }));
+                }
+            }
+            else
+            {
+                return;
+            }
+            // 弹出菜单
+            FloatMenu menu = new FloatMenu(cmdMenu)
+            {
+                vanishIfMouseDistant = false,
+                // 弹出时暂停游戏
+                forcePause = true,
+            };
+            Find.WindowStack.Add(menu);
+
         }
     }
 }

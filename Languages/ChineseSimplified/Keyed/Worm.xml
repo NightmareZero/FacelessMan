@@ -33,6 +33,9 @@
     <nzflm.slave_extract_trait>提取特性</nzflm.slave_extract_trait>
     <nzflm.slave_transfer_trait>传递特性</nzflm.slave_transfer_trait>
 
+    <nzflm.free_slaves>释放仆从</nzflm.free_slaves>
+    <nzflm.kill_slaves>杀死仆从</nzflm.kill_slaves>
+
     <NzFLM.MindWormSlave_TransferKnowledge_Fight>战斗</NzFLM.MindWormSlave_TransferKnowledge_Fight>
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>智慧</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
     <NzFLM.MindWormSlave_TransferKnowledge_Work>工作</NzFLM.MindWormSlave_TransferKnowledge_Work>

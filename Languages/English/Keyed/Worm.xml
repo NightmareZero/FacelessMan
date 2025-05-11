@@ -32,6 +32,9 @@
     <nzflm.slave_transfer_trait>Transfer Trait</nzflm.slave_transfer_trait>
     <nzflm.slave_remove_trait>Remove Trait</nzflm.slave_remove_trait>
 
+    <nzflm.free_slaves>Release Slaves</nzflm.free_slaves>
+    <nzflm.kill_slaves>Kill Slaves</nzflm.kill_slaves>
+
     <NzFLM.MindWormSlave_TransferKnowledge_Fight>Fight</NzFLM.MindWormSlave_TransferKnowledge_Fight>
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>Wisdom</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
     <NzFLM.MindWormSlave_TransferKnowledge_Work>Work</NzFLM.MindWormSlave_TransferKnowledge_Work>

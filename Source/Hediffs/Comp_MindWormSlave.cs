@@ -22,9 +22,6 @@ namespace NzFaceLessManMod
                 yield return "HediffDef " + parentDef.defName + " needs a 'HediffComp_Link' to work properly.";
             }
         }
-
-
-
     }
 
     public partial class HediffComp_MindWormSlave : HediffComp
