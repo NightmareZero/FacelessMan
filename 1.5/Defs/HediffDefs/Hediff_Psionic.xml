@@ -83,7 +83,7 @@
 	<HediffDef>
 		<defName>NzFlm_He_AnimalVirtualMind</defName>
 		<label>animal virtual mind</label>
-		<!-- 一个虚拟心智被注入到了这只动物的大脑中，现在它非常聪明 -->
+		<!-- 一个虚拟心智被注入到了这只动物的大脑中，现在它非常聪明，以至于可以被征召战斗 -->
 		<description>A virtual mind has been injected into the animal's brain, and now it is very
 			smart</description>
 		<duplicationAllowed>false</duplicationAllowed>
@@ -106,9 +106,9 @@
 	<HediffDef>
 		<defName>NzFlm_He_MindWormAttack</defName>
 		<label>mind worm attack</label>
-		<!-- 你的思想中有个东西，在逐渐改写你的意志，你无法拒绝它，除非你和施放者的死亡 -->
-		<description>There is something in your mind that is gradually rewriting your will, and you
-			cannot refuse it unless you or the caster dies</description>
+		<!-- 你的思想中有个东西，在逐渐改写你的意志，你无法拒绝它，除非你和施放者的死亡，这是个非常痛苦的过程，你可能会因此发狂 -->
+		<description>There is something in your mind that is gradually rewriting your will. You cannot
+			refuse it unless you and the caster die. This is a very painful process, and you may go mad</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
@@ -227,8 +227,8 @@
 	<HediffDef>
 		<defName>NzFlm_He_MindWormOverload</defName>
 		<label>mind worm overload</label>
-		<!-- 心灵蠕虫的过载 -->
-		<description>Overload of mind worms</description>
+		<!-- 你的心灵蠕虫现在过载了，对你产生了严重的精神压力，甚至可能导致死亡 -->
+		<description>Your mind worm is now overloaded, causing severe mental stress and even death</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<isBad>true</isBad>
 		<hediffClass>HediffWithComps</hediffClass>

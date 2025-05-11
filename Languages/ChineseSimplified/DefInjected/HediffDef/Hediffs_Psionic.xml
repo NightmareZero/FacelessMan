@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Nzflm_He_MindOverMatter.label>心胜于物</Nzflm_He_MindOverMatter.label>
+    <Nzflm_He_MindOverMatter.description>将灵能技巧编码于基因中使其成为本能，你相信心灵的力量胜过物理规律，现在你的战斗能力，工作效率，承伤能力都会随着精神力的提升而提升</Nzflm_He_MindOverMatter.description>
+
+    <NzFlm_He_AnimalVirtualMind.label>动物心灵</NzFlm_He_AnimalVirtualMind.label>、
+    <NzFlm_He_AnimalVirtualMind.description>一个虚拟心智被注入到了这只动物的大脑中，现在它非常聪明，以至于可以被征召战斗</NzFlm_He_AnimalVirtualMind.description>
+
+    <NzFlm_He_MindWormAttack.label>心灵蠕虫攻击</NzFlm_He_MindWormAttack.label>
+    <NzFlm_He_MindWormAttack.description>你的思想中有个东西，在逐渐改写你的意志，你无法拒绝它，除非你和施放者的死亡，这是个非常痛苦的过程，你可能会因此发狂</NzFlm_He_MindWormAttack.description>
+
+    <NzFlm_He_MindWormParasitic.label>心灵蠕虫寄生</NzFlm_He_MindWormParasitic.label>
+    <NzFlm_He_MindWormParasitic.description>你现在不再在意心灵蠕虫的存在，它是主人宠爱你的标志</NzFlm_He_MindWormParasitic.description>
+
+    <NzFlm_He_MindWormCover.label>心智覆盖</NzFlm_He_MindWormCover.label>
+    <NzFlm_He_MindWormCover.description>你的自由意志被心灵蠕虫压制了，现在它代替了你驱使你的身体和记忆</NzFlm_He_MindWormCover.description>
+
+    <NzFlm_He_MindWormLord.label>心灵蠕虫之主</NzFlm_He_MindWormLord.label>
+    <NzFlm_He_MindWormLord.description>你是心灵蠕虫的主人，你可以随意操控它们</NzFlm_He_MindWormLord.description>
+
+    <NzFlm_He_MindWormOverload.label>心灵蠕虫过载</NzFlm_He_MindWormOverload.label>
+    <NzFlm_He_MindWormOverload.description>你的心灵蠕虫现在过载了，对你产生了严重的精神压力，甚至可能导致死亡</NzFlm_He_MindWormOverload.description>
+
+</LanguageData>
