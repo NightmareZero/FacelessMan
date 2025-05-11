@@ -306,6 +306,8 @@ namespace NzFaceLessManMod
                         if (kill)
                         {
                             thisSlave?.Kill(null, null);
+                            Messages.Message("hzflm.slave_kill_by_master".Translate(pawn.Named("master"), thisSlave.Named("slave")),
+                                MessageTypeDefOf.NegativeHealthEvent);
                         }
                         else
                         {
@@ -314,8 +316,7 @@ namespace NzFaceLessManMod
                             var wormHediff = (HediffWithComps)thisSlave.health?.hediffSet?.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormParasitic);
                             if (wormHediff != null)
                             {
-                                thisSlave?.health?.RemoveHediff(wormHediff); // 移除奴隶的心灵蠕虫
-                                
+                                thisSlave?.health?.RemoveHediff(wormHediff); // 移除奴隶的心灵蠕虫(蠕虫会自动调用master的移除)
                                 got = true;
                             }
 
@@ -324,6 +325,8 @@ namespace NzFaceLessManMod
                                 Log.Error("MindWormMaster: updateMindWormsFromSlaves failed, slave wormHediff got null.");
                                 slaves.Remove(thisSlave); // 移除奴隶
                             }
+                            Messages.Message("hzflm.slave_free_by_master".Translate(pawn.Named("master"), thisSlave.Named("slave")),
+                                MessageTypeDefOf.PositiveEvent);
                         }
                     }));
                 }

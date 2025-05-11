@@ -4,6 +4,9 @@
     <hzflm.slave_free_by_master_dead>With the death of the master '{master}', the immature worms died out, and '{slave}' was free.</hzflm.slave_free_by_master_dead>
     <hzflm.slave_free_by_master_dead_wg>With the death of the master '{master}', the worm died and '{slave}' was free, but the previous mental influence continued.</hzflm.slave_free_by_master_dead_wg>
     <hzflm.slave_slaved_and_worm_growth>The worm has grown enough, that '{slave}' is now loyal to 'master'.</hzflm.slave_slaved_and_worm_growth>
+    <hzflm.slave_free_by_master>With the release by the master '{master}', '{slave}' is now free.</hzflm.slave_free_by_master>
+    <hzflm.slave_kill_by_master>Since the master '{master}' no longer needs '{slave}', '{slave}' is now free (perhaps?).</hzflm.slave_kill_by_master>
+    
     <nzflm.slaves_count>({0} worms)</nzflm.slaves_count>
     <nzflm.slaves_names>wroms:\n {0}</nzflm.slaves_names>
 
