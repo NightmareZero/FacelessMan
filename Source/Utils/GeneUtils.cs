@@ -9,13 +9,13 @@ using Verse;
 namespace NzFaceLessManMod
 {
     public static partial class GeneUtil
-    { 
-        public static void ApplyEvolutionToPawn(this Evolution evolution,Pawn pawn)
+    {
+        public static void ApplyEvolutionToPawn(this Evolution evolution, Pawn pawn)
         {
             // 先进行保存
             var evolutions = evolution.evolutions.ToList();
             var cache = evolutions.ToList();
-            
+
             // 比对差异，进行修改
             pawn.genes.GenesListForReading.ForEach(x =>
             {
@@ -32,10 +32,21 @@ namespace NzFaceLessManMod
             // 添加所有在selectedGenes的进化基因
             foreach (var gene in cache)
             {
-                pawn.genes.AddGene(gene,false);
+                pawn.genes.AddGene(gene, false);
             }
-          
-            
+
+            AfterApplyEvolutionToPawn(evolution, pawn);
+        }
+
+        private static void AfterApplyEvolutionToPawn(this Evolution evolution, Pawn pawn)
+        {
+#if DEBUG
+            Log.Warning($"ApplyEvolutionToPawn: {pawn.Name} {pawn.genes.GenesListForReading.Count}");
+            pawn.AddHediffExt(HediffDefsOf.Flm_GeneticInstability, pawn, ticksToDisappear: 600);
+#else
+            pawn.AddHediffExt(HediffDefsOf.Flm_GeneticInstability, pawn);
+#endif
+            evolution.LastCheckGeneticInstabilityResult = false;
         }
     }
 }

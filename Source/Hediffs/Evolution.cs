@@ -19,6 +19,27 @@ namespace NzFaceLessManMod
 
         private int pointAddInterval = 5 * 60000; // 5天增加一点
 
+        private int lastCheckGeneticInstabilityTick = 0; // 上一次检查基因不稳定的时间
+        private bool lastCheckGeneticInstabilityResult = true; // 上一次检查基因不稳定的结果
+
+        public bool LastCheckGeneticInstabilityResult
+        {
+            get
+            {
+                if (Find.TickManager.TicksGame - lastCheckGeneticInstabilityTick > 600)
+                {
+                    lastCheckGeneticInstabilityResult = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefsOf.Flm_GeneticInstability) != null;
+                    lastCheckGeneticInstabilityTick = Find.TickManager.TicksGame;
+                }
+                return lastCheckGeneticInstabilityResult;
+            }
+            set
+            {
+                lastCheckGeneticInstabilityResult = value;
+                lastCheckGeneticInstabilityTick = Find.TickManager.TicksGame;
+            }
+        }
+
         // 进化的基因
         public List<EvolutionGeneDef> evolutions = new List<EvolutionGeneDef>();
 
@@ -65,30 +86,19 @@ namespace NzFaceLessManMod
                     defaultLabel = "nzflm.evolution_button_label".Translate(),
                     defaultDesc = "nzflm.evolution_button_desc".Translate(),
                     icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
+                    Disabled = LastCheckGeneticInstabilityResult,
+                    disabledReason = HediffDefsOf.Flm_GeneticInstability.label.Translate(),
                     action = () =>
                     {
                         Find.WindowStack.Add(new Dialog_EditEvolution(pawn, delegate
                         {
                             // GameComponent_Genelines.Instance.AddGeneline(newGeneline);
                         }));
-                        // var options = new List<FloatMenuOption>();
-                        // foreach (var allGeneline in GameComponent_Genelines.Instance.genelines.Where(x => x != geneline))
-                        // {
-                        //     options.Add(new FloatMenuOption(geneline != null ? "VRE_ChangeTo".Translate(allGeneline.name) : allGeneline.name, delegate
-                        //     {
-                        //         allGeneline.AddPawnWithMetapod(pawn);
-                        //     }));
-                        // }
-                        // options.Add(new FloatMenuOption("VRE_ManageGenelines".Translate() + "...", delegate
-                        // {
-                        //     Find.WindowStack.Add(new Window_ManageGenelines());
-                        // }));
-                        // Find.WindowStack.Add(new FloatMenu(options));
                     }
                 };
                 if (pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefsOf.Flm_GeneticInstability) != null)
                 {
-                    manageEvolution.Disable("VRE_MetapodSicknessCannotChangeGeneline".Translate());
+                    manageEvolution.Disable(HediffDefsOf.Flm_GeneticInstability.label.Translate());
                 }
                 yield return manageEvolution;
             }

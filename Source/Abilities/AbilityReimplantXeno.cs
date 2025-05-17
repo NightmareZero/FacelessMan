@@ -254,14 +254,7 @@ namespace NzFaceLessManMod
                 }
                 return false;
             }
-            if (!parent.pawn.genes.Endogenes.Any())
-            {
-                if (throwMessages)
-                {
-                    Messages.Message("VRE_MessagePawnHasNoGermline".Translate(parent.pawn), parent.pawn, MessageTypeDefOf.RejectInput, historical: false);
-                }
-                return false;
-            }
+            
 
             // if (!PawnIdeoCanAcceptReimplant(parent.pawn, pawn))
             // {
@@ -282,57 +275,5 @@ namespace NzFaceLessManMod
             }
             return null;
         }
-
-
-        // public static void ReimplantGermline(Pawn caster, Pawn dest, XenotypeDef targetXenotype)
-        // {
-
-        //     // QuestUtility.SendQuestTargetSignals(caster.questTags, "XenogermReimplanted", caster.Named("SUBJECT"));
-
-        //     List<GeneDef> xenogenesToPreserve = new List<GeneDef>();
-        //     foreach (Gene gene in dest.genes.Xenogenes)
-        //     {
-        //         xenogenesToPreserve.Add(gene.def);
-        //     }
-
-        //     // TODO ->
-
-        //     List<Gene> adjustedList = new List<Gene>();
-
-        //     foreach (Gene endogene in caster.genes.Endogenes)
-        //     {
-        //         if (endogene.def.defName.Contains("VRE_Morphs"))
-        //         {
-        //             if (endogene.Active)
-        //             {
-        //                 adjustedList.Add(endogene);
-        //             }
-        //         }
-        //         else adjustedList.Add(endogene);
-        //     }
-
-
-        //     foreach (Gene endogene in adjustedList)
-        //     {
-        //         dest.genes.AddGene(endogene.def, xenogene: false);
-
-        //     }
-
-        //     foreach (GeneDef xenogene in xenogenesToPreserve)
-        //     {
-
-
-        //         dest.genes.AddGene(xenogene, xenogene: true);
-
-        //     }
-        //     if (!caster.genes.Xenotype.soundDefOnImplant.NullOrUndefined())
-        //     {
-        //         caster.genes.Xenotype.soundDefOnImplant.PlayOneShot(SoundInfo.InMap(dest));
-        //     }
-        //     dest.health.AddHediff(XmlDefs.Flm_GeneticInstability);
-        //     SetExtractGermline(caster);
-        //     GeneUtility.UpdateXenogermReplication(dest);
-
-        // }
     }
 }

@@ -71,13 +71,6 @@ namespace NzFaceLessManMod
                 {
                     bodyPartRecord = target.health.hediffSet.GetBodyPartRecord(hediffDef.defaultInstallPart);
                 }
-
-                if (bodyPartRecord == null && !toBodyIfNoPart)
-                {
-                    Log.Error("AddHediffExt: bodyPartRecord is null, and toBodyIfNoPart is false. " +
-                        "HediffDef: " + hediffDef.defName + ", Pawn: " + target.Name.ToStringShort);
-                    return;
-                }
             }
 
             // 生成Hediff
