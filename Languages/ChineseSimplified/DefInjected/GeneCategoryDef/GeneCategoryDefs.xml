@@ -3,5 +3,10 @@
     <Nzflm_AbilityCategory.label>无面人</Nzflm_AbilityCategory.label>
     <Nzflm_GeneCategory.label>无面人</Nzflm_GeneCategory.label>
 
-    <Nzflm_Gene_Ev_Base.label>无面通用基因</Nzflm_Gene_Ev.label>
+    <Nzflm_Gene_Ev_Base.label>通用基因</Nzflm_Gene_Ev_Base.label>
+    <Nzflm_Gene_Ev_Spy.label>特工机关</Nzflm_Gene_Ev_Spy.label>
+    <Nzflm_Gene_Ev_Bio.label>生物技术</Nzflm_Gene_Ev_Bio.label>
+    <Nzflm_Gene_Ev_Insect.label>虫群领主</Nzflm_Gene_Ev_Insect.label>
+    <Nzflm_Gene_Ev_Anomaly.label>虚空技术</Nzflm_Gene_Ev_Anomaly.label>
+    <Nzflm_Gene_Ev_Psionic.label>灵能技术</Nzflm_Gene_Ev_Psionic.label>
 </LanguageData>

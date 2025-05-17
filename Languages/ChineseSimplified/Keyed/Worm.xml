@@ -32,7 +32,7 @@
     <nzflm.slave_remove_memory>移除记忆</nzflm.slave_remove_memory>
     <nzflm.slave_extract_knowledge>提取知识</nzflm.slave_extract_knowledge>
     <nzflm.slave_transfer_knowledge>传递知识</nzflm.slave_transfer_knowledge>
-    <nzflm.slave_remove_trait>移除特性</nzflm.slave_remove_trait>
+    <nzflm.slave_remove_trait>移除主人特性</nzflm.slave_remove_trait>
     <nzflm.slave_extract_trait>提取特性</nzflm.slave_extract_trait>
     <nzflm.slave_transfer_trait>传递特性</nzflm.slave_transfer_trait>
 
