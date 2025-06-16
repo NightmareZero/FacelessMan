@@ -12,4 +12,4 @@ if "%1"=="" (
 
 
 REM build dll with specified configuration
-dotnet build .vscode -c %BUILD_CONFIG%
+dotnet build 1.5 -c %BUILD_CONFIG%
