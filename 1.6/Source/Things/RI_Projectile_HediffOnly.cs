@@ -13,6 +13,7 @@ namespace NzFaceLessManMod
     {
         public override bool AnimalsFleeImpact => true;
 
+        // 参考 thingClass Bullet 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             blockedByShield = false; // 强制为false
@@ -27,7 +28,7 @@ namespace NzFaceLessManMod
                 DamageInfo dinfo = new DamageInfo(def.projectile.damageDef, DamageAmount, ArmorPenetration, ExactRotation.eulerAngles.y, launcher, null, equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown, intendedTarget.Thing, instigatorGuilty);
                 // hitThing.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
                 Pawn pawn2 = hitThing as Pawn;
-                
+
                 if (dinfo.Def.hediff != null && pawn2 != null)
                 {
                     HediffDef hediffDef = dinfo.Def.hediff;
@@ -56,7 +57,7 @@ namespace NzFaceLessManMod
                         GenLeaving.DropFilthDueToDamage(this, dinfo.Amount);
                     }
                 }
-                 if (dinfo.Def.damageEffecter != null)
+                if (dinfo.Def.damageEffecter != null)
                 {
                     Effecter effecter = dinfo.Def.damageEffecter.Spawn();
                     effecter.Trigger(pawn2, pawn2);
@@ -106,13 +107,15 @@ namespace NzFaceLessManMod
                                 effecter.Cleanup();
                             }
                         }
+
+                    //     if (Rand.Chance(extraDamage.chance) && (pawn2 == null || Rand.Chance(FireUtility.ChanceToAttachFireFromEvent(pawn2))))
+                    // {
+                    //     hitThing.TryAttachFire(def.projectile.bulletFireSizeRange.RandomInRange, launcher);
+                    // }
                     }
 
 
-                    if (Rand.Chance(def.projectile.bulletChanceToStartFire) && (pawn2 == null || Rand.Chance(FireUtility.ChanceToAttachFireFromEvent(pawn2))))
-                    {
-                        hitThing.TryAttachFire(def.projectile.bulletFireSizeRange.RandomInRange, launcher);
-                    }
+                    
 
                     return;
                 }
@@ -130,9 +133,9 @@ namespace NzFaceLessManMod
                     }
                 }
 
-                if (Rand.Chance(def.projectile.bulletChanceToStartFire))
+                if (Rand.Chance(base.DamageDef.igniteCellChance))
                 {
-                    FireUtility.TryStartFireIn(base.Position, map, def.projectile.bulletFireSizeRange.RandomInRange, launcher);
+                    FireUtility.TryStartFireIn(base.Position, map, Rand.Range(0.55f, 0.85f), launcher);
                 }
             }
 

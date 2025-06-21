@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NzFaceLessMan")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.1.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0.0+64bed1704e8fba427498b3f3adfd6beff9a32a04")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.1.0.0+1e772ee9ed278a80167540eb469ead82d05a0d38")]
 [assembly: System.Reflection.AssemblyProductAttribute("NzFaceLessMan")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NzFaceLessMan")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.1.0.0")]
