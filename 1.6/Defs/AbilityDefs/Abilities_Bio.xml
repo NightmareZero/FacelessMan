@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- EMP喷射 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_EMPBlast</defName>
+        <label>EMP blast</label>
+        <!-- 发射一团粘稠的电浆，命中目标后造成范围性的电磁干扰。 -->
+        <description>Launch a blob of viscous plasma that causes a wide range of electromagnetic
+            interference
+            upon hitting the target.</description>
+        <!-- TODO -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>True</targetRequired>
+        <cooldownTicksRange>900</cooldownTicksRange>
+        <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
+            <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
+            <ai_IsWeapon>False</ai_IsWeapon>
+            <onlyManualCast>True</onlyManualCast>
+            <warmupTime>0.2</warmupTime>
+            <range>8</range>
+            <targetParams>
+                <canTargetSelf>False</canTargetSelf>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetMechs>True</canTargetMechs>
+                <canTargetLocations>True</canTargetLocations>
+            </targetParams>
+            <!-- TODO 更换为更合适的 -->
+            <defaultProjectile>Proj_EMPBlast</defaultProjectile>
+        </verbProperties>
+        <comps>
+            <!-- <li Class="NzFaceLessManMod.CompProperties_AbilityExplosive">
+                <explosiveRadius>4.66</explosiveRadius>
+                <explosiveDamageType>EMP</explosiveDamageType>
+            </li> -->
+
+        </comps>
+    </AbilityDef>
+
+    <!-- 电浆炸弹 -->
+    <ThingDef ParentName="BaseGrenadeProjectile">
+        <defName>Proj_EMPBlast</defName>
+        <label>EMP blast</label>
+        <thingClass>Projectile_Explosive</thingClass>
+        <graphicData>
+            <!-- TODO 替换材质 -->
+            <texPath>Things/Projectile/EMP_Ball</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <explosionRadius>5.5</explosionRadius>
+            <damageDef>EMP</damageDef>
+            <!-- Use default damage from explosion def -->
+            <explosionDelay>30</explosionDelay>
+        </projectile>
+    </ThingDef>
+
+    <!-- 火焰呼吸 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_FireBreath</defName>
+        <label>firebreath</label>
+        <!-- 经由一种相比 Impid 更好的，基于生物技术优化过的腺体，喷洒出高温易燃的液体。以迅速点燃目标 -->
+        <description>Spew flammable liquid from a gland that has been optimized with biotechnology
+            to be better than the Impid, igniting the target quickly.</description>
+        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <warmupStartSound>FireSpew_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
+            <range>5.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>FireSpew_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilitySpew">
+                <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
+                <damageType>Flame</damageType>
+                <damageAmount>17</damageAmount>
+                <armorPenetration>1.0</armorPenetration>
+                <range>5.9</range>
+                <lineWidthEnd>4.3</lineWidthEnd>
+                <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+                <filthDef>Filth_FlammableBile</filthDef>
+                <effecterDef>Fire_Spew</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 酸息 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_AcidBreath</defName>
+        <label>acid breath</label>
+        <!-- 通过特殊的腺体，喷洒出一种无毒的强酸性液体以腐蚀目标 -->
+        <description>Spew a non-toxic strong acid liquid through a special gland to corrode the target.</description>
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
+            <range>5.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>AcidSpray_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilitySpew">
+                <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
+                <damageType>AcidBurn</damageType>
+                <damageAmount>23</damageAmount>
+                <armorPenetration>2.0</armorPenetration>
+                <range>5.9</range>
+                <lineWidthEnd>4.3</lineWidthEnd>
+                <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+                <filthDef>Filth_SpentAcid</filthDef>
+                <effecterDef>AcidSpray_Directional</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+            </li>
+        </comps>
+    </AbilityDef>
+
+
+    <!-- 基因控制 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>Flm_Evolve</defName>
+        <label>gene control</label>
+        <!-- <cooldownTicksRange>120000</cooldownTicksRange> -->
+        <!-- 定制一个异种基因并注入目标，但这会让你变得非常疲劳 -->
+        <description>Customize an xenogerm and inject it into the target, but this will make you very
+            tired.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <aiCanUse>false</aiCanUse>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <targetRequired>true</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <stunTargetWhileCasting>True</stunTargetWhileCasting>
+        <showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>False</displayGizmoWhileUndrafted>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <warmupTime>4</warmupTime>
+            <range>-1</range>
+            <drawAimPie>False</drawAimPie>
+            <requireLineOfSight>False</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilityEvolve" />
+        </comps>
+    </AbilityDef>
+
+    <!-- 隐生 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_Cryptobiosis</defName>
+        <label>cryptobiosis</label>
+        <!-- 通过进入一种特殊状态，来大幅度减少食物消耗，提升高温/低温/毒素抗性，以便撑过一些艰难的日子 -->
+        <description>By entering a special state, greatly reduce food consumption, improve high
+            temperature/low temperature/toxin resistance, in order to get through some difficult days.</description>
+        <!-- TODO -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <verbProperties>
+            <warmupTime>2</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_Cryptobiosis</hediffDef>
+                <psychic>False</psychic>
+                <durationSecondsOverride>99999</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 麻痹毒素 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+		<defName>NzFlm_ParalysisToxin</defName>
+		<label>paralysis toxin</label>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+        <!-- 一种来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间 -->
+		<description>A modified version of the toxin from spiders in nature that can cause the target to be stunned for a long time.</description>
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<displayOrder>500</displayOrder>
+		<hostile>true</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>4</warmupTime>
+			<stunTargetOnCastStart>true</stunTargetOnCastStart>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+                <neverTargetHostileFaction>true</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
+                <hediffDef>Abasia</hediffDef>
+                <psychic>False</psychic>
+                <durationSecondsOverride>60000</durationSecondsOverride>
+            </li>
+            <li Class="NzFaceLessManMod.CompProperties_MustNoResisting"/>
+		</comps>
+	</AbilityDef>
+
+    <!-- 麻痹解毒剂 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+		<defName>NzFlm_ParalysisAntidote</defName>
+		<label>paralysis antidote</label>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+        <!-- 一种基于原毒剂的逆向解毒剂，可以立即结束目标的麻痹症效果 -->
+		<description>A reverse antidote based on the original toxin that can immediately end the target's abasia effect.</description>
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<displayOrder>500</displayOrder>
+		<hostile>true</hostile>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>4</warmupTime>
+			<stunTargetOnCastStart>true</stunTargetOnCastStart>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
+                <hediffDef>Abasia</hediffDef>
+                <type>remove</type>
+                <psychic>False</psychic>
+            </li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

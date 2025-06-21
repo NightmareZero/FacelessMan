@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThoughtDef>
+        <defName>NzFlm_Tk_ObsessedWithMaster</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <!-- <workerClass>ThoughtWorker_Precept_PreferredXenotype_Social</workerClass> -->
+        <durationDays>1000</durationDays>
+        <stackLimit>300</stackLimit>
+        <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+          <li>
+            <label>obsessed with master.</label>
+            <baseOpinionOffset>100</baseOpinionOffset>
+          </li>
+        </stages>
+      </ThoughtDef>
+</Defs>

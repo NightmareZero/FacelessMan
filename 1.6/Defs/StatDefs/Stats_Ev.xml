@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <StatDef Abstract="True" Name="NzFlm_ManStatBase">
+        <category>PawnCombat</category>
+        <showOnAnimals>true</showOnAnimals>
+        <showOnHumanlikes>true</showOnHumanlikes>
+        <showOnMechanoids>true</showOnMechanoids>
+        <showIfUndefined>true</showIfUndefined>
+        <defaultBaseValue>1</defaultBaseValue>
+        <hideAtValue>1</hideAtValue>
+        <minValue>0</minValue>
+    </StatDef>
+
+    <!-- 射程全放大系数 -->
+    <StatDef ParentName="NzFlm_ManStatBase">
+        <defName>NzFlm_SkillRangeMultiplier</defName>
+        <label>Gene Skill Range Multiplier</label>
+        <!-- 部分基因技能射程放大系数 -->
+        <description>Multiplier for the range of certain gene skills.</description>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>10003</displayPriorityInCategory>
+    </StatDef>
+
+    <!-- 射程半放大系数 -->
+    <StatDef ParentName="NzFlm_ManStatBase">
+        <defName>NzFlm_SkillRangeMultiplierHalf</defName>
+        <label>Gene Skill Range Multiplier Half</label>
+        <!-- 部分基因技能射程放大系数 -->
+        <description>Multiplier for the range of certain gene skills.</description>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>10003</displayPriorityInCategory>
+    </StatDef>
+
+    <!-- 进化技能冷却时间 -->
+    <StatDef ParentName="NzFlm_ManStatBase">
+        <defName>NzFlm_EvSkillCooldownTime</defName>
+        <label>Gene Skill Cooldown Time</label>
+        <!-- 部分基因技能冷却时间 -->
+        <description>Cooldown time for certain gene skills.</description>
+        <toStringStyle>PercentZero</toStringStyle>
+        <displayPriorityInCategory>10003</displayPriorityInCategory>
+    </StatDef>
+
+    <!-- 偏斜值 -->
+    <StatDef ParentName="NzFlm_ManStatBase">
+        <defName>NzFlm_GlancingHitPoint</defName>
+        <label>glancing hit point</label>
+        <!-- 受到的所有来自敌人的伤害，都会被减少 -->
+        <description>All damage received from enemies will be reduced.</description>
+        <toStringStyle>Integer</toStringStyle>
+        <displayPriorityInCategory>10003</displayPriorityInCategory>
+        <showOnAnimals>true</showOnAnimals>
+        <showOnHumanlikes>true</showOnHumanlikes>
+        <showOnMechanoids>true</showOnMechanoids>
+        <category>PawnCombat</category>
+        <defaultBaseValue>0</defaultBaseValue>
+        <minValue>0</minValue>
+    </StatDef>
+
+</Defs>

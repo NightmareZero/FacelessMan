@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <GeneCategoryDef>
+    <defName>Nzflm_GeneCategory</defName>
+    <label>Facelessman</label>
+    <displayPriorityInXenotype>501</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 通用进化 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Base</defName>
+    <label>Gene Expression</label>
+    <displayPriorityInXenotype>502</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 特工机关 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Spy</defName>
+    <label>Spy</label>
+    <displayPriorityInXenotype>503</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 生物技术 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Bio</defName>
+    <label>Biotechnology</label>
+    <displayPriorityInXenotype>504</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 虫群领主 -->
+  <GeneCategoryDef>
+    <defName>Nzflm_Gene_Ev_Insect</defName>
+    <label>Insect Lord</label>
+    <displayPriorityInXenotype>505</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 虚空技术 -->
+  <GeneCategoryDef MayRequire="Ludeon.RimWorld.Anomaly">
+    <defName>Nzflm_Gene_Ev_Anomaly</defName>
+    <label>Anomaly</label>
+    <displayPriorityInXenotype>506</displayPriorityInXenotype>
+  </GeneCategoryDef>
+
+  <!-- 灵能技术 -->
+  <GeneCategoryDef MayRequire="Ludeon.RimWorld.Royalty">
+    <defName>Nzflm_Gene_Ev_Psionic</defName>
+    <label>Psionic</label>
+    <displayPriorityInXenotype>507</displayPriorityInXenotype>
+  </GeneCategoryDef>
+</Defs>

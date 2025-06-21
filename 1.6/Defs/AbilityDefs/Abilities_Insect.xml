@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 战斗信息素 NzFlm_BattlePheromone -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_BattlePheromone</defName>
+        <label>Battle Pheromone</label>
+        <!-- 呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击 -->
+        <description>Release a pheromone that stimulates surrounding friendly creatures, enhancing
+            their combat effectiveness.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <targetRequired>False</targetRequired>
+        <cooldownTicksRange>10000</cooldownTicksRange>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <warmupTime>0.3</warmupTime>
+            <range>0</range>
+            <requireLineOfSight>False</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+            <soundCast>Pawn_Megascarab_Call</soundCast>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_BattlePheromone_Self</hediffDef>
+                <psychic>False</psychic>
+                <!-- 4小时 -->
+                <durationSecondsOverride>167</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 毁灭 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzRI_Zd_ClawDestroy</defName>
+        <label>destruction</label>
+        <!-- 尝试将目标撕成碎片，对敌人造成大量伤害 -->
+        <description>Try to tear the target into pieces, causing a lot of damage to the enemy.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <cooldownTicksRange>1250</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsIncendiary>true</ai_IsIncendiary>
+        <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <!-- <warmupStartSound>NzRI_FireSpew_Warmup</warmupStartSound> -->
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <range>-1</range>
+            <warmupTime>2</warmupTime>
+            <!-- <soundCast>FireSpew_Resolve</soundCast> -->
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetAnimals>true</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <statBases>
+            <Ability_Duration>4</Ability_Duration>
+        </statBases>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_Hit">
+                <damageDef>Scratch</damageDef>
+                <damageAmountBase>87</damageAmountBase>
+                <damageMultiplierStat>MeleeDamageFactor</damageMultiplierStat>
+                <armorPenetrationBase>2</armorPenetrationBase>
+                <stunTicks>60</stunTicks>
+                <hitParts>
+                    <li>Torso</li>
+                    <li>Body</li>
+                    <li>Shell</li>
+                    <li>MechanicalCentipedeBodyFirstRing</li>
+                    <li>MechanicalThorax</li>
+                    <li>MechanicalThoraxCanManipulate</li>
+                </hitParts>
+            </li>
+
+        </comps>
+    </AbilityDef>
+
+    <!-- 支援信息素 -->
+    <!-- 参考 <defName>Infestation</defName> -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_SupportPheromone</defName>
+        <label>support pheromone</label>
+        <!-- 呼唤几只可控的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
+        <description>Call a few controllable giant spiders to attack your enemies. Due to the stimulation of special pheromones, they will be more violent and will dissolve and die after a period of time.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <cooldownTicksRange>30000</cooldownTicksRange>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <statBases>
+            <Ability_Duration>7</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <violent>false</violent>
+            <warmupTime>2</warmupTime>
+            <!-- TODO 更换声音 -->
+            <soundCast>Pawn_Megascarab_Call</soundCast>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilityEffecter">
+                <effecterDef>EmergencePointComplete2X2</effecterDef>
+                <maintainForTicks>180</maintainForTicks>
+                <toTarget>False</toTarget>
+            </li>
+            <li Class="NzFaceLessManMod.CompProperties_SummonCreature">
+                <pawnKindDef>Megaspider</pawnKindDef>
+                <countMin>4</countMin>
+                <countMax>6</countMax>
+                <onTarget>False</onTarget>
+                <addHediff>NzFlm_He_SupportPheromone_Target</addHediff>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 凝胶喷射 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_GelSpray</defName>
+        <label>gel spray</label>
+        <!-- 快速喷洒出大量的凝胶，这种凝胶会快速凝固，限制目标的动作 -->
+        <description>Quickly spray a large amount of gel, which will quickly solidify and restrict the target's actions.</description>
+        <!-- TODO 替换 -->
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <aiCanUse>false</aiCanUse>
+        <warmupStartSound>FoamSpray_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
+            <range>7.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+            <warmupTime>0.5</warmupTime>
+            <soundCast>FoamSpray_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilitySpew">
+                <compClass>NzFaceLessManMod.CompAbilityEffect_Spew</compClass>
+                <damageType>AcidBurn</damageType>
+                <damageAmount>0</damageAmount>
+                <range>7.9</range>
+                <lineWidthEnd>5.1</lineWidthEnd>
+                <rangeStat>NzFlm_SkillRangeMultiplierHalf</rangeStat>
+                <!-- TODO 替换为消防泡沫 -->
+                <filthDef>NzFlm_Filth_StickyFoam</filthDef>
+                <!-- TODO 替换为消防泡沫 -->
+                <effecterDef>FoamSpray_Directional</effecterDef>
+                <canHitFilledCells>true</canHitFilledCells>
+                <!-- 减速凝胶 -->
+                <hediff>NzFlm_He_GelSpray</hediff>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 外骨骼铠甲 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_ExoskeletonArmor</defName>
+        <label>exoskeleton armor</label>
+        <!-- 激活你的外骨骼腺体，使其快速分泌一种液体，在你体外形成一层外骨骼，这些外骨骼需要一小段时间才会凝固变硬，在一段时间之后干裂消失 -->
+        <description>activate your exoskeleton glands to quickly secrete a liquid that forms a layer of exoskeleton outside your body. These exoskeletons need a short period of time to solidify and harden, and will crack and disappear after a period of time.</description>
+        <cooldownTicksRange>30000</cooldownTicksRange>
+        <!-- TODO -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <verbProperties>
+            <warmupTime>4</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_ExoskeletonArmor</hediffDef>
+                <psychic>False</psychic>
+                <!-- 3小时 -->
+                <!-- <durationSecondsOverride>125</durationSecondsOverride> -->
+            </li>
+            <!-- <li Class="CompProperties_AbilityFleckOnTarget">
+            <fleckDef>PsycastPsychicEffect</fleckDef>
+        </li> -->
+        </comps>
+    </AbilityDef>
+
+    <!-- 棘刺腺体 -->
+	<AbilityDef ParentName="Nz_Flm_AbilityEv">
+		<defName>NzFlm_SpikeShot</defName>
+		<label>spike shot</label>
+        <!-- 快速发射出多枚刺针，对你的敌人造成大量伤害 -->
+		<description>Quickly launch multiple spines, causing a lot of damage to your enemies.</description>
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+		<cooldownTicksRange>240~360</cooldownTicksRange>
+		<displayOrder>200</displayOrder>
+		<aiCanUse>true</aiCanUse>
+		<verbProperties>
+			<targetParams>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetBuildings>true</canTargetBuildings>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMutants>true</canTargetMutants>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>		
+			<range>22.9</range>
+            <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
+			<warmupTime>0.2</warmupTime>
+			<soundCast>PiercingSpine_Launch</soundCast>
+			<accuracyTouch>1.0</accuracyTouch>
+			<accuracyShort>1.0</accuracyShort>
+			<accuracyMedium>0.95</accuracyMedium>
+			<accuracyLong>0.9</accuracyLong>
+			<burstShotCount>7</burstShotCount>
+			<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
+			<defaultProjectile>PiercingSpine</defaultProjectile>
+			<verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
+			<ai_IsWeapon>false</ai_IsWeapon>
+			<!-- <onlyManualCast>true</onlyManualCast> -->
+			<minRange>1.5</minRange>
+		</verbProperties>
+		<comps>
+		</comps>
+	</AbilityDef>
+</Defs>

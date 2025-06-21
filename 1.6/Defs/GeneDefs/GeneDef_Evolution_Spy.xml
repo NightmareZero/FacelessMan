@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 变色龙皮肤 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ChameleonSkin</defName>
+        <label>chameleon skin</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你的皮肤可以像变色龙一样根据周围的环境变色，这让你可以让自己迅速隐形 -->
+        <description>Your skin can change color like a chameleon, allowing you to blend in with your surroundings and disappear quickly.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_ChameleonSkin</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 充能肌腱 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ChargedTendon</defName>
+        <label>charged tendon</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你改善了腿部的供血，使你的肌腱有更多的能量可以使用，让你移动更快 -->
+        <description>You have improved blood supply to your legs, giving your tendons more energy to use, allowing you to move faster.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>20</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <MoveSpeed>1.3</MoveSpeed>
+        </statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 弹性肌腱 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ElasticTendon</defName>
+        <label>elastic tendon</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你的腿部变得有力，让你可以跳跃到更远的地方 -->
+        <description>Your legs have become stronger, allowing you to jump further.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_Longjump</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 容貌伪装 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_Disguise</defName>
+        <label>disguise</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你可以改变你的容貌，让你可以迅速伪装成其他人 -->
+        <description>You can change your appearance, allowing you to quickly disguise yourself as someone else.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_Disguise</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 再生骨髓 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_RegenerativeBoneMarrow</defName>
+        <label>regenerative bone marrow</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你可以从你的骨髓中取出少量干细胞，用于治疗自己或他人 -->
+        <description>You can extract a small amount of stem cells from your bone marrow for self-treatment or treatment of others.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_StemCellTherapy</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 麻醉针腺体 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_AnestheticNeedleGland</defName>
+        <label>anesthetic needle gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 一种位于颈部结构及其复杂的器关，其毒素配方和灵感来自于某个部落的麻醉吹箭，配合可以在空气中迅速硬化的分泌物，你可以迅速瘫痪不远处的生物目标 -->
+        <description>A complex organ located in the neck, its toxin formula and inspiration come from a tribal anesthetic blow dart, combined with a secretion that can quickly harden in the air, allowing you to quickly paralyze nearby biological targets.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_AnestheticSpike</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 发达肾上腺 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_DevelopedAdrenalGland</defName>
+        <label>developed adrenal gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Spy</displayCategory>
+        <!-- 你的肾上腺变得更发达，并且还可以分泌一种特质的兴奋剂物质，让你可以在危险时更快地反应 -->
+        <description>Your adrenal glands have become more developed and can secrete a special stimulant substance, allowing you to react more quickly in dangerous situations.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>60</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <!-- <GlobalLearningFactor>1.2</GlobalLearningFactor> -->
+        </statFactors>
+        <abilities>
+            <li>NzFlm_AdrenalineRush</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+</Defs>

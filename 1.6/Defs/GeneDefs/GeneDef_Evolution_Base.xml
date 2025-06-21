@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 加压腺体 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_PressurizeGland</defName>
+        <label>pressurize gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <!-- 为你身上时所有的大部分喷射类腺体提供更高的喷射压力，增大射程 -->
+        <description>Provides higher jet pressure for most of the jet glands on your body,
+            increasing range.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <NzFlm_SkillRangeMultiplier>1.8</NzFlm_SkillRangeMultiplier>
+            <NzFlm_SkillRangeMultiplierHalf>1.4</NzFlm_SkillRangeMultiplierHalf>
+        </statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 高速分泌 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>NzFlm_EvSkillCooldownTime</defName>
+        <label>fast secretion</label>
+        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <!-- 你分泌特殊物质的速度加快了，这是你可以更早的再次使用特定技能 -->
+        <description>the speed of your secretion of special substances has increased,
+            which allows you to use specific skills again earlier.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <NzFlm_EvSkillCooldownTime>0.6</NzFlm_EvSkillCooldownTime>
+        </statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 强健身躯 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Flm_Ev_SturdyBody</defName>
+        <label>sturdy body</label>
+        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <!-- 由于基因上的悉心调制，你的身体正在以一种更加高效的方式运作，可以迅速止血，伤疤和慢性病也会逐渐自动修复(6~10天) -->
+        <description>your body is working in a more efficient way due to the careful modulation of genes,
+            which can quickly stop bleeding, and scars and chronic diseases will gradually heal automatically (6~10 days).</description>
+        <iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <statFactors>
+            <InjuryHealingFactor>3</InjuryHealingFactor>
+            <ImmunityGainSpeed>2</ImmunityGainSpeed>
+            <IncomingDamageFactor>0.85</IncomingDamageFactor>
+        </statFactors>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Moving</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Sight</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Hearing</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>Manipulation</capacity>
+                <postFactor>1.1</postFactor>
+            </li>
+            <li>
+                <capacity>BloodPumping</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+            <li>
+                <capacity>Metabolism</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+            <li>
+                <capacity>BloodFiltration</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+            <li>
+                <capacity>Breathing</capacity>
+                <postFactor>1.2</postFactor>
+            </li>
+        </capMods>
+        <evolution>2</evolution>
+        <!-- 防止永久伤口 -->
+        <preventPermanentWounds>true</preventPermanentWounds>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_Clotting">
+                        <clotCheckInterval>360</clotCheckInterval>
+                    </li>
+                    <li Class="NzFaceLessManMod.CompProperties_Healing"></li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 细胞制剂 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Flm_Ev_CellReagent</defName>
+        <label>cell reagent</label>
+        <displayCategory>Nzflm_Gene_Ev_Base</displayCategory>
+        <!-- 你可以通过接触目标的皮肤，将自己的一小团细胞注入到目标体内，以帮助目标快速愈合 -->
+        <description>You can inject a small group of your cells into the target's body by touching the target's skin
+            to help the target heal quickly.</description>
+        <iconPath>UI/Icons/Abilities/FleshMaster</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_InjectCellReagent</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+
+</Defs>

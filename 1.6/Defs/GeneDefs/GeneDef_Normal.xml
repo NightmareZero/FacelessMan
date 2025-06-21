@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<NzFaceLessManMod.XenoGeneTemplateDef>
+		<defName>xenoGeneTemplateDef</defName>
+		<geneClass>Gene</geneClass>
+		<ignoreIllegalLabelCharacterConfigError>true</ignoreIllegalLabelCharacterConfigError>
+		<!-- <exclusionTagPrefix>xenoGeneTemplateDef</exclusionTagPrefix> -->
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<label>GenePack: {0}</label>
+		<description>Carriers of this gene possess the complete genetic of {0} xenotype within them.</description>
+		<displayOrderOffset>0</displayOrderOffset>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</NzFaceLessManMod.XenoGeneTemplateDef>
+	<GeneDef>
+		<defName>Nzflm_Strong</defName>
+		<label>strong</label>
+		<displayCategory>Pain</displayCategory>
+		<description>Carriers of this gene are stronger and have a higher resistance to various types of injuries.</description>
+		<iconPath>UI/Icons/Genes/Gene_BodyHulk</iconPath>
+		<displayOrderInCategory>1</displayOrderInCategory>
+		<forcedTraits>
+			<li>
+				<def>Tough</def>
+			</li>
+		</forcedTraits>
+		<exclusionTags>
+			<li>Strong</li>
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-3</biostatMet>
+
+	</GeneDef>
+	<GeneDef>
+		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
+		<defName>Nzflm_FemaleOnly</defName>
+		<label>female only</label>
+		<displayCategory>Healing</displayCategory>
+		<!-- 携带这一基因的人通常仅有女性 -->
+		<description>Carriers of this gene are usually female.</description>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<iconPath>UI/Icons/Genes/Female</iconPath>
+		<exclusionTags>
+			<li>Nzflm_MaleOnly</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="NzFaceLessManMod.GeneDefExt">
+				<forceFemale>true</forceFemale>
+			</li>
+		</modExtensions>
+	</GeneDef>
+	<GeneDef>
+		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
+		<defName>Nzflm_MaleOnly</defName>
+		<label>male only</label>
+		<displayCategory>Healing</displayCategory>
+		<!-- 携带这一基因的人通常仅有男性 -->
+		<description>Carriers of this gene are usually male.</description>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<iconPath>UI/Icons/Genes/Male</iconPath>
+		<exclusionTags>
+			<li>Nzflm_FemaleOnly</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="NzFaceLessManMod.GeneDefExt">
+				<forceMale>true</forceMale>
+			</li>
+		</modExtensions>
+	</GeneDef>
+</Defs>

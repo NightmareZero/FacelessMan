@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 变色龙皮肤 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_ChameleonSkin</defName>
+        <label>chameleon skin</label>
+        <description>Change the color of your skin like a chameleon, making people around you unable
+            to perceive you for a while. Due to the time required for color change, your movement
+            speed will be affected.</description>
+        <!-- TODO -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <verbProperties>
+            <warmupTime>4</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_ChameleonSkin</hediffDef>
+                <psychic>False</psychic>
+                <!-- 3小时 -->
+                <durationSecondsOverride>125</durationSecondsOverride>
+            </li>
+            <!-- <li Class="CompProperties_AbilityFleckOnTarget">
+            <fleckDef>PsycastPsychicEffect</fleckDef>
+        </li> -->
+        </comps>
+    </AbilityDef>
+
+    <!-- 肾上腺爆发 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_AdrenalineRush</defName>
+        <label>adrenaline rush</label>
+        <!-- 你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度,并提高作战能力 -->
+        <description>Your adrenal glands rapidly secrete a substance similar to a stimulant, giving
+            you faster reaction speed and improved combat capabilities.</description>
+        <level>1</level>
+        <!-- TODO 图标 -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <targetRequired>False</targetRequired>
+        <cooldownTicksRange>30000</cooldownTicksRange>
+        <verbProperties>
+            <!-- TODO 声音 -->
+            <warmupTime>0.2</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+                <canTargetAnimals>True</canTargetAnimals>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_AdrenalineRush</hediffDef>
+                <severity>0.3</severity>
+                <psychic>False</psychic>
+            </li>
+            <!-- <li Class="CompProperties_AbilityFleckOnTarget">
+            <fleckDef>PsycastPsychicEffect</fleckDef>
+        </li> -->
+        </comps>
+    </AbilityDef>
+
+    <!-- 跳跃 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_Longjump</defName>
+        <label>longjump</label>
+        <!-- 使用你有力而富有弹性的双腿跳到远处。 -->
+        <description>Jump to a distance with your powerful and elastic legs.</description>
+        <iconPath>UI/Abilities/Longjump</iconPath>
+        <cooldownTicksRange>180</cooldownTicksRange>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityJump</verbClass>
+            <label>jump</label>
+            <violent>false</violent>
+            <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+            <warmupTime>0</warmupTime>
+            <range>19.9</range>
+            <requireLineOfSight>true</requireLineOfSight>
+            <soundCast>Longjump_Jump</soundCast>
+            <soundLanding>Longjump_Land</soundLanding>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+            </targetParams>
+        </verbProperties>
+        <jobDef>CastJump</jobDef>
+        <comps>
+
+        </comps>
+    </AbilityDef>
+
+    <!-- 容貌伪装 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_Disguise</defName>
+        <label>disguise</label>
+        <cooldownTicksRange>10000</cooldownTicksRange>
+        <description>Manipulating your flesh and blood to change the color of one's skin and
+            regenerate or lose one's hair, Disguise as a selected target.</description>
+        <!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+        <iconPath>UI/Icons/Abilities/Disguise</iconPath>
+        <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <aiCanUse>false</aiCanUse>
+        <jobDef>CastAbilityOnThing</jobDef>
+        <targetRequired>true</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+        <stunTargetWhileCasting>True</stunTargetWhileCasting>
+        <showPsycastEffects>False</showPsycastEffects>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>4</warmupTime>
+            <drawAimPie>False</drawAimPie>
+            <requireLineOfSight>False</requireLineOfSight>
+            <targetParams>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_AbilityDisguise" />
+        </comps>
+    </AbilityDef>
+
+    <!-- 干细胞治疗 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>NzFlm_StemCellTherapy</defName>
+        <label>stem cell therapy</label>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <!-- 从你体内取出少量干细胞，用于治疗目标一处最严重的伤口 -->
+        <description>Take a small amount of stem cells from your body to treat the most serious
+            wound of the target.</description>
+        <iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+        <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <displayOrder>500</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>4</warmupTime>
+            <stunTargetOnCastStart>true</stunTargetOnCastStart>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_FixWorstHealthCondition" />
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_StemCellConsumption</hediffDef>
+                <psychic>False</psychic>
+                <!-- 12小时 -->
+                <durationSecondsOverride>500</durationSecondsOverride>
+                <applyToTarget>False</applyToTarget>
+                <applyToSelf>True</applyToSelf>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 麻醉钉刺 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_AnestheticSpike</defName>
+        <label>anesthetic spike</label>
+        <!-- 从口腔中的腺体中发射一枚刺针，其中包裹着麻醉毒素，可以让目标迅速麻痹 -->
+        <description>Launch a spike from the gland in your mouth, wrapped in anesthetic toxin, which
+            can quickly paralyze the target.</description>
+        <level>1</level>
+        <!-- TODO -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <targetRequired>True</targetRequired>
+        <cooldownTicksRange>1200</cooldownTicksRange>
+        <verbProperties>
+            <verbClass>NzFaceLessManMod.Verb_CastAbilityX</verbClass>
+            <warmupTime>0.2</warmupTime>
+            <onlyManualCast>True</onlyManualCast>
+            <range>8.9</range>
+            <!-- 射程放大系数 -->
+            <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>
+            <targetParams>
+                <canTargetSelf>False</canTargetSelf>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetAnimals>True</canTargetAnimals>
+                <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>NzFlm_Porj_AnestheticSpike</projectileDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 麻醉钉刺 子弹 -->
+    <ThingDef ParentName="BaseBullet">
+        <defName>NzFlm_Porj_AnestheticSpike</defName>
+        <label>anesthetic spike</label>
+        <thingClass>NzFaceLessManMod.Projectile_HediffOnly</thingClass>
+        <graphicData>
+            <texPath>Things/Projectile/PiercingSpine</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <color>(0, 1, 0.6, 1)</color> <!-- 碧绿色 -->
+        </graphicData>
+        <projectile>
+            <!-- 麻醉针 -->
+            <damageDef>NzFlm_Dm_AnestheticSpike</damageDef>
+            <damageAmountBase>1</damageAmountBase>
+            <armorPenetrationBase>2.0</armorPenetrationBase>
+            <stoppingPower>0</stoppingPower>
+            <speed>55</speed>
+        </projectile>
+    </ThingDef>
+</Defs>

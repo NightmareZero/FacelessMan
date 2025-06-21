@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 基因控制导致 -->
+    <HediffDef>
+        <defName>Flm_GeneticInstability</defName>
+        <label>genetic instability</label>
+        <description>The genes in this person's body have undergone changes. These genes need time to integrate into the host and modify the genes and chemicals of various tissues throughout the body. During this period, this person will be very weak.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>0.001</initialSeverity>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.9</setMax>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <setMax>0.7</setMax>
+                    </li>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <setMax>0.7</setMax>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <setMax>0.7</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+                <canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+            </li>
+            <li Class="NzFaceLessManMod.Comp_ZeroSeverityOnRemove"/>
+        </comps>
+    </HediffDef>
+
+    <!-- 基因注入导致 -->
+    <HediffDef>
+        <defName>Flm_GeneLossDizzy</defName>
+        <label>gene loss dizzy</label>
+        <description>This person's genes were recently removed or expelled. This has
+            destabilized the person's metabolism and hormones, leaving them temporarily weak and
+            drowsy, with a weakened immune system.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>0.001</initialSeverity>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <stages>
+            <li>
+                <painOffset>0.1</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <offset>-0.2</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+            <li Class="NzFaceLessManMod.Comp_ZeroSeverityOnRemove"/>
+        </comps>
+    </HediffDef>
+
+</Defs>

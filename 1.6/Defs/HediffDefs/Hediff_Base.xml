@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <HediffDef Name="NzFlm_BodyPartBase" ParentName="ImplantHediffBase" Abstract="True">
+        <hediffClass>Hediff_AddedPart</hediffClass>
+        <priceImpact>false</priceImpact>
+        <stages>
+            <!-- <li>
+                <statFactors>
+                    <NzRI_ZhengDePowerMultiplier>1.1</NzRI_ZhengDePowerMultiplier>
+                </statFactors>
+            </li> -->
+        </stages>
+    </HediffDef>
+
+    <HediffDef>
+        <defName>NzFlm_He_CellReagent</defName>
+        <label>cell reagent</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 你的体内被注入了一小团细胞，暂时接管了你的免疫系统的控制权，大幅度增加了愈合和免疫速度 -->
+        <description>A small mass of cells has been injected into your body, temporarily taking over the control of your immune system, greatly increasing healing and immunity speed.</description>
+        <isBad>false</isBad>
+        <comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>30000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+			</li>
+        </comps>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>BloodPumping</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <postFactor>1.2</postFactor>
+                    </li>
+                </capMods>
+                <statFactors>
+                    <InjuryHealingFactor>2</InjuryHealingFactor>
+                    <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+                </statFactors>                
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

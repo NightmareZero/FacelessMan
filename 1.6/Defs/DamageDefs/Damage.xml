@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 麻醉钉刺 -->
+    <DamageDef ParentName="Bite">
+        <defName>NzFlm_Dm_AnestheticSpike</defName>
+        <label>anesthetic spike</label>
+        <deathMessage>{0} was paralyzed to death</deathMessage>
+        <additionalHediffs>
+            <li>
+                <hediff>Anesthetic</hediff>
+                <severityPerDamageDealt>0.9</severityPerDamageDealt>
+                <victimSeverityScaling>ToxicResistance</victimSeverityScaling>
+                <inverseStatScaling>true</inverseStatScaling>
+                <victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+            </li>
+        </additionalHediffs>
+        <hediff>NzFlm_AnestheticSpikeWound</hediff>
+        <applyAdditionalHediffsIfHuntingForFood>false</applyAdditionalHediffsIfHuntingForFood>
+        <impactSoundType>Toxic</impactSoundType>
+        <damageEffecter>Impact_Toxic</damageEffecter>
+    </DamageDef>
+</Defs>

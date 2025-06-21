@@ -1,0 +1,6 @@
+D:\Programs\RimWorld1.6\Mods\FacelessMan\1.5\obj\Debug\mod.csproj.AssemblyReference.cache
+D:\Programs\RimWorld1.6\Mods\FacelessMan\1.5\obj\Debug\mod.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programs\RimWorld1.6\Mods\FacelessMan\1.5\obj\Debug\mod.AssemblyInfoInputs.cache
+D:\Programs\RimWorld1.6\Mods\FacelessMan\1.5\obj\Debug\mod.AssemblyInfo.cs
+D:\Programs\RimWorld1.6\Mods\FacelessMan\1.5\obj\Debug\mod.csproj.CoreCompileInputs.cache
+D:\Programs\RimWorld1.6\Mods\FacelessMan\1.5\obj\Debug\mod.sourcelink.json

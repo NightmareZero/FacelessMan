@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+	<!-- 基因注入 -->
+	<GeneDef>
+		<defName>Flm_GermlineReimplanter</defName>
+		<label>genepack reimplanter</label>
+		<labelShortAdj>reimplanter</labelShortAdj>
+		<description>Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_GermlineReimplanter</iconPath> -->
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<abilities>
+			<li>NzFlm_ReimplantXenogerm</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>NzFlm_ReimplantXenogerm</AbilityDef>
+		</descriptionHyperlinks>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-2</biostatMet>
+	</GeneDef>
+	<!-- 异种变身 -->
+	<GeneDef>
+		<defName>Flm_Morphs</defName>
+		<label>xenotpye morphing</label>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<description>Carriers of this gene can choose one of their gene pack to instead of their xenotype gene</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+		<abilities>
+			<li>Flm_Morphing</li>
+		</abilities>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<exclusionTags>
+			<!-- <li>MorphCondition</li>		 -->
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</GeneDef>
+	<!-- 内联变身 -->
+	<GeneDef>
+		<defName>Flm_MorphsE</defName>
+		<label>endogenous morphing</label>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<description>Carriers of this gene can choose one of their gene pack to instead of their inheritable gene, it only works on inheritable gene pack.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+		<abilities>
+			<li>Flm_MorphingE</li>
+		</abilities>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<exclusionTags>
+			<!-- <li>MorphCondition</li>		 -->
+		</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</GeneDef>
+
+	<!-- 基因大师 -->
+	<GeneDef>
+		<defName>Flm_GeneMaster</defName>
+		<geneClass>NzFaceLessManMod.GeneExt</geneClass>
+		<label>gene master</label>
+		<displayCategory>Nzflm_GeneCategory</displayCategory>
+		<description>Carriers of this gene have all xenotype genes available within their body. and they won't be weakened by genetic recombination.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_MorphingNocturnal</iconPath> -->
+		<iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+		<displayOrderInCategory>1000</displayOrderInCategory>
+		<exclusionTags>
+			<li>Flm_GeneMaster</li>
+		</exclusionTags>
+		<biostatCpx>9</biostatCpx>
+		<biostatMet>6</biostatMet>
+		<biostatArc>3</biostatArc>
+		<modExtensions>
+			<li Class="NzFaceLessManMod.GeneDefExt">
+				<hediffDef>Flm_Evolution</hediffDef>
+				<hediffRemove>false</hediffRemove>
+				<mustEndogene>True</mustEndogene>
+			</li>
+		</modExtensions>
+	</GeneDef>
+
+</Defs>

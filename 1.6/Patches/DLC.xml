@@ -1,0 +1,18 @@
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <!-- <li Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+                <xpath>Defs/AbilityDef[@ParentName='Nz_Flm_AbilityBase']</xpath>
+                <value>
+                    <warmupSound>PsycastCastLoop</warmupSound>
+                </value>
+            </li> -->
+            <li Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+                <xpath>Defs/AbilityDef[@ParentName='Nz_Flm_AbilityEv']</xpath>
+                <value>
+                    <warmupSound>PsycastCastLoop</warmupSound>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

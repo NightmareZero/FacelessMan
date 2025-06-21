@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ScenarioDef>
+        <defName>Flm_Escape</defName>
+        <label>Escape</label>
+
+        <scenario>
+            <name>Escape</name>
+            <description>In the intensifying struggle for the heir apparent, you fail and you have to
+                leave your family, brocade, servants, and jewels behind to try to survive in this
+                desolate place, and on the way to escape, you persuade a local man to serve you with
+                some fancy words.</description>
+            <summary>You have escaped from your family and are trying to survive on your own.</summary>
+            <playerFaction>
+                <def>PlayerFaction</def>
+                <factionDef>PlayerColony</factionDef>
+            </playerFaction>
+            <parts>
+                <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+                    <def>ConfigPage_ConfigureStartingPawns</def>
+                    <pawnChoiceCount>2</pawnChoiceCount>
+                    <pawnCount>2</pawnCount>
+                </li>
+                <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+                    <def>ConfigurePawnsXenotypes</def>
+                    <pawnChoiceCount>2</pawnChoiceCount>
+  
+                    <xenotypeCounts>
+                        <li>
+                            <xenotype>Flm_FacelessMan</xenotype>
+                            <count>1</count>
+                        </li>
+                        <li>
+                            <xenotype>Flm_Peasant</xenotype>
+                            <count>1</count>
+                        </li>
+                    </xenotypeCounts>
+                </li>
+                <li Class="ScenPart_PlayerPawnsArriveMethod">
+                    <def>PlayerPawnsArriveMethod</def>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Silver</thingDef>
+                    <count>100</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MealSurvivalPack</thingDef>
+                    <count>7</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MedicineIndustrial</thingDef>
+                    <count>5</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Gun_Revolver</thingDef>
+                </li>
+                <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                    <def>ScatterThingsNearPlayerStart</def>
+                    <thingDef>Steel</thingDef>
+                    <count>650</count>
+                    <allowRoofed>True</allowRoofed>
+                </li>
+                <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                    <def>ScatterThingsNearPlayerStart</def>
+                    <thingDef>WoodLog</thingDef>
+                    <count>300</count>
+                    <allowRoofed>True</allowRoofed>
+                </li>
+                <li Class="ScenPart_ScatterThingsAnywhere">
+                    <def>ScatterThingsAnywhere</def>
+                    <thingDef>Steel</thingDef>
+                    <count>720</count>
+                    <allowRoofed>True</allowRoofed>
+                </li>
+                <li Class="ScenPart_ScatterThingsAnywhere">
+                    <def>ScatterThingsAnywhere</def>
+                    <thingDef>MealSurvivalPack</thingDef>
+                    <count>21</count>
+                    <allowRoofed>True</allowRoofed>
+                </li>
+                <li Class="ScenPart_GameStartDialog">
+                    <def>GameStartDialog</def>
+                    <text>After several morph and disguises, you shook off the family pursuit and now you must survive in this desolate place. Now with the help of snubbed servants, you will build a powerful territory and take revenge on your brothers.</text>
+                    <textKey>GameStartDialog</textKey>
+                    <closeSound>GameStartSting</closeSound>
+                </li>
+            </parts>
+        </scenario>
+    </ScenarioDef>
+</Defs>

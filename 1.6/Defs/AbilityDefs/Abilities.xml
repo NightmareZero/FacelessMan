@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>NzFlm_ReimplantXenogerm</defName>
+		<label>implant genes</label>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<description>Implanting the xenotype carrying the genes of the 'xenotype gene package' from
+			oneself into a target organism. If the recipient's xenotype genes are still undergoing
+			reconstruction, it will lead to their demise.\n\n
+			After implantation, the genes of the xenotype will overwrite those of the
+			recipient's xenotype genes, while the lineage genes remain unaffected.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_XenogermReimplanter</iconPath> -->
+		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<category>Nzflm_AbilityCategory</category>
+		<displayOrder>500</displayOrder>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>4</warmupTime>
+			<stunTargetOnCastStart>true</stunTargetOnCastStart>
+			<targetParams>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_AbilityReimplantXeno" />
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>Flm_Morphing</defName>
+		<label>xenotype morph</label>
+		<cooldownTicksRange>15000</cooldownTicksRange>
+		<description>Morph into a different xenotype.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+		<category>Nzflm_AbilityCategory</category>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<aiCanUse>false</aiCanUse>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<hotKey>Misc12</hotKey>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>4</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_AbilityMorph" >
+				<compClass>NzFaceLessManMod.CompAbilityMorphX</compClass>
+			</li>
+		</comps>
+	</AbilityDef>
+	<AbilityDef>
+		<defName>Flm_MorphingE</defName>
+		<label>endogenous morph</label>
+		<cooldownTicksRange>15000</cooldownTicksRange>
+		<description>Morph into a different endogenous.</description>
+		<!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
+		<iconPath>UI/Icons/Abilities/Mask</iconPath>
+		<category>Nzflm_AbilityCategory</category>
+		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
+		<aiCanUse>false</aiCanUse>
+		<jobDef>CastAbilityOnThing</jobDef>
+		<targetRequired>False</targetRequired>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<showPsycastEffects>False</showPsycastEffects>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		<hotKey>Misc12</hotKey>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<warmupTime>4</warmupTime>
+			<drawAimPie>False</drawAimPie>
+			<requireLineOfSight>False</requireLineOfSight>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="NzFaceLessManMod.CompProperties_AbilityMorph">
+				<compClass>NzFaceLessManMod.CompAbilityMorphE</compClass>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+</Defs>

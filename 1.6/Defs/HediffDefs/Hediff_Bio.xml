@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 隐生 -->
+    <HediffDef>
+        <defName>NzFlm_He_Cryptobiosis</defName>
+        <label>cryptobiosis</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 你进入了 “隐生” 状态，现在你的活动几乎停滞了 -->
+        <description>You have entered the "cryptobiosis" state, and now your metabolism has almost
+            stopped.</description>
+        <isBad>false</isBad>
+        <comps>
+            <!-- TODO 添加一个移除按钮 -->
+            <li Class="HediffCompProperties_DisappearsOnDeath" />
+            <li Class="NzFaceLessManMod.HediffCompProperties_GizmoBtnRemoveThis">
+                <label>Awaken</label>
+                <description>Awaken from cryptobiosis.</description>
+                <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+                <afterRemovedHediff>NzFlm_He_CryptobiosisWeak</afterRemovedHediff>
+            </li>
+            <li Class="NzFaceLessManMod.HediffCompProperties_MaxNeed">
+                <maxSleep>0.3</maxSleep>
+                <initSleep>0.1</initSleep>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <!-- 意识 -->
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.3</setMax>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                    <li>
+                        <!-- 血液循环 -->
+                        <capacity>BloodPumping</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                    <li>
+                        <!-- 过滤 -->
+                        <capacity>BloodFiltration</capacity>
+                        <setMax>0.5</setMax>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <!-- 温度 -->
+                    <ComfyTemperatureMin>-60</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>40</ComfyTemperatureMax>
+                    <ToxicResistance>1</ToxicResistance>
+                </statOffsets>
+                <!-- 食物消耗 -->
+                <hungerRateFactor>0.01</hungerRateFactor>
+                <statFactors>
+                    <!-- 休息 -->
+                    <BedRestEffectiveness>0.05</BedRestEffectiveness>
+                    <MoveSpeed>0.5</MoveSpeed>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- 隐生虚弱 -->
+    <HediffDef>
+        <defName>NzFlm_He_CryptobiosisWeak</defName>
+        <label>cryptobiosis weakness</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 你刚刚从 “隐生” 状态中苏醒，现在你的身体还没有完全恢复 -->
+        <description>You have just awakened from the "cryptobiosis" state, and your body has not yet fully recovered.</description>
+        <isBad>true</isBad>
+        <comps>
+            <!-- 2小时后消失 -->
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>5000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+				<canUseDecimalsShortForm>true</canUseDecimalsShortForm>
+			</li>
+        </comps>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <!-- 意识 -->
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.9</setMax>
+                    </li>
+                    <li>
+                        <capacity>Metabolism</capacity>
+                        <setMax>0.9</setMax>
+                    </li>
+                    <li>
+                        <!-- 血液循环 -->
+                        <capacity>BloodPumping</capacity>
+                        <setMax>0.9</setMax>
+                    </li>
+                    <li>
+                        <!-- 过滤 -->
+                        <capacity>BloodFiltration</capacity>
+                        <setMax>0.9</setMax>
+                    </li>
+                </capMods>
+                <statOffsets>
+                    <!-- 温度 -->
+                    <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>10</ComfyTemperatureMax>
+                </statOffsets>
+                <!-- 食物消耗 -->
+                <hungerRateFactor>1.5</hungerRateFactor>
+                <statFactors>
+                    <!-- 休息 -->
+                    <BedRestEffectiveness>0.8</BedRestEffectiveness>
+                    <MoveSpeed>0.9</MoveSpeed>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

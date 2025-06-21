@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 灵能觉醒 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_PsychicAwakening</defName>
+        <label>psychic awakening</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 通过其他方式觉醒灵能不够稳定，启灵装置又太过昂贵，所以经过数十年的努力，我们合成出了一种新型的基因，能够让普通人觉醒灵能 -->
+        <description>The awakening of psychic power through other means is not stable, and the
+            psychic awakening device is too expensive. After decades of efforts, we have synthesized
+            a new type of gene that can awaken ordinary people to psychic power.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>2</evolution>
+        <statOffsets>
+            <PsychicSensitivity>0.4</PsychicSensitivity>
+            <MeditationFocusGain>0.5</MeditationFocusGain>
+            <PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
+        </statOffsets>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_BionicPartAdd">
+                        <hediffDef>PsychicAmplifier</hediffDef>
+                        <bodyPartDef>Brain</bodyPartDef>
+                        <installCount>-1</installCount>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 唯心主义 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_Idealism</defName>
+        <label>idealism</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 将灵能技巧编码于基因中使其成为本能，现在你的精神力量随着时间而逐渐恢复，精神力越高，回复越快 -->
+        <description>The psychic skills are encoded in the gene, making them instinctive. Now your
+            mental power
+            gradually recovers over time, and the higher your mental power, the faster it recovers.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
+        <displayOrderInCategory>20</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statOffsets>
+            <NzFlm_PsychicRecovery>2</NzFlm_PsychicRecovery>
+        </statOffsets>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心胜于物 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindOverMatter</defName>
+        <label>mind over matter</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 将记忆与灵能技巧编码于基因中使其成为本能，现在你相信心灵的力量胜过物理规律，战斗能力，工作效率，承伤能力都会随着精神力的提升而提升 -->
+        <description>The memory and psychic skills are encoded in the gene, making them instinctive.
+            Now you believe that the power of the mind is greater than the laws of physics, and your combat
+            ability, work efficiency, and damage resistance will improve with the improvement of mental power.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <hediffDef>Nzflm_He_MindOverMatter</hediffDef>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 漂浮 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_Float</defName>
+        <label>float</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 将灵能技巧编码于基因中使其成为本能，你可以在空中漂浮，无视艰难地形的影响，也不会踩到陷阱 -->
+        <description>The psychic skills are encoded in the gene, making them instinctive. You can
+            float in the air,
+            ignoring the effects of difficult terrain and not stepping on traps.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+            <PawnTrapSpringChance>0</PawnTrapSpringChance>
+        </statFactors>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProperties_CanFloat" />
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 意志壁垒 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_WillBarrier</defName>
+        <label>will barrier</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 将灵能技巧编码于基因中使其成为本能，你现在可以忽略物理规律般的无视一部分伤害 -->
+        <description>The psychic skills are encoded in the gene, making them instinctive. Your now 
+            can ignore some damage ,ignore the laws of physics.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_Idealism</prerequisite>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.GeneCompProperties_DamageIgnore">
+                        <chance>0.4</chance>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 人格塑造 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_PersonalitySculpting</defName>
+        <label>personality sculpting</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 在你的大脑中，生成一个新的器官，能够生成一个虚拟人格，能够辅助你进行思考和决策，减少你的睡眠需求，以及和你的仆从进行联络，同时还可以在你精神崩溃时唤醒你 -->
+        <description>New organ is generated in your brain, which can generate a virtual personality
+            to assist you in thinking and decision-making, reduce your sleep needs, and communicate
+            with your servants. It can also wake you up when you are mentally broken.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
+        <displayOrderInCategory>60</displayOrderInCategory>
+        <statFactors>
+            <RestFallRateFactor>0.6</RestFallRateFactor>
+        </statFactors>
+        <capMods>
+            <li>
+                <capacity>Consciousness</capacity>
+                <postFactor>1.3</postFactor>
+            </li>
+        </capMods>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_AwakeMentalBreak">
+                        <ticks>180</ticks>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 虚拟心灵 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_VirtualMind</defName>
+        <label>virtual mind</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以为动物注入一个虚拟心灵，让他们获得更高的智力，目标的训练度会迅速充满，同时你可以征召他们为你战斗 -->
+        <description>You can inject a virtual mind into animals to give them higher intelligence,
+            and the target's training level will quickly fill up. At the same time, you can summon
+            them
+            to fight for you.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
+        <displayOrderInCategory>70</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_AnimalVirtualMind</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心灵蠕虫 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindWorm</defName>
+        <label>mind worm</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以为目标注入一个心灵蠕虫，这个心灵蠕虫会逐渐洗脑目标，使目标服从你的意志，称为你的仆从，你的虚拟人格会为你管理他们 -->
+        <description>You can inject a mind worm into the target, which will gradually brainwash the
+            target
+            and make the target obey your will and become your servant. Your virtual personality
+            will manage
+            them for you.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
+        <displayOrderInCategory>80</displayOrderInCategory>
+        <evolution>2</evolution>
+        <abilities>
+            <li>NzFlm_MindWorm</li>
+        </abilities>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <hediffDef>NzFlm_He_MindWormLord</hediffDef>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心智操纵 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindManipulation</defName>
+        <label>mind manipulation</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以借助心灵蠕虫的力量，对你的仆从的心灵进行一些简单的操作 -->
+        <description>You can use the power of the mind worm to perform some simple operations on
+            your servants.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
+        <displayOrderInCategory>90</displayOrderInCategory>
+        <evolution>1</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_SetItDirty">
+                        <hediffs>
+                            <li>NzFlm_He_MindWormLord</li>
+                        </hediffs>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心智覆盖 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindCover</defName>
+        <label>mind cover</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以借助心灵蠕虫的力量，让它代替你的仆人操作自己的身体，你的仆人将不会再有人的各种想法和情感 -->
+        <description>You can use the power of the mind worm to let it operate your servant's body
+            instead of
+            you. Your servant will no longer have various human thoughts and emotions.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
+        <displayOrderInCategory>100</displayOrderInCategory>
+        <evolution>2</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_SetItDirty">
+                        <hediffs>
+                            <li>NzFlm_He_MindWormLord</li>
+                        </hediffs>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 心智塑形 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>Nzflm_Ev_MindShaping</defName>
+        <!-- <label>mind shaping</label> -->
+        <label>#TODO</label>
+        <displayCategory>Nzflm_Gene_Ev_Psionic</displayCategory>
+        <!-- 你可以借助心灵蠕虫的力量，像修改纸张上面的文字一样，修改你的仆人的记忆和技艺 -->
+        <description>You can use the power of the mind worm to modify your servant's memory and
+            skills like modifying the text on paper.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <prerequisite>Nzflm_Ev_MindWorm</prerequisite>
+        <displayOrderInCategory>110</displayOrderInCategory>
+        <evolution>2</evolution>
+        <modExtensions>
+            <li Class="NzFaceLessManMod.GeneDefExt">
+                <comps>
+                    <li Class="NzFaceLessManMod.CompProp_SetItDirty">
+                        <hediffs>
+                            <li>NzFlm_He_MindWormLord</li>
+                        </hediffs>
+                    </li>
+                </comps>
+            </li>
+        </modExtensions>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+
+</Defs>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    
+
+    <!-- 撕裂利爪 -->
+    <HediffDef ParentName="NzFlm_BodyPartBase">
+        <defName>Nzflm_RippingClaws</defName>
+        <label>ripping claws</label>
+        <labelNoun>ripping claws</labelNoun>
+        <!-- 甲壳和硬骨制成的爪子，取代了手部，内含的力量甚至可以撕裂敌人成两半 -->
+        <description>A claw made of chitin and hardened bones, replacing the hands, the force
+            contained in it can even tear the enemy in half.</description>
+        <defaultInstallPart>Hand</defaultInstallPart>
+        <tags>
+        </tags>
+        <comps>
+            <li Class="HediffCompProperties_VerbGiver">
+                <tools>
+                    <li>
+                        <label>claw</label>
+                        <capacities>
+                            <li>Scratch</li>
+                        </capacities>
+                        <power>31</power>
+                        <armorPenetration>1.0</armorPenetration>
+                        <cooldownTime>0.9</cooldownTime>
+                        <soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+                        <soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+                    </li>
+                </tools>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <!-- 普通工作速度 -->
+                    <GeneralLaborSpeed>0.9</GeneralLaborSpeed>
+                    <PlantWorkSpeed>1.60</PlantWorkSpeed>
+                    <MiningSpeed>1.90</MiningSpeed>
+                </statFactors>
+                <statOffsets>
+                </statOffsets>
+            </li>
+        </stages>
+        <aptitudes>
+            <Melee>12</Melee>
+            <Mining>8</Mining>
+            <Plants>4</Plants>
+            <Crafting>-4</Crafting>
+            <Medicine>-4</Medicine>
+            <Artistic>-4</Artistic>
+        </aptitudes>
+        <addedPartProps>
+            <solid>true</solid>
+            <partEfficiency>0.9</partEfficiency>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- 活铁皮层 -->
+    <HediffDef ParentName="NzFlm_BodyPartBase" MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_He_BioferriteSkinLayer</defName>
+        <label>bioferrite skin layer</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <!-- 在你的皮下形成多层活铁护甲，略微降低你承受的伤害，但是会使你变得易燃。 -->
+        <description>Form multiple layers of bioferrite armor under your skin, significantly
+            reducing the damage you take, but making you more susceptible to catching fire.</description>
+        <isBad>false</isBad>
+        <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+        <comps>
+            <li Class="NzFaceLessManMod.HediffCompProperties_GlancingHit" />
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <NzFlm_GlancingHitPoint>6</NzFlm_GlancingHitPoint>
+                </statOffsets>
+                <statFactors>
+                    <IncomingDamageFactor>0.85</IncomingDamageFactor>
+                    <InjuryHealingFactor>2</InjuryHealingFactor>
+                    <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

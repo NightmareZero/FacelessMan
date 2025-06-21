@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- 细胞制剂 -->
+    <AbilityDef ParentName="Nz_Flm_AbilityEv">
+        <defName>NzFlm_InjectCellReagent</defName>
+        <label>cell reagent</label>
+        <!-- 将一小团细胞注入到目标体内，暂时篡夺目标免疫系统的控制权，治疗目标所有伤口的同时，大幅度增加愈合速度 -->
+        <description>Inject a small mass of cells into the target's body, temporarily usurping the
+            target's immune system control, healing all wounds and greatly increasing healing speed.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <cooldownTicksRange>1250</cooldownTicksRange>
+        <stunTargetWhileCasting>true</stunTargetWhileCasting>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <warmupMote>Mote_CoagulateStencil</warmupMote>
+        <warmupEffecter>Coagulate</warmupEffecter>
+        <warmupStartSound>Coagulate_Cast</warmupStartSound>
+        <jobDef>CastAbilityOnThingMelee</jobDef>
+        <displayOrder>400</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>1</warmupTime>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetHumans>true</canTargetHumans>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetMutants>false</canTargetMutants>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityCoagulate">
+                <tendQualityRange>0.6~0.8</tendQualityRange>
+            </li>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>NzFlm_He_CellReagent</hediffDef>
+                <psychic>False</psychic>
+                <!-- 12小时 -->
+                <durationSecondsOverride>500</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>

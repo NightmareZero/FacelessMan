@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 蓄电器官 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_BatteryOrgan</defName>
+        <label>battery organ</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一个可以储存电能的器官，可以在需要的时候释放出来。 -->
+        <description>An organ that can store electrical energy and release it when needed.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>10</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_EMPBlast</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 鳞片皮肤 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_ScaledSkin</defName>
+        <label>scaled skin</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 来自于蜥蜴的鳞片，或者说 "巨龙" 的鳞片，其带来的改变不仅限于皮肤表层，也包括了一些腺体，能大幅度降低受到的伤害。 -->
+        <description>Scales grow on the skin, providing additional defense.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>20</displayOrderInCategory>
+        <evolution>1</evolution>
+        <statFactors>
+			<InjuryHealingFactor>0.95</InjuryHealingFactor>
+			<IncomingDamageFactor>0.65</IncomingDamageFactor>
+		</statFactors>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 火囊 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_FireSac</defName>
+        <label>fire sac</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一种可以储存可燃液体并在必要时喷射的器官， 相比炎魔种，恢复更快 -->
+        <description>An organ that can store flammable liquid and spray it when needed, with faster recovery than the Impid Xenotype.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>30</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_FireBreath</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 酸液囊 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_AcidSac</defName>
+        <label>acid sac</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一种可以储存腐蚀性液体并在必要时喷射的器官, 不含毒性，但是胜在其强力腐蚀性 -->
+        <description>An organ that can store corrosive liquid and spray it when needed, without toxicity, but with strong corrosiveness.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>35</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_AcidBreath</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 基因控制 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_GeneControl</defName>
+        <label>gene control</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 你可以像使用一个基因实验室一样使用体内器官来生成一个异种胚芽，并注入目标体内，但是这会让你变得非常疲劳。 -->
+        <description>You can use the organs in your body to generate a xenogerm and inject it into the target, but this will make you very tired.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>40</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>Flm_Evolve</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 隐生 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_Cryptobiosis</defName>
+        <label>cryptobiosis</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 一种从熊、蛙类、昆虫和蜥蜴身上提取的混合定制基因，让你可以进入“隐生”状态，以撑过一些艰难的日子。 -->
+        <description>A custom gene extracted from bears, frogs, insects, and lizards that allows you to enter a "camouflage" state to get through some difficult days.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <li>NzFlm_Cryptobiosis</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 昏迷毒腺 -->
+    <NzFaceLessManMod.EvolutionGeneDef>
+        <defName>Nzflm_Ev_StunGland</defName>
+        <label>stun gland</label>
+        <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
+        <!-- 来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间(最多1年)，也可以反向注入解毒剂，立即结束目标的麻痹症效果。 -->
+        <description>A modified version of the toxin from spiders in nature that can cause the target to be stunned for a long time (up to 1 year), or can be injected with an antidote in reverse to immediately end the target's paralysis effect.</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>60</displayOrderInCategory>
+        <evolution>1</evolution>
+        <abilities>
+            <!-- 麻痹毒素 -->
+            <li>NzFlm_ParalysisToxin</li>
+            <!-- 麻痹解毒剂 -->
+            <li>NzFlm_ParalysisAntidote</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+</Defs>

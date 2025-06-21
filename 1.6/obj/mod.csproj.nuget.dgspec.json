@@ -1,0 +1,51 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Programs\\RimWorld1.6\\Mods\\FacelessMan\\1.5\\mod.csproj": {}
+  },
+  "projects": {
+    "D:\\Programs\\RimWorld1.6\\Mods\\FacelessMan\\1.5\\mod.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programs\\RimWorld1.6\\Mods\\FacelessMan\\1.5\\mod.csproj",
+        "projectName": "NzFaceLessMan",
+        "projectPath": "D:\\Programs\\RimWorld1.6\\Mods\\FacelessMan\\1.5\\mod.csproj",
+        "packagesPath": "C:\\Users\\night\\.nuget\\packages\\",
+        "outputPath": "D:\\Programs\\RimWorld1.6\\Mods\\FacelessMan\\1.5\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\night\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net480"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net480",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net480",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
