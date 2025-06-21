@@ -210,7 +210,7 @@
                 <canTargetMechs>true</canTargetMechs>
                 <canTargetBuildings>true</canTargetBuildings>
                 <canTargetHumans>true</canTargetHumans>
-                <canTargetMutants>true</canTargetMutants>
+                <canTargetEntities>true</canTargetEntities>
 				<canTargetLocations>true</canTargetLocations>
 			</targetParams>		
 			<range>22.9</range>
