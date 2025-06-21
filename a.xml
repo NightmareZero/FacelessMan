@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    
+    <Nzflm_Ev_PressurizeGland.label>增压腺体</Nzflm_Ev_PressurizeGland.label>
+    <Nzflm_Ev_PressurizeGland.description>为你身上时所有的大部分喷射类腺体提供更高的喷射压力，增大射程</Nzflm_Ev_PressurizeGland.description>
+
+    <NzFlm_EvSkillCooldownTime.label>高速分泌</NzFlm_EvSkillCooldownTime.label>
+    <NzFlm_EvSkillCooldownTime.description>你分泌特殊物质的速度加快了，这是你可以更早的再次使用特定技能</NzFlm_EvSkillCooldownTime.description>
+
+    <Flm_Ev_SturdyBody.label>强健身躯</Flm_Ev_SturdyBody.label>
+    <Flm_Ev_SturdyBody.description>由于基因上的悉心调制，你的身体正在以一种更加高效的方式运作，可以迅速止血，伤疤和慢性病也会逐渐自动修复(6~10天)</Flm_Ev_SturdyBody.description>
+
+    <Flm_Ev_CellReagent.label>细胞制剂</Flm_Ev_CellReagent.label>
+    <Flm_Ev_CellReagent.description>你可以通过接触目标的皮肤，将自己的一小团细胞注入到目标体内，以帮助目标快速愈合</Flm_Ev_CellReagent.description>
+
+    <Nzflm_Ev_BatteryOrgan.label>蓄电器官</Nzflm_Ev_BatteryOrgan.label>
+    <Nzflm_Ev_BatteryOrgan.description>一个可以储存电能的器官，可以在需要的时候释放出来。</Nzflm_Ev_BatteryOrgan.description>
+    
+    <Projectile>给蓄电器官用的小电浆球或者别的类似生物手雷的(用作子弹)</Projectile>
+
+    <Nzflm_Ev_ScaledSkin.label>鳞片皮肤</Nzflm_Ev_ScaledSkin.label>
+    <Nzflm_Ev_ScaledSkin.description>来自于蜥蜴的鳞片，或者说 "巨龙" 的鳞片，其带来的改变不仅限于皮肤表层，也包括了一些腺体，能大幅度降低受到的伤害。</Nzflm_Ev_ScaledSkin.description>
+
+    <Nzflm_Ev_GeneControl.label>基因控制</Nzflm_Ev_GeneControl.label>
+    <Nzflm_Ev_GeneControl.description>你可以像使用一个基因实验室一样使用体内器官来生成一个异种胚芽，并注入目标体内，但是这会让你变得非常疲劳。</Nzflm_Ev_GeneControl.description>
+
+    <Nzflm_Ev_Cryptobiosis.label>隐生</Nzflm_Ev_Cryptobiosis.label>
+    <Nzflm_Ev_Cryptobiosis.description>一种从熊、蛙类、昆虫和蜥蜴身上提取的混合定制基因，让你可以进入“隐生”状态，以撑过一些艰难的日子。</Nzflm_Ev_Cryptobiosis.description>
+
+    <Nzflm_Ev_StunGland.label>麻痹腺体</Nzflm_Ev_StunGland.label>
+    <Nzflm_Ev_StunGland.description>来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间(最多1年)，也可以反向注入解毒剂，立即结束目标的麻痹症效果。</Nzflm_Ev_StunGland.description>
+
+    <Nzflm_Ev_NestGland.label>母巢腺体</Nzflm_Ev_NestGland.label>
+    <Nzflm_Ev_NestGland.description>提取自虫族女皇的基因，加以改进，现在可以分泌一种激素，刺激周围的友方生物，增强其战斗力。</Nzflm_Ev_NestGland.description>
+
+    <Nzflm_Ev_UltrasonicOrgan.label>超声波器官</Nzflm_Ev_UltrasonicOrgan.label>
+    <Nzflm_Ev_UltrasonicOrgan.description>一种位于口腔中的，可以发出超声波的器官，可以用来探测周围的环境，让你忽略黑暗对视觉的影响</Nzflm_Ev_UltrasonicOrgan.description>
+
+    <Nzflm_Ev_RippingClaws.label>撕裂利爪</Nzflm_Ev_RippingClaws.label>
+    <Nzflm_Ev_RippingClaws.description>一种由几丁质和硬化骨骼组成的利爪，替代手部，其中蕴含的力道甚至可以将敌人撕成两半。</Nzflm_Ev_RippingClaws.description>
+
+    <Nzflm_Ev_QueenGland.label>女皇腺体</Nzflm_Ev_QueenGland.label>
+    <Nzflm_Ev_QueenGland.description>呼唤几只可控的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。</Nzflm_Ev_QueenGland.description>
+
+    <Nzflm_Ev_GelGland.label>凝胶腺</Nzflm_Ev_GelGland.label>
+    <Nzflm_Ev_GelGland.description>从虫族分泌茧的基因中，获得了分泌喷洒快速凝固的胶体的基因，这种胶体触碰到目标之后，会快速凝固，限制目标的动作</Nzflm_Ev_GelGland.description>
+
+    <Nzflm_Ev_ExoskeletonGland.label>外骨骼汗腺</Nzflm_Ev_ExoskeletonGland.label>
+    <Nzflm_Ev_ExoskeletonGland.description>替换你的汗腺，使其可以快速分泌另一种液体，在你体外形成外骨骼，大幅度降低你受到的伤害，但是会降低移动速度 </Nzflm_Ev_ExoskeletonGland.description>
+
+    <Nzflm_Ev_SpikeGland.label>棘刺腺体</Nzflm_Ev_SpikeGland.label>
+    <Nzflm_Ev_SpikeGland.description>由一大堆虫子的基因，辅以研究员的天才想法，我们复原了古老传说中一种叫做"刺蛇"的相关生物的基因</Nzflm_Ev_SpikeGland.description>
+
+    <Nzflm_Ev_PsychicAwakening.label>心灵觉醒</Nzflm_Ev_PsychicAwakening.label>
+    <Nzflm_Ev_PsychicAwakening.description>通过其他方式觉醒灵能不够稳定，启灵装置又太过昂贵，所以经过数十年的努力，我们合成出了一种新型的基因，能够让普通人觉醒灵能</Nzflm_Ev_PsychicAwakening.description>
+
+    <Nzflm_Ev_PersonalitySculpting.label>人格塑造</Nzflm_Ev_PersonalitySculpting.label>
+    <Nzflm_Ev_PersonalitySculpting.description>在你的大脑中，生成一个新的器官，能够生成一个虚拟人格，能够辅助你进行思考和决策，减少你的睡眠需求，以及和你的仆从进行联络，同时还可以在你精神崩溃时唤醒你</Nzflm_Ev_PersonalitySculpting.description>
+
+    <Nzflm_Ev_Idealism.label>唯心主义</Nzflm_Ev_Idealism.label>
+    <Nzflm_Ev_Idealism.description>将灵能技巧编码于基因中使其成为本能，现在你的精神力量随着时间而逐渐恢复，精神力越高，回复越快</Nzflm_Ev_Idealism.description>
+
+    <Nzflm_Ev_Float.label>飘浮</Nzflm_Ev_Float.label>
+    <Nzflm_Ev_Float.description>将灵能技巧编码于基因中使其成为本能，你将在空中漂浮，无视艰难地形的影响，也不会踩到陷阱</Nzflm_Ev_Float.description>
+
+    <Nzflm_Ev_WillBarrier.label>意志壁垒</Nzflm_Ev_WillBarrier.label>
+    <Nzflm_Ev_WillBarrier.description>将灵能技巧编码于基因中使其成为本能，你现在可以忽略物理规律般的无视一部分伤害</Nzflm_Ev_WillBarrier.description>
+
+    <Nzflm_Ev_MindOverMatter.label>心胜于物</Nzflm_Ev_MindOverMatter.label>
+    <Nzflm_Ev_MindOverMatter.description>将记忆与灵能技巧编码于基因中使其成为本能，现在你相信心灵的力量胜过物理规律，战斗能力，工作效率，承伤能力都会随着精神力的提升而提升</Nzflm_Ev_MindOverMatter.description>
+
+    <Nzflm_Ev_VirtualMind.label>虚拟心灵</Nzflm_Ev_VirtualMind.label>
+    <Nzflm_Ev_VirtualMind.description>你可以为动物注入一个虚拟心灵，让他们获得更高的智力，目标的训练度会迅速充满，同时你可以征召他们为你战斗</Nzflm_Ev_VirtualMind.description>
+
+    <Nzflm_Ev_MindManipulation.label>心智操纵</Nzflm_Ev_MindManipulation.label>
+    <Nzflm_Ev_MindManipulation.description>你可以借助心灵蠕虫的力量，对你的仆从的心灵进行一些简单的操作</Nzflm_Ev_MindManipulation.description>
+
+    <Nzflm_Ev_MindCover.label>心智覆盖</Nzflm_Ev_MindCover.label>
+    <Nzflm_Ev_MindCover.description>你可以借助心灵蠕虫的力量，让它代替你的仆人操作自己的身体，你的仆人将不会再有人的各种想法和情感</Nzflm_Ev_MindCover.description>
+
+    <Nzflm_Ev_MindWorm.label>心灵蠕虫</Nzflm_Ev_MindWorm.label>
+    <Nzflm_Ev_MindWorm.description>你可以为目标注入一个心灵蠕虫，这个心灵蠕虫会逐渐洗脑目标，使目标服从你的意志，称为你的仆从，你的虚拟人格会为你管理他们</Nzflm_Ev_MindWorm.description>
+
+    <Nzflm_Ev_MindShaping.label>心智塑形</Nzflm_Ev_MindShaping.label>
+    <Nzflm_Ev_MindShaping.description>你可以借助心灵蠕虫的力量，像修改纸张上面的文字一样，修改你的仆人的记忆和技艺</Nzflm_Ev_MindShaping.description>
+
+    <Nzflm_Ev_RegenerativeBoneMarrow.label>再生骨髓</Nzflm_Ev_RegenerativeBoneMarrow.label>
+    <Nzflm_Ev_RegenerativeBoneMarrow.description>你可以从你的骨髓中取出少量干细胞，用于治疗自己或他人</Nzflm_Ev_RegenerativeBoneMarrow.description>
+
+    <Nzflm_Ev_AnestheticNeedleGland.label>麻醉针腺</Nzflm_Ev_AnestheticNeedleGland.label>
+    <Nzflm_Ev_AnestheticNeedleGland.description>一种位于颈部结构及其复杂的器关，其毒素配方和灵感来自于某个部落的麻醉吹箭，配合可以在空气中迅速硬化的分泌物，你可以迅速瘫痪不远处的生物目标</Nzflm_Ev_AnestheticNeedleGland.description>
+
+    <Nzflm_Ev_DevelopedAdrenalGland.label>发达肾上腺</Nzflm_Ev_DevelopedAdrenalGland.label>
+    <Nzflm_Ev_DevelopedAdrenalGland.description>你的肾上腺变得更发达，并且还可以分泌一种特质的兴奋剂物质，让你可以在危险时更快地反应</Nzflm_Ev_DevelopedAdrenalGland.description>
+
+    <Nzflm_Ev_ChameleonSkin.label>变色龙皮肤</Nzflm_Ev_ChameleonSkin.label>
+    <Nzflm_Ev_ChameleonSkin.description>你的皮肤可以像变色龙一样根据周围的环境变色，这让你可以让自己迅速隐形。</Nzflm_Ev_ChameleonSkin.description>
+
+    <Nzflm_Ev_ChargedTendon.label>充能肌腱</Nzflm_Ev_ChargedTendon.label>
+    <Nzflm_Ev_ChargedTendon.description>你改善了腿部的供血，使你的肌腱有更多的能量可以使用，让你移动更快。</Nzflm_Ev_ChargedTendon.description>
+
+    <Nzflm_Ev_ElasticTendon.label>弹性肌腱</Nzflm_Ev_ElasticTendon.label>
+    <Nzflm_Ev_ElasticTendon.description>你的腿部变得有力，让你可以跳跃到更远的地方。</Nzflm_Ev_ElasticTendon.description>
+
+    <Nzflm_Ev_Disguise.label>伪装</Nzflm_Ev_Disguise.label>
+    <Nzflm_Ev_Disguise.description>你可以改变你的容貌，让你可以迅速伪装成其他人</Nzflm_Ev_Disguise.description>
+</Defs>
