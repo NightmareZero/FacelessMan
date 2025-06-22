@@ -143,9 +143,13 @@
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
 		<isBad>false</isBad>
-		<disablesNeeds>
-			<li MayRequire="Ludeon.RimWorld.Ideology">Suppression</li>
-		</disablesNeeds>
+		<stages>
+			<li>
+				<disablesNeeds>
+					<li MayRequire="Ludeon.RimWorld.Ideology">Suppression</li>
+				</disablesNeeds>
+			</li>
+		</stages>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormSlave" />
@@ -168,21 +172,7 @@
 		<clearsEgo>true</clearsEgo>
 		<isBad>false</isBad>
 		<hediffClass>HediffWithComps</hediffClass>
-		<disablesNeeds>
-			<li>Beauty</li>
-			<li>Outdoors</li>
-			<li>Comfort</li>
-			<li>Rest</li>
-			<li>Joy</li>
-			<li>Mood</li>
-			<li>Indoors</li>
-			<li>DrugDesire</li>
-			<li>RoomSize</li>
-			<li MayRequire="Ludeon.RimWorld.Biotech">KillThirst</li>
-			<li MayRequire="Ludeon.RimWorld.Biotech">Learning</li>
-			<li MayRequire="Ludeon.RimWorld.Biotech">Play</li>
-			<li MayRequire="Ludeon.RimWorld.Royalty">Authority</li>
-		</disablesNeeds>
+
 		<stages>
 			<li>
 				<painOffset>-0.6</painOffset>
@@ -197,6 +187,22 @@
 						<postFactor>0.85</postFactor>
 					</li>
 				</capMods>
+
+				<disablesNeeds>
+					<li>Beauty</li>
+					<li>Outdoors</li>
+					<li>Comfort</li>
+					<li>Rest</li>
+					<li>Joy</li>
+					<li>Mood</li>
+					<li>Indoors</li>
+					<li>DrugDesire</li>
+					<li>RoomSize</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">KillThirst</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Learning</li>
+					<li MayRequire="Ludeon.RimWorld.Biotech">Play</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">Authority</li>
+				</disablesNeeds>
 			</li>
 		</stages>
 		<comps>

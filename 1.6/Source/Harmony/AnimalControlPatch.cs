@@ -183,15 +183,14 @@ namespace NzFaceLessManMod
         }
     }
 
-    [HarmonyPatch(typeof(FloatMenuMakerMap))]
-    [HarmonyPatch("CanTakeOrder")]
-    public static class FloatMenuMakerMap_CanTakeOrder_Patch
+    [HarmonyPatch(typeof(Pawn),nameof(Pawn.CanTakeOrder), MethodType.Getter)]
+    public static class Pawn_CanTakeOrder_Patch
     {
         [HarmonyPostfix]
-        public static void AnimalAllowsFloatMenu(Pawn pawn, ref bool __result)
+        public static void AnimalAllowsFloatMenu(Pawn __instance, ref bool __result)
 
         {
-            if (pawn.Faction?.IsPlayer == true &&  AnimalControl.CanDraft(pawn))
+            if (__instance.Faction?.IsPlayer == true &&  AnimalControl.CanDraft(__instance))
             {
                 __result = true;
             }
@@ -199,23 +198,23 @@ namespace NzFaceLessManMod
         }
     }
 
-    [HarmonyPatch(typeof(FloatMenuMakerMap))]
-    [HarmonyPatch("AddJobGiverWorkOrders")]
-    public static class FloatMenuMakerMap_AddJobGiverWorkOrders_Patch
-    {
-        [HarmonyPrefix]
-        public static bool AnimalNoWorkOrder(Pawn pawn)
+    // TODO
+    // [HarmonyPatch(typeof(FloatMenuMakerMap))]
+    // [HarmonyPatch("AddJobGiverWorkOrders")]
+    // public static class FloatMenuMakerMap_AddJobGiverWorkOrders_Patch
+    // {
+    //     [HarmonyPrefix]
+    //     public static bool AnimalNoWorkOrder(Pawn pawn)
+    //     {
 
-        {
+    //         if (AnimalControl.CanDraft(pawn))
+    //         {
+    //             return false;
+    //         }
+    //         return true;
 
-            if (AnimalControl.CanDraft(pawn))
-            {
-                return false;
-            }
-            return true;
-
-        }
-    }
+    //     }
+    // }
     
     [HarmonyPatch(typeof(SchoolUtility))]
     [HarmonyPatch("CanTeachNow")]
