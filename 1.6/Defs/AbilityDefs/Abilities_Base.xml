@@ -7,7 +7,7 @@
         <!-- 将一小团细胞注入到目标体内，暂时篡夺目标免疫系统的控制权，治疗目标所有伤口的同时，大幅度增加愈合速度 -->
         <description>Inject a small mass of cells into the target's body, temporarily usurping the
             target's immune system control, healing all wounds and greatly increasing healing speed.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Base/InjectCellReagent</iconPath>
         <cooldownTicksRange>1250</cooldownTicksRange>
         <stunTargetWhileCasting>true</stunTargetWhileCasting>
         <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>

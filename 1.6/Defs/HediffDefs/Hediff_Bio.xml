@@ -48,8 +48,8 @@
                 </capMods>
                 <statOffsets>
                     <!-- 温度 -->
-                    <ComfyTemperatureMin>-60</ComfyTemperatureMin>
-                    <ComfyTemperatureMax>40</ComfyTemperatureMax>
+                    <ComfyTemperatureMin>-66</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>66</ComfyTemperatureMax>
                     <ToxicResistance>1</ToxicResistance>
                 </statOffsets>
                 <!-- 食物消耗 -->
