@@ -25,5 +25,17 @@ namespace NzFaceLessManMod
         }
 
         public override float EffectiveRange => AdjustedRange(this, CasterPawn);
+
+        int shootCount = 0;
+        protected override bool TryCastShot()
+        {
+            shootCount++;
+            if (shootCount >= BurstShotCount)
+            {
+                shootCount = 0;
+                return Ability.Activate(currentTarget, currentDestination);
+            }
+            return base.TryCastShot();
+        }
     }
 }
