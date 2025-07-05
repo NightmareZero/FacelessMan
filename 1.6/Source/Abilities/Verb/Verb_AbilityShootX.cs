@@ -33,7 +33,7 @@ namespace NzFaceLessManMod
             if (shootCount >= BurstShotCount)
             {
                 shootCount = 0;
-                return Ability.Activate(currentTarget, currentDestination);
+                Ability.Activate(currentTarget, currentDestination);
             }
             return base.TryCastShot();
         }
