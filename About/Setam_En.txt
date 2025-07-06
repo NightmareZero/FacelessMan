@@ -1,4 +1,6 @@
-    The Faceless Ones' origins are shrouded in mystery, with some claiming they are
+    [h1]Faceless Ones[/h1]
+
+The Faceless Ones' origins are shrouded in mystery, with some claiming they are
 the byproduct of laboratory experiments in the pursuit of the ultimate human, while
 others recount that they were selectively bred to serve as stand-ins for dignitaries in
 public settings. Now, they primarily act as diplomats or spies for various factions,
@@ -6,65 +8,68 @@ utilizing their extensive internal gene pool to transform into any race. Coupled
 their exquisite makeup skills, they can infiltrate any colony or organization and slip
 away unharmed afterward.
 
+[h2]Mod contents：[/h2]
+This mod adds a Xenotype and corresponding genes
 
-
-Mod contents：
-This mod adds a Xenotype the corresponding genes
-
+[h3]Features：[/h3]
 This mod takes all of the Xenotype in Rimworld (including those added by other mods) and packages them into corresponding gene packages,
  allowing the player to inject the genes of an xenotype race into any of the colonists 
- however, are the carriers of these gene packages, eliminating the need for the cumbersome gene extraction process in Biotech
+The Faceless Ones are the carriers of these gene packages, eliminating the need for the cumbersome gene extraction process in Biotech
 
-Xenotype：
+[h2]Xenotype：[/h2]
 
-FacelessMan：The Faceless Ones are skilled infiltrators, capable of transforming
-            themselves or their minions into any race using their extensive gene pool.
+[b]FacelessMan：[/b]The Faceless Ones are skilled infiltrators, capable of transforming
+            themselves or their minions into any (genetic) race, or disguising themselves as anyone
 
-Peasant：a servant race created by the Faceless Ones, designed to perform tasks they are not skilled at or do not prefer.
+[b]Peasant：[/b]a servant race created by the Faceless Ones, designed to perform tasks they are not skilled at or do not prefer
 
 
 
-Genes：
+[h2]Genes：[/h2]
 
-Genepack Reimplanter：Carriers of this gene can implant a copy of selected xenotype into another person through an injector organ. 
+[b]Genepack Reimplanter：[/b]Carriers of this gene can select a gene package from their internal gene pool and inject it into a selected target. 
 
-Gene Morphing：Carriers of this gene can choose one of their xenotype gene pack for morphing.
+[b]Gene Morphing：[/b]Carriers of this gene can choose one of their gene packages for morphing.
 
-Gene Master：Carriers of this gene have all xenotype genes available within their body. and they won't be weakened by genetic recombination.
+[b]Gene Expression：[/b]The Faceless Ones have countless unique gene segments pre-built within their bodies, you can recombine yourself by switching them.
 
-Strong：Carriers of this gene are stronger and have a higher resistance to various types of injuries.
-
-Flesh Master：Carriers of this gene specializes in controlling their's cells, allowing the body to heal quickly and become more resilient, 
-  and bleeding wounds close very quickly.
-
-GenePackX：Every Xenotype in Rimworld (including mod-added ones), is generated with a corresponding "GenePack" gene, 
+[b]GenePackX：[/b]Every Xenotype in Rimworld (including mod-added ones), is generated with a corresponding "Xenotype Gene Package" gene, 
   and when you have this gene in you, you can use "Genepack Reimplanter" and "Gene Morphing" to transform or convert others
 
 
 
-Abilities：
+[h2]Abilities：[/h2]
 
-Implant Genes：Implanting the xenotype carrying the genes of the 'xenotype gene package' from oneself into a target organism. 
+[b]Implant Genes：[/b]Implanting the embryo of the "Xenotype Gene Package" from oneself into a target organism. 
   If the recipient's xenotype genes are still undergoing reconstruction, it will lead to their demise.
-  After implantation, the genes of the xenotype will overwrite those of the recipient's xenotype genes, while the lineage genes remain unaffected.
+  After implantation, the genes of the xenotype embryo will overwrite those of the recipient's xenotype genes, while the lineage genes remain unaffected.
 
-Morph：Morph into a different xenotype.
+[b]Morph：[/b]Morph into a different xenotype.
 
-Embrace Evolution：Customize an xenotype and inject it into the target, but even the mighty gene master will become weakened.
+[b]Gene Expression：[/b]The Faceless Ones have countless unique gene segments pre-built within their bodies, you can recombine yourself by switching them to gain some related abilities, every few days, the gene points you can bear will increase
 
-Disguise：Manipulating your flesh and blood to change the color of one's skin and regenerate or lose one's hair, Disguise as a selected target.
+[h2]Gene Fragment Groups：[/h2]
+
+[b]Common Genes[/b] Some common gene segments, some of which will affect a large number of Faceless Ones' skills
+
+[b]Agent Agency[/b] After countless infiltration missions, these genes have proven to be highly effective
+
+[b]Biotechnology[/b] Over the long years, scientists have extracted many genes from animals and other human xenotypes
+
+[b]Swarm Lord[/b] Through the study of the ancient Queen, we have acquired some insect genes
+
+[b]Psionic Technology[/b] Through genetic coding, some psionic abilities have been turned into instincts, no longer requiring complex awakening rituals (Requires Royalty DLC)
+
+[b]Void Technology[/b] (Still in development) (Requires Anomaly DLC)
 
 
 
-Future development: 
-I have been quite busy recently, but in the near future, I may add some events to this mod. 
-If I have more time in the future, I may even add related clothing, weapons, and missions.
+[h2]Future development：[/h2]
+
+Adding more gene segments, as well as some events, related clothing, weapons and missions
 
 
-Code： https://github.com/NightmareZero/FacelessMan.git
+[b]Source Code：[/b] [url]https://github.com/NightmareZero/FacelessMan.git[/url]
 
-The English parts of this mod are all machine translated, if anyone would like to fix the errors and omissions, you can private message me or go directly to Github to submit Also,
- except for the cover which is generated by Ai, the other ones basically use Rimworld's own icons, if anyone thinks it's too ugly, you can go to Github to submit it too, and I can add you as a collaborator of the mod!
-
-Oth：
-I copied a small amount of code related to HarmonyPatch from VanillaRacesExpanded-Lycanthrope and VanillaRacesExpanded-Insector (and made modifications according to my needs). If there are any copyright issues, please let me know. 
+The English parts of this mod are all machine translated, if anyone would like to fix the errors and omissions, you can private message me or go directly to Github to submit
+Thanks to the great Penguin, who provided the image resources, the new abilities added in version 1.6 would not have any skill icons without him 
