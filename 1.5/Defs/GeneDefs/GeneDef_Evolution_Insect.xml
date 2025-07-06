@@ -8,7 +8,7 @@
         <!-- 提取自虫族女皇的基因，加以改进，现在可以分泌一种激素，刺激周围的友方生物，增强其战斗力 -->
         <description>Extracted from the queen of the insect, improved, now it can secrete a hormone that stimulates
             surrounding friendly creatures, enhancing their combat effectiveness.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/NestGland</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
@@ -24,7 +24,7 @@
         <!-- 一种位于口腔中的，可以发出超声波的器官，可以用来探测周围的环境，让你忽略黑暗对视觉的影响 -->
         <description>An organ located in the mouth that can emit ultrasonic waves, which can be used
             to detect the surrounding environment and ignore the visual effects of darkness.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/UltrasonicOrgan</iconPath>
         <displayOrderInCategory>20</displayOrderInCategory>
         <evolution>1</evolution>
         <ignoreDarkness>true</ignoreDarkness>
@@ -38,7 +38,7 @@
         <!-- 一种由几丁质和硬化骨骼组成的利爪，替代手部，其中蕴含的力道甚至可以将敌人撕成两半 -->
         <description>A claw made of chitin and hardened bones, replacing the hands, the force
             contained in it can even tear the enemy in half.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/RippingClaws</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
         <evolution>1</evolution>
         <statOffsets>
@@ -68,7 +68,7 @@
         <!-- 地下深处虫巢女皇的腺体，可以分泌信息素，呼唤附近的虫族来帮你 -->
         <description>taken from the queen of the underground nest, it can secrete pheromones to
             call the nearby insect to help you.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/QueenGland</iconPath>
         <displayOrderInCategory>40</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
@@ -84,7 +84,7 @@
         <!-- 从虫族分泌茧的基因中，获得了分泌喷洒快速凝固的胶体的基因，这种胶体触碰到目标之后，会快速凝固，限制目标的动作 -->
         <description>Obtained the gene that secretes and sprays rapidly solidified colloid from the insect
             secretion cocoon. This colloid will quickly solidify after touching the target, restricting the target's actions.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/GelGland</iconPath>
         <displayOrderInCategory>50</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
@@ -100,7 +100,7 @@
         <!-- 替换你的汗腺，使其可以快速分泌另一种液体，在你体外形成外骨骼，大幅度降低你受到的伤害，但是会降低移动速度 -->
         <description>Replaced your sweat glands so that it can quickly secrete another liquid to form an exoskeleton outside your body,
             greatly reducing the damage you take, but reducing your movement speed.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/ExoskeletonGland</iconPath>
         <displayOrderInCategory>60</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
@@ -117,7 +117,7 @@
         <description>
             By a large number of insect genes, with the genius idea of the researcher, we restored the ancient legend
             of a kind of 'hydralisk' related biological genes.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/SpikeGland</iconPath>
         <displayOrderInCategory>70</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>
