@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <ScenarioDef>
+    <ScenarioDef ParentName="ScenarioBase">
         <defName>Flm_Escape</defName>
         <label>Escape</label>
-
+        <description>In the intensifying struggle for the heir apparent, you fail and you have to
+            leave your family, brocade, servants, and jewels behind to try to survive in this
+            desolate place, and on the way to escape, you persuade a local man to serve you with
+            some fancy words.</description>
         <scenario>
-            <name>Escape</name>
-            <description>In the intensifying struggle for the heir apparent, you fail and you have to
-                leave your family, brocade, servants, and jewels behind to try to survive in this
-                desolate place, and on the way to escape, you persuade a local man to serve you with
-                some fancy words.</description>
             <summary>You have escaped from your family and are trying to survive on your own.</summary>
             <playerFaction>
                 <def>PlayerFaction</def>
                 <factionDef>PlayerColony</factionDef>
             </playerFaction>
             <parts>
+                <!-- Game start dialog -->
+                <li Class="ScenPart_GameStartDialog">
+                    <def>GameStartDialog</def>
+                    <text>After several morph and disguises, you shook off the family pursuit and now you must survive in this desolate place. Now with the help of snubbed servants, you will build a powerful territory and take revenge on your brothers.</text>
+                    <closeSound>GameStartSting</closeSound>
+                </li>
+
+                <!-- Config pages -->
                 <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
                     <def>ConfigPage_ConfigureStartingPawns</def>
                     <pawnChoiceCount>2</pawnChoiceCount>
                     <pawnCount>2</pawnCount>
                 </li>
+
                 <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
                     <def>ConfigurePawnsXenotypes</def>
                     <pawnChoiceCount>2</pawnChoiceCount>
-  
                     <xenotypeCounts>
                         <li>
                             <xenotype>Flm_FacelessMan</xenotype>
@@ -36,9 +42,15 @@
                         </li>
                     </xenotypeCounts>
                 </li>
+
+                <!-- Player starting stuff spawn method-->
                 <li Class="ScenPart_PlayerPawnsArriveMethod">
                     <def>PlayerPawnsArriveMethod</def>
+                    <method>Standing</method>
+                    <visible>false</visible>
                 </li>
+
+                <!-- Player starting things -->
                 <li Class="ScenPart_StartingThing_Defined">
                     <def>StartingThing_Defined</def>
                     <thingDef>Silver</thingDef>
@@ -58,18 +70,22 @@
                     <def>StartingThing_Defined</def>
                     <thingDef>Gun_Revolver</thingDef>
                 </li>
+
+                <!-- Scatter some things near player start -->
                 <li Class="ScenPart_ScatterThingsNearPlayerStart">
-                    <def>ScatterThingsNearPlayerStart</def>
+                    <def>StartingThing_Defined</def>
                     <thingDef>Steel</thingDef>
                     <count>650</count>
                     <allowRoofed>True</allowRoofed>
                 </li>
                 <li Class="ScenPart_ScatterThingsNearPlayerStart">
-                    <def>ScatterThingsNearPlayerStart</def>
+                    <def>StartingThing_Defined</def>
                     <thingDef>WoodLog</thingDef>
                     <count>300</count>
                     <allowRoofed>True</allowRoofed>
                 </li>
+
+                <!-- Scatter some things anywhere -->
                 <li Class="ScenPart_ScatterThingsAnywhere">
                     <def>ScatterThingsAnywhere</def>
                     <thingDef>Steel</thingDef>
@@ -81,12 +97,6 @@
                     <thingDef>MealSurvivalPack</thingDef>
                     <count>21</count>
                     <allowRoofed>True</allowRoofed>
-                </li>
-                <li Class="ScenPart_GameStartDialog">
-                    <def>GameStartDialog</def>
-                    <text>After several morph and disguises, you shook off the family pursuit and now you must survive in this desolate place. Now with the help of snubbed servants, you will build a powerful territory and take revenge on your brothers.</text>
-                    <textKey>GameStartDialog</textKey>
-                    <closeSound>GameStartSting</closeSound>
                 </li>
             </parts>
         </scenario>
