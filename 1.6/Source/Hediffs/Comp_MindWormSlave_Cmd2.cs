@@ -83,7 +83,7 @@ namespace NzFaceLessManMod
                     {
                         parent.pawn?.story?.traits?.RemoveTrait(thisTrait);
                         // 添加过载
-                        parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.3f,
+                        parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.2f,
                             master?.health?.hediffSet?.GetBrain());
                         // 播放音效
                         DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -129,7 +129,7 @@ namespace NzFaceLessManMod
                         // 添加特质到自己的特质列表
                         parent.pawn?.story?.traits?.GainTrait(newTrait);
                         // 添加过载
-                        parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.5f,
+                        parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.3f,
                             master?.health?.hediffSet?.GetBrain());
                         // 播放音效
                         DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -175,7 +175,7 @@ namespace NzFaceLessManMod
                         // 添加特质到主人的特质列表
                         master?.story?.traits?.GainTrait(newTrait);
                         // 添加过载
-                        master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                        master?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                             parent.pawn?.health?.hediffSet?.GetBrain());
                         // 播放音效
                         DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -211,7 +211,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Shooting);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Medicine);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
 
                     // 播放音效
@@ -225,7 +225,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Artistic);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Crafting);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -239,7 +239,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Plants);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Cooking);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.9f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.5f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -251,7 +251,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Social);
                     doTransferKnowledge(parent.pawn, master, 0.25f, SkillDefOf.Animals);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                         parent.pawn?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(master);
@@ -282,7 +282,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Shooting);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Medicine);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                         master?.health?.hediffSet?.GetBrain());
 
                     // 播放音效
@@ -296,7 +296,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Artistic);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Crafting);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.6f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
                         master?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -310,7 +310,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Plants);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Cooking);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.7f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.5f,
                         master?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
@@ -322,7 +322,7 @@ namespace NzFaceLessManMod
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Social);
                     doTransferKnowledge(master, parent.pawn, 0.5f, SkillDefOf.Animals);
                     // 添加过载
-                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.4f,
+                    parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.3f,
                         master?.health?.hediffSet?.GetBrain());
                     // 播放音效
                     DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);

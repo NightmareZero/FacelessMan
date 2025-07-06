@@ -26,7 +26,7 @@ namespace NzFaceLessManMod
                 defaultLabel = "NzFLM.MindWormSlave_Gizmo".Translate(),
                 defaultDesc = "NzFLM.MindWormSlave_GizmoDesc".Translate(),
                 // TODO 修改
-                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
+                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/Psionic/MindShaping"),
                 action = delegate
                 {
                     var cmdMenu = new List<FloatMenuOption>();

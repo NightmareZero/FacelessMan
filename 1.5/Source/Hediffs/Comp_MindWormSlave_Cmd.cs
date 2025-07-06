@@ -26,7 +26,7 @@ namespace NzFaceLessManMod
                 defaultLabel = "NzFLM.MindWormSlave_Gizmo".Translate(),
                 defaultDesc = "NzFLM.MindWormSlave_GizmoDesc".Translate(),
                 // TODO 修改
-                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/ViewGenes"),
+                icon = ContentFinder<Texture2D>.Get("UI/Icons/Abilities/Psionic/MindShaping"),
                 action = delegate
                 {
                     var cmdMenu = new List<FloatMenuOption>();
@@ -74,7 +74,7 @@ namespace NzFaceLessManMod
                 Messages.Message("nzflm.slaves_psychic_shock_msg".Translate(parent.pawn.LabelCap),
                     MessageTypeDefOf.NeutralEvent);
             },
-            itemIcon: null,
+            iconTex: null,
             iconColor: Color.white
             ));
             // 精神抚慰
@@ -98,7 +98,7 @@ namespace NzFaceLessManMod
                 Messages.Message("nzflm.slaves_psychic_soothe_msg".Translate(parent.pawn.LabelCap),
                     MessageTypeDefOf.NeutralEvent);
             },
-            itemIcon: null,
+            iconTex: null,
             iconColor: Color.white
             ));
         }
@@ -125,7 +125,7 @@ namespace NzFaceLessManMod
                     Messages.Message("nzflm.slaves_psychic_coverage_remove_msg".Translate(parent.pawn.LabelCap),
                         MessageTypeDefOf.NeutralEvent);
                 },
-                itemIcon: null,
+                iconTex: null,
                 iconColor: Color.white
                 ));
             }
@@ -144,7 +144,7 @@ namespace NzFaceLessManMod
                     Messages.Message("nzflm.slaves_psychic_coverage_msg".Translate(parent.pawn.LabelCap),
                         MessageTypeDefOf.NeutralEvent);
                 },
-                itemIcon: null,
+                iconTex: null,
                 iconColor: Color.white
                 ));
             }
