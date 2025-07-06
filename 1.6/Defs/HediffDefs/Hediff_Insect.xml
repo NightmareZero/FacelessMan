@@ -201,7 +201,7 @@
 			greatly reducing movement and attack speed.</description>
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
-		<initialSeverity>0.34</initialSeverity>
+		<initialSeverity>0.333</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-3</severityPerDay>
@@ -265,7 +265,7 @@
 		<duplicationAllowed>false</duplicationAllowed>
 		<hediffClass>HediffWithComps</hediffClass>
 		<isBad>false</isBad>
-		<initialSeverity>0.4</initialSeverity>
+		<initialSeverity>0.38</initialSeverity>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-3</severityPerDay>

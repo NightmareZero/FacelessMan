@@ -7,7 +7,7 @@
         <!-- 呼唤几只限时的巨型蜘蛛，对你的敌人发动袭击 -->
         <description>Release a pheromone that stimulates surrounding friendly creatures, enhancing
             their combat effectiveness.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/NestGland</iconPath>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>10000</cooldownTicksRange>
         <hostile>false</hostile>
@@ -38,7 +38,7 @@
         <label>destruction</label>
         <!-- 尝试将目标撕成碎片，对敌人造成大量伤害 -->
         <description>Try to tear the target into pieces, causing a lot of damage to the enemy.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/RippingClaws</iconPath>
         <cooldownTicksRange>1250</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <ai_IsIncendiary>true</ai_IsIncendiary>
@@ -86,7 +86,7 @@
         <label>support pheromone</label>
         <!-- 呼唤几只可控的巨型蜘蛛，对你的敌人发动袭击，由于特殊信息素的刺激，它们会更加狂暴，一段时间后，这些生物会溶解死亡。 -->
         <description>Call a few controllable giant spiders to attack your enemies. Due to the stimulation of special pheromones, they will be more violent and will dissolve and die after a period of time.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/QueenGland</iconPath>
         <cooldownTicksRange>30000</cooldownTicksRange>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -128,7 +128,7 @@
         <!-- 快速喷洒出大量的凝胶，这种凝胶会快速凝固，限制目标的动作 -->
         <description>Quickly spray a large amount of gel, which will quickly solidify and restrict the target's actions.</description>
         <!-- TODO 替换 -->
-        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/GelGland</iconPath>
         <cooldownTicksRange>600</cooldownTicksRange>
         <aiCanUse>false</aiCanUse>
         <warmupStartSound>FoamSpray_Warmup</warmupStartSound>
@@ -169,7 +169,7 @@
         <description>activate your exoskeleton glands to quickly secrete a liquid that forms a layer of exoskeleton outside your body. These exoskeletons need a short period of time to solidify and harden, and will crack and disappear after a period of time.</description>
         <cooldownTicksRange>30000</cooldownTicksRange>
         <!-- TODO -->
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/ExoskeletonGland</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>
@@ -200,7 +200,7 @@
 		<label>spike shot</label>
         <!-- 快速发射出多枚刺针，对你的敌人造成大量伤害 -->
 		<description>Quickly launch multiple spines, causing a lot of damage to your enemies.</description>
-        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <iconPath>UI/Icons/Abilities/Insect/SpikeGland</iconPath>
 		<cooldownTicksRange>240~360</cooldownTicksRange>
 		<displayOrder>200</displayOrder>
 		<aiCanUse>true</aiCanUse>

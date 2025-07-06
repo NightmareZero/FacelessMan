@@ -98,7 +98,7 @@
         <displayCategory>Nzflm_Gene_Ev_Bio</displayCategory>
         <!-- 来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间(最多1年)，也可以反向注入解毒剂，立即结束目标的麻痹症效果。 -->
         <description>A modified version of the toxin from spiders in nature that can cause the target to be stunned for a long time (up to 1 year), or can be injected with an antidote in reverse to immediately end the target's paralysis effect.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Bio/AcidSac</iconPath>
         <displayOrderInCategory>60</displayOrderInCategory>
         <evolution>1</evolution>
         <abilities>

@@ -9,7 +9,7 @@
             interference
             upon hitting the target.</description>
         <!-- TODO -->
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Bio/BatteryOrgan</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>True</targetRequired>
         <cooldownTicksRange>900</cooldownTicksRange>
@@ -63,7 +63,7 @@
         <!-- 经由一种相比 Impid 更好的，基于生物技术优化过的腺体，喷洒出高温易燃的液体。以迅速点燃目标 -->
         <description>Spew flammable liquid from a gland that has been optimized with biotechnology
             to be better than the Impid, igniting the target quickly.</description>
-        <iconPath>UI/Abilities/FireSpew</iconPath>
+        <iconPath>UI/Icons/Abilities/Bio/FireSac</iconPath>
         <cooldownTicksRange>600</cooldownTicksRange>
         <aiCanUse>false</aiCanUse>
         <warmupStartSound>FireSpew_Warmup</warmupStartSound>
@@ -99,7 +99,7 @@
         <label>acid breath</label>
         <!-- 通过特殊的腺体，喷洒出一种无毒的强酸性液体以腐蚀目标 -->
         <description>Spew a non-toxic strong acid liquid through a special gland to corrode the target.</description>
-        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <iconPath>UI/Icons/Abilities/Bio/AcidSac</iconPath>
         <cooldownTicksRange>600</cooldownTicksRange>
         <aiCanUse>false</aiCanUse>
         <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
@@ -138,7 +138,7 @@
         <!-- 定制一个异种基因并注入目标，但这会让你变得非常疲劳 -->
         <description>Customize an xenogerm and inject it into the target, but this will make you very
             tired.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Bio/GeneControl</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <aiCanUse>false</aiCanUse>
@@ -176,7 +176,7 @@
         <description>By entering a special state, greatly reduce food consumption, improve high
             temperature/low temperature/toxin resistance, in order to get through some difficult days.</description>
         <!-- TODO -->
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Bio/Cryptobiosis</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>
@@ -203,7 +203,7 @@
 		<cooldownTicksRange>2500</cooldownTicksRange>
         <!-- 一种来源于自然界蜘蛛的毒素的调制版，可以让目标昏迷很长时间 -->
 		<description>A modified version of the toxin from spiders in nature that can cause the target to be stunned for a long time.</description>
-		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<iconPath>UI/Icons/Abilities/Bio/StunGland</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
 		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
 		<displayOrder>500</displayOrder>
@@ -241,7 +241,7 @@
 		<cooldownTicksRange>2500</cooldownTicksRange>
         <!-- 一种基于原毒剂的逆向解毒剂，可以立即结束目标的麻痹症效果 -->
 		<description>A reverse antidote based on the original toxin that can immediately end the target's abasia effect.</description>
-		<iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+		<iconPath>UI/Icons/Abilities/Bio/StunGland</iconPath>
 		<warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
 		<warmupEffecter>Implant_Xenogerm</warmupEffecter>
 		<displayOrder>500</displayOrder>

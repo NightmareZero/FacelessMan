@@ -8,7 +8,7 @@
             to perceive you for a while. Due to the time required for color change, your movement
             speed will be affected.</description>
         <!-- TODO -->
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Spy/ChameleonSkin</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>
@@ -42,7 +42,7 @@
             you faster reaction speed and improved combat capabilities.</description>
         <level>1</level>
         <!-- TODO 图标 -->
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Spy/AdrenalGland</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>30000</cooldownTicksRange>
@@ -74,7 +74,7 @@
         <label>longjump</label>
         <!-- 使用你有力而富有弹性的双腿跳到远处。 -->
         <description>Jump to a distance with your powerful and elastic legs.</description>
-        <iconPath>UI/Abilities/Longjump</iconPath>
+        <iconPath>UI/Icons/Abilities/Spy/ElasticTendon</iconPath>
         <cooldownTicksRange>180</cooldownTicksRange>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -108,7 +108,7 @@
         <description>Manipulating your flesh and blood to change the color of one's skin and
             regenerate or lose one's hair, Disguise as a selected target.</description>
         <!-- <iconPath>UI/Icons/Genes/Gene_Morph</iconPath> -->
-        <iconPath>UI/Icons/Abilities/Disguise</iconPath>
+        <iconPath>UI/Icons/Abilities/Spy/Disguise</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <aiCanUse>false</aiCanUse>
@@ -147,7 +147,7 @@
         <!-- 从你体内取出少量干细胞，用于治疗目标一处最严重的伤口 -->
         <description>Take a small amount of stem cells from your body to treat the most serious
             wound of the target.</description>
-        <iconPath>UI/Icons/Abilities/XenogermreImplanter</iconPath>
+        <iconPath>UI/Icons/Abilities/Spy/RegenerativeBoneMarrow</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <displayOrder>500</displayOrder>
@@ -191,7 +191,7 @@
             can quickly paralyze the target.</description>
         <level>1</level>
         <!-- TODO -->
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Spy/AnestheticNeedleGland</iconPath>
         <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
         <targetRequired>True</targetRequired>
         <cooldownTicksRange>1200</cooldownTicksRange>

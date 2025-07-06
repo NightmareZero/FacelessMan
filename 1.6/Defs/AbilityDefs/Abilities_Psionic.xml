@@ -7,7 +7,7 @@
         <!-- 让你的虚拟心灵，生成一个更小的虚拟心灵，让目标动物拥有智慧，目标不再需要训练，而且可以征召战斗 -->
         <description>Let your virtual mind generate a smaller virtual mind, allowing the target
             animal to have wisdom, no longer need training, and can be summoned to fight.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Psionic/VirtualMind</iconPath>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <category>Nzflm_AbilityCategory</category>
         <displayOrder>500</displayOrder>
@@ -54,7 +54,7 @@
         <description>You can inject a mind worm into the target, which will gradually brainwash the target -->
             and make the target obey your will and become your servant. Your virtual personality will manage -->
             them for you.</description>
-        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <iconPath>UI/Icons/Abilities/Psionic/MindWorm</iconPath>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <category>Nzflm_AbilityCategory</category>
         <displayOrder>500</displayOrder>
