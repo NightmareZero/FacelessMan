@@ -233,4 +233,22 @@ namespace NzFaceLessManMod
             else return true;
         }
     }
+
+    // 控制动物是否显示装备栏
+    [HarmonyPatch(typeof(ITab_Pawn_Gear))]
+    [HarmonyPatch("ShouldShowEquipment")]
+    public static class ITab_Pawn_Gear_ShouldShowEquipment_Patch
+    {
+        [HarmonyPrefix]
+        public static bool ShouldShowEquipmentPrefix(Pawn p, ref bool __result)
+        {
+            // 如果是可征召的动物，不显示装备栏
+            if (AnimalControl.CanDraft(p))
+            {
+                __result = false;
+                return false; // 跳过原方法
+            }
+            return true; // 继续执行原方法
+        }
+    }
 }
