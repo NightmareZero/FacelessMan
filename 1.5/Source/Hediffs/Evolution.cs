@@ -17,7 +17,7 @@ namespace NzFaceLessManMod
         // 上一次增加点数的时间
         public int lastPointAddTick = 0;
 
-        private int pointAddInterval = 5 * 60000; // 5天增加一点
+        private int pointAddInterval = 3 * 60000; // 3天增加一点
 
         private int lastCheckGeneticInstabilityTick = 0; // 上一次检查基因不稳定的时间
         private bool lastCheckGeneticInstabilityResult = true; // 上一次检查基因不稳定的结果
