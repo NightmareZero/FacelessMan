@@ -69,6 +69,70 @@ namespace NzFaceLessManMod
             }
         }
 
+        protected override void PostXenotypeOnGUI(float curX, float curY)
+        {
+            TaggedString taggedString2 = "IgnoreRestrictions".Translate();
+            float width = Text.CalcSize(taggedString2).x + 4f + 24f;
+            Rect rect = new Rect(curX, curY, width, Text.LineHeight);
+            
+            bool num = ignoreRestrictions;
+            Widgets.CheckboxLabeled(rect, taggedString2, ref ignoreRestrictions);
+            if (num != ignoreRestrictions)
+            {
+                if (ignoreRestrictions)
+                {
+                    Find.WindowStack.Add(new Dialog_MessageBox("IgnoreRestrictionsConfirmation".Translate(), "Yes".Translate(), delegate
+                    {
+                    }, "No".Translate(), delegate
+                    {
+                        ignoreRestrictions = false;
+                    }));
+                }
+                else
+                {
+                    SelectedGenes.RemoveAll((GeneDef x) => x.biostatArc > 0);
+                    OnGenesChanged();
+                }
+            }
 
+            if (Mouse.IsOver(rect))
+            {
+                Widgets.DrawHighlight(rect);
+                TooltipHandler.TipRegion(rect, "IgnoreRestrictionsDesc".Translate());
+            }
+
+            postXenotypeHeight += rect.yMax - curY;
+        }
+
+        protected override bool CanAccept()
+        {
+            // 跳过基类的CanAccept以避免StartingPawnUtility的问题
+            // 直接调用GeneCreationDialogBase的CanAccept
+            if (xenotypeName.NullOrEmpty())
+            {
+                Messages.Message("MessageMustChooseLabel".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+                return false;
+            }
+
+            if (!SelectedGenes.Any())
+            {
+                Messages.Message("MessageNoSelectedGenes".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+                return false;
+            }
+
+            if (GenFilePaths.AllCustomXenotypeFiles.EnumerableCount() >= 200)
+            {
+                Messages.Message("MessageTooManyCustomXenotypes", null, MessageTypeDefOf.RejectInput, historical: false);
+                return false;
+            }
+
+            if (!ignoreRestrictions && leftChosenGroups.Any())
+            {
+                Messages.Message("MessageConflictingGenesPresent".Translate(), null, MessageTypeDefOf.RejectInput, historical: false);
+                return false;
+            }
+
+            return true;
+        }
     }
 }

@@ -155,7 +155,7 @@
             <drawAimPie>False</drawAimPie>
             <requireLineOfSight>False</requireLineOfSight>
             <targetParams>
-                <canTargetSelf>false</canTargetSelf>
+                <canTargetSelf>true</canTargetSelf>
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetBuildings>false</canTargetBuildings>
                 <canTargetAnimals>false</canTargetAnimals>

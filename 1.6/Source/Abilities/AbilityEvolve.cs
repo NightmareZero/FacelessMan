@@ -14,9 +14,12 @@ namespace NzFaceLessManMod
 
         public override IEnumerable<PreCastAction> GetPreCastActions()
         {
+            customXenotype = null;
+
             Find.WindowStack.Add(new Dialog_CreateXenotype1(0, onAccept: (xeno) =>
             {
                 customXenotype = xeno;
+
             }));
             return base.GetPreCastActions();
         }
@@ -53,6 +56,7 @@ namespace NzFaceLessManMod
             }
 
             CustomXenotype(caster, targetPawn, customXenotype);
+
         }
 
         public static void CustomXenotype(Pawn caster, Pawn target, CustomXenotype xenotype)
