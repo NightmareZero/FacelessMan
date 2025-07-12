@@ -54,11 +54,11 @@ namespace NzFaceLessManMod
             foreach (var xeno_ in xenoGenes)
             {
                 var xeno = xeno_;
-                if (xeno.Value.defName == DefsOf.Flm_FacelessMan.defName)
-                {
-                    continue;
-                }
-                else if (xeno.Value.genes.Count == 0)
+                // if (xeno.Value.defName == DefsOf.Flm_FacelessMan.defName)
+                // {
+                //     continue;
+                // }
+                if (xeno.Value.genes.Count == 0)
                 {
                     continue;
                 }
