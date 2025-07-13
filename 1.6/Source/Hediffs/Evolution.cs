@@ -14,10 +14,12 @@ namespace NzFaceLessManMod
         public int evolutionLimit = 0;
         // 当前的点数
         public int evolution = 0;
+
+        public int evolutionMax = 30; // 最大点数
         // 上一次增加点数的时间
         public int lastPointAddTick = 0;
 
-        private int pointAddInterval = 3 * 60000; // 3天增加一点
+        private int pointAddInterval = 4 * 60000; // 4天增加一点
 
         private int lastCheckGeneticInstabilityTick = 0; // 上一次检查基因不稳定的时间
         private bool lastCheckGeneticInstabilityResult = true; // 上一次检查基因不稳定的结果
@@ -43,9 +45,9 @@ namespace NzFaceLessManMod
         // 进化的基因
         public List<EvolutionGeneDef> evolutions = new List<EvolutionGeneDef>();
 
-        public override void Tick()
+        public override void TickInterval(int delta)
         {
-            base.Tick();
+            base.TickInterval(delta);
             // 在dirty之后0.5秒执行
             if (geneDirty && Find.TickManager.TicksGame - geneDirtyTick > 30)
             {
@@ -54,15 +56,25 @@ namespace NzFaceLessManMod
                 geneDirtyTick = 0;
             }
 
-            // 如果已经可以新增点数
-            if (Find.TickManager.TicksGame - lastPointAddTick > pointAddInterval)
+            if (this.evolutionLimit < this.evolutionMax)
             {
-                this.evolutionLimit++; // 增加点数
-                this.lastPointAddTick = Find.TickManager.TicksGame; // 记录时间
+                int currentTick = Find.TickManager.TicksGame;
+                // 确保lastPointAddTick已初始化，避免第一次就触发
+                if (lastPointAddTick == 0)
+                {
+                    lastPointAddTick = currentTick;
+                }
+                else if (currentTick - lastPointAddTick > pointAddInterval)
+                {
+                    evolutionLimit++; // 增加点数
+                    lastPointAddTick = currentTick; // 记录时间
 #if DEBUG
-                Log.WarningOnce("evolutionLimit added to " + this.evolutionLimit, 62489671);
+                    Log.WarningOnce("evolutionLimit added to " + evolutionLimit, 62489671);
 #endif
+                }
             }
+
+
         }
 
         private void onGeneDirty()
