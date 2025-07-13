@@ -74,7 +74,10 @@ namespace NzFaceLessManMod
                     }
                     ReimplantXenotype(caster, targetPawn, xeno.Value);
                     this.isXenoSelected = true;
-                });
+                },
+                iconColor: Color.white,
+                iconTex: xeno.Value.Icon
+                );
                 selectXenoMenu.Add(opt);
             }
             // 绘制菜单(特殊处理)
@@ -180,13 +183,13 @@ namespace NzFaceLessManMod
                 for (int num = target.genes.Xenogenes.Count - 1; num >= 0; num--)
                 {
                     target.genes.RemoveGene(target.genes.Xenogenes[num]);
-                }   
+                }
             }
 
             if (target.genes.Xenogenes.Count == 0 && target.genes.Endogenes.Count == 0)
-                {
-                    target.genes.SetXenotype(XenotypeDefOf.Baseliner);
-                }
+            {
+                target.genes.SetXenotype(XenotypeDefOf.Baseliner);
+            }
         }
 
         /// <summary>
@@ -254,7 +257,7 @@ namespace NzFaceLessManMod
                 }
                 return false;
             }
-            
+
 
             // if (!PawnIdeoCanAcceptReimplant(parent.pawn, pawn))
             // {
