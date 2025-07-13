@@ -163,7 +163,7 @@
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetHumans>true</canTargetHumans>
                 <canTargetAnimals>true</canTargetAnimals>
-                <canTargetSelf>false</canTargetSelf>
+                <canTargetSelf>true</canTargetSelf>
                 <canTargetBuildings>false</canTargetBuildings>
                 <canTargetMechs>false</canTargetMechs>
             </targetParams>
