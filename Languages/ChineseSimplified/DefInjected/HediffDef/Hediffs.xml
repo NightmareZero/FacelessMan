@@ -9,4 +9,7 @@
     <Flm_Evolution.label>进化</Flm_Evolution.label>
     <Flm_Evolution.description>随着时间积累，身体会逐渐适应，并允许表达更多的基因</Flm_Evolution.description>
 
+    <NzFlm_He_CellReagent.label>细胞制剂</NzFlm_He_CellReagent.label>
+    <NzFlm_He_CellReagent.description>注入一小团细胞到目标体内，暂时篡夺目标免疫系统的控制权，治疗目标所有伤口的同时，大幅度增加愈合速度。</NzFlm_He_CellReagent.description>
+
 </LanguageData>

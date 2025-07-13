@@ -36,6 +36,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityCoagulate">
+                <compClass>NzFaceLessManMod.CompAbilityCoagulateNoCheck</compClass>
                 <tendQualityRange>0.6~0.8</tendQualityRange>
             </li>
             <li Class="CompProperties_AbilityGiveHediff">
