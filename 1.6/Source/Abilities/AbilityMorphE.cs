@@ -58,19 +58,24 @@ namespace NzFaceLessManMod
                 if (xeno.Value.defName == DefsOf.Flm_FacelessMan.defName)
                 {
                     continue;
-                } else if (xeno.Value.inheritable == false)
+                }
+                else if (xeno.Value.inheritable == false)
                 {
                     continue;
                 }
 #if DEBUG
                 Log.Message("flm: draw menu xeno.Key: " + xeno.Key);
 #endif
-                var opt = new FloatMenuOption(xeno.Key, () =>
+                var opt = new FloatMenuOption(xeno.Key,
+                 () =>
                 {
                     MorphEndotype(targetPawn, xeno.Value);
                     this.isEndoSelected = true;
                     base.Apply(target, dest);
-                });
+                },
+                iconColor: Color.white,
+                iconTex: xeno.Value.Icon
+                );
                 selectEndoMenu.Add(opt);
             }
 

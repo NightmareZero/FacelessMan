@@ -61,7 +61,10 @@ namespace NzFaceLessManMod
                     MorphXenotype(casterPawn, xeno.Value);
                     this.isXenoSelected = true;
                     base.Apply(target, dest);
-                });
+                },
+                iconColor: Color.white,
+                iconTex: xeno.Value.Icon
+                );
                 selectXenoMenu.Add(opt);
             }
 
@@ -112,12 +115,12 @@ namespace NzFaceLessManMod
         /// </summary>
         /// <param name="caster"></param>
         private static void fixMorphAbility(Pawn caster)
-        { 
+        {
             // 检查caster是否有变身技能
             Ability morphAbility = caster.abilities?.abilities?.Find(a => a.def == DefsOf.Flm_Morphing);
             if (morphAbility != null) // 如果有，则不需要修复
-            { 
-                return; 
+            {
+                return;
             }
 
             // 检查基因中是否有变身技能
@@ -134,7 +137,7 @@ namespace NzFaceLessManMod
                         if (abilityDef == DefsOf.Flm_Morphing)
                         {
                             // 添加变身技能
-                            Ability ability = new Ability(caster,DefsOf.Flm_Morphing);
+                            Ability ability = new Ability(caster, DefsOf.Flm_Morphing);
                             caster.abilities.abilities.Add(ability);
                             return; // 找到一个就可以了
                         }
