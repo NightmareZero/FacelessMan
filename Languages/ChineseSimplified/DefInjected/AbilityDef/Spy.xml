@@ -11,4 +11,7 @@
 
     <NzFlm_AdrenalineRush.label>肾上腺爆发</NzFlm_AdrenalineRush.label>
     <NzFlm_AdrenalineRush.description>你的肾上腺迅速分泌一种类兴奋剂物质，使你获得更快的反应速度,并提高作战能力。</NzFlm_AdrenalineRush.description>
+
+    <NzFlm_Longjump.label>远跳</NzFlm_Longjump.label>
+    <NzFlm_Longjump.description>使用你有力而富有弹性的双腿跳到远处。</NzFlm_Longjump.description>
 </LanguageData>
