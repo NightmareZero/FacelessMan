@@ -2,4 +2,10 @@
 <LanguageData>
     <NzFlm_He_SupportPheromone_Target.label>信息素狂暴</NzFlm_He_SupportPheromone_Target.label>
     <NzFlm_He_SupportPheromone_Target.description>大量的激素导致这只虫子处于极度兴奋状态，大量毒素在其体中流动，这会导致一段时间或其死亡后，溶解为一团粘液</NzFlm_He_SupportPheromone_Target.description>
+
+    <NzFlm_He_BattlePheromone_Target.label>战斗信息素</NzFlm_He_BattlePheromone_Target.label>
+    <NzFlm_He_BattlePheromone_Target.description>受到信息素的刺激。</NzFlm_He_BattlePheromone_Target.description>
+
+    <NzFlm_He_BattlePheromone_Self.label>战斗信息素(本体)</NzFlm_He_BattlePheromone_Self.label>
+    <NzFlm_He_BattlePheromone_Self.description>你散发出一种奇怪的气味，在你周围的人会不由自主的感到振奋。</NzFlm_He_BattlePheromone_Self.description>
 </LanguageData>

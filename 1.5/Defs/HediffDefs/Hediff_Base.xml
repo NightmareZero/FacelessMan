@@ -39,8 +39,8 @@
                     </li>
                 </capMods>
                 <statFactors>
-                    <InjuryHealingFactor>2</InjuryHealingFactor>
-                    <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+                    <InjuryHealingFactor>3</InjuryHealingFactor>
+                    <ImmunityGainSpeed>2</ImmunityGainSpeed>
                 </statFactors>                
             </li>
         </stages>
