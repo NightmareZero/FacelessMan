@@ -95,6 +95,11 @@ namespace NzFaceLessManMod
 
         private void doDraw()
         {
+            // 当是征召状态时
+            if (PawnOwner == null || !PawnOwner.Spawned || PawnOwner.Dead || PawnOwner.Map == null || !PawnOwner.Drafted)
+            {
+                return;
+            }
 
             float num = Mathf.Lerp(minDrawSize, maxDrawSize, 0);
             Vector3 drawPos = PawnOwner.Drawer.DrawPos;
