@@ -201,7 +201,7 @@
         <!-- 快速发射出多枚刺针，对你的敌人造成大量伤害 -->
 		<description>Quickly launch multiple spines, causing a lot of damage to your enemies.</description>
         <iconPath>UI/Icons/Abilities/Insect/SpikeGland</iconPath>
-		<cooldownTicksRange>240~360</cooldownTicksRange>
+		<cooldownTicksRange>840~1360</cooldownTicksRange>
 		<displayOrder>200</displayOrder>
 		<aiCanUse>true</aiCanUse>
 		<verbProperties>
