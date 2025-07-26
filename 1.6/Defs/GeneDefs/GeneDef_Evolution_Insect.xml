@@ -10,7 +10,7 @@
             surrounding friendly creatures, enhancing their combat effectiveness.</description>
         <iconPath>UI/Icons/Abilities/Insect/NestGland</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <abilities>
             <li>NzFlm_BattlePheromone</li>
         </abilities>
@@ -70,7 +70,7 @@
             call the nearby insect to help you.</description>
         <iconPath>UI/Icons/Abilities/Insect/QueenGland</iconPath>
         <displayOrderInCategory>40</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>3</evolution>
         <abilities>
             <li>NzFlm_SupportPheromone</li>
         </abilities>
@@ -102,7 +102,7 @@
             greatly reducing the damage you take, but reducing your movement speed.</description>
         <iconPath>UI/Icons/Abilities/Insect/ExoskeletonGland</iconPath>
         <displayOrderInCategory>60</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <abilities>
             <li>NzFlm_ExoskeletonArmor</li>
         </abilities>

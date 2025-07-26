@@ -10,10 +10,10 @@
             increasing range.</description>
         <iconPath>UI/Icons/Abilities/Base/PressurizeGland</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <statFactors>
-            <NzFlm_SkillRangeMultiplier>1.8</NzFlm_SkillRangeMultiplier>
-            <NzFlm_SkillRangeMultiplierHalf>1.4</NzFlm_SkillRangeMultiplierHalf>
+            <NzFlm_SkillRangeMultiplier>2</NzFlm_SkillRangeMultiplier>
+            <NzFlm_SkillRangeMultiplierHalf>1.6</NzFlm_SkillRangeMultiplierHalf>
         </statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
 
@@ -27,9 +27,9 @@
             which allows you to use specific skills again earlier.</description>
         <iconPath>UI/Icons/Abilities/Base/SkillCooldownTime</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <statFactors>
-            <NzFlm_EvSkillCooldownTime>0.6</NzFlm_EvSkillCooldownTime>
+            <NzFlm_EvSkillCooldownTime>0.5</NzFlm_EvSkillCooldownTime>
         </statFactors>
     </NzFaceLessManMod.EvolutionGeneDef>
 

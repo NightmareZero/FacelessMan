@@ -42,7 +42,7 @@
         <iconPath>UI/Icons/Abilities/Psionic/Idealism</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>20</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <statOffsets>
             <NzFlm_PsychicRecovery>2</NzFlm_PsychicRecovery>
         </statOffsets>
@@ -60,7 +60,7 @@
         <iconPath>UI/Icons/Abilities/Psionic/MindOverMatter</iconPath>
         <prerequisite>Nzflm_Ev_PsychicAwakening</prerequisite>
         <displayOrderInCategory>30</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
                 <hediffDef>Nzflm_He_MindOverMatter</hediffDef>
@@ -104,7 +104,7 @@
         <iconPath>UI/Icons/Abilities/Psionic/WillBarrier</iconPath>
         <prerequisite>Nzflm_Ev_Idealism</prerequisite>
         <displayOrderInCategory>50</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <modExtensions>
             <li Class="NzFaceLessManMod.GeneDefExt">
                 <comps>
@@ -162,7 +162,7 @@
         <iconPath>UI/Icons/Abilities/Psionic/VirtualMind</iconPath>
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
         <displayOrderInCategory>70</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <abilities>
             <li>NzFlm_AnimalVirtualMind</li>
         </abilities>
@@ -182,7 +182,7 @@
         <iconPath>UI/Icons/Abilities/Psionic/MindWorm</iconPath>
         <prerequisite>Nzflm_Ev_PersonalitySculpting</prerequisite>
         <displayOrderInCategory>80</displayOrderInCategory>
-        <evolution>2</evolution>
+        <evolution>3</evolution>
         <abilities>
             <li>NzFlm_MindWorm</li>
         </abilities>

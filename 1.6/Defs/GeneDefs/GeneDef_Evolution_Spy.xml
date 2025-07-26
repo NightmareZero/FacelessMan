@@ -9,7 +9,7 @@
         <description>Your skin can change color like a chameleon, allowing you to blend in with your surroundings and disappear quickly.</description>
         <iconPath>UI/Icons/Abilities/Spy/ChameleonSkin</iconPath>
         <displayOrderInCategory>10</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <abilities>
             <li>NzFlm_ChameleonSkin</li>
         </abilities>
@@ -69,7 +69,7 @@
         <description>You can extract a small amount of stem cells from your bone marrow for self-treatment or treatment of others.</description>
         <iconPath>UI/Icons/Abilities/Spy/RegenerativeBoneMarrow</iconPath>
         <displayOrderInCategory>50</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <abilities>
             <li>NzFlm_StemCellTherapy</li>
         </abilities>
@@ -99,7 +99,7 @@
         <description>Your adrenal glands have become more developed and can secrete a special stimulant substance, allowing you to react more quickly in dangerous situations.</description>
         <iconPath>UI/Icons/Abilities/Spy/AdrenalGland</iconPath>
         <displayOrderInCategory>60</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <statFactors>
             <!-- <GlobalLearningFactor>1.2</GlobalLearningFactor> -->
         </statFactors>

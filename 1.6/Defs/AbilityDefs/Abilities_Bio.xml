@@ -12,7 +12,7 @@
         <iconPath>UI/Icons/Abilities/Bio/BatteryOrgan</iconPath>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>True</targetRequired>
-        <cooldownTicksRange>900</cooldownTicksRange>
+        <cooldownTicksRange>400</cooldownTicksRange>
         <verbProperties>
             <verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
             <rangeStat>NzFlm_SkillRangeMultiplier</rangeStat>

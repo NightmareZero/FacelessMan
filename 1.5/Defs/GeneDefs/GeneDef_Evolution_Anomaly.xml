@@ -9,7 +9,7 @@
         <description>multi-layered bioferrite armor is formed under your skin, reducing the final damage you take, but making you more flammable.</description>
         <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <displayOrderInCategory>30</displayOrderInCategory>
-        <evolution>1</evolution>
+        <evolution>2</evolution>
         <damageFactors>
             <Flame>1.5</Flame>
         </damageFactors>
