@@ -54,6 +54,8 @@
                 <canTargetLocations>false</canTargetLocations>
                 <canTargetMechs>true</canTargetMechs>
                 <canTargetAnimals>true</canTargetAnimals>
+                <canTargetSubhumans>true</canTargetSubhumans>
+                <canTargetEntities>true</canTargetEntities>
             </targetParams>
         </verbProperties>
         <statBases>
