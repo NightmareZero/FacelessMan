@@ -39,7 +39,7 @@
         <!-- 尝试将目标撕成碎片，对敌人造成大量伤害 -->
         <description>Try to tear the target into pieces, causing a lot of damage to the enemy.</description>
         <iconPath>UI/Icons/Abilities/Insect/RippingClaws</iconPath>
-        <cooldownTicksRange>1250</cooldownTicksRange>
+        <cooldownTicksRange>600</cooldownTicksRange>
         <aiCanUse>true</aiCanUse>
         <ai_IsIncendiary>true</ai_IsIncendiary>
         <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
