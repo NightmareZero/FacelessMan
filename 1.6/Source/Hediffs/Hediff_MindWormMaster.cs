@@ -176,13 +176,7 @@ namespace NzFaceLessManMod
             try
             {
                 // 更新描述
-                if (slaves != null && slaves.Count > 0)
-                {
-                    for (int i = 0; i < slaves.Count; i++)
-                    {
-                        cacheDescription += slaves.ElementAt(i).Name.ToStringShort + "\n ";
-                    }
-                }
+                UpdateCacheDescription();
 
                 // 检查有没有基因
                 CanMindCtrl = pawn.genes?.HasActiveGene(DefsOf.Nzflm_Ev_MindManipulation) ?? false;
@@ -193,6 +187,19 @@ namespace NzFaceLessManMod
             finally
             {
                 dirtyCaches = false;
+            }
+        }
+
+        private void UpdateCacheDescription()
+        {
+            cacheDescription = null; // 清空描述缓存
+            lastDescriptionUpdateTick = Find.TickManager.TicksGame; // 更新上次更新时间
+            if (slaves != null && slaves.Count > 0)
+            {
+                for (int i = 0; i < slaves.Count; i++)
+                {
+                    cacheDescription += slaves.ElementAt(i).Name.ToStringShort + "\n ";
+                }
             }
         }
 
@@ -210,6 +217,7 @@ namespace NzFaceLessManMod
         }
 
         private string cacheDescription = null; // 描述
+        private int lastDescriptionUpdateTick = 0; // 上次更新描述的tick
 
         public override string LabelBase
         {
@@ -231,8 +239,12 @@ namespace NzFaceLessManMod
                 string baseDescription = base.Description;
                 if (slaves.Count > 0)
                 {
-                    UpdateCaches(); // 更新缓存
+                    if (Find.TickManager.TicksGame - lastDescriptionUpdateTick > 300)
+                    {
+                        UpdateCacheDescription();
+                    }
                     return baseDescription + ": \n" + "nzflm.slaves_names".Translate(cacheDescription);
+
                 }
                 return baseDescription;
 
