@@ -386,23 +386,6 @@ namespace NzFaceLessManMod
         private void ShapingCmdRemoveMemory()
         {
 
-
-            // 获取并删除所有非基因的特质
-            List<Trait> traits = parent.pawn?.story?.traits?.allTraits;
-            if (traits != null && traits.Count > 0)
-            {
-                for (int i = traits.Count - 1; i >= 0; i--)
-                {
-                    if (traits[i].sourceGene != null)
-                    {
-                        // 基因的特质
-                        continue;
-                    }
-                    parent.pawn.story.traits.RemoveTrait(traits[i]);
-
-                }
-            }
-
             // 获取所有的记忆和想法
             List<Thought_Memory> thoughts = parent.pawn?.needs?.mood?.thoughts?.memories?.Memories;
             if (thoughts != null && thoughts.Count > 0)

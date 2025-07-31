@@ -116,6 +116,7 @@ namespace NzFaceLessManMod
                         // 触发精神崩溃
                         parent.pawn.mindState.mentalStateHandler.TryStartMentalState(mentalBreak, reason: parent.Label.Translate(), forceWake: true);
                         ticksSinceLastMentalBreak = Find.TickManager.TicksGame; // 更新上次精神崩溃的时间
+                        return;
                     }
                 }
             }

@@ -53,6 +53,7 @@ namespace NzFaceLessManMod
             slaves.Add(slave); // 添加到奴隶列表
             mindWorms[slave] = worm; // 添加到字典
 
+            dirtyCaches = true; // 标记缓存需要更新
             return true;
         }
 
@@ -195,6 +196,7 @@ namespace NzFaceLessManMod
             }
         }
 
+
         /// <summary>
         /// implement ISetDirty interface
         /// </summary>
@@ -230,7 +232,7 @@ namespace NzFaceLessManMod
                 if (slaves.Count > 0)
                 {
                     UpdateCaches(); // 更新缓存
-                    return baseDescription + "\n" + "nzflm.slaves_names".Translate(cacheDescription);
+                    return baseDescription + ": \n" + "nzflm.slaves_names".Translate(cacheDescription);
                 }
                 return baseDescription;
 

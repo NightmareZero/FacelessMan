@@ -110,7 +110,14 @@ namespace NzFaceLessManMod
             // 移除自身
             parent.pawn?.health?.RemoveHediff(this.parent);
 
-            Messages.Message("hzflm.slave_free_by_master_dead_wg".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+            if (master.Dead)
+            {
+                Messages.Message("hzflm.slave_free_by_master_dead_wg".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+            }
+            else
+            { 
+                Messages.Message("hzflm.slave_free_by_master_dead_wg2".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+            }
         }
 
         public override void CompExposeData()

@@ -3,6 +3,7 @@
     
     <hzflm.slave_free_by_master_dead>由于主人 '{master}' 的死亡,未成熟的蠕虫消亡了, '{slave}' 自由了</hzflm.slave_free_by_master_dead>
     <hzflm.slave_free_by_master_dead_wg>由于主人 '{master}' 的死亡,蠕虫消亡了， '{slave}' 自由了，但是之前的精神影响仍在继续</hzflm.slave_free_by_master_dead_wg>
+    <hzflm.slave_free_by_master_dead_wg2>由于主人 '{master}' 不再能控制蠕虫， '{slave}' 自由了，但是之前的精神影响仍在继续</hzflm.slave_free_by_master_dead_wg2>
     <hzflm.slave_slaved_and_worm_growth>蠕虫得到了足够的成长，现在 '{slave}' 为 'master' 效忠了</hzflm.slave_slaved_and_worm_growth>
     <hzflm.slave_free_by_master>由于主人 '{master}' 释放， '{slave}' 现在自由了</hzflm.slave_free_by_master>
     <hzflm.slave_kill_by_master>由于主人 '{master}' 不再需要 '{slave}'， '{slave}' 自由了(或许?)</hzflm.slave_kill_by_master>
@@ -32,7 +33,7 @@
     <nzflm.slave_remove_memory>移除记忆</nzflm.slave_remove_memory>
     <nzflm.slave_extract_knowledge>提取知识</nzflm.slave_extract_knowledge>
     <nzflm.slave_transfer_knowledge>传递知识</nzflm.slave_transfer_knowledge>
-    <nzflm.slave_remove_trait>移除主人特性</nzflm.slave_remove_trait>
+    <nzflm.slave_remove_trait>移除特性</nzflm.slave_remove_trait>
     <nzflm.slave_extract_trait>提取特性</nzflm.slave_extract_trait>
     <nzflm.slave_transfer_trait>传递特性</nzflm.slave_transfer_trait>
 
