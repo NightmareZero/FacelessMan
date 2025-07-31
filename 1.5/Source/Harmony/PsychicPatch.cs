@@ -23,7 +23,7 @@ namespace NzFaceLessManMod
                 return;
             }
 
-            Log.Message($"[NzFaceLessManMod] PsyfocusFallPerDay: {__result} * {-mup}");
+            // Log.Message($"[NzFaceLessManMod] PsyfocusFallPerDay: {__result} * {-mup}");
             __result = __result * __result < 0 ? mup : -mup;
         }
     }
