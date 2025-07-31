@@ -22,13 +22,39 @@ namespace NzFaceLessManMod
         {
             otherPawn = null;
 
+            // 由于 'TryGetComp' 使用 is 判断，所以也可以获取到继承它的
             HediffComp_Link link = hediff.TryGetComp<HediffComp_Link>();
-            if (link == null || link.OtherPawn == null)
+            if (link != null && link.OtherPawn != null)
+            {
+                otherPawn = link.OtherPawn;
+                return true;
+            }
+
+            return false;
+        }
+        
+        /// <summary>
+        /// 检查Hediff是否应该被移除
+        /// 通过HediffComp_Disappears组件
+        /// 如果没有HediffComp_Disappears组件，则返回false
+        /// 如果有HediffComp_Disappears组件，但CompShouldRemove为false，则返回false
+        /// 如果有HediffComp_Disappears组件，且CompShouldRemove为true，则返回true
+        /// </summary>
+        /// <param name="hediff"></param>
+        /// <returns></returns>
+        public static bool IsShouldRemovedByComp_Disappears(this Hediff hediff)
+        {
+            if (hediff == null)
             {
                 return false;
             }
 
-            otherPawn = link.OtherPawn;
+            HediffComp_Disappears disappearsComp = hediff.TryGetComp<HediffComp_Disappears>();
+            if (disappearsComp == null || !disappearsComp.CompShouldRemove) // 修复：|| 改为 &&
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -62,7 +88,7 @@ namespace NzFaceLessManMod
                     target.health.RemoveHediff(existHediffOfDef);
                 }
             }
-            
+
             // 尝试获取目标部位
             if (bodyPartRecord == null)
             {
@@ -93,6 +119,7 @@ namespace NzFaceLessManMod
             }
 
             // 注入Link连接
+            // 由于 ‘TryGetComp’ 使用 is 判断，所以也可以获取到继承它的子类
             HediffComp_Link hediffComp_Link = hediff.TryGetComp<HediffComp_Link>();
             if (hediffComp_Link != null)
             {

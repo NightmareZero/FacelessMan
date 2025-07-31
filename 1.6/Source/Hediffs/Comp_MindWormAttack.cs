@@ -87,11 +87,18 @@ namespace NzFaceLessManMod
                 Messages.Message("hzflm.slave_free_by_master_dead".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
                 return;
             }
+            if (parent.IsShouldRemovedByComp_Disappears())
+            {
 
-            Messages.Message("hzflm.slave_slaved_and_worm_growth".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
-            // 添加成熟的心灵蠕虫Hediff
-            parent.pawn.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormParasitic, master,
-            bodyPartRecord: this.parent?.pawn?.health.hediffSet?.GetBrain(), replaceExisting: true);
+                Messages.Message("hzflm.slave_slaved_and_worm_growth".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+                // 添加成熟的心灵蠕虫Hediff
+                parent.pawn.AddHediffExt(HediffDefsOf.NzFlm_He_MindWormParasitic, master,
+                bodyPartRecord: this.parent?.pawn?.health.hediffSet?.GetBrain(), replaceExisting: true);
+            }
+            else
+            { 
+                Messages.Message("hzflm.slave_free_by_master_dead_wg2".Translate(master.Name.Named("master"), parent.pawn.Name.Named("slave")), MessageTypeDefOf.NegativeEvent);
+            }
         }
 
         public override void CompPostTick(ref float severityAdjustment)

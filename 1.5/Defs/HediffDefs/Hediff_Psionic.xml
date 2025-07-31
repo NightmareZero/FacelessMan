@@ -148,6 +148,7 @@
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormSlave" />
 			<li Class="HediffCompProperties_Link">
+				<compClass>NzFaceLessManMod.HediffComp_LinkOther</compClass>
 				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
 				<maxDistance>0</maxDistance>
 			</li>
@@ -201,6 +202,7 @@
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="NzFaceLessManMod.HediffCompProperties_MindWormCover" />
 			<li Class="HediffCompProperties_Link">
+				<compClass>NzFaceLessManMod.HediffComp_LinkOther</compClass>
 				<requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
 				<maxDistance>0</maxDistance>
 			</li>

@@ -17,9 +17,9 @@ namespace NzFaceLessManMod
         public override IEnumerable<string> ConfigErrors(HediffDef parentDef)
         {
             // 检查有没有Link
-            if (!parentDef.HasComp(typeof(HediffComp_Link)))
+            if (!parentDef.HasComp(typeof(HediffComp_LinkOther)))
             {
-                yield return "HediffDef " + parentDef.defName + " needs a 'HediffComp_Link' to work properly.";
+                yield return "HediffDef " + parentDef.defName + " needs a 'HediffComp_LinkOther' to work properly.";
             }
         }
     }
