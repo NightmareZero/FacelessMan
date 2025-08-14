@@ -373,8 +373,14 @@ namespace NzFaceLessManMod
             float dstTotalXp = dstSkill.XpTotalEarned + dstSkill.xpSinceLastLevel;
 
             // 计算可转移的经验（不能超过两者经验差）
-            float maxTransferXp = srcTotalXp - dstTotalXp;
+            float maxTransferXp = Mathf.Max(0, srcTotalXp - dstTotalXp);
             float transferXp = Mathf.Min(srcTotalXp * percent, maxTransferXp);
+            transferXp = Mathf.Max(0, transferXp); // 保证不会负数
+            if (transferXp <= 0)
+            {
+                Messages.Message("NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect".Translate(), MessageTypeDefOf.NeutralEvent);
+                return;
+            }
 
             Log.Message($"maxTransferXp: {maxTransferXp}");
             Log.Message($"transferXp: {transferXp}");

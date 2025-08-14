@@ -48,7 +48,7 @@
         <verbProperties>
             <verbClass>Verb_CastAbilityTouch</verbClass>
             <range>-1</range>
-            <warmupTime>2</warmupTime>
+            <warmupTime>0.5</warmupTime>
             <!-- <soundCast>FireSpew_Resolve</soundCast> -->
             <targetParams>
                 <canTargetLocations>false</canTargetLocations>
