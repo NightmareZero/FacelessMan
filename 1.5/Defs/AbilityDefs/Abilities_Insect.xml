@@ -222,7 +222,7 @@
 			<accuracyShort>1.0</accuracyShort>
 			<accuracyMedium>0.95</accuracyMedium>
 			<accuracyLong>0.9</accuracyLong>
-			<burstShotCount>7</burstShotCount>
+			<burstShotCount>4</burstShotCount>
 			<ticksBetweenBurstShots>11</ticksBetweenBurstShots>
 			<defaultProjectile>PiercingSpine</defaultProjectile>
 			<verbClass>NzFaceLessManMod.Verb_AbilityShootX</verbClass>
