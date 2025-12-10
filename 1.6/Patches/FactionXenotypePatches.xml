@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationSequence">
+    <operations>
+      <!-- 为温和的外来者派系添加 Flm_FacelessMan Xenotype -->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/FactionDef[defName="OutlanderCivil"]/xenotypeSet/xenotypeChances</xpath>
+        <value>
+          <Flm_FacelessMan>0.05</Flm_FacelessMan>
+        </value>
+      </li>
+      
+      <!-- 为帝国派系添加 Flm_FacelessMan Xenotype（仅当皇权DLC存在时） -->
+      <li Class="PatchOperationAdd" MayRequire="Ludeon.RimWorld.Royalty">
+        <xpath>/Defs/FactionDef[defName="Empire"]/xenotypeSet/xenotypeChances</xpath>
+        <value>
+          <Flm_FacelessMan>0.05</Flm_FacelessMan>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+</Patch>
