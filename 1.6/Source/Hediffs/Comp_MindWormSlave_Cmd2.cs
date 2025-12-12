@@ -26,7 +26,7 @@ namespace NzFaceLessManMod
             // 传教(将自己的信仰传递给目标)
             if (ModsConfig.IdeologyActive)
             {
-                if (master?.Ideo != null && parent.pawn?.Ideo != null && master.Ideo != parent.pawn.Ideo) {
+                if (master?.Ideo != null && master.Ideo != parent.pawn.Ideo) {
                     menu.Add(new FloatMenuOption("nzflm.slave_spread_belief".Translate(), delegate
                     {
                         SubMenu_ShapingCmd_SpreadBelief();
