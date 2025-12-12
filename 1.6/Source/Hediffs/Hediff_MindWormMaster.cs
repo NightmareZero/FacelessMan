@@ -10,6 +10,17 @@ namespace NzFaceLessManMod
 {
     public class Hediff_MindWormMaster : HediffWithComps, ISetDirty
     {
+        /// <summary>
+        /// 管理奴隶的操作类型
+        /// </summary>
+        private enum SlaveManageOperation
+        {
+            Free,
+            Kill,
+            PsychicShock,
+            PsychicSoothe
+        }
+
         private HashSet<Pawn> slaves = new HashSet<Pawn>(); // 奴隶列表
         private Dictionary<Pawn, HediffComp_MindWormSlave> mindWorms = new Dictionary<Pawn, HediffComp_MindWormSlave>(); // 心灵蠕虫字典
 
@@ -283,7 +294,6 @@ namespace NzFaceLessManMod
 
         private void AddMenuOptions(List<FloatMenuOption> menu)
         {
-
             if (this.CanMindShaping)
             {
                 menu.Add(new FloatMenuOption("nzflm.slave_remove_trait".Translate(), delegate
@@ -295,57 +305,94 @@ namespace NzFaceLessManMod
             {
                 menu.Add(new FloatMenuOption("nzflm.free_slaves".Translate(), delegate
                 {
-                    this.SubMenu_ManageSlave();
+                    this.SubMenu_ManageSlave(SlaveManageOperation.Free);
                 }));
                 menu.Add(new FloatMenuOption("nzflm.kill_slaves".Translate(), delegate
                 {
-                    this.SubMenu_ManageSlave(true);
+                    this.SubMenu_ManageSlave(SlaveManageOperation.Kill);
                 }));
+                if (this.CanMindCtrl)
+                {
+                    menu.Add(new FloatMenuOption("nzflm.slaves_psychic_shock".Translate(), delegate
+                    {
+                        this.SubMenu_ManageSlave(SlaveManageOperation.PsychicShock);
+                    }));
+                    menu.Add(new FloatMenuOption("nzflm.slaves_psychic_soothe".Translate(), delegate
+                    {
+                        this.SubMenu_ManageSlave(SlaveManageOperation.PsychicSoothe);
+                    }));
+                }
             }
         }
 
-        private void SubMenu_ManageSlave(bool kill = false)
+        private void SubMenu_ManageSlave(SlaveManageOperation operation)
         {
             List<FloatMenuOption> cmdMenu = new List<FloatMenuOption>();
             if (this.slaves != null && this.slaves.Count > 0)
             {
-                //
-                // 遍历所有的奴隶
-                for (int i = 0; i < slaves.Count; i++)
+                foreach (var thisSlave in slaves)
                 {
-                    var thisSlave = slaves.ElementAt(i);
-                    // 添加奴隶到菜单
+                    if (thisSlave == null)
+                    {
+                        continue;
+                    }
                     cmdMenu.Add(new FloatMenuOption(thisSlave.Name.ToStringShort, delegate
                     {
-                        if (kill)
+                        switch (operation)
                         {
-                            thisSlave?.Kill(null, null);
-                            Messages.Message("hzflm.slave_kill_by_master".Translate(pawn.Named("master"), thisSlave.Named("slave")),
-                                MessageTypeDefOf.NegativeHealthEvent);
-                        }
-                        else
-                        {
-                            var got = false;
+                            case SlaveManageOperation.Kill:
+                                thisSlave.Kill(null, null);
+                                Messages.Message("hzflm.slave_kill_by_master".Translate(pawn.Named("master"), thisSlave.Named("slave")),
+                                    MessageTypeDefOf.NegativeHealthEvent);
+                                break;
+                            case SlaveManageOperation.PsychicShock:
+                                // 精神冲击
+                                thisSlave.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var shockPart);
+                                thisSlave.AddHediffExt(HediffDefOf.PsychicShock, caster: this.pawn, shockPart, ticksToDisappear: 2500);
 
-                            var wormHediff = (HediffWithComps)thisSlave.health?.hediffSet?.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormParasitic);
-                            if (wormHediff != null)
-                            {
-                                thisSlave?.health?.RemoveHediff(wormHediff); // 移除奴隶的心灵蠕虫(蠕虫会自动调用master的移除)
-                                got = true;
-                            }
+                                // 播放音效
+                                DefsOf.Psycast_Skip_Pulse.PlayOneShot(thisSlave);
 
-                            if (!got)
-                            {
-                                Log.Error("MindWormMaster: updateMindWormsFromSlaves failed, slave wormHediff got null.");
-                                slaves.Remove(thisSlave); // 移除奴隶
-                            }
-                            Messages.Message("hzflm.slave_free_by_master".Translate(pawn.Named("master"), thisSlave.Named("slave")),
-                                MessageTypeDefOf.PositiveEvent);
+                                Messages.Message("nzflm.slaves_psychic_shock_msg".Translate(thisSlave.LabelCap),
+                                    MessageTypeDefOf.NeutralEvent);
+                                break;
+                            case SlaveManageOperation.PsychicSoothe:
+                                // 精神抚慰
+                                // 移除精神冲击
+                                if (thisSlave.health.hediffSet?.TryGetHediff(HediffDefOf.PsychicShock, out var hediff) == true)
+                                {
+                                    thisSlave.health?.RemoveHediff(hediff);
+                                }
+                                // 恢复精神状态
+                                if (thisSlave.InMentalState == true)
+                                {
+                                    thisSlave.MentalState?.RecoverFromState();
+                                }
+
+                                // 播放音效
+                                DefsOf.Psycast_Skip_Pulse.PlayOneShot(thisSlave);
+
+                                Messages.Message("nzflm.slaves_psychic_soothe_msg".Translate(thisSlave.LabelCap),
+                                    MessageTypeDefOf.NeutralEvent);
+                                break;
+                            default: // Free
+                                var wormHediff = (HediffWithComps)thisSlave.health?.hediffSet?.GetFirstHediffOfDef(HediffDefsOf.NzFlm_He_MindWormParasitic);
+                                if (wormHediff != null)
+                                {
+                                    thisSlave.health?.RemoveHediff(wormHediff); // 移除奴隶的心灵蠕虫(蠕虫会自动调用master的移除)
+                                }
+                                else
+                                {
+                                    Log.Error("MindWormMaster: updateMindWormsFromSlaves failed, slave wormHediff got null.");
+                                    slaves.Remove(thisSlave); // 移除奴隶
+                                }
+                                Messages.Message("hzflm.slave_free_by_master".Translate(pawn.Named("master"), thisSlave.Named("slave")),
+                                    MessageTypeDefOf.PositiveEvent);
+                                break;
                         }
                     }));
                 }
             }
-
             else
             {
                 return;

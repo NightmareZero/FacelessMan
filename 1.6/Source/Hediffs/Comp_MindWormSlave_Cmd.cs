@@ -30,7 +30,6 @@ namespace NzFaceLessManMod
                 action = delegate
                 {
                     var cmdMenu = new List<FloatMenuOption>();
-                    if (masterHediff.CanMindCtrl) AddCtrlCmd(cmdMenu);
                     if (masterHediff.CanMindShaping) AddShapingCmd(cmdMenu);
                     if (masterHediff.CanMindCoverage) AddCoverageCmd(cmdMenu);
                     if (cmdMenu.Count == 0)
@@ -58,50 +57,7 @@ namespace NzFaceLessManMod
 
         }
 
-        // 控制Gizmo
-        private void AddCtrlCmd(List<FloatMenuOption> menu)
-        {
-            // 精神冲击
-            menu.Add(new FloatMenuOption("nzflm.slaves_psychic_shock".Translate(),
-             action: delegate
-            {
-                parent.pawn.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out var part);
-                parent.pawn?.AddHediffExt(HediffDefOf.PsychicShock, caster: master, part, ticksToDisappear: 2500);
 
-                // 播放音效
-                DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
-
-                Messages.Message("nzflm.slaves_psychic_shock_msg".Translate(parent.pawn.LabelCap),
-                    MessageTypeDefOf.NeutralEvent);
-            },
-            iconTex: null,
-            iconColor: Color.white
-            ));
-            // 精神抚慰
-            menu.Add(new FloatMenuOption("nzflm.slaves_psychic_soothe".Translate(),
-             action: delegate
-            {
-                // 移除精神冲击
-                if (parent?.pawn?.health.hediffSet?.TryGetHediff(HediffDefOf.PsychicShock, out var hediff) == true)
-                {
-                    parent?.pawn?.health?.RemoveHediff(hediff);
-                }
-                // 恢复精神状态
-                if (parent?.pawn?.InMentalState == true)
-                {
-                    parent?.pawn?.MentalState?.RecoverFromState();
-                }
-
-                // 播放音效
-                DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
-
-                Messages.Message("nzflm.slaves_psychic_soothe_msg".Translate(parent.pawn.LabelCap),
-                    MessageTypeDefOf.NeutralEvent);
-            },
-            iconTex: null,
-            iconColor: Color.white
-            ));
-        }
 
         private void AddCoverageCmd(List<FloatMenuOption> menu)
         {
