@@ -23,6 +23,17 @@ namespace NzFaceLessManMod
                 DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
                 Messages.Message("nzflm.slave_remove_memory".Translate(), MessageTypeDefOf.PositiveEvent);
             }, MenuOptionPriority.Default, null, null, 0f, null, null));
+            // 传教(将自己的信仰传递给目标)
+            if (ModsConfig.IdeologyActive)
+            {
+                if (master?.Ideo != null && parent.pawn?.Ideo != null && master.Ideo != parent.pawn.Ideo) {
+                    menu.Add(new FloatMenuOption("nzflm.slave_spread_belief".Translate(), delegate
+                    {
+                        SubMenu_ShapingCmd_SpreadBelief();
+                    }));
+                }
+            }
+
             // 抽取知识 战斗(近战，远程，医疗)/智慧(智识，艺术，手工)/劳作(建筑，采矿，种植，烹饪)/交流(社交，驯兽)
             menu.Add(new FloatMenuOption("nzflm.slave_extract_knowledge".Translate(), delegate
             {
@@ -265,6 +276,34 @@ namespace NzFaceLessManMod
                 forcePause = true,
             };
             Find.WindowStack.Add(menu);
+        }
+
+        private void SubMenu_ShapingCmd_SpreadBelief() {
+            // 检查master和目标pawn是否存在
+            if (master == null || parent.pawn == null)
+            {
+                return;
+            }
+            
+            // 获取master的意识形态
+            Ideo masterIdeo = master.ideo?.Ideo;
+            if (masterIdeo == null)
+            {
+                return;
+            }
+            
+            // 将目标pawn的意识形态设置为master的意识形态
+            parent.pawn.ideo.SetIdeo(masterIdeo);
+            
+            // 添加过载
+            parent.pawn?.AddHediffSeverity(HediffDefsOf.NzFlm_He_MindWormOverload, 0.3f,
+                master?.health?.hediffSet?.GetBrain());
+            
+            // 播放音效
+            DefsOf.Psycast_Skip_Pulse.PlayOneShot(parent.pawn);
+            
+            // 显示消息
+            Messages.Message("nzflm.slave_spread_belief_success".Translate(), MessageTypeDefOf.PositiveEvent);
         }
 
         /// <summary>

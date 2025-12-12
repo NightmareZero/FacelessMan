@@ -49,4 +49,6 @@
     <nzflm.worm_transfer_knowledge>知识传递完成</nzflm.worm_transfer_knowledge>
     <NzFaceLessManMod.MindWormSlave_TransferKnowledge_Fail>知识传递失败</NzFaceLessManMod.MindWormSlave_TransferKnowledge_Fail>
     <NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect>知识传递没有效果</NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect>
+    <nzflm.slave_spread_belief>传播信仰</nzflm.slave_spread_belief>
+    <nzflm.slave_spread_belief_success>信仰传播成功</nzflm.slave_spread_belief_success>
 </LanguageData>

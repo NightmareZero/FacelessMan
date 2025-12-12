@@ -43,4 +43,6 @@
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>Wisdom</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
     <NzFLM.MindWormSlave_TransferKnowledge_Work>Work</NzFLM.MindWormSlave_TransferKnowledge_Work>
     <NzFLM.MindWormSlave_TransferKnowledge_Communicate>Communicate</NzFLM.MindWormSlave_TransferKnowledge_Communicate>
+    <nzflm.slave_spread_belief>Spread Belief</nzflm.slave_spread_belief>
+    <nzflm.slave_spread_belief_success>Belief spread successfully</nzflm.slave_spread_belief_success>
 </LanguageData>
