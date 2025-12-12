@@ -3,6 +3,7 @@
     <nzflm.category_facelessman>无面人</nzflm.category_facelessman>
     <nzflm.no_xenotype>无异种类型</nzflm.no_xenotype>
     <nzflm.no_xenotype_selected>异种类型未选择</nzflm.no_xenotype_selected>
+    <nzflm.no_endotype>无系谱类型</nzflm.no_endotype>
     <nzflm.no_endotype_selected>内源类型未选择</nzflm.no_endotype_selected>
     <nzflm.remove_endotype>移除系谱基因</nzflm.remove_endotype>
     <nzflm.remove_xenotype>移除异种基因</nzflm.remove_xenotype>

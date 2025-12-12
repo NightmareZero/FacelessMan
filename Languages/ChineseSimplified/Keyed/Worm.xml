@@ -44,4 +44,9 @@
     <NzFLM.MindWormSlave_TransferKnowledge_Wisdom>智慧</NzFLM.MindWormSlave_TransferKnowledge_Wisdom>
     <NzFLM.MindWormSlave_TransferKnowledge_Work>工作</NzFLM.MindWormSlave_TransferKnowledge_Work>
     <NzFLM.MindWormSlave_TransferKnowledge_Communicate>交流</NzFLM.MindWormSlave_TransferKnowledge_Communicate>
+
+    <nzflm.worm_extract_knowledge>知识提取完成</nzflm.worm_extract_knowledge>
+    <nzflm.worm_transfer_knowledge>知识传递完成</nzflm.worm_transfer_knowledge>
+    <NzFaceLessManMod.MindWormSlave_TransferKnowledge_Fail>知识传递失败</NzFaceLessManMod.MindWormSlave_TransferKnowledge_Fail>
+    <NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect>知识传递没有效果</NzFaceLessManMod.MindWormSlave_TransferKnowledge_NoEffect>
 </LanguageData>

@@ -8,4 +8,10 @@
 
     <NzFlm_He_BattlePheromone_Self.label>战斗信息素(本体)</NzFlm_He_BattlePheromone_Self.label>
     <NzFlm_He_BattlePheromone_Self.description>你散发出一种奇怪的气味，在你周围的人会不由自主的感到振奋。</NzFlm_He_BattlePheromone_Self.description>
+
+    <NzFlm_He_GelSpray.label>减速凝胶</NzFlm_He_GelSpray.label>
+    <NzFlm_He_GelSpray.description>被喷溅了一身的减速凝胶，这些凝胶会在短时间内凝固，极大地降低移动和攻击速度。</NzFlm_He_GelSpray.description>
+
+    <NzFlm_He_ExoskeletonArmor.label>外骨骼装甲</NzFlm_He_ExoskeletonArmor.label>
+    <NzFlm_He_ExoskeletonArmor.description>一层类似装甲的外骨骼在你的身体外部形成，既轻便又坚固，但不太利于关节活动。</NzFlm_He_ExoskeletonArmor.description>
 </LanguageData>

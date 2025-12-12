@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <NzFlm_He_Cryptobiosis.label>隐生</NzFlm_He_Cryptobiosis.label>
+    <NzFlm_He_Cryptobiosis.description>你进入了 "隐生" 状态，现在你的代谢几乎停止了。</NzFlm_He_Cryptobiosis.description>
+    <NzFlm_He_CryptobiosisWeak.label>隐生虚弱</NzFlm_He_CryptobiosisWeak.label>
+    <NzFlm_He_CryptobiosisWeak.description>你刚刚从 "隐生" 状态中苏醒，现在你的身体还没有完全恢复。</NzFlm_He_CryptobiosisWeak.description>
+</LanguageData>
