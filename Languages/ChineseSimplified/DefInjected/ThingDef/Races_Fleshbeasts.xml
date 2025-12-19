@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- 血肉野兽翻译 -->
+  <FleshBeast.label>血肉野兽</FleshBeast.label>
+  <FleshBeast.description>一种巨大的扭曲血肉和骨骼的融合体。它的身体由多个较小的血肉生物拼接而成，拥有强大的攻击力和惊人的再生能力。</FleshBeast.description>
+  
+  <!-- 工具翻译 -->
+  <FleshBeast.left_spike.label>骨刺</FleshBeast.left_spike.label>
+</LanguageData>

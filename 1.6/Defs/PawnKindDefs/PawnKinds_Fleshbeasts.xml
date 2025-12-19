@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <PawnKindDef ParentName="BaseFleshbeastPawnKind">
+    <defName>FleshBeast</defName>
+    <label>fleshbeast</label>
+    <race>FleshBeast</race>
+    <combatPower>120</combatPower>
+    <wildGroupSizeRange>1~3</wildGroupSizeRange>
+    <apparelChance>0</apparelChance>
+    <weaponChance>0</weaponChance>
+    <generateFightersOnly>true</generateFightersOnly>
+    <canUseArtifacts>false</canUseArtifacts>
+  </PawnKindDef>
+</Defs>
