@@ -11,4 +11,7 @@
 
     <NzFlm_Disguise.label>伪装</NzFlm_Disguise.label>
     <NzFlm_Disguise.description>操纵自己的血肉之躯，改变皮肤颜色，再生或脱发，伪装成选定的目标。</NzFlm_Disguise.description>
+    
+    <NzFlm_MindInterference.label>心智干扰</NzFlm_MindInterference.label>
+    <NzFlm_MindInterference.description>通过注入一小团血肉，干扰实体和黑暗超凡智能的联系，(30天内实体意识最大 5%)</NzFlm_MindInterference.description>
 </LanguageData>

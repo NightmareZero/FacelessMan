@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <!-- 心智干扰 -->
+    <AbilityDef ParentName="AbilityTouchBase">
+        <defName>NzFlm_MindInterference</defName>
+        <label>mind interference</label>
+        <cooldownTicksRange>3000</cooldownTicksRange>
+        <!-- 通过注入一小团血肉，干扰实体和黑暗超凡智能的联系，(30天内实体意识最大 5%) -->
+        <description>By injecting a small mass of flesh, it interferes with the connection between the entity and the dark supernatural intelligence. (Maximum entity consciousness 5% within 30 days)</description>
+        <iconPath>UI/Icons/Abilities/Psionic/MindInterference</iconPath>
+        <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
+        <warmupEffecter>Implant_Xenogerm</warmupEffecter>
+        <category>Nzflm_AbilityCategory</category>
+        <displayOrder>500</displayOrder>
+        <hostile>true</hostile>
+        <verbProperties>
+            <verbClass>Verb_CastAbilityTouch</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <range>-1</range>
+            <warmupTime>4</warmupTime>
+            <stunTargetOnCastStart>true</stunTargetOnCastStart>
+            <targetParams>
+                <canTargetEntities>true</canTargetEntities>
+                <canTargetHumans>false</canTargetHumans>
+                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetSelf>false</canTargetSelf>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
+                <hediffDef>NzFlm_He_MindInterference</hediffDef>
+                <psychic>False</psychic>
+                <durationSecondsOverride>2592000</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>
