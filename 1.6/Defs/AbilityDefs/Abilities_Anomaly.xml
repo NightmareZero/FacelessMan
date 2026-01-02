@@ -7,7 +7,8 @@
         <cooldownTicksRange>3000</cooldownTicksRange>
         <!-- 通过注入一小团血肉，干扰实体和黑暗超凡智能的联系，(30天内实体意识最大 5%) -->
         <description>By injecting a small mass of flesh, it interferes with the connection between the entity and the dark supernatural intelligence. (Maximum entity consciousness 5% within 30 days)</description>
-        <iconPath>UI/Icons/Abilities/Psionic/MindInterference</iconPath>
+        <!-- TODO 图标需要更换 -->
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
         <warmupStartSound>ReimplantXenogerm_Cast</warmupStartSound>
         <warmupEffecter>Implant_Xenogerm</warmupEffecter>
         <category>Nzflm_AbilityCategory</category>

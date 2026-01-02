@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <PawnKindDef ParentName="BaseFleshbeastPawnKind">
+
+  <PawnKindDef Name="BaseFleshbeastKind" Abstract="True">
+    <defaultFactionDef>Entities</defaultFactionDef>
+    <overrideDebugActionCategory>Entity</overrideDebugActionCategory>
+    <meleeAttackInfectionPathways>
+      <li>EntityAttacked</li>
+    </meleeAttackInfectionPathways>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="BaseFleshbeastKind">
     <defName>FleshBeast</defName>
     <label>fleshbeast</label>
     <race>FleshBeast</race>
     <combatPower>120</combatPower>
-    <wildGroupSizeRange>1~3</wildGroupSizeRange>
-    <apparelChance>0</apparelChance>
-    <weaponChance>0</weaponChance>
-    <generateFightersOnly>true</generateFightersOnly>
-    <canUseArtifacts>false</canUseArtifacts>
+    <wildGroupSize>1~3</wildGroupSize>
+    <abilities>
+      <li>SpikeLaunch_Fingerspike</li>
+    </abilities>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Fleshbeast/Trispike/Trispike</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2</drawSize>
+          <drawOffset>(0, 0, 0.1)</drawOffset>
+        </bodyGraphicData>
+        <silhouetteGraphicData>
+          <texPath>Things/Pawn/Fleshbeast/Trispike/Trispike_MenuIcon</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>2</drawSize>
+        </silhouetteGraphicData>
+      </li>
+    </lifeStages>
   </PawnKindDef>
 </Defs>
