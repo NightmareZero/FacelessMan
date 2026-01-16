@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- 增强版激素心脏 -->
+    <HediffDef ParentName="AddedBodyPartBase" MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_EnhancedAdrenalHeart</defName>
+        <label>enhanced adrenal heart</label>
+        <labelNoun>an enhanced adrenal heart</labelNoun>
+        <description>An enhanced adrenal heart with extended duration. It makes the ghoul's hormones surge and blood vessels dilate, allowing it to unleash incredible movement and attack abilities for a longer time.</description>
+        <spawnThingOnRemoved>NzFlm_EnhancedAdrenalHeart</spawnThingOnRemoved>
+        <abilities>
+            <li>GhoulFrenzy</li>
+        </abilities>
+        <stages>
+            <li>
+                <hungerRateFactorOffset>0.15</hungerRateFactorOffset>
+            </li>
+        </stages>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- 增强版强酸胃 -->
+    <HediffDef ParentName="AddedBodyPartBase" MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_EnhancedAcidStomach</defName>
+        <label>enhanced acid stomach</label>
+        <labelNoun>an enhanced acid stomach</labelNoun>
+        <description>An acid organ with enhanced range. The ghoul can spray corrosive acid over a wider area.</description>
+        <spawnThingOnRemoved>NzFlm_EnhancedAcidStomach</spawnThingOnRemoved>
+        <abilities>
+            <li>CorrosiveSpray</li>
+        </abilities>
+        <stages>
+            <li>
+                <painOffset>0.08</painOffset>
+                <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+            </li>
+        </stages>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- 钢血注入器（肝脏版） -->
+    <HediffDef ParentName="AddedBodyPartBase" MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_SteelBloodInjectorLiver</defName>
+        <label>steel blood injector</label>
+        <labelNoun>a steel blood injector</labelNoun>
+        <description>A steel blood injector with extended duration. It can pump metalblood into the bloodstream, making the ghoul resist more damage for a longer time.</description>
+        <spawnThingOnRemoved>NzFlm_SteelBloodInjectorLiver</spawnThingOnRemoved>
+        <abilities>
+            <li>MetalbloodInjection</li>
+        </abilities>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>-0.2</MoveSpeed>
+                </statOffsets>
+            </li>
+        </stages>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+    </HediffDef>
+</Defs>

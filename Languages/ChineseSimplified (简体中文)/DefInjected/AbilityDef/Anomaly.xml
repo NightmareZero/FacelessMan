@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <NzFlm_GhoulControl.label>食尸鬼掌控</NzFlm_GhoulControl.label>
+    <NzFlm_GhoulControl.description>控制食尸鬼体内的暗黑超凡碎片，使其产生特定变异。随机生成编译的器官和肢体</NzFlm_GhoulControl.description>
+    
+    <nzflm.ghoulcontrol.not_ghoul>只能对食尸鬼使用此技能</nzflm.ghoulcontrol.not_ghoul>
+    <nzflm.ghoulcontrol.no_available_mutations>该食尸鬼已拥有所有可用的变异</nzflm.ghoulcontrol.no_available_mutations>
+    <nzflm.ghoulcontrol.installed>已为 {0} 安装 {1}</nzflm.ghoulcontrol.installed>
+</LanguageData>

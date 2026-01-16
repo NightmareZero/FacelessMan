@@ -37,4 +37,29 @@
             </li>
         </comps>
     </AbilityDef>
+
+    <!-- 食尸鬼掌控 -->
+    <AbilityDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_GhoulControl</defName>
+        <label>ghoul control</label>
+        <description>Control dark archotech shards within a ghoul, causing it to undergo specific mutations. Randomly generate enhanced organs and limbs.</description>
+        <iconPath>UI/Icons/Abilities/GhoulControl</iconPath>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <warmupTime>1.0</warmupTime>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>9.9</range>
+            <warmupTime>1.0</warmupTime>
+            <soundCast>AnomalyAbilityWarmup</soundCast>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_GhoulControl" />
+        </comps>
+    </AbilityDef>
 </Defs>

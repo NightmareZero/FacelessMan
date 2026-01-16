@@ -32,12 +32,27 @@
         <label>mind interference</label>
         <displayCategory>Nzflm_Gene_Ev_Anomaly</displayCategory>
         <!-- 通过注入一小团血肉，干扰实体和黑暗超凡智能的联系，(30天内实体意识最大 5%) -->
-        <description>By injecting a small mass of flesh, it interferes with the connection between the entity and the dark supernatural intelligence. (Maximum entity consciousness 5% within 30 days)</description>
+        <description>By injecting a small mass of flesh, it interferes with connection between the entity and the dark supernatural intelligence. (Maximum entity consciousness 5% within 30 days)</description>
         <iconPath>UI/Icons/Abilities/Psionic/MindInterference</iconPath>
         <displayOrderInCategory>40</displayOrderInCategory>
         <evolution>2</evolution>
         <abilities>
             <li>NzFlm_MindInterference</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
+
+    <!-- 食尸鬼掌控 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>Nzflm_Ev_GhoulControl</defName>
+        <label>ghoul control</label>
+        <labelShort>ghoul control</labelShort>
+        <displayCategory>Nzflm_Gene_Ev_Anomaly</displayCategory>
+        <description>You can control dark archotech shards within ghouls, causing them to undergo specific mutations.</description>
+        <iconPath>UI/Icons/Abilities/GhoulControl</iconPath>
+        <displayOrderInCategory>50</displayOrderInCategory>
+        <evolution>2</evolution>
+        <abilities>
+            <li>NzFlm_GhoulControl</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

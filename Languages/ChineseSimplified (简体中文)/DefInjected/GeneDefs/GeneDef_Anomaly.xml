@@ -4,5 +4,8 @@
     <Nzflm_Ev_BioferriteSkinLayer.description>在你的皮下形成多层活铁护甲，降低你承受的最终伤害，但是会使你变得易燃。</Nzflm_Ev_BioferriteSkinLayer.description>
     
     <Nzflm_Ev_MindInterference.label>心智干扰</Nzflm_Ev_MindInterference.label>
-    <Nzflm_Ev_MindInterference.description>通过注入一小团血肉，干扰实体和黑暗超凡智能的联系，(30天内实体意识最大 5%)</Nzflm_Ev_MindInterference.description>
+    <Nzflm_Ev_MindInterference.description>通过注入一小团血肉，干扰实体和暗黑超凡智能的联系</Nzflm_Ev_MindInterference.description>
+    
+    <Nzflm_Ev_GhoulControl.label>食尸鬼掌控</Nzflm_Ev_GhoulControl.label>
+    <Nzflm_Ev_GhoulControl.description>你可以控制食尸鬼体内的暗黑超凡碎片，使食尸鬼产生特定变异。</Nzflm_Ev_GhoulControl.description>
 </LanguageData>

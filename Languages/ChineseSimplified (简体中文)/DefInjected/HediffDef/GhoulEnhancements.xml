@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <NzFlm_EnhancedAdrenalHeart.label>强化激素心脏</NzFlm_EnhancedAdrenalHeart.label>
+    <NzFlm_EnhancedAdrenalHeart.labelNoun>强化激素心脏</NzFlm_EnhancedAdrenalHeart.labelNoun>
+    <NzFlm_EnhancedAdrenalHeart.description>增强版激素心脏，持续时间更长。可使食尸鬼激素充盈、血脉偾张，在更长时间内爆发出惊人的移动和攻击能力。</NzFlm_EnhancedAdrenalHeart.description>
+    
+    <NzFlm_EnhancedAcidStomach.label>强酸胃</NzFlm_EnhancedAcidStomach.label>
+    <NzFlm_EnhancedAcidStomach.labelNoun>强酸胃</NzFlm_EnhancedAcidStomach.labelNoun>
+    <NzFlm_EnhancedAcidStomach.description>强酸器官，喷射范围更大。食尸鬼可在更大范围内喷射腐蚀性酸液。</NzFlm_EnhancedAcidStomach.description>
+    
+    <NzFlm_SteelBloodInjectorLiver.label>钢血注入器</NzFlm_SteelBloodInjectorLiver.label>
+    <NzFlm_SteelBloodInjectorLiver.labelNoun>钢血注入器</NzFlm_SteelBloodInjectorLiver.labelNoun>
+    <NzFlm_SteelBloodInjectorLiver.description>钢血注入器，持续时间更长。可向血液中泵入钢血，使食尸鬼在更长时间内抵御更多伤害。</NzFlm_SteelBloodInjectorLiver.description>
+</LanguageData>
