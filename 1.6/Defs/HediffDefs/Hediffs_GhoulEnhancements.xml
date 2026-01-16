@@ -8,11 +8,11 @@
         <description>An enhanced adrenal heart with extended duration. It makes the ghoul's hormones surge and blood vessels dilate, allowing it to unleash incredible movement and attack abilities for a longer time.</description>
         <spawnThingOnRemoved>NzFlm_EnhancedAdrenalHeart</spawnThingOnRemoved>
         <abilities>
-            <li>GhoulFrenzy</li>
+            <li>NzFlm_EnhancedGhoulFrenzy</li>
         </abilities>
         <stages>
             <li>
-                <hungerRateFactorOffset>0.15</hungerRateFactorOffset>
+                <hungerRateFactorOffset>0.05</hungerRateFactorOffset>
             </li>
         </stages>
         <addedPartProps>
@@ -28,11 +28,11 @@
         <description>An acid organ with enhanced range. The ghoul can spray corrosive acid over a wider area.</description>
         <spawnThingOnRemoved>NzFlm_EnhancedAcidStomach</spawnThingOnRemoved>
         <abilities>
-            <li>CorrosiveSpray</li>
+            <li>NzFlm_EnhancedCorrosiveSpray</li>
         </abilities>
         <stages>
             <li>
-                <painOffset>0.08</painOffset>
+                <painOffset>0.04</painOffset>
                 <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
             </li>
         </stages>
@@ -49,12 +49,12 @@
         <description>A steel blood injector with extended duration. It can pump metalblood into the bloodstream, making the ghoul resist more damage for a longer time.</description>
         <spawnThingOnRemoved>NzFlm_SteelBloodInjectorLiver</spawnThingOnRemoved>
         <abilities>
-            <li>MetalbloodInjection</li>
+            <li>NzFlm_EnhancedMetalbloodInjection</li>
         </abilities>
         <stages>
             <li>
                 <statOffsets>
-                    <MoveSpeed>-0.2</MoveSpeed>
+                    <MoveSpeed>-0.1</MoveSpeed>
                 </statOffsets>
             </li>
         </stages>

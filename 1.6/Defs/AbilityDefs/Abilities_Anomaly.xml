@@ -62,4 +62,137 @@
             <li Class="CompProperties_GhoulControl" />
         </comps>
     </AbilityDef>
+
+    <!-- 增强版食尸鬼狂暴 -->
+    <AbilityDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_EnhancedGhoulFrenzy</defName>
+        <label>enhanced ghoul frenzy</label>
+        <description>Use the enhanced adrenal heart to saturate the bloodstream with stress hormones and liquid energy, permitting the ghoul to move and attack at incredible speeds for an extended duration.</description>
+        <iconPath>UI/Abilities/GhoulFrenzy</iconPath>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <hostile>false</hostile>
+        <groupAbility>true</groupAbility>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <targetRequired>false</targetRequired>
+        <statBases>
+            <Ability_Duration>30</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <requireLineOfSight>false</requireLineOfSight>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <soundCast>Pawn_Ghoul_Frenzy</soundCast>
+            <targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <hediffDef>GhoulFrenzy</hediffDef>
+                <onlyApplyToSelf>True</onlyApplyToSelf>
+                <replaceExisting>true</replaceExisting>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 增强版腐蚀喷射 -->
+    <AbilityDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_EnhancedCorrosiveSpray</defName>
+        <label>enhanced corrosive spray</label>
+        <description>Use the enhanced acid stomach to spray acid over a greater distance. The stomach pumps the corrosive fluid through a surgically implanted duct, allowing the ghoul to spew it from their mouth at high velocity over a wider area.</description>
+        <iconPath>UI/Abilities/AcidSpray</iconPath>
+        <cooldownTicksRange>5000</cooldownTicksRange>
+        <aiCanUse>true</aiCanUse>
+        <displayOrder>300</displayOrder>
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+        <warmupStartSound>AcidSpray_Warmup</warmupStartSound>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>17.9</range>
+            <warmupTime>0.25</warmupTime>
+            <soundCast>AcidSpray_Resolve</soundCast>
+            <targetParams>
+                <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilitySprayLiquid">
+                <projectileDef>Proj_CorrosiveFluid_Enhanced</projectileDef>
+                <numCellsToHit>15</numCellsToHit>
+                <sprayEffecter>AcidSpray_Directional</sprayEffecter>
+            </li>
+        </comps>
+    </AbilityDef>
+
+    <!-- 增强版腐蚀液体弹药 -->
+    <ThingDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>Proj_CorrosiveFluid_Enhanced</defName>
+        <label>corrosive fluid</label>
+        <thingClass>Projectile_Liquid</thingClass>
+        <category>Projectile</category>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <useHitPoints>False</useHitPoints>
+        <neverMultiSelect>True</neverMultiSelect>
+        <graphicData>
+            <texPath>Things/Projectile/Acid</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>0.85</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>AcidBurn</damageDef>
+            <speed>25</speed>
+            <damageAmountBase>50</damageAmountBase>
+            <arcHeightFactor>0.4</arcHeightFactor>
+            <armorPenetrationBase>0.8</armorPenetrationBase>
+            <stoppingPower>1</stoppingPower>
+            <shadowSize>0</shadowSize>
+            <filth>Filth_SpentAcid</filth>
+            <filthCount>1</filthCount>
+        </projectile>
+    </ThingDef>
+
+    <!-- 增强版钢血注入 -->
+    <AbilityDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_EnhancedMetalbloodInjection</defName>
+        <label>enhanced metalblood injection</label>
+        <description>Use the steel blood injector to release metalblood serum into the bloodstream, reducing incoming damage for a shorter period of time but with faster cooldown.</description>
+        <iconPath>UI/Abilities/MetalbloodInjection</iconPath>
+        <cooldownTicksRange>9000</cooldownTicksRange>
+        <hostile>false</hostile>
+        <groupAbility>true</groupAbility>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <aiCanUse>true</aiCanUse>
+        <ai_IsOffensive>true</ai_IsOffensive>
+        <targetRequired>false</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_Duration>120</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <requireLineOfSight>false</requireLineOfSight>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <soundCast>Pawn_Ghoul_Frenzy</soundCast>
+            <targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <hediffDef>Metalblood</hediffDef>
+                <onlyApplyToSelf>True</onlyApplyToSelf>
+                <replaceExisting>true</replaceExisting>
+            </li>
+        </comps>
+    </AbilityDef>
 </Defs>

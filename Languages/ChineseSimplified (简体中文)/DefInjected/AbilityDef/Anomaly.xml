@@ -6,4 +6,13 @@
     <nzflm.ghoulcontrol.not_ghoul>只能对食尸鬼使用此技能</nzflm.ghoulcontrol.not_ghoul>
     <nzflm.ghoulcontrol.no_available_mutations>该食尸鬼已拥有所有可用的变异</nzflm.ghoulcontrol.no_available_mutations>
     <nzflm.ghoulcontrol.installed>已为 {0} 安装 {1}</nzflm.ghoulcontrol.installed>
+
+    <NzFlm_EnhancedGhoulFrenzy.label>增强版食尸鬼狂暴</NzFlm_EnhancedGhoulFrenzy.label>
+    <NzFlm_EnhancedGhoulFrenzy.description>使用增强版激素心脏，向血液中注入压力激素和液态能量，使食尸鬼在更长时间内以惊人的速度移动和攻击。</NzFlm_EnhancedGhoulFrenzy.description>
+
+    <NzFlm_EnhancedCorrosiveSpray.label>增强版腐蚀喷射</NzFlm_EnhancedCorrosiveSpray.label>
+    <NzFlm_EnhancedCorrosiveSpray.description>使用增强版强酸胃，在更大范围内喷射酸液。胃部通过手术植入的导管泵送腐蚀性液体，使食尸鬼能够以高速在更广的范围内从口中喷吐酸液。</NzFlm_EnhancedCorrosiveSpray.description>
+
+    <NzFlm_EnhancedMetalbloodInjection.label>增强版钢血注入</NzFlm_EnhancedMetalbloodInjection.label>
+    <NzFlm_EnhancedMetalbloodInjection.description>使用钢血注入器，向血液中释放钢血血清，在更短的时间内减少受到的伤害，但冷却时间更短。</NzFlm_EnhancedMetalbloodInjection.description>
 </LanguageData>
