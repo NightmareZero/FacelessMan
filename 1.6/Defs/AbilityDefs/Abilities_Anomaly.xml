@@ -195,4 +195,33 @@
             </li>
         </comps>
     </AbilityDef>
+
+    <!-- 超速愈合注入 -->
+    <AbilityDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_RapidHealingInjection</defName>
+        <label>flesh surge</label>
+        <description>Injects some dark archotech micro-machines into the target, greatly stimulating the target's healing speed. Due to the intense pain it causes, it will put the target into a coma.</description>
+        <iconPath>UI/Icons/Abilities/RapidHealingInjection</iconPath>
+        <cooldownTicksRange>60000</cooldownTicksRange>
+        <warmupTime>1.0</warmupTime>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>9.9</range>
+            <warmupTime>1.0</warmupTime>
+            <soundCast>AnomalyAbilityWarmup</soundCast>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetItems>false</canTargetItems>
+                <canTargetSelf>true</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_SwitchGiveHediff">
+                <hediffDef>NzFlm_He_RapidHealingInjection</hediffDef>
+                <psychic>False</psychic>
+                <durationSecondsOverride>8640</durationSecondsOverride>
+            </li>
+        </comps>
+    </AbilityDef>
 </Defs>

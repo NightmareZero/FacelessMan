@@ -25,4 +25,31 @@
             </li>
         </comps>
     </HediffDef>
+
+    <!-- 超速愈合注入 -->
+    <HediffDef>
+        <defName>NzFlm_He_RapidHealingInjection</defName>
+        <label>flesh surge</label>
+        <description>Injects some dark archotech micro-machines into the target, greatly stimulating the target's healing speed. Due to the intense pain it causes, it will put the target into a coma.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>1.0</initialSeverity>
+        <defaultLabelColor>(0.3, 0.9, 0.3)</defaultLabelColor>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <setMax>0.1</setMax>
+                    </li>
+                </capMods>
+                <regeneration>300</regeneration>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>12000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+    </HediffDef>
 </Defs>

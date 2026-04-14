@@ -15,4 +15,7 @@
 
     <NzFlm_EnhancedMetalbloodInjection.label>增强版钢血注入</NzFlm_EnhancedMetalbloodInjection.label>
     <NzFlm_EnhancedMetalbloodInjection.description>使用钢血注入器，向血液中释放钢血血清，在更短的时间内减少受到的伤害，但冷却时间更短。</NzFlm_EnhancedMetalbloodInjection.description>
+
+    <NzFlm_RapidHealingInjection.label>血肉暴涨</NzFlm_RapidHealingInjection.label>
+    <NzFlm_RapidHealingInjection.description>向目标注入一些暗黑超凡微械，大幅度刺激目标愈合速度，由于会造成剧烈的疼痛，会导致目标昏迷。</NzFlm_RapidHealingInjection.description>
 </LanguageData>

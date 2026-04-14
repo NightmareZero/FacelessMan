@@ -8,4 +8,7 @@
     
     <Nzflm_Ev_GhoulControl.label>食尸鬼掌控</Nzflm_Ev_GhoulControl.label>
     <Nzflm_Ev_GhoulControl.description>你可以控制食尸鬼体内的暗黑超凡碎片，使食尸鬼产生特定变异。</Nzflm_Ev_GhoulControl.description>
+
+    <Nzflm_Ev_RapidHealingInjection.label>血肉暴涨</Nzflm_Ev_RapidHealingInjection.label>
+    <Nzflm_Ev_RapidHealingInjection.description>向目标注入一些暗黑超凡微械，大幅度刺激目标愈合速度，由于会造成剧烈的疼痛，会导致目标昏迷。</Nzflm_Ev_RapidHealingInjection.description>
 </LanguageData>

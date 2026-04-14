@@ -55,4 +55,19 @@
             <li>NzFlm_GhoulControl</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+    
+    <!-- 超速愈合注入 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>Nzflm_Ev_RapidHealingInjection</defName>
+        <label>flesh surge</label>
+        <displayCategory>Nzflm_Gene_Ev_Anomaly</displayCategory>
+        <!-- 向目标注入一些暗黑超凡微械，大幅度刺激目标愈合速度，由于会造成剧烈的痛苦，会导致目标昏迷。 -->
+        <description>Injects some dark archotech micro-machines into the target, greatly stimulating the target's healing speed. Due to the intense pain it causes, it will put the target into a coma.</description>
+        <iconPath>UI/Icons/Abilities/RapidHealingInjection</iconPath>
+        <displayOrderInCategory>60</displayOrderInCategory>
+        <evolution>2</evolution>
+        <abilities>
+            <li>NzFlm_RapidHealingInjection</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>
