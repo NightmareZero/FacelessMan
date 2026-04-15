@@ -34,4 +34,27 @@
       </li>
     </lifeStages>
   </PawnKindDef>
+  
+  <PawnKindDef ParentName="BaseFleshbeastKind">
+    <defName>FleshChunk</defName>
+    <label>flesh chunk</label>
+    <race>FleshChunk</race>
+    <combatPower>10</combatPower>
+    <wildGroupSize>1~1</wildGroupSize>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Fleshbeast/Trispike/Trispike</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <drawOffset>(0, 0, 0.05)</drawOffset>
+        </bodyGraphicData>
+        <silhouetteGraphicData>
+          <texPath>Things/Pawn/Fleshbeast/Trispike/Trispike_MenuIcon</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <drawSize>1</drawSize>
+        </silhouetteGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
 </Defs>

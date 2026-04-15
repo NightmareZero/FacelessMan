@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+  <!-- 生物: 血肉野兽 -->
   <ThingDef ParentName="BaseFleshbeast">
     <defName>FleshBeast</defName>
     <label>fleshbeast</label>
@@ -109,6 +110,60 @@
           <li>Blunt</li>
         </capacities>
         <power>4</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+        <soundMeleeHit>Pawn_Fleshbeast_Attack_Blunt</soundMeleeHit>
+      </li>
+    </tools>
+  </ThingDef>
+  
+  <!-- 生物: 碎肉块 -->
+  <ThingDef ParentName="BaseFleshbeast">
+    <defName>FleshChunk</defName>
+    <label>flesh chunk</label>
+    <description>A small chunk of flesh split from a corpse.</description>
+    <statBases>
+      <MoveSpeed>2.0</MoveSpeed>
+      <MinimumContainmentStrength>10</MinimumContainmentStrength>
+      <ToxicResistance>0.3</ToxicResistance>
+    </statBases>
+    <uiIconPath>Things/Pawn/Fleshbeast/Trispike/Trispike_MenuIcon</uiIconPath>
+    <race>
+      <body>Trispike</body>
+      <baseBodySize>0.2</baseBodySize>
+      <baseHealthScale>0.5</baseHealthScale>
+      <lifeExpectancy>5</lifeExpectancy>
+      <renderTree>Trispike</renderTree>
+      <lifeStageAges>
+        <li>
+          <def>EntityFullyFormed</def>
+          <soundWounded>Pawn_Fleshbeast_Trispike_Wounded</soundWounded>
+          <soundDeath>Pawn_Fleshbeast_Trispike_Death</soundDeath>
+          <soundCall>Pawn_Fleshbeast_Trispike_Call</soundCall>
+        </li>
+      </lifeStageAges>
+    </race>
+    <tools>
+      <li>
+        <label>small spike</label>
+        <labelNoLocation>spike</labelNoLocation>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftSpike</linkedBodyPartsGroup>
+        <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+        <soundMeleeHit>Pawn_Fleshbeast_Attack_Spike</soundMeleeHit>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>1</power>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>

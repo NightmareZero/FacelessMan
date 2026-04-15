@@ -70,4 +70,19 @@
             <li>NzFlm_RapidHealingInjection</li>
         </abilities>
     </NzFaceLessManMod.EvolutionGeneDef>
+    
+    <!-- 尸体分裂 -->
+    <NzFaceLessManMod.EvolutionGeneDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>Nzflm_Ev_CorpseSplit</defName>
+        <label>corpse split</label>
+        <displayCategory>Nzflm_Gene_Ev_Anomaly</displayCategory>
+        <!-- 粉碎一具尸体，根据其体型，产生数个碎肉块(每0.5 * 3) -->
+        <description>Shatter a corpse, producing several flesh chunks based on its body size (3 chunks per 0.5 body size).</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <displayOrderInCategory>70</displayOrderInCategory>
+        <evolution>2</evolution>
+        <abilities>
+            <li>NzFlm_CorpseSplit</li>
+        </abilities>
+    </NzFaceLessManMod.EvolutionGeneDef>
 </Defs>

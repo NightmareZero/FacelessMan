@@ -6,4 +6,8 @@
   
   <!-- 工具翻译 -->
   <FleshBeast.left_spike.label>骨刺</FleshBeast.left_spike.label>
+  
+  <!-- 碎肉块 -->
+  <FleshChunk.label>碎肉块</FleshChunk.label>
+  <FleshChunk.description>从尸体上分裂的小型肉块。</FleshChunk.description>
 </LanguageData>

@@ -224,4 +224,29 @@
             </li>
         </comps>
     </AbilityDef>
+    
+    <!-- 尸体分裂 -->
+    <AbilityDef MayRequire="Ludeon.RimWorld.Anomaly">
+        <defName>NzFlm_CorpseSplit</defName>
+        <label>corpse split</label>
+        <description>Shatter a corpse, producing several flesh chunks based on its body size (3 chunks per 0.5 body size).</description>
+        <iconPath>UI/Icons/Abilities/ViewGenes</iconPath>
+        <cooldownTicksRange>3000</cooldownTicksRange>
+        <warmupTime>1.0</warmupTime>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <range>9.9</range>
+            <warmupTime>1.0</warmupTime>
+            <soundCast>AnomalyAbilityWarmup</soundCast>
+            <targetParams>
+                <canTargetItems>true</canTargetItems>
+                <canTargetPawns>false</canTargetPawns>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetSelf>false</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="NzFaceLessManMod.CompProperties_CorpseSplit" />
+        </comps>
+    </AbilityDef>
 </Defs>
