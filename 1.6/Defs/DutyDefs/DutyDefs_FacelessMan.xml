@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <!-- 通用攻击职责 -->
+  <DutyDef>
+    <defName>FacelessMan_Assault</defName>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- 优先使用能力 -->
+        <li Class="ThinkNode_Subtree">
+          <treeDef>Abilities_Aggressive</treeDef>
+        </li>
+        
+        <!-- 自动寻找并攻击敌人 -->
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+          <allowTurrets>true</allowTurrets>
+        </li>
+        
+        <!-- 攻击附近的建筑 -->
+        <li Class="JobGiver_AITrashColonyClose" />
+        
+        <!-- 攻击远处的建筑 -->
+        <li Class="JobGiver_AITrashBuildingsDistant" />
+        
+        <!-- 前往最近的敌对目标 -->
+        <li Class="JobGiver_AIGotoNearestHostile">
+          <overrideExpiryInterval>60</overrideExpiryInterval>
+        </li>
+        
+        <!-- 攻击所有惰性物体 -->
+        <li Class="JobGiver_AITrashBuildingsDistant">
+          <attackAllInert>true</attackAllInert>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <!-- 防御职责 -->
+  <DutyDef>
+    <defName>FacelessMan_Defend</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- 防御指定点 -->
+        <li Class="JobGiver_AIDefendPoint">
+          <targetAcquireRadius>65</targetAcquireRadius>
+          <targetKeepRadius>72</targetKeepRadius>
+        </li>
+        
+        <!-- 在职责位置附近徘徊 -->
+        <li Class="JobGiver_WanderNearDutyLocation">
+          <wanderRadius>12</wanderRadius>
+          <locomotionUrgencyOutsideRadius>Walk</locomotionUrgencyOutsideRadius>
+          <expireOnNearbyEnemy>true</expireOnNearbyEnemy>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+  <!-- 巡逻职责 -->
+  <DutyDef>
+    <defName>FacelessMan_Patrol</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <!-- 自动寻找并攻击敌人 -->
+        <li Class="JobGiver_AIFightEnemies">
+          <targetAcquireRadius>50</targetAcquireRadius>
+          <targetKeepRadius>55</targetKeepRadius>
+        </li>
+        
+        <!-- 巡逻移动 -->
+        <li Class="JobGiver_Wander">
+          <wanderRadius>20</wanderRadius>
+          <wanderDestValidator Class="WanderDestValidator_PreventUnjammable">
+            <maxDanger>Some</maxDanger>
+          </wanderDestValidator>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+  
+</Defs>
