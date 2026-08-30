@@ -28,7 +28,7 @@
         </comps>
         <stages>
             <li>
-                <regeneration>33</regeneration>
+                <regeneration>3</regeneration>
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
@@ -40,8 +40,8 @@
                     </li>
                 </capMods>
                 <statFactors>
-                    <InjuryHealingFactor>3</InjuryHealingFactor>
-                    <ImmunityGainSpeed>2</ImmunityGainSpeed>
+                    <InjuryHealingFactor>2</InjuryHealingFactor>
+                    <ImmunityGainSpeed>1.3</ImmunityGainSpeed>
                 </statFactors>                
             </li>
         </stages>
