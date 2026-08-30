@@ -3,7 +3,7 @@
 	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>NzFlm_ReimplantXenogerm</defName>
 		<label>implant genes</label>
-		<cooldownTicksRange>30000</cooldownTicksRange>
+		<cooldownTicksRange>60000</cooldownTicksRange>
 		<description>Implanting the xenotype carrying the genes of the 'xenotype gene package' from
 			oneself into a target organism. If the recipient's xenotype genes are still undergoing
 			reconstruction, it will lead to their demise.\n\n
