@@ -43,7 +43,7 @@
             <li>
                 <!-- 缓解 -->
                 <label>relief</label>
-                <painOffset>0.4</painOffset>
+                <painOffset>0.1</painOffset>
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
@@ -82,7 +82,7 @@
             <li>
                 <!-- 耗尽 -->
                 <label>exhausted</label>
-                <painOffset>0.15</painOffset>
+                <painOffset>0.2</painOffset>
                 <minSeverity>2.0</minSeverity>
                 <capMods>
                     <li>
