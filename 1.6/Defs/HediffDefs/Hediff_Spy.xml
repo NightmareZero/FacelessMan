@@ -33,7 +33,7 @@
         <!-- 你使用了你的干细胞治疗了自己或者他人，现在你感觉有点虚弱 -->
         <description>You used your stem cells to treat yourself or others, and now you feel a little weak.</description>
         <isBad>false</isBad>
-        <initialSeverity>2.5</initialSeverity>
+        <initialSeverity>2.0</initialSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerDay">
                 <severityPerDay>-1</severityPerDay>
@@ -43,7 +43,7 @@
             <li>
                 <!-- 缓解 -->
                 <label>relief</label>
-                <painOffset>0.1</painOffset>
+                <painOffset>0.35</painOffset>
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
@@ -63,7 +63,7 @@
                 <!-- 虚弱 -->
                 <label>weak</label>
                 <painOffset>0.1</painOffset>
-                <minSeverity>1.1</minSeverity>
+                <minSeverity>0.7</minSeverity>
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
@@ -83,7 +83,7 @@
                 <!-- 耗尽 -->
                 <label>exhausted</label>
                 <painOffset>0.2</painOffset>
-                <minSeverity>2.0</minSeverity>
+                <minSeverity>1.5</minSeverity>
                 <capMods>
                     <li>
                         <capacity>Consciousness</capacity>
