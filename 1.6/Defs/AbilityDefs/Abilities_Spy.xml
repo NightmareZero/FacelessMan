@@ -143,7 +143,7 @@
     <AbilityDef ParentName="AbilityTouchBase">
         <defName>NzFlm_StemCellTherapy</defName>
         <label>stem cell therapy</label>
-        <cooldownTicksRange>60000</cooldownTicksRange>
+        <cooldownTicksRange>120000</cooldownTicksRange>
         <!-- 从你体内取出少量干细胞，用于治疗目标一处最严重的伤口 -->
         <description>Take a small amount of stem cells from your body to treat the most serious
             wound of the target.</description>
