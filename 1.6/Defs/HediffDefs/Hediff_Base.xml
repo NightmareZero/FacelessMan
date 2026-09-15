@@ -28,7 +28,7 @@
         </comps>
         <stages>
             <li>
-                <regeneration>6</regeneration>
+                <regeneration>9</regeneration>
                 <capMods>
                     <li>
                         <capacity>BloodPumping</capacity>
